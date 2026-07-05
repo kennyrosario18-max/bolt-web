@@ -1,0 +1,123 @@
+[
+  {
+    "id": "eco-cross-4",
+    "name": "ECO Cross",
+    "line": "eco",
+    "speed": "30–35 km/h",
+    "cap": "360 kg",
+    "range_lead": "50–75 km",
+    "range_li": "80–100 km",
+    "desc": "Línea ECO compacta para 4 pasajeros. Ideal para residenciales y resorts.",
+    "pax": 4
+  },
+  {
+    "id": "eco-cross-4-2",
+    "name": "ECO Cross 4+2",
+    "line": "eco",
+    "speed": "30–35 km/h",
+    "cap": "540 kg",
+    "range_lead": "50–75 km",
+    "range_li": "80–100 km",
+    "desc": "Versión extendida del ECO Cross para grupos de hasta 6 pasajeros.",
+    "pax": 6
+  },
+  {
+    "id": "eco-plus-2-2",
+    "name": "ECO Plus 2+2",
+    "line": "eco",
+    "speed": "30–35 km/h",
+    "cap": "360 kg",
+    "range_lead": "75 km",
+    "range_li": "80–100 km",
+    "desc": "ECO Plus con configuración 2+2, asientos enfrentados para 4 pasajeros.",
+    "pax": 4
+  },
+  {
+    "id": "eco-plus-4-2",
+    "name": "ECO Plus 4+2",
+    "line": "eco",
+    "speed": "30–35 km/h",
+    "cap": "540 kg",
+    "range_lead": "75 km",
+    "range_li": "80–100 km",
+    "desc": "ECO Plus de 6 pasajeros — máximo confort para familias o grupos.",
+    "pax": 6
+  },
+  {
+    "id": "eco-track-4-2",
+    "name": "ECO Track 4+2",
+    "line": "eco",
+    "speed": "30–35 km/h",
+    "cap": "540 kg",
+    "range_lead": "50–75 km",
+    "range_li": "80–110 km",
+    "desc": "Variante todoterreno con suspensión reforzada, para 6 pasajeros.",
+    "pax": 6
+  },
+  {
+    "id": "eco-sport-4-2",
+    "name": "ECO Sport 4+2",
+    "line": "eco",
+    "speed": "30–35 km/h",
+    "cap": "540 kg",
+    "range_lead": "75 km",
+    "range_li": "80–100 km",
+    "desc": "ECO Sport extendido para grupos. Look agresivo, capacidad de 6.",
+    "pax": 6
+  },
+  {
+    "id": "cc-limo-4-2",
+    "name": "Club Car Limo 4+2",
+    "line": "clubcar",
+    "speed": "20–31 km/h",
+    "cap": "540 kg",
+    "range_lead": "35–40 km",
+    "range_li": "60–90 km",
+    "desc": "Configuración limo de Club Car — el más espacioso, ideal para eventos.",
+    "pax": 6
+  },
+  {
+    "id": "cc-precedent-2-2",
+    "name": "Club Car Precedent 2+2",
+    "line": "clubcar",
+    "speed": "20–31 km/h",
+    "cap": "360 kg",
+    "range_lead": "35–40 km",
+    "range_li": "60–90 km",
+    "desc": "Precedent clásico 2+2 con asientos enfrentados para 4 pasajeros.",
+    "pax": 4
+  },
+  {
+    "id": "cc-tempo-2-2",
+    "name": "Club Car Tempo 2+2",
+    "line": "clubcar",
+    "speed": "20–31 km/h",
+    "cap": "360 kg",
+    "range_lead": "35–40 km",
+    "range_li": "70–90 km",
+    "desc": "Modelo Tempo de Club Car. Diseño moderno, manejo suave.",
+    "pax": 4
+  },
+  {
+    "id": "zycar-4",
+    "name": "Zycar 4",
+    "line": "zycar",
+    "speed": "30–35 km/h",
+    "cap": "360 kg",
+    "range_lead": "70–90 km",
+    "range_li": "70–90 km",
+    "desc": "Línea Zycar — la apuesta moderna con detalles tecnológicos.",
+    "pax": 4
+  },
+  {
+    "id": "zycar-4-2",
+    "name": "Zycar 4+2",
+    "line": "zycar",
+    "speed": "30–35 km/h",
+    "cap": "540 kg",
+    "range_lead": "70–90 km",
+    "range_li": "70–90 km",
+    "desc": "Zycar extendido para 6 pasajeros. Diseño contemporáneo.",
+    "pax": 6
+  }
+]

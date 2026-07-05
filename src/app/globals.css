@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* BOLT ⚡ Design Tokens v2.0 — portados de reservas.boltgolfcars.com/assets/tokens.css
+   No usar colores fuera de esta paleta. */
+:root {
+  --bolt-yellow: #ffd60a;
+  --bolt-yellow-dark: #8a6a00;
+  --bolt-ink: #0a0a0a;
+  --bolt-body: #2b2b2b;
+  --bolt-grey: #71717a;
+  --bolt-line: #e8e8ea;
+  --bolt-cream: #fffbea;
+  --bolt-success: #16a34a;
+  --bolt-danger: #dc2626;
+}
+
+@theme inline {
+  --color-volt: var(--bolt-yellow);
+  --color-volt-dark: var(--bolt-yellow-dark);
+  --color-ink: var(--bolt-ink);
+  --color-inktext: var(--bolt-body);
+  --color-steel: var(--bolt-grey);
+  --color-line: var(--bolt-line);
+  --color-cream: var(--bolt-cream);
+  --color-ok: var(--bolt-success);
+  --color-danger: var(--bolt-danger);
+
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --radius-card: 14px;
+  --radius-box: 10px;
+}
+
+body {
+  background: #ffffff;
+  color: var(--bolt-body);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Titulares siempre en Bricolage Grotesque.
+   En @layer base para que las utilidades (text-white, etc.) puedan sobreescribir. */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-bricolage), system-ui, sans-serif;
+    color: var(--bolt-ink);
+    text-wrap: balance;
+  }
+}
+
+/* "Marcador eléctrico": resaltado amarillo sobre frases clave */
+.hl {
+  background: linear-gradient(
+    transparent 55%,
+    var(--bolt-yellow) 55%,
+    var(--bolt-yellow) 92%,
+    transparent 92%
+  );
+  padding: 0 2px;
+}
+
+/* Versión para fondos oscuros: el texto resaltado se mantiene legible */
+.hl-dark {
+  color: var(--bolt-yellow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
