@@ -81,6 +81,10 @@ export function RequestForm() {
     setError("");
 
     if (form.empresa) return; // bot atrapado por el honeypot: no hacemos nada
+    if (!form.llegada || !form.salida) {
+      setError("Selecciona tus fechas de llegada y salida.");
+      return;
+    }
     if (days <= 0) {
       setError("La fecha de salida debe ser posterior a la fecha de llegada.");
       return;
@@ -116,7 +120,7 @@ export function RequestForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2" noValidate>
+    <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">
       <div className="sm:col-span-2">
         <label className={labelCls} htmlFor="nombre">
           Nombre completo *

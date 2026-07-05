@@ -10,7 +10,8 @@
   --bolt-grey: #71717a;
   --bolt-line: #e8e8ea;
   --bolt-cream: #fffbea;
-  --bolt-success: #16a34a;
+  /* verde oscurecido para cumplir AA como texto sobre fondos claros (antes #16a34a) */
+  --bolt-success: #15803d;
   --bolt-danger: #dc2626;
 }
 

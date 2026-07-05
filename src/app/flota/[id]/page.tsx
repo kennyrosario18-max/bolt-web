@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const model = getModel(id);
   if (!model) return {};
   return {
-    title: `${model.name} — golf cart de ${model.pax} plazas`,
+    title: `${model.name} — ${model.pax} plazas`,
     description: `${model.desc} Renta desde US$${priceFrom(model.pax)}/día con entrega en tu villa en Punta Cana.`,
   };
 }
@@ -94,12 +94,12 @@ export default async function ModelPage({ params }: Props) {
               {model.name}
             </h1>
             <p className="mt-4 text-lg text-white/75">{model.desc}</p>
-            <p className="mt-1 text-sm italic text-white/40">{DESC_EN[model.id]}</p>
+            <p className="mt-1 text-sm italic text-white/60">{DESC_EN[model.id]}</p>
             <p className="mt-6 text-2xl font-extrabold text-volt">
               desde US${priceFrom(model.pax)}
               <span className="text-base font-semibold text-white/60">/día</span>
             </p>
-            <p className="text-xs text-white/40">{PRICING.itbisNote}</p>
+            <p className="text-xs text-white/60">{PRICING.itbisNote}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href={`/solicitar-disponibilidad?modelo=${model.id}`}

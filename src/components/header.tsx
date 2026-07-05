@@ -7,8 +7,9 @@ import { CONTACT, waLink } from "@/content/site";
 
 const NAV = [
   { href: "/flota", label: "Flota" },
+  { href: "/precios", label: "Precios" },
   { href: "/#zonas", label: "Zonas" },
-  { href: "/#como-funciona", label: "Cómo funciona" },
+  { href: "/servicios", label: "Servicios" },
 ];
 
 export function Header() {

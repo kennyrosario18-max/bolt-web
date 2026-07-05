@@ -57,5 +57,5 @@ export function relatedModels(model: Model, count = 3): Model[] {
 }
 
 export function modelImage(id: string): string {
-  return `/images/models/${id}.jpg`;
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/models/${id}.jpg`;
 }

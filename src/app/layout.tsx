@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="es" className={`${bricolage.variable} ${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <Header />
-        <main className="flex-1 pb-20 md:pb-0">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <MobileCta />
       </body>

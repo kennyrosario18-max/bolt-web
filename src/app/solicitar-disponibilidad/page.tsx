@@ -23,7 +23,7 @@ export default function RequestPage() {
             Completa el formulario y nuestro equipo verificará la disponibilidad de tu modelo.
             Ninguna reserva se confirma automáticamente — siempre te responde una persona.
           </p>
-          <p className="mt-1 text-sm italic text-white/40">
+          <p className="mt-1 text-sm italic text-white/60">
             Send your request — our team confirms availability personally.
           </p>
         </div>
