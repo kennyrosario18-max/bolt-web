@@ -1,0 +1,60 @@
+name: CI & Deploy
+
+# Gate de calidad + deploy automático a producción (boltgolfcars.com).
+# Reemplaza el push manual: cada commit a main pasa typecheck + lint + checks de
+# contenido + build; solo si todo verde, publica a gh-pages. Elimina el bus-factor
+# y el riesgo de publicar un build roto.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  verify-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Typecheck (TypeScript estricto)
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      # `npm run build` corre el gate de contenido (prebuild → check-content.mjs)
+      # y luego next build. Sin BASE_PATH = build de producción, indexable.
+      - name: Build de producción (+ gate de contenido)
+        run: npm run build
+
+      - name: CNAME y .nojekyll
+        run: |
+          echo "boltgolfcars.com" > out/CNAME
+          touch out/.nojekyll
+
+      # Deploy solo en push a main; en pull_request queda como verificación.
+      - name: Deploy a gh-pages
+        if: github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
+          cname: boltgolfcars.com
+          commit_message: "Deploy ${{ github.sha }}"

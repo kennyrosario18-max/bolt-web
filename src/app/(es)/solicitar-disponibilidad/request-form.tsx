@@ -155,9 +155,12 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
   const [error, setError] = useState("");
 
   // Preselección desde ?modelo= leída post-mount: permite prerenderizar el
-  // formulario completo sin useSearchParams/Suspense (export estático).
+  // formulario completo sin useSearchParams/Suspense (export estático). El
+  // setState al montar es intencional — el SSG renderiza vacío y el cliente
+  // aplica el query una sola vez, evitando cualquier mismatch de hidratación.
   useEffect(() => {
     const id = new URLSearchParams(window.location.search).get("modelo") ?? "";
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (getModel(id)) setForm((f) => ({ ...f, modelo: id }));
   }, []);
 
