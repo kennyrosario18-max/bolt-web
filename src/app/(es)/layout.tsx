@@ -37,8 +37,9 @@ export const metadata: Metadata = {
     siteName: "BOLT Golf Cars",
     locale: "es_DO",
     type: "website",
-    images: ["/images/models/eco-cross-4-2.jpg"],
+    images: [{ url: "/og/home.png", width: 1200, height: 630 }],
   },
+  twitter: { card: "summary_large_image", images: ["/og/home.png"] },
 };
 
 export default function RootLayoutEs({

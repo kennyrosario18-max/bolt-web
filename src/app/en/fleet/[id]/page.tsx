@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MODELS, getModel } from "@/content/models";
 import { priceFrom } from "@/content/site";
 import { hreflang } from "@/lib/i18n";
+import { ogMeta } from "@/lib/og";
 import { ModelDetailView } from "@/views/model-detail";
 
 interface Props {
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/en/fleet/${model.id}/`,
       ...hreflang(`/flota/${model.id}/`, `/en/fleet/${model.id}/`),
     },
+    ...ogMeta(`model-${model.id}`),
   };
 }
 

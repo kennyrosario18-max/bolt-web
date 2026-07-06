@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getZoneLanding } from "@/content/zones-landing";
 import { hreflang } from "@/lib/i18n";
+import { ogMeta } from "@/lib/og";
 import { ZoneLandingView, generateZoneParams } from "@/views/zone-landing";
 
 interface Props {
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/en/rentals/${zona}/`,
       ...hreflang(`/alquiler/${zona}/`, `/en/rentals/${zona}/`),
     },
+    ...ogMeta(`zone-${zona}`),
   };
 }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SaleView } from "@/views/sale";
 import { hreflang } from "@/lib/i18n";
+import { ogMeta } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "Golf carts for sale in Punta Cana — new & used",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "/en/golf-carts-for-sale/",
     ...hreflang("/venta/", "/en/golf-carts-for-sale/"),
   },
+  ...ogMeta("venta"),
 };
 
 export default function GolfCartsForSalePage() {
