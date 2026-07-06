@@ -78,6 +78,25 @@ summary:focus-visible,
   border-radius: 6px;
 }
 
+/* Menú móvil — header server component sin React (F3). El posicionamiento y los
+   colores van en utilidades Tailwind sobre el <nav>; el Popover API nativo
+   controla cuándo se muestra (Escape, cierre al tocar fuera, foco). Aquí solo la
+   animación de la hamburguesa, con clase plana .is-open que sincroniza el shim
+   (evitamos :has()/:popover-open porque Lightning CSS los poda según targets). */
+#nav-toggle.is-open .nav-l1 {
+  transform: translateY(0.5rem) rotate(45deg);
+}
+#nav-toggle.is-open .nav-l2 {
+  opacity: 0;
+}
+#nav-toggle.is-open .nav-l3 {
+  transform: translateY(-0.5rem) rotate(-45deg);
+}
+/* El Popover en top-layer conserva las utilidades de posición del <nav>. */
+#nav-movil {
+  margin: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
