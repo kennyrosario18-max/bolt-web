@@ -78,8 +78,8 @@ export default function HomePageEn() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-card">
             <Image
-              src={modelImage("eco-cross-4")}
-              alt="BOLT ECO Cross golf cart in Punta Cana"
+              src={modelImage("zycar-4")}
+              alt="BOLT Zycar 4 golf cart in front of a villa in Punta Cana"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"

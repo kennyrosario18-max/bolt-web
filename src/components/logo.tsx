@@ -1,7 +1,7 @@
 /** Marca BOLT: rayo SIEMPRE primero (⚡ BOLT), forma asimétrica oficial v2. */
 export function BoltLogo({ dark = false, size = 22 }: { dark?: boolean; size?: number }) {
   return (
-    <span className="inline-flex items-center gap-2">
+    <span translate="no" className="inline-flex items-center gap-2">
       <svg
         width={size * 0.72}
         height={size}
