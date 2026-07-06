@@ -1,6 +1,12 @@
 import raw from "./models.json";
 
 /** Datos migrados programáticamente del catálogo actual (reservas.boltgolfcars.com/catalogo). */
+export interface BatteryOption {
+  name: string;
+  nameEn: string;
+  range: string;
+}
+
 export interface Model {
   id: string;
   name: string;
@@ -11,6 +17,9 @@ export interface Model {
   range_lead: string;
   range_li: string;
   desc: string;
+  /** Opciones de batería confirmadas por Kenny (jul/2026); si existe,
+      reemplaza las celdas genéricas plomo/litio en la ficha. */
+  batteries?: BatteryOption[];
 }
 
 export const MODELS = raw as Model[];

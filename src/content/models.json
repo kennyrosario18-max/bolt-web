@@ -6,9 +6,21 @@
     "speed": "30–35 km/h",
     "cap": "360 kg",
     "range_lead": "50–75 km",
-    "range_li": "80–100 km",
+    "range_li": "85–95 km",
     "desc": "Línea ECO compacta para 4 pasajeros. Ideal para residenciales y resorts.",
-    "pax": 4
+    "pax": 4,
+    "batteries": [
+      {
+        "name": "Litio estándar 105 Ah",
+        "nameEn": "Standard lithium 105 Ah",
+        "range": "60–70 km"
+      },
+      {
+        "name": "Litio de largo alcance 150 Ah",
+        "nameEn": "Long-range lithium 150 Ah",
+        "range": "85–95 km"
+      }
+    ]
   },
   {
     "id": "eco-cross-4-2",
@@ -17,9 +29,21 @@
     "speed": "30–35 km/h",
     "cap": "540 kg",
     "range_lead": "50–75 km",
-    "range_li": "80–95 km",
+    "range_li": "85–95 km",
     "desc": "Versión extendida del ECO Cross para grupos de hasta 6 pasajeros.",
-    "pax": 6
+    "pax": 6,
+    "batteries": [
+      {
+        "name": "Litio estándar 105 Ah",
+        "nameEn": "Standard lithium 105 Ah",
+        "range": "60–70 km"
+      },
+      {
+        "name": "Litio de largo alcance 150 Ah",
+        "nameEn": "Long-range lithium 150 Ah",
+        "range": "85–95 km"
+      }
+    ]
   },
   {
     "id": "eco-plus-2-2",

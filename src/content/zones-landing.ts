@@ -81,7 +81,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Qué modelo me conviene para un grupo grande?",
-        a: "Para 5 o 6 personas recomendamos la línea ECO de 6 plazas (4+2). Si buscan máximo confort, el ECO Cross premium con batería de litio rinde hasta 95 km por carga.",
+        a: "Para 5 o 6 personas recomendamos la línea ECO de 6 plazas (4+2). Si buscan máximo confort, el ECO Cross premium con batería de litio de largo alcance (150 Ah) rinde hasta 95 km por carga.",
       },
       {
         q: "¿La entrega tiene costo?",

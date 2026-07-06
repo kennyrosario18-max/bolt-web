@@ -59,12 +59,18 @@ export default async function ModelPage({ params }: Props) {
   const related = relatedModels(model);
   const waMsg = `Hola BOLT ⚡ Quiero consultar disponibilidad del ${model.name} (${model.pax} plazas).`;
 
+  const autonomySpecs = model.batteries
+    ? model.batteries.map((b) => ({ label: b.name, value: b.range }))
+    : [
+        { label: "Autonomía (plomo)", value: model.range_lead },
+        { label: "Autonomía (litio)", value: model.range_li },
+      ];
+
   const specs = [
     { label: "Plazas", value: `${model.pax} pasajeros` },
     { label: "Velocidad máxima", value: model.speed },
     { label: "Capacidad de carga", value: model.cap },
-    { label: "Autonomía (plomo)", value: model.range_lead },
-    { label: "Autonomía (litio)", value: model.range_li },
+    ...autonomySpecs,
     { label: "Línea", value: LINE_NAMES[model.line] },
   ];
 
