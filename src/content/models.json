@@ -129,13 +129,13 @@
   },
   {
     "id": "cc-limo-4-2",
-    "name": "Club Car Limo 4+2",
+    "name": "Club Car Precedent Limo 4+2",
     "line": "clubcar",
     "speed": "20–31 km/h",
     "cap": "540 kg",
     "range_lead": "25–40 km",
     "range_li": "60–70 km",
-    "desc": "Configuración limo de Club Car — el más espacioso, ideal para eventos.",
+    "desc": "Configuración limo del Precedent — el más espacioso, ideal para eventos.",
     "pax": 6,
     "batteries": [
       {
