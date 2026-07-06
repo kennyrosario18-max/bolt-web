@@ -78,3 +78,15 @@ export function relatedModels(model: Model, count = 3): Model[] {
 export function modelImage(id: string): string {
   return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/models/${id}.jpg`;
 }
+
+/** Fotos extra por modelo (para la sesión real). Convención: {id}-2.jpg, -3.jpg…
+    en public/images/models. Hoy cada modelo trae 1 foto; añade el conteo aquí
+    cuando lleguen las fotos y la galería aparece sola. */
+export const MODEL_EXTRA_PHOTOS: Record<string, number> = {};
+
+/** Galería del modelo: principal + extras. Estructura lista aunque hoy sea 1. */
+export function modelImages(id: string): string[] {
+  const base = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/models/${id}`;
+  const extra = MODEL_EXTRA_PHOTOS[id] ?? 0;
+  return [`${base}.jpg`, ...Array.from({ length: extra }, (_, i) => `${base}-${i + 2}.jpg`)];
+}

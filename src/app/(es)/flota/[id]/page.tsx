@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const model = getModel(id);
   if (!model) return {};
   return {
-    title: `${model.name} — ${model.pax} plazas`,
-    description: `${model.desc} Renta desde US$${priceFrom(model.pax)}/día con entrega en tu villa en Punta Cana.`,
+    title: `Renta ${model.name} en Punta Cana — ${model.pax} plazas`,
+    description: `Alquila el ${model.name} (${model.pax} plazas) en Punta Cana desde US$${priceFrom(model.pax)}/día. Entrega en tu villa, seguro y soporte 24/7 — confirmación el mismo día.`,
     alternates: {
       canonical: `/flota/${model.id}/`,
       ...hreflang(`/flota/${model.id}/`, `/en/fleet/${model.id}/`),

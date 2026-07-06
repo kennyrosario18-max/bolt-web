@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DELIVERY_POLICY, PRICE_GROUPS, PRICING_FOOTNOTE } from "@/content/pricing";
+import { MODELS } from "@/content/models";
 import { waLink } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
@@ -18,6 +19,7 @@ const T = {
     deliverySub: "· Delivery",
     reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
+    chipsLabel: "Solicita tu modelo:",
     fleetCta: "Ver la flota →",
     fleetHref: "/flota",
     waCta: "Preguntar por WhatsApp",
@@ -34,6 +36,7 @@ const T = {
     deliverySub: "· Entrega",
     reqCta: "Request availability",
     reqHref: "/en/request-availability",
+    chipsLabel: "Request your model:",
     fleetCta: "See the fleet →",
     fleetHref: "/en/fleet",
     waCta: "Ask on WhatsApp",
@@ -113,6 +116,21 @@ export function PricingView({ locale }: { locale: Locale }) {
                     </div>
                   </div>
                 ))}
+              </div>
+              {/* Chips de modelos del grupo — prefill al formulario (fin del callejón). */}
+              <div className="mt-5">
+                <p className="text-xs font-bold uppercase tracking-wide text-steel">{t.chipsLabel}</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {MODELS.filter((m) => m.pax === (gi === 0 ? 4 : 6)).map((m) => (
+                    <Link
+                      key={m.id}
+                      href={`${t.reqHref}?modelo=${m.id}`}
+                      className="inline-flex items-center rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-inktext transition-colors hover:border-ink hover:text-ink"
+                    >
+                      {m.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

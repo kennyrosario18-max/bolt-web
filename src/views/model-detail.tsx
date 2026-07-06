@@ -4,7 +4,7 @@ import {
   DESC_EN,
   INCLUDED,
   lineName,
-  modelImage,
+  modelImages,
   relatedModels,
   type Model,
 } from "@/content/models";
@@ -89,6 +89,7 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
   const t = T[locale];
   const es = locale === "es";
   const related = relatedModels(model);
+  const photos = modelImages(model.id);
   const faqs = t.faqs(model.name, model.pax);
 
   const autonomySpecs = model.batteries
@@ -127,15 +128,27 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
       {/* Hero del modelo — premium negro */}
       <section className="bg-ink text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-16">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-white/5">
-            <Image
-              src={modelImage(model.id)}
-              alt={t.alt(model)}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
+          <div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-white/5">
+              <Image
+                src={photos[0]}
+                alt={t.alt(model)}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            {/* Galería lista: aparece sola cuando el modelo tenga varias fotos. */}
+            {photos.length > 1 ? (
+              <div className="mt-3 grid grid-cols-4 gap-2">
+                {photos.slice(0, 4).map((src, i) => (
+                  <div key={src} className="relative aspect-square overflow-hidden rounded-box bg-white/5">
+                    <Image src={src} alt={`${model.name} — ${i + 1}`} fill sizes="120px" className="object-cover" />
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
           <div>
             <nav aria-label={t.crumbAria} className="text-sm text-white/50">

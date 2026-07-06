@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { DESC_EN, MODELS, getModel } from "@/content/models";
+import { MODELS, getModel } from "@/content/models";
 import { priceFrom } from "@/content/site";
 import { hreflang } from "@/lib/i18n";
 import { ModelDetailView } from "@/views/model-detail";
@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const model = getModel(id);
   if (!model) return {};
   return {
-    title: `${model.name} — ${model.pax} seater`,
-    description: `${DESC_EN[model.id]} Rent from US$${priceFrom(model.pax)}/day with delivery to your villa in Punta Cana.`,
+    title: `${model.name} rental in Punta Cana — ${model.pax} seats`,
+    description: `Rent the ${model.name} (${model.pax} seats) in Punta Cana from US$${priceFrom(model.pax)}/day. Villa delivery, insurance and 24/7 support — same-day confirmation.`,
     alternates: {
       canonical: `/en/fleet/${model.id}/`,
       ...hreflang(`/flota/${model.id}/`, `/en/fleet/${model.id}/`),
