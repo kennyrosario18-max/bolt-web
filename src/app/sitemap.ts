@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pair("/precios/", "/en/pricing/", 0.9),
     ...pair("/solicitar-disponibilidad/", "/en/request-availability/", 0.9),
     ...pair("/servicios/", "/en/services/", 0.7),
+    ...pair("/venta/", "/en/golf-carts-for-sale/", 0.8),
     ...pair("/nosotros/", "/en/about/", 0.5),
     ...pair("/preguntas-frecuentes/", "/en/faq/", 0.6),
     ...pair("/soporte/", "/en/support/", 0.5),

@@ -6,6 +6,7 @@ export const SEGMENT_ES_TO_EN: Record<string, string> = {
   flota: "fleet",
   precios: "pricing",
   servicios: "services",
+  venta: "golf-carts-for-sale",
   alquiler: "rentals",
   "solicitar-disponibilidad": "request-availability",
   nosotros: "about",
