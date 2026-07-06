@@ -5,7 +5,7 @@
     "line": "eco",
     "speed": "30–35 km/h",
     "cap": "360 kg",
-    "range_lead": "50–75 km",
+    "range_lead": "25–40 km",
     "range_li": "85–95 km",
     "desc": "Línea ECO compacta para 4 pasajeros. Ideal para residenciales y resorts.",
     "pax": 4,
@@ -28,7 +28,7 @@
     "line": "eco",
     "speed": "30–35 km/h",
     "cap": "540 kg",
-    "range_lead": "50–75 km",
+    "range_lead": "25–40 km",
     "range_li": "85–95 km",
     "desc": "Versión extendida del ECO Cross para grupos de hasta 6 pasajeros.",
     "pax": 6,
@@ -51,7 +51,7 @@
     "line": "eco",
     "speed": "30–35 km/h",
     "cap": "360 kg",
-    "range_lead": "75 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "ECO Plus con configuración 2+2, asientos enfrentados para 4 pasajeros.",
     "pax": 4,
@@ -59,7 +59,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "75 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
@@ -74,7 +74,7 @@
     "line": "eco",
     "speed": "30–35 km/h",
     "cap": "540 kg",
-    "range_lead": "75 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "ECO Plus de 6 pasajeros — máximo confort para familias o grupos.",
     "pax": 6,
@@ -82,7 +82,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "75 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
@@ -97,7 +97,7 @@
     "line": "eco",
     "speed": "30–35 km/h",
     "cap": "540 kg",
-    "range_lead": "50–75 km",
+    "range_lead": "25–40 km",
     "range_li": "85–95 km",
     "desc": "Variante todoterreno con suspensión reforzada, para 6 pasajeros.",
     "pax": 6,
@@ -115,7 +115,7 @@
     "line": "eco",
     "speed": "30–35 km/h",
     "cap": "540 kg",
-    "range_lead": "75 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "ECO Sport extendido para grupos. Look agresivo, capacidad de 6.",
     "pax": 6,
@@ -123,7 +123,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "75 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
@@ -138,7 +138,7 @@
     "line": "clubcar",
     "speed": "20–31 km/h",
     "cap": "540 kg",
-    "range_lead": "35–40 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "Configuración limo de Club Car — el más espacioso, ideal para eventos.",
     "pax": 6,
@@ -146,7 +146,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "35–40 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
@@ -161,7 +161,7 @@
     "line": "clubcar",
     "speed": "20–31 km/h",
     "cap": "360 kg",
-    "range_lead": "35–40 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "Precedent clásico 2+2 con asientos enfrentados para 4 pasajeros.",
     "pax": 4,
@@ -169,7 +169,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "35–40 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
@@ -184,7 +184,7 @@
     "line": "clubcar",
     "speed": "20–31 km/h",
     "cap": "360 kg",
-    "range_lead": "35–40 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "Modelo Tempo de Club Car. Diseño moderno, manejo suave.",
     "pax": 4,
@@ -192,7 +192,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "35–40 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
@@ -207,7 +207,7 @@
     "line": "zycar",
     "speed": "30–35 km/h",
     "cap": "360 kg",
-    "range_lead": "70–90 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "Línea Zycar — la apuesta moderna con detalles tecnológicos.",
     "pax": 4,
@@ -215,7 +215,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "70–90 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
@@ -230,7 +230,7 @@
     "line": "zycar",
     "speed": "30–35 km/h",
     "cap": "540 kg",
-    "range_lead": "70–90 km",
+    "range_lead": "25–40 km",
     "range_li": "60–70 km",
     "desc": "Zycar extendido para 6 pasajeros. Diseño contemporáneo.",
     "pax": 6,
@@ -238,7 +238,7 @@
       {
         "name": "Plomo-ácido",
         "nameEn": "Lead-acid",
-        "range": "70–90 km"
+        "range": "25–40 km"
       },
       {
         "name": "Litio estándar 105 Ah",
