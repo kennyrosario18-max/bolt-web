@@ -6,7 +6,9 @@ import { ARTICLES } from "@/content/blog";
 // Requerido por output:'export' — el sitemap se genera en build.
 export const dynamic = "force-static";
 
-const SITE = "https://boltgolfcars.com";
+import { SITE_URL } from "@/lib/site-url";
+
+const SITE = SITE_URL;
 
 /** Par ES/EN con hreflang recíproco; prioridades por rol en el embudo. */
 function pair(es: string, en: string, priority: number): MetadataRoute.Sitemap {
@@ -14,12 +16,12 @@ function pair(es: string, en: string, priority: number): MetadataRoute.Sitemap {
     {
       url: `${SITE}${es}`,
       priority,
-      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}` } },
+      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${es}` } },
     },
     {
       url: `${SITE}${en}`,
       priority,
-      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}` } },
+      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${es}` } },
     },
   ];
 }

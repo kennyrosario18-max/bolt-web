@@ -9,6 +9,8 @@ export interface BlogSection {
 
 export interface BlogArticle {
   slug: string;
+  published: string;
+  updated: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -21,6 +23,8 @@ export interface BlogArticle {
 
 export const ARTICLES: BlogArticle[] = [
   {
+    "published": "2026-07-05",
+    "updated": "2026-07-06",
     "slug": "golf-cart-puntacana-resort-club",
     "title": "Guía para moverte en golf cart por Puntacana Resort & Club",
     "metaTitle": "Golf cart en Puntacana Resort & Club",
@@ -119,6 +123,8 @@ export const ARTICLES: BlogArticle[] = [
     "locale": "es"
   },
   {
+    "published": "2026-07-05",
+    "updated": "2026-07-06",
     "slug": "golf-cart-cap-cana-guia",
     "title": "Renta de golf cart en Cap Cana: la guía completa de BOLT",
     "metaTitle": "Renta de Golf Cart en Cap Cana: Guía",
@@ -287,11 +293,15 @@ export const ARTICLES: BlogArticle[] = [
         ]
       }
     ],
+    "published": "2026-07-05",
+    "updated": "2026-07-06",
     "slug": "golf-cart-4-o-6-plazas",
     "title": "Golf cart de 4 o 6 plazas en Punta Cana: cómo elegir el ideal para tu grupo",
     "locale": "es"
   },
   {
+    "published": "2026-07-05",
+    "updated": "2026-07-06",
     "slug": "bateria-plomo-o-litio-golf-cart",
     "title": "¿Plomo-ácido o litio? La autonomía real de tu golf cart en Punta Cana",
     "metaTitle": "Plomo-ácido vs litio en golf carts",

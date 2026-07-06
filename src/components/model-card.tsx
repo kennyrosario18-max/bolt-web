@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { DESC_EN, LINE_NAMES, modelImage, type Model } from "@/content/models";
+import { DESC_EN, lineName, modelImage, type Model } from "@/content/models";
 import { priceFrom } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
@@ -26,7 +26,7 @@ export function ModelCard({ model, locale = "es" }: { model: Model; locale?: Loc
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <span className="absolute left-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-xs font-bold uppercase tracking-wide text-volt">
-          {LINE_NAMES[model.line]}
+          {lineName(model.line, locale)}
         </span>
       </div>
       <div className="p-5">

@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { JsonLdScriptProps, LOCAL_BUSINESS } from "@/lib/schema";
+import { IS_PREVIEW, SITE_URL } from "@/lib/site-url";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -17,16 +18,20 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  themeColor: "#0a0a0a",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://boltgolfcars.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "BOLT Golf Cars — Renta de golf carts premium en Punta Cana",
     template: "%s | BOLT Golf Cars",
   },
   description:
     "Renta y venta de golf carts en Puntacana Resort & Club, Cap Cana y Bávaro. Entrega en tu villa, vehículos asegurados y soporte 24/7. Your ride in paradise.",
-  // Preview: no indexar hasta el lanzamiento en el dominio raíz (se activa en F4).
-  robots: { index: false, follow: false },
+  // Preview (GitHub Pages) = noindex; el build de producción es indexable solo con quitar BASE_PATH.
+  robots: { index: !IS_PREVIEW, follow: !IS_PREVIEW },
   openGraph: {
     siteName: "BOLT Golf Cars",
     locale: "es_DO",
@@ -43,9 +48,15 @@ export default function RootLayoutEs({
   return (
     <html lang="es" className={`${bricolage.variable} ${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-[60] focus:rounded-full focus:bg-volt focus:px-4 focus:py-2 focus:font-bold focus:text-ink"
+        >
+          Saltar al contenido
+        </a>
         <script {...JsonLdScriptProps(LOCAL_BUSINESS)} />
         <Header locale="es" />
-        <main className="flex-1">{children}</main>
+        <main id="contenido" className="flex-1">{children}</main>
         <Footer locale="es" />
         <MobileCta locale="es" />
       </body>

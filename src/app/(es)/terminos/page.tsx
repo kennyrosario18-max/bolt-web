@@ -4,7 +4,7 @@ import { hreflang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: 'Términos y Condiciones',
-  description: 'Términos de la renta de golf carts BOLT: reserva y pagos, requisitos del conductor, uso permitido, responsabilidad, seguro y ley aplicable en República Dominicana.',
+  description: 'Términos de la renta de golf carts BOLT: reserva, requisitos del conductor, uso permitido, responsabilidad, seguro y ley aplicable en República Dominicana.',
   alternates: { canonical: '/terminos/', ...hreflang('/terminos/', '/en/terms/') },
 };
 

@@ -1,7 +1,14 @@
 import { CONTACT, ZONES, PRICING, priceFrom } from "@/content/site";
-import { DESC_EN, modelImage, type Model } from "@/content/models";
+import { DESC_EN, type Model } from "@/content/models";
+import { SITE_URL } from "./site-url";
 
-const SITE = "https://boltgolfcars.com";
+const SITE = SITE_URL;
+
+/** Imagen absoluta para JSON-LD/OG: SITE ya incluye el basePath del preview,
+    así que aquí NO se usa modelImage() (que también lo antepone). */
+function modelImageUrl(id: string): string {
+  return `${SITE}/images/models/${id}.jpg`;
+}
 
 /** AutoRental / LocalBusiness — igual en ambos idiomas. */
 export const LOCAL_BUSINESS = {
@@ -14,7 +21,7 @@ export const LOCAL_BUSINESS = {
   telephone: "+18098398515",
   email: CONTACT.email,
   slogan: "Your ride in paradise.",
-  image: `${SITE}/images/models/eco-cross-4-2.jpg`,
+  image: modelImageUrl("eco-cross-4-2"),
   address: {
     "@type": "PostalAddress",
     streetAddress: "Av. Barceló Km 3 1/2, Naves Montolio, Local #17",
@@ -23,8 +30,14 @@ export const LOCAL_BUSINESS = {
     addressCountry: "DO",
   },
   areaServed: ZONES.map((z) => ({ "@type": "Place", name: z.name })),
-  priceRange: `US$${PRICING.from4pax}–US$85 por día`,
-  openingHours: "Mo-Su 00:00-24:00",
+  sameAs: [CONTACT.instagram],
+  priceRange: `US$${PRICING.from4pax}–US$85`,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59",
+  },
 };
 
 export function productSchema(model: Model, locale: "es" | "en") {
@@ -34,16 +47,19 @@ export function productSchema(model: Model, locale: "es" | "en") {
     "@type": "Product",
     name: `${model.name} — BOLT Golf Cars`,
     description: locale === "es" ? model.desc : DESC_EN[model.id],
-    image: `${SITE}${modelImage(model.id)}`,
+    image: modelImageUrl(model.id),
     url: `${SITE}${path}/`,
     brand: { "@type": "Brand", name: "BOLT" },
     offers: {
-      "@type": "Offer",
-      // Precio "desde": el tier Budget del grupo de plazas correspondiente.
-      price: priceFrom(model.pax),
+      // Rango honesto del grupo de plazas: los tiers exactos por unidad
+      // se confirman al reservar (Budget/Estándar/Premium).
+      "@type": "AggregateOffer",
       priceCurrency: "USD",
+      lowPrice: priceFrom(model.pax),
+      highPrice: model.pax >= 6 ? 85 : 65,
+      offerCount: model.pax >= 6 ? 3 : 2,
       availability: "https://schema.org/InStock",
-      url: `${SITE}${locale === "es" ? "/solicitar-disponibilidad" : "/en/request-availability"}/`,
+      url: `${SITE}${path}/`,
     },
   };
 }

@@ -23,7 +23,7 @@ export default function PricingPage() {
           <p className="mt-4 max-w-xl text-white/70">
             Precios por día en US$ con el ITBIS mostrado en cada modelo. Lo que ves es lo que pagas.
           </p>
-          <p className="mt-1 text-sm italic text-white/60">
+          <p lang="en" className="mt-1 text-sm italic text-white/60">
             Daily rates in US$, tax shown per model — what you see is what you pay.
           </p>
         </div>
@@ -88,11 +88,11 @@ export default function PricingPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-3 text-xs italic text-steel">{DELIVERY_POLICY.en}</p>
+          <p lang="en" className="mt-3 text-xs italic text-steel">{DELIVERY_POLICY.en}</p>
         </div>
 
         <p className="mt-8 text-sm text-steel">{PRICING_FOOTNOTE.es}</p>
-        <p className="mt-1 text-xs italic text-steel">{PRICING_FOOTNOTE.en}</p>
+        <p lang="en" className="mt-1 text-xs italic text-steel">{PRICING_FOOTNOTE.en}</p>
 
         <div className="mt-10 flex flex-wrap gap-3">
           <Link

@@ -62,7 +62,7 @@ export default async function ZonePage({ params }: Props) {
           <h1 className="mt-3 max-w-3xl font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
             {landing.heroTitle}
           </h1>
-          <p className="mt-1 text-sm italic text-white/60">{landing.heroTitleEn}</p>
+          <p lang="en" className="mt-1 text-sm italic text-white/60">{landing.heroTitleEn}</p>
           <p className="mt-5 max-w-2xl text-lg text-white/75">{landing.intro}</p>
           {zone.minDays ? (
             <p className="mt-4 inline-block rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink">
@@ -96,7 +96,7 @@ export default async function ZonePage({ params }: Props) {
                 </span>
                 {b.es}
               </p>
-              <p className="mt-1 text-sm italic text-steel">{b.en}</p>
+              <p lang="en" className="mt-1 text-sm italic text-steel">{b.en}</p>
             </li>
           ))}
         </ul>

@@ -52,8 +52,8 @@ const NAV: Record<Locale, { href: string; label: string }[]> = {
 };
 
 const CTA: Record<Locale, { href: string; label: string }> = {
-  es: { href: "/solicitar-disponibilidad", label: "⚡ Solicitar disponibilidad" },
-  en: { href: "/en/request-availability", label: "⚡ Request availability" },
+  es: { href: "/solicitar-disponibilidad", label: "Solicitar disponibilidad" },
+  en: { href: "/en/request-availability", label: "Request availability" },
 };
 
 const WA_MSG: Record<Locale, string> = {
@@ -98,6 +98,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
             href={CTA[locale].href}
             className="rounded-full bg-volt px-5 py-2.5 text-sm font-bold text-ink transition-transform hover:scale-105"
           >
+            <span aria-hidden="true">⚡ </span>
             {CTA[locale].label}
           </Link>
         </nav>
@@ -113,6 +114,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
             type="button"
             className="flex h-10 w-10 flex-col items-center justify-center gap-1.5"
             aria-expanded={open}
+            aria-controls="nav-movil"
             aria-label={
               open
                 ? locale === "es" ? "Cerrar menú" : "Close menu"
@@ -129,6 +131,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
 
       {open && (
         <nav
+          id="nav-movil"
           className="border-t border-white/10 px-4 pb-6 pt-2 md:hidden"
           aria-label={locale === "es" ? "Principal móvil" : "Main mobile"}
         >
@@ -148,6 +151,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
               className="rounded-full bg-volt px-5 py-3 text-center text-sm font-bold text-ink"
               onClick={() => setOpen(false)}
             >
+              <span aria-hidden="true">⚡ </span>
               {CTA[locale].label}
             </Link>
             <a

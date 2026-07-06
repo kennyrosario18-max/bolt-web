@@ -1,26 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import { LINE_NAMES, MODELS, type Model } from "@/content/models";
+import { MODELS, lineName, type Model } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
 import { PRICING } from "@/content/site";
+import type { Locale } from "@/lib/i18n";
 
 type Filter =
   | { kind: "all" }
   | { kind: "line"; line: Model["line"] }
   | { kind: "pax"; pax: 4 | 6 };
 
-const FILTERS: { label: string; filter: Filter }[] = [
-  { label: `Todos (${MODELS.length})`, filter: { kind: "all" } },
-  ...(["eco", "clubcar", "zycar"] as const).map((line) => ({
-    label: `${LINE_NAMES[line]} (${MODELS.filter((m) => m.line === line).length})`,
-    filter: { kind: "line", line } as Filter,
-  })),
-  ...([4, 6] as const).map((pax) => ({
-    label: `${pax} plazas (${MODELS.filter((m) => m.pax === pax).length})`,
-    filter: { kind: "pax", pax } as Filter,
-  })),
-];
+const T = {
+  es: { all: "Todos", seats: "plazas", filterLabel: "Filtrar modelos", srHeading: "Modelos disponibles" },
+  en: { all: "All", seats: "seats", filterLabel: "Filter models", srHeading: "Available models" },
+} as const;
+
+function buildFilters(locale: Locale): { label: string; filter: Filter }[] {
+  const t = T[locale];
+  return [
+    { label: `${t.all} (${MODELS.length})`, filter: { kind: "all" } },
+    ...(["eco", "clubcar", "zycar"] as const).map((line) => ({
+      label: `${lineName(line, locale)} (${MODELS.filter((m) => m.line === line).length})`,
+      filter: { kind: "line", line } as Filter,
+    })),
+    ...([4, 6] as const).map((pax) => ({
+      label: `${pax} ${t.seats} (${MODELS.filter((m) => m.pax === pax).length})`,
+      filter: { kind: "pax", pax } as Filter,
+    })),
+  ];
+}
 
 function applyFilter(models: Model[], f: Filter): Model[] {
   if (f.kind === "line") return models.filter((m) => m.line === f.line);
@@ -28,14 +37,16 @@ function applyFilter(models: Model[], f: Filter): Model[] {
   return models;
 }
 
-export function FleetGrid() {
+export function FleetGrid({ locale = "es" }: { locale?: Locale }) {
   const [active, setActive] = useState(0);
-  const visible = applyFilter(MODELS, FILTERS[active].filter);
+  const filters = buildFilters(locale);
+  const visible = applyFilter(MODELS, filters[active].filter);
+  const t = T[locale];
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14">
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar modelos">
-        {FILTERS.map((f, i) => (
+      <div className="flex flex-wrap gap-2" role="group" aria-label={t.filterLabel}>
+        {filters.map((f, i) => (
           <button
             key={f.label}
             type="button"
@@ -52,14 +63,16 @@ export function FleetGrid() {
         ))}
       </div>
 
-      <h2 className="sr-only">Modelos disponibles</h2>
+      <h2 className="sr-only">{t.srHeading}</h2>
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((m) => (
-          <ModelCard key={m.id} model={m} />
+          <ModelCard key={m.id} model={m} locale={locale} />
         ))}
       </div>
 
-      <p className="mt-8 text-center text-xs text-steel">{PRICING.itbisNote}</p>
+      <p className="mt-8 text-center text-xs text-steel">
+        {locale === "es" ? PRICING.itbisNote : PRICING.itbisNoteEn}
+      </p>
     </section>
   );
 }

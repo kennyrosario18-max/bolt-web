@@ -30,19 +30,29 @@ export const LINE_NAMES: Record<Model["line"], string> = {
   zycar: "Zycar",
 };
 
+export const LINE_NAMES_EN: Record<Model["line"], string> = {
+  eco: "ECO Line",
+  clubcar: "Club Car",
+  zycar: "Zycar",
+};
+
+export function lineName(line: Model["line"], locale: "es" | "en"): string {
+  return locale === "es" ? LINE_NAMES[line] : LINE_NAMES_EN[line];
+}
+
 /** Traducciones EN de las descripciones (el JSON original solo trae ES). */
 export const DESC_EN: Record<string, string> = {
   "eco-cross-4": "Compact ECO line for 4 passengers. Ideal for residential communities and resorts.",
-  "eco-cross-4-2": "Extended ECO Cross for groups of up to 6 passengers, with premium lithium battery options for all-day range around the resort.",
-  "eco-plus-2-2": "ECO Plus in a 2+2 layout with rear-facing seats for 4 passengers \u2014 comfortable, easy to drive and ideal for couples and small families.",
+  "eco-cross-4-2": "Extended ECO Cross for up to 6 passengers, with premium lithium battery options.",
+  "eco-plus-2-2": "ECO Plus in a 2+2 layout with rear-facing seats for 4 passengers.",
   "eco-plus-4-2": "6-passenger ECO Plus — maximum comfort for families and groups.",
-  "eco-track-4-2": "All-terrain ECO variant with reinforced suspension and long-range 150 Ah lithium battery. Seats 6 with room for the whole crew.",
-  "eco-sport-4-2": "Extended ECO Sport for groups. Sporty look, 6 seats and up to 540 kg of capacity for families and friends on the move.",
+  "eco-track-4-2": "All-terrain ECO with reinforced suspension and 150 Ah lithium. Seats 6.",
+  "eco-sport-4-2": "Extended ECO Sport with a sporty look. Seats 6, up to 540 kg.",
   "cc-limo-4-2": "Club Car limo configuration — the most spacious, ideal for events.",
   "cc-precedent-2-2": "Classic Precedent 2+2 with rear-facing seats for 4 passengers.",
-  "cc-tempo-2-2": "Club Car Tempo with modern design and a smooth, quiet ride. Seats 4 passengers in a comfortable 2+2 layout.",
-  "zycar-4": "The Zycar line — a modern build with tech details.",
-  "zycar-4-2": "Extended Zycar for 6 passengers with contemporary design and tech details \u2014 a modern ride for larger groups.",
+  "cc-tempo-2-2": "Club Car Tempo: modern design, smooth quiet ride, 2+2 seats for 4.",
+  "zycar-4": "The Zycar line — a modern build with tech details. Seats 4 passengers in comfort.",
+  "zycar-4-2": "Extended Zycar for 6 passengers with contemporary design.",
 };
 
 /** Qué incluye cada renta (aplica a toda la flota). */

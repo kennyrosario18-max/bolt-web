@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FleetGridEn } from "./fleet-grid-en";
+import { FleetGrid } from "@/app/(es)/flota/fleet-grid";
 import { MODELS } from "@/content/models";
 import { PRICING } from "@/content/site";
 import { hreflang } from "@/lib/i18n";
@@ -27,7 +27,7 @@ export default function FleetPageEn() {
           </p>
         </div>
       </section>
-      <FleetGridEn />
+      <FleetGrid locale="en" />
     </>
   );
 }

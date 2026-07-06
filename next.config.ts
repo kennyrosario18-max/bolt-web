@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
   basePath,
   trailingSlash: true,
   images: { unoptimized: true },
+  // 404 global con dos root layouts (ver docs not-found.md).
+  experimental: { globalNotFound: true },
   // next/image con unoptimized NO antepone basePath al src; se prefija a mano
   // en modelImage() usando esta variable inlineada en build.
   env: { NEXT_PUBLIC_BASE_PATH: basePath },

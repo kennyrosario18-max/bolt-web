@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ARTICLES, getArticle } from "@/content/blog";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { SITE_URL } from "@/lib/site-url";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -34,11 +35,16 @@ export default async function BlogArticlePage({ params }: Props) {
     headline: article.title,
     description: article.metaDescription,
     inLanguage: "es",
-    image: "https://boltgolfcars.com/images/models/eco-cross-4-2.jpg",
-    datePublished: "2026-07-05",
-    author: { "@type": "Organization", name: "BOLT Golf Cars" },
-    publisher: { "@type": "Organization", name: "BOLT Golf Cars" },
-    mainEntityOfPage: `https://boltgolfcars.com/blog/${article.slug}/`,
+    image: `${SITE_URL}/images/models/eco-cross-4-2.jpg`,
+    datePublished: article.published,
+    dateModified: article.updated,
+    author: { "@type": "Organization", name: "BOLT Golf Cars", url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: "BOLT Golf Cars",
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/brand/bolt-icon.svg` },
+    },
+    mainEntityOfPage: `${SITE_URL}/blog/${article.slug}/`,
   };
 
   return (

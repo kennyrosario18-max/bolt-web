@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { RequestForm } from "./request-form";
 import { hreflang } from "@/lib/i18n";
 
@@ -28,15 +27,13 @@ export default function RequestPage() {
             Completa el formulario y nuestro equipo verificará la disponibilidad de tu modelo.
             Ninguna reserva se confirma automáticamente — siempre te responde una persona.
           </p>
-          <p className="mt-1 text-sm italic text-white/60">
+          <p lang="en" className="mt-1 text-sm italic text-white/60">
             Send your request — our team confirms availability personally.
           </p>
         </div>
       </section>
       <section className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-        <Suspense fallback={null}>
-          <RequestForm />
-        </Suspense>
+        <RequestForm />
       </section>
     </>
   );

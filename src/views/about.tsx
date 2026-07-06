@@ -88,7 +88,7 @@ const T = {
       "A new unit with written warranty and usage induction",
       "Local after-sales backing: maintenance, parts and support from the same team that runs the BOLT fleet daily",
     ],
-    culturaTitle: "Culture · How we are inside",
+    culturaTitle: "Culture · What we're like inside",
     cultura: [
       { t: "The bolt shows in the reply", d: "Nobody leaves a WhatsApp on read. Whoever writes gets an answer in minutes, even if it's just “give me 10 minutes to confirm”." },
       { t: "Everything gets recorded, nothing floats", d: "Every rental, payment, commission and maintenance enters the system. What isn't recorded doesn't exist." },

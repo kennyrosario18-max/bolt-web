@@ -12,7 +12,7 @@
   --bolt-cream: #fffbea;
   /* verde oscurecido para cumplir AA como texto sobre fondos claros (antes #16a34a) */
   --bolt-success: #15803d;
-  --bolt-danger: #dc2626;
+  --bolt-danger: #b91c1c; /* red-700: AA sobre blanco y red-50 */
 }
 
 @theme inline {

@@ -23,7 +23,8 @@ export function MobileCta({ locale = "es" }: { locale?: Locale }) {
         href={es ? "/solicitar-disponibilidad" : "/en/request-availability"}
         className="flex h-12 flex-1 items-center justify-center rounded-full bg-volt text-sm font-bold text-ink"
       >
-        {es ? "⚡ Solicitar disponibilidad" : "⚡ Request availability"}
+        <span aria-hidden="true">⚡&nbsp;</span>
+        {es ? "Solicitar disponibilidad" : "Request availability"}
       </Link>
     </div>
   );

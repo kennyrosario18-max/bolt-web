@@ -60,7 +60,7 @@ export default function HomePage() {
               <span className="hl-dark font-semibold">Puntacana Resort &amp; Club</span>, Cap Cana y
               Bávaro.
             </p>
-            <p className="mt-2 max-w-md text-sm italic text-white/55">
+            <p lang="en" className="mt-2 max-w-md text-sm italic text-white/55">
               Premium golf carts delivered to your villa — rental &amp; sales.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -104,7 +104,7 @@ export default function HomePage() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-white">{t.es}</p>
-                  <p className="text-xs italic text-white/60">{t.en}</p>
+                  <p lang="en" className="text-xs italic text-white/60">{t.en}</p>
                 </div>
               </div>
             ))}
@@ -184,7 +184,7 @@ export default function HomePage() {
         </h2>
         <p className="mt-3 max-w-xl text-inktext">
           Llevamos tu golf cart con carga completa hasta tu villa o residencial.
-          <span className="mt-1 block text-sm italic text-steel">
+          <span lang="en" className="mt-1 block text-sm italic text-steel">
             Delivered wherever you are, fully charged.
           </span>
         </p>
@@ -222,7 +222,7 @@ export default function HomePage() {
               <div key={s.n}>
                 <span className="font-display text-4xl font-extrabold text-volt">{s.n}</span>
                 <h3 className="mt-3 font-display text-xl font-bold text-white">{s.es}</h3>
-                <p className="mt-1 text-sm italic text-white/60">{s.en}</p>
+                <p lang="en" className="mt-1 text-sm italic text-white/60">{s.en}</p>
                 <p className="mt-3 text-sm text-white/70">{s.detail}</p>
               </div>
             ))}

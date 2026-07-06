@@ -25,7 +25,7 @@ const T = {
       { href: "/blog", label: "Blog" },
       { href: "/contacto", label: "Contacto" },
     ],
-    cta: "⚡ Solicitar disponibilidad",
+    cta: "Solicitar disponibilidad",
     ctaHref: "/solicitar-disponibilidad",
     zoneHref: (id: string) => `/alquiler/${id}`,
     legal: "BOLT ⚡ es una marca operada por",
@@ -50,7 +50,7 @@ const T = {
       { href: "/en/about", label: "About us" },
       { href: "/en/contact", label: "Contact" },
     ],
-    cta: "⚡ Request availability",
+    cta: "Request availability",
     ctaHref: "/en/request-availability",
     zoneHref: (id: string) => `/en/rentals/${id}`,
     legal: "BOLT ⚡ is a brand operated by",
@@ -68,7 +68,7 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
           <p className="mt-3 text-lg font-display font-bold text-volt">{SLOGAN}</p>
           <p className="mt-2 max-w-xs text-sm text-white/60">
             {t.tagline}
-            <span className="mt-1 block italic text-white/60">{t.taglineSub}</span>
+            <span lang={locale === "es" ? "en" : "es"} className="mt-1 block italic text-white/60">{t.taglineSub}</span>
           </p>
         </div>
 
@@ -123,6 +123,7 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
             href={t.ctaHref}
             className="mt-5 inline-block rounded-full bg-volt px-5 py-2.5 text-sm font-bold text-ink"
           >
+            <span aria-hidden="true">⚡ </span>
             {t.cta}
           </Link>
         </div>

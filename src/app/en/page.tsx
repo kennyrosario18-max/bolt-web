@@ -97,7 +97,7 @@ export default function HomePageEn() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-white">{t.en}</p>
-                  <p className="text-xs italic text-white/60">{t.es}</p>
+                  <p lang="es" className="text-xs italic text-white/60">{t.es}</p>
                 </div>
               </div>
             ))}

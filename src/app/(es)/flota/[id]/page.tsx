@@ -119,7 +119,7 @@ export default async function ModelPage({ params }: Props) {
               {model.name}
             </h1>
             <p className="mt-4 text-lg text-white/75">{model.desc}</p>
-            <p className="mt-1 text-sm italic text-white/60">{DESC_EN[model.id]}</p>
+            <p lang="en" className="mt-1 text-sm italic text-white/60">{DESC_EN[model.id]}</p>
             <p className="mt-6 text-2xl font-extrabold text-volt">
               desde US${priceFrom(model.pax)}
               <span className="text-base font-semibold text-white/60">/día</span>
@@ -170,7 +170,7 @@ export default async function ModelPage({ params }: Props) {
               </span>
               <div>
                 <p className="text-sm font-semibold text-ink">{item.es}</p>
-                <p className="text-xs italic text-steel">{item.en}</p>
+                <p lang="en" className="text-xs italic text-steel">{item.en}</p>
               </div>
             </li>
           ))}

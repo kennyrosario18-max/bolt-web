@@ -58,7 +58,7 @@ export default function ServicesPage() {
             Movilidad completa para tu estadía o tu propiedad: renta, venta, entrega y soporte que
             responde.
           </p>
-          <p className="mt-1 text-sm italic text-white/60">
+          <p lang="en" className="mt-1 text-sm italic text-white/60">
             Complete mobility — rental, sales, delivery and support that answers.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function ServicesPage() {
           {SERVICES.map((s) => (
             <div key={s.title} className="flex flex-col rounded-card border border-line p-7">
               <h2 className="font-display text-xl font-extrabold">{s.title}</h2>
-              <p className="text-sm italic text-steel">{s.titleEn}</p>
+              <p lang="en" className="text-sm italic text-steel">{s.titleEn}</p>
               <p className="mt-3 flex-1 text-inktext">{s.body}</p>
               {"external" in s.cta && s.cta.external ? (
                 <a
@@ -107,7 +107,7 @@ export default function ServicesPage() {
             <li>✓ Disponibilidad prioritaria</li>
             <li>✓ Reporte por villa</li>
           </ul>
-          <p className="mt-3 text-xs italic text-white/60">
+          <p lang="en" className="mt-3 text-xs italic text-white/60">
             Preferred rates · monthly e-invoice account · priority availability · per-villa
             reporting.
           </p>

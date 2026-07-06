@@ -25,7 +25,7 @@ export default function FleetPage() {
             <span className="font-bold text-white">US${PRICING.from4pax}/día</span>. Todos con
             entrega en tu villa, seguro y soporte 24/7.
           </p>
-          <p className="mt-1 text-sm italic text-white/60">
+          <p lang="en" className="mt-1 text-sm italic text-white/60">
             Our full fleet — 4 and 6 seaters, delivered to your villa.
           </p>
         </div>

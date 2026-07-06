@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import {
   DESC_EN,
   INCLUDED,
-  LINE_NAMES,
+  lineName,
   MODELS,
   getModel,
   modelImage,
@@ -78,7 +78,7 @@ export default async function ModelPageEn({ params }: Props) {
     { label: "Top speed", value: model.speed },
     { label: "Load capacity", value: model.cap },
     ...autonomySpecs,
-    { label: "Line", value: LINE_NAMES[model.line] },
+    { label: "Line", value: lineName(model.line, "en") },
   ];
 
   return (
@@ -112,7 +112,7 @@ export default async function ModelPageEn({ params }: Props) {
               <Link href="/en/fleet" className="hover:text-volt">
                 Fleet
               </Link>{" "}
-              / {LINE_NAMES[model.line]}
+              / {lineName(model.line, "en")}
             </nav>
             <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               {model.name}
@@ -167,7 +167,7 @@ export default async function ModelPageEn({ params }: Props) {
               </span>
               <div>
                 <p className="text-sm font-semibold text-ink">{item.en}</p>
-                <p className="text-xs italic text-steel">{item.es}</p>
+                <p lang="es" className="text-xs italic text-steel">{item.es}</p>
               </div>
             </li>
           ))}

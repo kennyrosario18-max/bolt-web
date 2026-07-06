@@ -1,7 +1,7 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
 import { MODELS, getModel } from "@/content/models";
 import { CONTACT, ZONES, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
@@ -132,13 +132,11 @@ function daysBetween(a: string, b: string): number {
 }
 
 const inputCls =
-  "w-full rounded-box border border-line bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink";
+  "w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1";
 const labelCls = "block text-sm font-bold text-ink";
 
 export function RequestForm({ locale = "es" }: { locale?: Locale }) {
   const t = T[locale];
-  const searchParams = useSearchParams();
-  const preselected = getModel(searchParams.get("modelo") ?? "")?.id ?? "";
 
   const [form, setForm] = useState<FormState>({
     nombre: "",
@@ -148,12 +146,19 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     salida: "",
     zona: "",
     pasajeros: "",
-    modelo: preselected,
+    modelo: "",
     comentarios: "",
     empresa: "",
   });
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+
+  // Preselección desde ?modelo= leída post-mount: permite prerenderizar el
+  // formulario completo sin useSearchParams/Suspense (export estático).
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get("modelo") ?? "";
+    if (getModel(id)) setForm((f) => ({ ...f, modelo: id }));
+  }, []);
 
   const zone = ZONES.find((z) => z.id === form.zona);
   const days = daysBetween(form.llegada, form.salida);
@@ -189,8 +194,12 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     e.preventDefault();
     setError("");
 
-    if (form.empresa) return; // bot atrapado por el honeypot: no hacemos nada
-    if (!form.llegada || !form.salida) {
+    if (form.empresa) {
+      // Bot atrapado por el honeypot: fingimos éxito sin abrir WhatsApp.
+      setSent(true);
+      return;
+    }
+    if (!form.llegada || !form.salida || Number.isNaN(days)) {
       setError(t.errFechas);
       return;
     }
@@ -266,13 +275,13 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
         <label className={labelCls} htmlFor="llegada">
           {t.lLlegada}
         </label>
-        <input id="llegada" type="date" required value={form.llegada} onChange={set("llegada")} className={inputCls} />
+        <input id="llegada" type="date" required min={new Date().toISOString().slice(0, 10)} value={form.llegada} onChange={set("llegada")} className={inputCls} />
       </div>
       <div>
         <label className={labelCls} htmlFor="salida">
           {t.lSalida}
         </label>
-        <input id="salida" type="date" required value={form.salida} onChange={set("salida")} className={inputCls} />
+        <input id="salida" type="date" required min={form.llegada || new Date().toISOString().slice(0, 10)} value={form.salida} onChange={set("salida")} className={inputCls} />
       </div>
 
       <div>
@@ -338,9 +347,9 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
 
       {/* Honeypot invisible para bots */}
       <div className="hidden" aria-hidden="true">
-        <label htmlFor="empresa">
-          Empresa
-          <input id="empresa" tabIndex={-1} autoComplete="off" value={form.empresa} onChange={set("empresa")} />
+        <label htmlFor="extra-notas">
+          No llenar
+          <input id="extra-notas" tabIndex={-1} autoComplete="off" value={form.empresa} onChange={set("empresa")} />
         </label>
       </div>
 
@@ -371,13 +380,13 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
         </p>
         <p className="mt-2 text-xs text-steel">
           {t.legalPre}{" "}
-          <a href={t.termsHref} className="underline">
+          <Link href={t.termsHref} className="underline">
             {t.legalTerms}
-          </a>{" "}
+          </Link>{" "}
           {t.legalAnd}{" "}
-          <a href={t.privacyHref} className="underline">
+          <Link href={t.privacyHref} className="underline">
             {t.legalPrivacy}
-          </a>
+          </Link>
           .
         </p>
       </div>

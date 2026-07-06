@@ -148,7 +148,7 @@ export function FaqView({ locale }: { locale: Locale }) {
           {faqs.map((f) => (
             <details key={f.q} className="group rounded-card border border-line bg-white p-6 open:bg-cream/50">
               <summary className="cursor-pointer list-none font-display text-base font-bold text-ink marker:content-none">
-                <span className="mr-2 inline-block text-volt-dark transition-transform group-open:rotate-90">
+                <span aria-hidden="true" className="mr-2 inline-block text-volt-dark transition-transform group-open:rotate-90">
                   ›
                 </span>
                 {f.q}
