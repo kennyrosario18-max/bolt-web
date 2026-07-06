@@ -14,6 +14,9 @@ const T = {
     account: "Número de cuenta",
     after: "Después de transferir, envía tu comprobante por WhatsApp para confirmar tu reserva.",
     keep: "Conserva tu comprobante de transferencia.",
+    fraudTitle: "Protege tu pago",
+    fraud:
+      "Estos son los ÚNICOS datos de pago de BOLT y solo se publican en esta página. Nunca te pediremos depositar a otra cuenta por chat, correo ni llamada. Ante cualquier duda, verifica aquí en boltgolfcars.com/deposito y confirma únicamente al WhatsApp oficial +1 809 839 8515.",
     cta: "Enviar comprobante",
     waMsg: "Hola BOLT, aquí está mi comprobante de depósito.",
   },
@@ -28,6 +31,9 @@ const T = {
     account: "Account number",
     after: "After transferring, send your receipt via WhatsApp to confirm your booking.",
     keep: "Keep your transfer receipt.",
+    fraudTitle: "Protect your payment",
+    fraud:
+      "These are BOLT's ONLY payment details and they are published exclusively on this page. We will never ask you to pay into a different account via chat, email or phone. If in doubt, verify here at boltgolfcars.com/deposit and confirm only through our official WhatsApp +1 809 839 8515.",
     cta: "Send receipt",
     waMsg: "Hi BOLT, here is my deposit receipt.",
   },
@@ -90,7 +96,12 @@ export function DepositView({ locale }: { locale: Locale }) {
           ))}
         </div>
 
-        <div className="mt-8 rounded-card bg-cream p-7">
+        <div className="mt-8 rounded-card border-2 border-danger/30 bg-white p-7">
+          <h2 className="font-display text-lg font-extrabold text-danger">⚠ {t.fraudTitle}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-inktext">{t.fraud}</p>
+        </div>
+
+        <div className="mt-6 rounded-card bg-cream p-7">
           <p className="font-semibold text-ink">{t.after}</p>
           <p className="mt-1 text-sm text-steel">{t.keep}</p>
           <a
