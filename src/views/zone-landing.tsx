@@ -124,9 +124,6 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
                 <CheckIcon className="mr-2 inline-block align-[-0.15em] text-ok" size={15} />
                 {es ? b.es : b.en}
               </p>
-              <p lang={es ? "en" : "es"} className="mt-1 text-sm italic text-steel">
-                {es ? b.en : b.es}
-              </p>
             </li>
           ))}
         </ul>

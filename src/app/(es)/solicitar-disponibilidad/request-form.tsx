@@ -115,6 +115,9 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
 
   return (
     <>
+      {/* F4: la barra CTA fija es redundante donde vive el formulario — el envío
+          ES el CTA. La ocultamos solo en esta página, sin JS. */}
+      <style>{`#mobile-cta{display:none}`}</style>
       <form id="req-form" className="grid gap-5 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <label className={labelCls} htmlFor="nombre">{t.lNombre}</label>

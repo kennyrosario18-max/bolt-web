@@ -200,12 +200,7 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
           {INCLUDED.map((item) => (
             <li key={item.es} className="flex items-start gap-3 rounded-box bg-cream p-4">
               <CheckIcon className="mt-0.5 shrink-0 text-ok" size={18} />
-              <div>
-                <p className="text-sm font-semibold text-ink">{es ? item.es : item.en}</p>
-                <p lang={es ? "en" : "es"} className="text-xs italic text-steel">
-                  {es ? item.en : item.es}
-                </p>
-              </div>
+              <p className="text-sm font-semibold text-ink">{es ? item.es : item.en}</p>
             </li>
           ))}
         </ul>

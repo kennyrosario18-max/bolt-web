@@ -124,9 +124,6 @@ export function ServicesView({ locale }: { locale: Locale }) {
           {SERVICES.map((s) => (
             <div key={s.title} className="flex flex-col rounded-card border border-line p-7">
               <h2 className="font-display text-xl font-extrabold">{es ? s.title : s.titleEn}</h2>
-              <p lang={es ? "en" : "es"} className="text-sm italic text-steel">
-                {es ? s.titleEn : s.title}
-              </p>
               <p className="mt-3 flex-1 text-inktext">{es ? s.body : s.bodyEn}</p>
               {s.external ? (
                 <a
@@ -163,9 +160,6 @@ export function ServicesView({ locale }: { locale: Locale }) {
               <li key={b}>{b}</li>
             ))}
           </ul>
-          <p lang={es ? "en" : "es"} className="mt-3 text-xs italic text-white/60">
-            {t.partnersSub}
-          </p>
           <a
             href={waLink(t.partnersMsg)}
             target="_blank"

@@ -7,7 +7,7 @@ import type { Locale } from "@/lib/i18n";
 export function MobileCta({ locale = "es" }: { locale?: Locale }) {
   const es = locale === "es";
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-line bg-white/95 p-3 backdrop-blur md:hidden">
+    <div id="mobile-cta" className="fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-line bg-white/95 p-3 backdrop-blur md:hidden">
       <a
         href={waLink(
           es

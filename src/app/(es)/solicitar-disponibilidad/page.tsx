@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RequestForm } from "./request-form";
+import { CheckIcon } from "@/components/icons";
 import { hreflang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -29,6 +30,9 @@ export default function RequestPage() {
           </p>
           <p lang="en" className="mt-1 text-sm italic text-white/60">
             Send your request — our team confirms availability personally.
+          </p>
+          <p className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink">
+            <CheckIcon size={15} /> Confirmamos tu disponibilidad el mismo día
           </p>
         </div>
       </section>

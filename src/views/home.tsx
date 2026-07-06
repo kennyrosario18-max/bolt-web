@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MODELS, modelImage } from "@/content/models";
+import { TESTIMONIALS } from "@/content/testimonials";
 import { ModelCard } from "@/components/model-card";
-import { BoltIcon, PinIcon, ShieldIcon, ChatIcon } from "@/components/icons";
+import { BoltIcon, PinIcon, ShieldIcon, ChatIcon, CheckIcon } from "@/components/icons";
 import { PRICING, SLOGAN, ZONES, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
@@ -57,6 +58,9 @@ const T = {
     zoneCta: "Ver zona →",
     howKicker: "Cómo funciona",
     howTitle: "Tu BOLT en 3 pasos",
+    sameDay: "Confirmamos tu disponibilidad el mismo día",
+    testiKicker: "Reseñas",
+    testiTitle: "Lo que dicen nuestros huéspedes",
     steps: [
       { n: "01", title: "Elige tu modelo y envía la solicitud", sub: "Pick your cart and send the request", detail: "Selecciona fechas, zona de entrega y pasajeros. Toma menos de un minuto." },
       { n: "02", title: "Confirmamos disponibilidad", sub: "We confirm availability", detail: "Nuestro equipo verifica y te responde por WhatsApp con la mejor opción." },
@@ -112,6 +116,9 @@ const T = {
     zoneCta: "View zone →",
     howKicker: "How it works",
     howTitle: "Your BOLT in 3 steps",
+    sameDay: "We confirm your availability the same day",
+    testiKicker: "Reviews",
+    testiTitle: "What our guests say",
     steps: [
       { n: "01", title: "Pick your cart and send the request", sub: "Elige tu modelo y envía la solicitud", detail: "Choose dates, delivery area and passengers. It takes less than a minute." },
       { n: "02", title: "We confirm availability", sub: "Confirmamos disponibilidad", detail: "Our team checks the fleet and replies on WhatsApp with the best option." },
@@ -191,9 +198,6 @@ export function HomeView({ locale }: { locale: Locale }) {
                 <Icon className="mt-0.5 shrink-0 text-volt" size={22} />
                 <div>
                   <p className="text-sm font-semibold text-white">{item.main}</p>
-                  <p lang={es ? "en" : "es"} className="text-xs italic text-white/60">
-                    {item.sub}
-                  </p>
                 </div>
               </div>
               );
@@ -268,12 +272,7 @@ export function HomeView({ locale }: { locale: Locale }) {
           {t.coverA}
           <span className="hl">{t.coverB}</span>
         </h2>
-        <p className="mt-3 max-w-xl text-inktext">
-          {t.coverLead}
-          <span lang={es ? "en" : "es"} className="mt-1 block text-sm italic text-steel">
-            {t.coverSub}
-          </span>
-        </p>
+        <p className="mt-3 max-w-xl text-inktext">{t.coverLead}</p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ZONES.map((z) => (
             <Link
@@ -296,6 +295,26 @@ export function HomeView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      {/* Testimonios — slot listo; se muestra solo cuando haya reseñas reales (F4). */}
+      {TESTIMONIALS.length > 0 && (
+        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-volt-dark">{t.testiKicker}</p>
+          <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+            {t.testiTitle}
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {TESTIMONIALS.map((tm) => (
+              <figure key={tm.author} className="rounded-card border border-line bg-white p-6">
+                <blockquote className="text-inktext">“{es ? tm.quote : tm.quoteEn}”</blockquote>
+                <figcaption className="mt-4 text-sm font-bold text-ink">
+                  {tm.author} <span className="font-normal text-steel">· {tm.context}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Cómo funciona */}
       <section id={t.howAnchor} className="scroll-mt-20 bg-ink text-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
@@ -303,14 +322,14 @@ export function HomeView({ locale }: { locale: Locale }) {
           <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             {t.howTitle}
           </h2>
+          <p className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink">
+            <CheckIcon size={15} /> {t.sameDay}
+          </p>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {t.steps.map((s) => (
               <div key={s.n}>
                 <span className="font-display text-4xl font-extrabold text-volt">{s.n}</span>
                 <h3 className="mt-3 font-display text-xl font-bold text-white">{s.title}</h3>
-                <p lang={es ? "en" : "es"} className="mt-1 text-sm italic text-white/60">
-                  {s.sub}
-                </p>
                 <p className="mt-3 text-sm text-white/70">{s.detail}</p>
               </div>
             ))}

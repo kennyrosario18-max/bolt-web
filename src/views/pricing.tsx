@@ -134,9 +134,6 @@ export function PricingView({ locale }: { locale: Locale }) {
                   </li>
                 ))}
               </ul>
-              <p lang="en" className="mt-3 text-xs italic text-steel">
-                {DELIVERY_POLICY.en}
-              </p>
             </>
           ) : (
             <>
@@ -147,11 +144,6 @@ export function PricingView({ locale }: { locale: Locale }) {
         </div>
 
         <p className="mt-8 text-sm text-steel">{es ? PRICING_FOOTNOTE.es : PRICING_FOOTNOTE.en}</p>
-        {es ? (
-          <p lang="en" className="mt-1 text-xs italic text-steel">
-            {PRICING_FOOTNOTE.en}
-          </p>
-        ) : null}
 
         <div className="mt-10 flex flex-wrap gap-3">
           <Link

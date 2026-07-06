@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RequestForm } from "@/app/(es)/solicitar-disponibilidad/request-form";
+import { CheckIcon } from "@/components/icons";
 import { hreflang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -26,6 +27,9 @@ export default function RequestPageEn() {
           <p className="mt-3 text-white/70">
             Fill in the form and our team will verify availability for your model. No booking is
             ever confirmed automatically — a real person always replies.
+          </p>
+          <p className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink">
+            <CheckIcon size={15} /> We confirm your availability the same day
           </p>
         </div>
       </section>
