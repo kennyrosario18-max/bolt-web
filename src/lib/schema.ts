@@ -1,4 +1,5 @@
-import { CONTACT, ZONES, PRICING, priceFrom } from "@/content/site";
+import { CONTACT, ZONES } from "@/content/site";
+import { MIN_PRICE, MAX_PRICE, priceStats } from "@/content/pricing";
 import { DESC_EN, type Model } from "@/content/models";
 import { SITE_URL } from "./site-url";
 
@@ -31,7 +32,7 @@ export const LOCAL_BUSINESS = {
   },
   areaServed: ZONES.map((z) => ({ "@type": "Place", name: z.name })),
   sameAs: [CONTACT.instagram],
-  priceRange: `US$${PRICING.from4pax}–US$85`,
+  priceRange: `US$${MIN_PRICE}–US$${MAX_PRICE}`,
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -55,9 +56,9 @@ export function productSchema(model: Model, locale: "es" | "en") {
       // se confirman al reservar (Budget/Estándar/Premium).
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: priceFrom(model.pax),
-      highPrice: model.pax >= 6 ? 85 : 65,
-      offerCount: model.pax >= 6 ? 3 : 2,
+      lowPrice: priceStats(model.pax).low,
+      highPrice: priceStats(model.pax).high,
+      offerCount: priceStats(model.pax).count,
       availability: "https://schema.org/InStock",
       url: `${SITE}${path}/`,
     },

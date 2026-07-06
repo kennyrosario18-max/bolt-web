@@ -73,6 +73,19 @@ export const PRICE_GROUPS: PriceGroup[] = [
   },
 ];
 
+/** Tarifas derivadas — fuente única PRICE_GROUPS. Ningún importe se repite a mano
+    (evita que schema.ts, el blog o el JSON-LD contradigan la página de precios). */
+const ALL_TIERS = PRICE_GROUPS.flatMap((g) => g.tiers);
+export const MIN_PRICE = Math.min(...ALL_TIERS.map((t) => t.usd));
+export const MAX_PRICE = Math.max(...ALL_TIERS.map((t) => t.usd));
+
+/** Rango y conteo de tiers para el grupo de plazas de un modelo. */
+export function priceStats(pax: number) {
+  const group = PRICE_GROUPS[pax >= 6 ? 1 : 0];
+  const usd = group.tiers.map((t) => t.usd);
+  return { low: Math.min(...usd), high: Math.max(...usd), count: group.tiers.length };
+}
+
 export const DELIVERY_POLICY = {
   es: [
     { b: "2 días o más:", rest: " entrega y recogida incluidas sin costo." },
