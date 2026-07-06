@@ -7,7 +7,7 @@ const PAGES = ["", "flota/eco-cross-4-2/", "alquiler/cap-cana/", "precios/", "se
   "contacto/", "nosotros/", "en/", "en/fleet/eco-cross-4-2/", "blog/golf-cart-4-o-6-plazas/"];
 const norm = (h) => {
   const ld = [...h.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>m[1]).sort();
-  let x = h.replace(/<script(?! type="application\/ld\+json")[\s\S]*?<\/script>/g, "")
+  let x = h.replace(/<!-- -->/g, "").replace(/<script(?! type="application\/ld\+json")[\s\S]*?<\/script>/g, "")
            .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, "")
            .replace(/\/_next\/static\/[^"']+/g, "/_next/ASSET")
            .replace(/-[a-z0-9]{8,}\.(js|css|woff2|p)/g, ".$1");

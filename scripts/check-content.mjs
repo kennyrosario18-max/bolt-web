@@ -22,13 +22,12 @@ for (const m of models) {
     errors.push(`Modelo "${m.id}" sin imagen public/images/models/${m.id}.jpg`);
 }
 
-// 2) Cada zona de rentals tiene su meta EN (clave con o sin comillas).
+// 2) Cada zona tiene meta EN en zones-landing.ts (fuente única, no dict paralelo).
 const zones = ["puntacana-resort", "cap-cana", "bavaro", "casa-de-campo", "la-romana"];
-const rentalsEn = read("src/app/en/rentals/[zona]/page.tsx");
-for (const z of zones) {
-  const hasKey = rentalsEn.includes(`"${z}"`) || new RegExp(`\\b${z}\\s*:`).test(rentalsEn);
-  if (!hasKey) errors.push(`Zona "${z}" sin meta EN en en/rentals/[zona]`);
-}
+const zonesTs = read("src/content/zones-landing.ts");
+const metaEnCount = (zonesTs.match(/metaTitleEn:/g) || []).length;
+if (metaEnCount < zones.length)
+  errors.push(`Solo ${metaEnCount}/${zones.length} zonas tienen metaTitleEn en zones-landing.ts`);
 
 // 3) Toda TARIFA del blog (importe seguido de /día · /day · por día · per day)
 //    debe existir en pricing.ts. Se ignoran cálculos en prosa (ej. "US$15 de diferencia").

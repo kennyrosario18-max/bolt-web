@@ -11,6 +11,8 @@ export interface ZoneLanding {
   metaTitle: string;
   /** Description SEO redactada (~150 chars), sin cortes automáticos. */
   metaDescription: string;
+  metaTitleEn: string;
+  metaDescriptionEn: string;
   intro: string;
   introEn: string;
   bullets: { es: string; en: string }[];
@@ -33,6 +35,8 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     metaTitle: "Golf carts en Puntacana Resort & Club",
     metaDescription:
       "Renta de golf carts con entrega en tu villa en Puntacana Resort & Club. Flota de 4 y 6 plazas, vehículos asegurados y soporte bilingüe 24/7.",
+    metaTitleEn: "Golf carts in Puntacana Resort & Club",
+    metaDescriptionEn: "Golf cart rental with villa delivery inside Puntacana Resort & Club. 4 and 6-seat fleet, insured vehicles and 24/7 bilingual support.",
     intro:
       "Es nuestra base principal y donde más carritos entregamos cada semana. Llevamos tu golf cart con carga completa hasta tu villa, coordinando el acceso con tu anfitrión o property manager.",
     introEn:
@@ -70,6 +74,8 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     metaTitle: "Golf carts en Cap Cana desde US$50/día",
     metaDescription:
       "Golf carts de 4 y 6 plazas entregados en tu villa en Cap Cana desde US$50/día. Entrega incluida en rentas de 2+ días y soporte bilingüe 24/7.",
+    metaTitleEn: "Golf carts in Cap Cana from US$50/day",
+    metaDescriptionEn: "4 and 6-seat golf carts delivered to your villa in Cap Cana from US$50/day. Free delivery on 2+ day rentals and 24/7 bilingual support.",
     intro:
       "Cobertura completa dentro de Cap Cana: desde la zona de la marina hasta los campos de golf y las comunidades privadas. Entregamos en tu villa o apartamento con todo listo para rodar.",
     introEn:
@@ -107,6 +113,8 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     metaTitle: "Golf carts en Bávaro desde US$50/día",
     metaDescription:
       "Nuestra base está en Bávaro: entrega rápida de golf carts en residenciales y complejos de la zona desde US$50/día. Tarifas semanales y mensuales.",
+    metaTitleEn: "Golf carts in Bávaro from US$50/day",
+    metaDescriptionEn: "Our base is in Bávaro: fast golf cart delivery to residential communities and resorts from US$50/day. Weekly and monthly rates available.",
     intro:
       "Bávaro es nuestra casa: aquí está nuestra base de operaciones. Eso significa entrega rápida, asistencia inmediata y toda la flota disponible para residenciales y complejos turísticos de la zona.",
     introEn:
@@ -144,6 +152,8 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     metaTitle: "Golf carts en Casa de Campo — 7+ días",
     metaDescription:
       "Llevamos golf carts a Casa de Campo en reservas de 7 días o más, con transporte cotizado según tu villa. Flota premium de 4 y 6 plazas.",
+    metaTitleEn: "Golf carts in Casa de Campo — 7+ days",
+    metaDescriptionEn: "We bring golf carts to Casa de Campo for rentals of 7 days or more, with transport quoted by villa. Premium 4 and 6-seat fleet.",
     intro:
       "Llevamos nuestra flota hasta Casa de Campo para reservas de 7 días o más. El transporte del carrito se cotiza según tu villa y fechas — lo incluimos en la confirmación de tu solicitud.",
     introEn:
@@ -181,6 +191,8 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     metaTitle: "Golf carts en La Romana — 7+ días",
     metaDescription:
       "Renta de golf carts en La Romana para estadías de 7 días o más. Entrega en tu villa con transporte cotizado y soporte 24/7 por WhatsApp.",
+    metaTitleEn: "Golf carts in La Romana — 7+ days",
+    metaDescriptionEn: "Golf cart rental in La Romana for stays of 7 days or more. Villa delivery with quoted transport and 24/7 WhatsApp support.",
     intro:
       "Atendemos la zona de La Romana con reservas de 7 días o más. Tu golf cart llega a tu villa o residencial con carga completa; el transporte se cotiza según la ubicación exacta.",
     introEn:
