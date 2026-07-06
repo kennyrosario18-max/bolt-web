@@ -14,6 +14,8 @@ export const SEGMENT_ES_TO_EN: Record<string, string> = {
   politica: "policy",
   deposito: "deposit",
   contacto: "contact",
+  terminos: "terms",
+  privacidad: "privacy",
 };
 
 const SEGMENT_EN_TO_ES = Object.fromEntries(

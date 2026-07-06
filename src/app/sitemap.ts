@@ -37,6 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pair("/politica/", "/en/policy/", 0.4),
     ...pair("/deposito/", "/en/deposit/", 0.4),
     ...pair("/contacto/", "/en/contact/", 0.5),
+    ...pair("/terminos/", "/en/terms/", 0.3),
+    ...pair("/privacidad/", "/en/privacy/", 0.3),
   ];
 
   for (const m of MODELS) {

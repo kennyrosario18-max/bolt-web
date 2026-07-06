@@ -50,6 +50,12 @@ const T = {
     warnMin: (name: string | undefined, min: number | undefined, days: number) =>
       `Para ${name} el mínimo es de ${min} días — tu selección actual es de ${days} día${days === 1 ? "" : "s"}.`,
     submit: "⚡ Enviar solicitud por WhatsApp",
+    legalPre: "Al enviar tu solicitud aceptas nuestros",
+    legalTerms: "Términos y Condiciones",
+    legalAnd: "y nuestra",
+    legalPrivacy: "Política de Privacidad",
+    termsHref: "/terminos",
+    privacyHref: "/privacidad",
     disclaimer:
       "Al enviar se abrirá WhatsApp con tu solicitud lista — solo presiona enviar. También puedes escribirnos a",
   },
@@ -96,6 +102,12 @@ const T = {
     warnMin: (name: string | undefined, min: number | undefined, days: number) =>
       `${name} requires a ${min}-day minimum — your current selection is ${days} day${days === 1 ? "" : "s"}.`,
     submit: "⚡ Send request via WhatsApp",
+    legalPre: "By sending your request you accept our",
+    legalTerms: "Terms & Conditions",
+    legalAnd: "and our",
+    legalPrivacy: "Privacy Policy",
+    termsHref: "/en/terms",
+    privacyHref: "/en/privacy",
     disclaimer: "WhatsApp will open with your request ready — just press send. You can also email us at",
   },
 } as const;
@@ -354,6 +366,17 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           {t.disclaimer}{" "}
           <a href={`mailto:${CONTACT.email}`} className="underline">
             {CONTACT.email}
+          </a>
+          .
+        </p>
+        <p className="mt-2 text-xs text-steel">
+          {t.legalPre}{" "}
+          <a href={t.termsHref} className="underline">
+            {t.legalTerms}
+          </a>{" "}
+          {t.legalAnd}{" "}
+          <a href={t.privacyHref} className="underline">
+            {t.legalPrivacy}
           </a>
           .
         </p>
