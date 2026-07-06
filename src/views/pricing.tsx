@@ -24,6 +24,9 @@ const T = {
     fleetHref: "/flota",
     waCta: "Preguntar por WhatsApp",
     waMsg: "Hola BOLT, tengo una pregunta sobre las tarifas de renta.",
+    depositTitle: "Depósitos y temporada",
+    depositBody: "Reserva: depósito de confirmación del 30% del total. A la entrega: depósito de garantía de US$200, reembolsable tras la inspección de devolución.",
+    seasonBody: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el depósito no es reembolsable.",
   },
   en: {
     kicker: "Pricing",
@@ -41,6 +44,9 @@ const T = {
     fleetHref: "/en/fleet",
     waCta: "Ask on WhatsApp",
     waMsg: "Hi BOLT, I have a question about rental rates.",
+    depositTitle: "Deposits & season",
+    depositBody: "Booking: 30% confirmation deposit of the total. At delivery: a US$200 damage deposit, refundable after the return inspection.",
+    seasonBody: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the deposit is non-refundable on those dates.",
   },
 } as const;
 
@@ -159,6 +165,13 @@ export function PricingView({ locale }: { locale: Locale }) {
               <p className="mt-4 text-sm text-inktext">{DELIVERY_POLICY.en}</p>
             </>
           )}
+        </div>
+
+        {/* Depósitos + temporada — transparencia (F6). */}
+        <div className="mt-8 rounded-card border border-line bg-white p-7">
+          <h2 className="font-display text-xl font-extrabold">{t.depositTitle}</h2>
+          <p className="mt-3 text-sm text-inktext">{t.depositBody}</p>
+          <p className="mt-2 text-sm font-semibold text-volt-dark">{t.seasonBody}</p>
         </div>
 
         <p className="mt-8 text-sm text-steel">{es ? PRICING_FOOTNOTE.es : PRICING_FOOTNOTE.en}</p>

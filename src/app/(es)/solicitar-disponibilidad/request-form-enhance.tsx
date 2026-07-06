@@ -16,6 +16,7 @@ interface Payload {
   phone: string; header: string; plazas: string; recommend: string;
   day: string; days: string; f: Fields;
   errFechas: string; errOrden: string; errMin: string; warnMin: string; zoneNoteTpl: string;
+  estimateTpl: string; price4: number; price6: number;
 }
 
 function script(p: Payload): string {
@@ -25,8 +26,8 @@ function script(p: Payload): string {
   var form=document.getElementById('req-form');
   if(!form)return;
   var $=function(id){return document.getElementById(id);};
-  var llegada=$('llegada'),salida=$('salida'),zona=$('zona'),modelo=$('modelo');
-  var zonaNote=$('zona-note'),warn=$('min-warning'),err=$('form-error');
+  var llegada=$('llegada'),salida=$('salida'),zona=$('zona'),modelo=$('modelo'),pasajeros=$('pasajeros');
+  var zonaNote=$('zona-note'),warn=$('min-warning'),err=$('form-error'),estimate=$('estimate');
 
   // Fechas RD locales: se parsean por componentes (no UTC) para un conteo exacto.
   function diffDays(a,b){if(!a||!b)return 0;var x=a.split('-'),y=b.split('-');return Math.round((new Date(+y[0],+y[1]-1,+y[2])-new Date(+x[0],+x[1]-1,+x[2]))/86400000);}
@@ -46,6 +47,27 @@ function script(p: Payload): string {
       warn.textContent=fill(P.warnMin,{name:name,min:md,days:d,dayword:d===1?P.day:P.days});
       warn.hidden=false;
     }else{warn.hidden=true;warn.textContent='';}
+    updateEstimate();
+  }
+
+  // Tarifa "desde" del día: la del modelo elegido; si no, por pasajeros
+  // (5+ personas => tarifa de 6 plazas). Devuelve 0 si no hay con qué estimar.
+  function dailyPrice(){
+    var mo=modelo.options[modelo.selectedIndex];
+    if(mo&&mo.value&&mo.getAttribute('data-price'))return +mo.getAttribute('data-price');
+    var pax=pasajeros?pasajeros.value:'';
+    if(pax){var n=parseInt(pax,10)||7;return n>=5?P.price6:P.price4;}
+    return 0;
+  }
+  function updateEstimate(){
+    if(!estimate)return;
+    var d=diffDays(llegada.value,salida.value),daily=dailyPrice();
+    if(d>0&&daily>0){
+      var total=Math.round(d*daily*1.18);      // ITBIS 18% incluido
+      var deposit=Math.round(total*0.30);       // depósito de confirmación 30%
+      estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit});
+      estimate.hidden=false;
+    }else{estimate.hidden=true;estimate.textContent='';}
   }
 
   function clearError(){
@@ -70,13 +92,13 @@ function script(p: Payload): string {
     var lines=[
       P.header,'',
       f.nombre+': '+val('nombre'),
-      f.email+': '+val('email'),
+      val('email')?(f.email+': '+val('email')):'',
       f.whatsapp+': '+val('whatsapp'),
       f.modelo+': '+modelStr,
       f.llegada+': '+val('llegada'),
       f.salida+': '+val('salida')+(d>0?(' ('+d+' '+(d===1?P.day:P.days)+')'):''),
       f.entrega+': '+zoneName+(zoneNote?(' — '+zoneNote):''),
-      f.pasajeros+': '+val('pasajeros'),
+      val('pasajeros')?(f.pasajeros+': '+val('pasajeros')):'',
       val('comentarios')?(f.comentarios+': '+val('comentarios')):''
     ];
     return lines.filter(Boolean).join('\\n');
@@ -111,6 +133,8 @@ function script(p: Payload): string {
   llegada.addEventListener('change',function(){salida.min=llegada.value;syncDeps();});
   salida.addEventListener('change',syncDeps);
   zona.addEventListener('change',syncDeps);
+  if(modelo)modelo.addEventListener('change',updateEstimate);
+  if(pasajeros)pasajeros.addEventListener('change',updateEstimate);
 
   // Preselección ?modelo y avisos iniciales. selectedIndex es una propiedad (no
   // un atributo que React reconcilie en un <select> no controlado), así que no

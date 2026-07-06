@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MODELS } from "@/content/models";
-import { CONTACT, ZONES } from "@/content/site";
+import { CONTACT, ZONES, priceFrom } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
 import { RequestFormEnhance } from "./request-form-enhance";
 import type { Locale } from "@/lib/i18n";
@@ -21,7 +21,7 @@ const T = {
     day: "día",
     days: "días",
     lNombre: "Nombre completo *",
-    lEmail: "Correo electrónico *",
+    lEmail: "Correo electrónico (opcional)",
     lWhatsapp: "WhatsApp *",
     lLlegada: "Fecha de llegada *",
     lSalida: "Fecha de salida *",
@@ -29,7 +29,12 @@ const T = {
     zonaPlaceholder: "Selecciona la zona…",
     minDays: (n: number) => ` (mínimo ${n} días)`,
     zoneNoteTpl: "{name}: reservas de {min}+ días · {note}",
-    lPasajeros: "Cantidad de pasajeros *",
+    perDayShort: "/día",
+    estimateTpl: "Estimado desde US${total} por {days} {dayword} · ITBIS incluido · depósito 30%: US${deposit}",
+    depositNote: "Reserva: depósito de confirmación 30%. A la entrega: depósito de garantía US$200, reembolsable tras la inspección.",
+    seasonNote: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el depósito no es reembolsable.",
+    openWa: "Abrir WhatsApp",
+    lPasajeros: "Cantidad de pasajeros",
     pasajerosPlaceholder: "Selecciona…",
     lModelo: "Modelo",
     modeloPlaceholder: "Recomiéndenme según mi grupo",
@@ -60,7 +65,7 @@ const T = {
     day: "day",
     days: "days",
     lNombre: "Full name *",
-    lEmail: "Email *",
+    lEmail: "Email (optional)",
     lWhatsapp: "WhatsApp *",
     lLlegada: "Arrival date *",
     lSalida: "Departure date *",
@@ -68,7 +73,12 @@ const T = {
     zonaPlaceholder: "Select your zone…",
     minDays: (n: number) => ` (${n}-day minimum)`,
     zoneNoteTpl: "{name}: {min}+ day rentals · {note}",
-    lPasajeros: "Number of passengers *",
+    perDayShort: "/day",
+    estimateTpl: "Estimated from US${total} for {days} {dayword} · tax included · 30% deposit: US${deposit}",
+    depositNote: "Booking: 30% confirmation deposit. At delivery: a US$200 damage deposit, refundable after inspection.",
+    seasonNote: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the deposit is non-refundable on those dates.",
+    openWa: "Open WhatsApp",
+    lPasajeros: "Number of passengers",
     pasajerosPlaceholder: "Select…",
     lModelo: "Model",
     modeloPlaceholder: "Recommend one for my group",
@@ -111,6 +121,10 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     errMin: t.errMin,
     warnMin: t.warnMin,
     zoneNoteTpl: t.zoneNoteTpl,
+    estimateTpl: t.estimateTpl,
+    // Tarifa "desde" para el estimado: por plazas (fuente única priceFrom).
+    price4: priceFrom(4),
+    price6: priceFrom(6),
   };
 
   return (
@@ -126,7 +140,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
 
         <div>
           <label className={labelCls} htmlFor="email">{t.lEmail}</label>
-          <input id="email" name="email" type="email" required className={inputCls} autoComplete="email" />
+          <input id="email" name="email" type="email" className={inputCls} autoComplete="email" />
         </div>
         <div>
           <label className={labelCls} htmlFor="whatsapp">{t.lWhatsapp}</label>
@@ -163,7 +177,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
         </div>
         <div>
           <label className={labelCls} htmlFor="pasajeros">{t.lPasajeros}</label>
-          <select id="pasajeros" name="pasajeros" required className={inputCls}>
+          <select id="pasajeros" name="pasajeros" className={inputCls}>
             <option value="">{t.pasajerosPlaceholder}</option>
             {[1, 2, 3, 4, 5, 6, "7+"].map((n) => (
               <option key={n} value={n}>{n}</option>
@@ -176,8 +190,9 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           <select id="modelo" name="modelo" className={inputCls}>
             <option value="">{t.modeloPlaceholder}</option>
             {MODELS.map((m) => (
-              <option key={m.id} value={m.id} data-name={m.name} data-pax={m.pax}>
-                {m.name} · {m.pax} {t.plazas}
+              <option key={m.id} value={m.id} data-name={m.name} data-pax={m.pax} data-price={priceFrom(m.pax)}>
+                {m.name} · {m.pax} {t.plazas} · desde US${priceFrom(m.pax)}
+                {t.perDayShort}
               </option>
             ))}
           </select>
@@ -194,6 +209,15 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
             No llenar
             <input id="extra-notas" name="empresa" tabIndex={-1} autoComplete="off" />
           </label>
+        </div>
+
+        {/* Estimado en vivo — se muestra cuando hay fechas + modelo o pasajeros. */}
+        <p id="estimate" hidden aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-ink sm:col-span-2" />
+
+        {/* Transparencia de depósitos + temporada (siempre visible). */}
+        <div className="rounded-box border border-line bg-white px-4 py-3 text-xs text-steel sm:col-span-2">
+          <p className="font-semibold text-inktext">{t.depositNote}</p>
+          <p className="mt-1">{t.seasonNote}</p>
         </div>
 
         <p id="min-warning" hidden aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2" />
@@ -230,9 +254,20 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
         <BoltIcon className="mx-auto text-volt" size={44} />
         <h2 className="mt-3 font-display text-2xl font-extrabold">{t.sentTitle}</h2>
         <p className="mx-auto mt-3 max-w-lg text-inktext">{t.success}</p>
-        <p className="mt-4 text-sm text-steel">
+        {/* CTA prominente: reabrir WhatsApp con la solicitud (el script fija el href). */}
+        <a
+          id="wa-fallback"
+          href={`https://wa.me/${CONTACT.whatsapp}`}
+          className="mt-6 inline-flex items-center justify-center gap-1.5 rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BoltIcon className="inline-block align-[-0.15em]" size={15} />
+          {t.openWa}
+        </a>
+        <p className="mt-3 text-sm text-steel">
           {t.waFallback}{" "}
-          <a id="wa-fallback" href={`https://wa.me/${CONTACT.whatsapp}`} className="font-bold text-ink underline" target="_blank" rel="noopener noreferrer">
+          <a href={`https://wa.me/${CONTACT.whatsapp}`} className="font-bold text-ink underline" target="_blank" rel="noopener noreferrer">
             {CONTACT.phoneDisplay}
           </a>.
         </p>
