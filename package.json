@@ -9,7 +9,8 @@
     "lint": "eslint",
     "optimize:images": "node scripts/optimize-images.mjs",
     "gen:og": "node scripts/gen-og.mjs",
-    "prebuild": "node scripts/check-content.mjs"
+    "prebuild": "node scripts/check-content.mjs",
+    "postbuild": "node scripts/strip-hydration.mjs"
   },
   "dependencies": {
     "next": "16.2.10",
