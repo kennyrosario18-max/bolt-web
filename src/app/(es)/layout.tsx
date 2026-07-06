@@ -4,6 +4,7 @@ import "../globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
+import { Analytics } from "@/components/analytics";
 import { JsonLdScriptProps, LOCAL_BUSINESS } from "@/lib/schema";
 import { IS_PREVIEW, SITE_URL } from "@/lib/site-url";
 
@@ -59,6 +60,7 @@ export default function RootLayoutEs({
         <main id="contenido" className="flex-1">{children}</main>
         <Footer locale="es" />
         <MobileCta locale="es" />
+        <Analytics />
       </body>
     </html>
   );

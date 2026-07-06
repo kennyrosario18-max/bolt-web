@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { MODELS, getModel } from "@/content/models";
 import { CONTACT, ZONES, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
+import { track } from "@/lib/analytics";
 
 const T = {
   es: {
@@ -212,6 +213,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
       return;
     }
 
+    track("form_submit", { zona: form.zona, pasajeros: form.pasajeros, modelo: form.modelo });
     window.open(waLink(summary), "_blank", "noopener,noreferrer");
     setSent(true);
   }
