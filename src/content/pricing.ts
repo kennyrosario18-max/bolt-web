@@ -1,89 +1,57 @@
-/** Tarifas oficiales de renta — migradas de reservas.boltgolfcars.com/precios (confirmadas jun/2026).
-    Siempre US$; el ITBIS 18% se muestra por fila, nunca oculto. */
+import { MODELS, type Model } from "./models";
 
-export interface PriceTier {
+/** Tarifas oficiales de renta — POR MODELO (confirmadas por Kenny, jul/2026).
+ *  Siempre US$/día; el ITBIS 18% se calcula desde aquí, nunca a mano. Fuente
+ *  única: cada precio se define una vez y se propaga a fichas, /precios, el
+ *  formulario, el schema y las OG cards. */
+
+/** Precio base US$/día por id de modelo. */
+export const MODEL_PRICES: Record<string, number> = {
+  "eco-cross-4": 65,
+  "eco-cross-4-2": 85,
+  "eco-plus-2-2": 60,
+  "eco-plus-4-2": 75,
+  "eco-track-4-2": 100,
+  "eco-sport-4-2": 75,
+  "cc-limo-4-2": 65,
+  "cc-precedent-2-2": 50,
+  "cc-tempo-2-2": 60,
+  "zycar-4": 65,
+  "zycar-4-2": 75,
+};
+
+/** Precio base US$/día de un modelo. */
+export function modelPrice(id: string): number {
+  return MODEL_PRICES[id] ?? 0;
+}
+
+/** ITBIS 18% incluido, formateado "US$XX.XX". */
+export function withItbis(usd: number): string {
+  return `US$${(usd * 1.18).toFixed(2)}`;
+}
+
+const PRICES = Object.values(MODEL_PRICES);
+export const MIN_PRICE = Math.min(...PRICES);
+export const MAX_PRICE = Math.max(...PRICES);
+
+/** "Desde" por capacidad = el modelo más barato de esas plazas (4→50, 6→65). */
+export function priceFromPax(pax: number): number {
+  const of = MODELS.filter((m) => m.pax === pax).map((m) => modelPrice(m.id));
+  return of.length ? Math.min(...of) : MIN_PRICE;
+}
+
+export interface PricedModel {
+  id: string;
   name: string;
-  nameEn: string;
-  config: string;
-  usd: number;
-  withItbis: string;
-  tag?: string;
-  tagEn?: string;
-  note?: string;
-  noteEn?: string;
+  line: Model["line"];
+  price: number;
 }
 
-export interface PriceGroup {
-  group: string;
-  groupEn: string;
-  tiers: PriceTier[];
-}
-
-export const PRICE_GROUPS: PriceGroup[] = [
-  {
-    group: "Hasta 4 personas",
-    groupEn: "Up to 4 people",
-    tiers: [
-      {
-        name: "4 plazas · Budget",
-        nameEn: "4 seats · Budget",
-        config: "2+2 · hasta 4 personas",
-        usd: 50,
-        withItbis: "US$59.00",
-        tag: "El más económico",
-        tagEn: "Best value",
-      },
-      {
-        name: "4 plazas · Estándar",
-        nameEn: "4 seats · Standard",
-        config: "2+2 · hasta 4 personas",
-        usd: 65,
-        withItbis: "US$76.70",
-      },
-    ],
-  },
-  {
-    group: "Hasta 6 personas",
-    groupEn: "Up to 6 people",
-    tiers: [
-      {
-        name: "6 plazas · Budget",
-        nameEn: "6 seats · Budget",
-        config: "4+2 · hasta 6 personas",
-        usd: 65,
-        withItbis: "US$76.70",
-      },
-      {
-        name: "6 plazas · Estándar",
-        nameEn: "6 seats · Standard",
-        config: "4+2 · hasta 6 personas",
-        usd: 70,
-        withItbis: "US$82.60",
-      },
-      {
-        name: "6 plazas · Premium — ECO Cross",
-        nameEn: "6 seats · Premium — ECO Cross",
-        config: "4+2 · hasta 6 personas",
-        usd: 85,
-        withItbis: "US$100.30",
-        note: "🔋 Litio de largo alcance 150 Ah · hasta 95 km · asientos de lujo",
-        noteEn: "150 Ah long-range lithium · up to 95 km · luxury seats",
-      },
-    ],
-  },
-];
-
-/** Tarifas derivadas — fuente única PRICE_GROUPS. Ningún importe se repite a mano
-    (evita que schema.ts, el blog o el JSON-LD contradigan la página de precios). */
-const ALL_TIERS = PRICE_GROUPS.flatMap((g) => g.tiers);
-export const MIN_PRICE = Math.min(...ALL_TIERS.map((t) => t.usd));
-export const MAX_PRICE = Math.max(...ALL_TIERS.map((t) => t.usd));
-
-/** Rango y conteo de tiers para el grupo de plazas de un modelo. */
-export function priceStats(pax: number) {
-  const group = PRICE_GROUPS[pax >= 6 ? 1 : 0];
-  const usd = group.tiers.map((t) => t.usd);
-  return { low: Math.min(...usd), high: Math.max(...usd), count: group.tiers.length };
+/** Modelos con su precio, ordenados por precio — para la página /precios. */
+export function pricedModels(pax: 4 | 6): PricedModel[] {
+  return MODELS.filter((m) => m.pax === pax)
+    .map((m) => ({ id: m.id, name: m.name, line: m.line, price: modelPrice(m.id) }))
+    .sort((a, b) => a.price - b.price);
 }
 
 export const DELIVERY_POLICY = {

@@ -32,7 +32,7 @@ if (metaEnCount < zones.length)
 // 3) Toda TARIFA del blog (importe seguido de /día · /day · por día · per day)
 //    debe existir en pricing.ts. Se ignoran cálculos en prosa (ej. "US$15 de diferencia").
 const pricing = read("src/content/pricing.ts");
-const validTariffs = new Set([...pricing.matchAll(/usd:\s*(\d+)/g)].map((m) => `US$${m[1]}`));
+const validTariffs = new Set([...pricing.matchAll(/"[\w-]+":\s*(\d+)/g)].map((m) => `US$${m[1]}`));
 const blog = read("src/content/blog.ts");
 const tariffs = new Set(
   [...blog.matchAll(/US\$(\d+)(?:\/día|\/day| por día| per day)/g)].map((m) => `US$${m[1]}`)

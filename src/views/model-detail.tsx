@@ -11,7 +11,8 @@ import {
 import { ModelCard } from "@/components/model-card";
 import { ModelPhoto } from "@/components/model-photo";
 import { BoltIcon, CheckIcon } from "@/components/icons";
-import { PRICING, priceFrom, waLink } from "@/content/site";
+import { PRICING, waLink } from "@/content/site";
+import { modelPrice } from "@/content/pricing";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema, productSchema } from "@/lib/schema";
 
@@ -160,7 +161,7 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
             </p>
             <p className="mt-6 text-2xl font-extrabold text-volt">
               {t.from}
-              {priceFrom(model.pax)}
+              {modelPrice(model.id)}
               <span className="text-base font-semibold text-white/60">{t.perDay}</span>
             </p>
             <p className="text-xs text-white/60">{t.itbis}</p>

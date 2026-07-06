@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MODELS } from "@/content/models";
 import { CONTACT, ZONES, priceFrom, WEB3FORMS_ACCESS_KEY } from "@/content/site";
+import { modelPrice } from "@/content/pricing";
 import { BoltIcon } from "@/components/icons";
 import { RequestFormEnhance } from "./request-form-enhance";
 import type { Locale } from "@/lib/i18n";
@@ -193,8 +194,8 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           <select id="modelo" name="modelo" className={inputCls}>
             <option value="">{t.modeloPlaceholder}</option>
             {MODELS.map((m) => (
-              <option key={m.id} value={m.id} data-name={m.name} data-pax={m.pax} data-price={priceFrom(m.pax)}>
-                {m.name} · {m.pax} {t.plazas} · desde US${priceFrom(m.pax)}
+              <option key={m.id} value={m.id} data-name={m.name} data-pax={m.pax} data-price={modelPrice(m.id)}>
+                {m.name} · {m.pax} {t.plazas} · US${modelPrice(m.id)}
                 {t.perDayShort}
               </option>
             ))}

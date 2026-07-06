@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { DESC_EN, lineName, type Model } from "@/content/models";
 import { ModelPhoto } from "@/components/model-photo";
-import { priceFrom } from "@/content/site";
+import { modelPrice } from "@/content/pricing";
 import type { Locale } from "@/lib/i18n";
 
 export function ModelCard({ model, locale = "es" }: { model: Model; locale?: Locale }) {
@@ -41,7 +41,7 @@ export function ModelCard({ model, locale = "es" }: { model: Model; locale?: Loc
         <div className="mt-4 flex items-center justify-between border-t border-line pt-4">
           <span className="text-sm font-semibold text-ink">
             {es ? "desde" : "from"}{" "}
-            <span className="text-base font-extrabold">US${priceFrom(model.pax)}</span>
+            <span className="text-base font-extrabold">US${modelPrice(model.id)}</span>
             {es ? "/día" : "/day"}
           </span>
           <span className="text-sm font-bold text-volt-dark transition-transform group-hover:translate-x-1">

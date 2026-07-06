@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { DELIVERY_POLICY, PRICE_GROUPS, PRICING_FOOTNOTE } from "@/content/pricing";
-import { MODELS } from "@/content/models";
+import { DELIVERY_POLICY, PRICING_FOOTNOTE, pricedModels, withItbis } from "@/content/pricing";
+import { lineName } from "@/content/models";
 import { waLink } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
@@ -15,6 +15,9 @@ const T = {
     leadSub: "Daily rates in US$, tax shown per model — what you see is what you pay.",
     perDay: " /día",
     withTax: "con ITBIS · ",
+    group4: "Hasta 4 personas",
+    group6: "Hasta 6 personas",
+    tapModel: "Toca un modelo para solicitarlo →",
     deliveryTitle: "Entrega y recogida ",
     deliverySub: "· Delivery",
     reqCta: "Solicitar disponibilidad",
@@ -35,6 +38,9 @@ const T = {
     leadSub: "Precios por día en US$ con el ITBIS mostrado en cada modelo. Lo que ves es lo que pagas.",
     perDay: " /day",
     withTax: "with tax · ",
+    group4: "Up to 4 people",
+    group6: "Up to 6 people",
+    tapModel: "Tap a model to request it →",
     deliveryTitle: "Delivery & pickup ",
     deliverySub: "· Entrega",
     reqCta: "Request availability",
@@ -49,8 +55,6 @@ const T = {
     seasonBody: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the deposit is non-refundable on those dates.",
   },
 } as const;
-
-const configEn = (c: string) => c.replace("hasta", "up to").replace("personas", "people");
 
 export function PricingView({ locale }: { locale: Locale }) {
   const t = T[locale];
@@ -73,70 +77,39 @@ export function PricingView({ locale }: { locale: Locale }) {
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
-          {PRICE_GROUPS.map((g, gi) => (
-            <div key={g.group}>
+          {[
+            { label: t.group4, models: pricedModels(4) },
+            { label: t.group6, models: pricedModels(6) },
+          ].map((grp, gi) => (
+            <div key={grp.label}>
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-3xl font-extrabold text-volt-dark">0{gi + 1}</span>
-                <h2 className="font-display text-2xl font-extrabold">
-                  {es ? g.group : g.groupEn}{" "}
-                  <span className="text-base font-semibold text-steel">
-                    · {es ? g.groupEn : g.group}
-                  </span>
-                </h2>
+                <h2 className="font-display text-2xl font-extrabold">{grp.label}</h2>
               </div>
-              <div className="mt-5 space-y-4">
-                {g.tiers.map((tier) => (
-                  <div
-                    key={tier.name}
-                    className="flex flex-wrap items-center justify-between gap-4 rounded-card border border-line bg-white p-6"
+              <p className="mt-2 text-xs font-bold uppercase tracking-wide text-steel">{t.tapModel}</p>
+              <div className="mt-4 space-y-3">
+                {grp.models.map((m) => (
+                  <Link
+                    key={m.id}
+                    href={`${t.reqHref}?modelo=${m.id}`}
+                    className="flex flex-wrap items-center justify-between gap-4 rounded-card border border-line bg-white p-6 transition-shadow hover:shadow-xl"
                   >
                     <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="font-display text-lg font-extrabold">
-                          {es ? tier.name : tier.nameEn}
-                        </h3>
-                        {(es ? tier.tag : tier.tagEn) ? (
-                          <span className="rounded-full bg-volt px-3 py-0.5 text-xs font-bold text-ink">
-                            {es ? tier.tag : tier.tagEn}
-                          </span>
-                        ) : null}
-                      </div>
-                      <p className="mt-1 text-sm text-steel">
-                        {es ? tier.config : configEn(tier.config)}
-                      </p>
-                      {(es ? tier.note : tier.noteEn) ? (
-                        <p className="mt-1 text-sm font-semibold text-volt-dark">
-                          {es ? tier.note : `🔋 ${tier.noteEn}`}
-                        </p>
-                      ) : null}
+                      <h3 className="font-display text-lg font-extrabold">{m.name}</h3>
+                      <p className="mt-1 text-sm text-steel">{lineName(m.line, locale)}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-display text-3xl font-extrabold text-ink">
-                        US${tier.usd}
+                        US${m.price}
                         <span className="text-sm font-semibold text-steel">{t.perDay}</span>
                       </p>
                       <p className="text-xs text-steel">
                         {t.withTax}
-                        {tier.withItbis}
+                        {withItbis(m.price)}
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
-              </div>
-              {/* Chips de modelos del grupo — prefill al formulario (fin del callejón). */}
-              <div className="mt-5">
-                <p className="text-xs font-bold uppercase tracking-wide text-steel">{t.chipsLabel}</p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {MODELS.filter((m) => m.pax === (gi === 0 ? 4 : 6)).map((m) => (
-                    <Link
-                      key={m.id}
-                      href={`${t.reqHref}?modelo=${m.id}`}
-                      className="inline-flex items-center rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-inktext transition-colors hover:border-ink hover:text-ink"
-                    >
-                      {m.name}
-                    </Link>
-                  ))}
-                </div>
               </div>
             </div>
           ))}

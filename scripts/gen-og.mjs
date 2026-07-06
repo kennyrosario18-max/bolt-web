@@ -9,7 +9,13 @@ import models from "../src/content/models.json" with { type: "json" };
 const OUT = "public/og";
 await mkdir(OUT, { recursive: true });
 
-const priceFrom = (pax) => (pax >= 6 ? 65 : 50);
+// Precio por modelo (espejo de src/content/pricing.ts — mantener sincronizado).
+const MODEL_PRICES = {
+  "eco-cross-4": 65, "eco-cross-4-2": 85, "eco-plus-2-2": 60, "eco-plus-4-2": 75,
+  "eco-track-4-2": 100, "eco-sport-4-2": 75, "cc-limo-4-2": 65, "cc-precedent-2-2": 50,
+  "cc-tempo-2-2": 60, "zycar-4": 65, "zycar-4-2": 75,
+};
+const modelPrice = (id) => MODEL_PRICES[id] ?? 50;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const BOLT = "M58 0 L0 78 L36 78 L28 140 L100 50 L60 50 L70 0 Z";
 
@@ -50,7 +56,7 @@ const cards = [
     file: `model-${m.id}`,
     title: m.name,
     subtitle: `${m.pax} plazas · Punta Cana`,
-    price: `desde US$${priceFrom(m.pax)}/día`,
+    price: `US$${modelPrice(m.id)}/día`,
   })),
   ...ZONES.map((z) => ({
     file: `zone-${z.id}`,

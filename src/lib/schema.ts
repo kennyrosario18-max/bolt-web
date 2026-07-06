@@ -1,5 +1,5 @@
 import { CONTACT, ZONES } from "@/content/site";
-import { MIN_PRICE, MAX_PRICE, priceStats } from "@/content/pricing";
+import { MIN_PRICE, MAX_PRICE, modelPrice } from "@/content/pricing";
 import { DESC_EN, type Model } from "@/content/models";
 import { SITE_URL } from "./site-url";
 
@@ -60,13 +60,9 @@ export function productSchema(model: Model, locale: "es" | "en") {
     url: `${SITE}${path}/`,
     brand: { "@type": "Brand", name: "BOLT" },
     offers: {
-      // Rango honesto del grupo de plazas: los tiers exactos por unidad
-      // se confirman al reservar (Budget/Estándar/Premium).
-      "@type": "AggregateOffer",
+      "@type": "Offer",
       priceCurrency: "USD",
-      lowPrice: priceStats(model.pax).low,
-      highPrice: priceStats(model.pax).high,
-      offerCount: priceStats(model.pax).count,
+      price: modelPrice(model.id),
       availability: "https://schema.org/InStock",
       url: `${SITE}${path}/`,
     },

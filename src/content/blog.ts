@@ -63,8 +63,8 @@ export const ARTICLES: BlogArticle[] = [
           "Para un grupo activo que sale temprano y regresa de noche, un modelo de litio te da tranquilidad de sobra. Si no estás seguro, dinos cuántos son y qué planes tienen: te recomendamos el modelo que mejor encaje."
         ],
         "bullets": [
-          "4 plazas (2+2, hasta 360 kg): ideal para parejas o familias pequeñas. Desde US$50/día (Budget) o US$65/día (Estándar).",
-          "6 plazas (4+2, hasta 540 kg): la mejor opción para familias grandes o grupos de amigos. Desde US$65/día (Budget), US$70/día (Estándar) o US$85/día (Premium: ECO Cross con batería de litio 150 Ah y asientos de lujo).",
+          "4 plazas (2+2, hasta 360 kg): ideal para parejas o familias pequeñas. Desde US$50/día según el modelo.",
+          "6 plazas (4+2, hasta 540 kg): la mejor opción para familias grandes o grupos de amigos. Desde US$65/día según el modelo — el ECO Cross premium, con batería de litio 150 Ah y asientos de lujo, va a US$85/día.",
           "Plomo-ácido: 25–40 km por carga.",
           "Litio estándar (105 Ah): 60–70 km por carga.",
           "Litio de largo alcance (150 Ah): 85–95 km por carga, disponible en los ECO Cross (4 y 6 plazas) y el ECO Track."
@@ -166,8 +166,8 @@ export const ARTICLES: BlogArticle[] = [
           "Las tarifas de BOLT son por día en dólares, con el ITBIS del 18% aparte:"
         ],
         "bullets": [
-          "4 plazas: desde US$50/día (línea Budget) o US$65/día (Estándar).",
-          "6 plazas: US$65/día (Budget), US$70/día (Estándar) o US$85/día (Premium — ECO Cross de litio 150 Ah con asientos de lujo).",
+          "4 plazas: desde US$50/día según el modelo.",
+          "6 plazas: desde US$65/día según el modelo (el ECO Cross premium, de litio 150 Ah con asientos de lujo, US$85/día).",
           "Rentas de 7 noches o más: tarifa semanal o mensual con descuento; pregunta al cotizar."
         ]
       },
@@ -259,8 +259,8 @@ export const ARTICLES: BlogArticle[] = [
           "Aquí van los precios reales de BOLT, en US$ por día (el ITBIS del 18% se cobra aparte):"
         ],
         "bullets": [
-          "Golf cart de 4 plazas: desde US$50/día en línea Budget, o US$65/día en línea Estándar.",
-          "Golf cart de 6 plazas: US$65/día (Budget), US$70/día (Estándar) o US$85/día (Premium: ECO Cross con batería de litio de 150 Ah y asientos de lujo).",
+          "Golf cart de 4 plazas: desde US$50/día según el modelo.",
+          "Golf cart de 6 plazas: desde US$65/día según el modelo (el ECO Cross premium, con batería de litio de 150 Ah y asientos de lujo, US$85/día).",
           "Entrega y recogida en tu villa incluidas en rentas de 2+ días; para rentas de 1 día, la entrega cuesta US$40 + ITBIS.",
           "Estadías de 7+ noches: pregunta por la tarifa semanal o mensual con descuento."
         ]
@@ -356,8 +356,8 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Cuándo conviene el tier premium ECO Cross (US$85/día)",
         "paragraphs": [
-          "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$85/día + ITBIS. Frente al 6 plazas estándar de US$70/día, hablamos de US$15 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
-          "Para comparar, nuestros 4 plazas con plomo-ácido arrancan en US$50/día (Budget) y US$65 (Estándar); los 6 plazas en US$65 (Budget) y US$70 (Estándar), siempre + ITBIS 18%. Toda renta incluye entrega y recogida en tu villa (incluida desde 2+ días de renta), cargador, seguro y soporte por WhatsApp 24/7 en español e inglés. El día de renta son 24 horas desde la entrega, no día calendario.",
+          "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$85/día + ITBIS. Frente a un 6 plazas estándar de US$75/día, hablamos de US$10 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
+          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye entrega y recogida en tu villa (incluida desde 2+ días de renta), cargador, seguro y soporte por WhatsApp 24/7 en español e inglés. El día de renta son 24 horas desde la entrega, no día calendario.",
           "¿No estás seguro de cuál te conviene? Escríbenos por WhatsApp al +1 809 839 8515 y cuéntanos tu plan: cuántas personas son, dónde se hospedan y cuántos días. Trabajamos por solicitud de disponibilidad —nunca confirmación automática—, así que mientras antes nos escribas, mejor. Your ride in paradise."
         ]
       }
