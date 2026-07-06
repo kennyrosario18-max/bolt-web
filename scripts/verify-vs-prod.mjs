@@ -16,7 +16,6 @@ const norm = (h) => {
 let ok = true;
 for (const u of PAGES) {
   const prod = norm(await (await fetch(`https://boltgolfcars.com/${u}`)).text());
-  const path = u === "" ? "index.html" : (u.startsWith("en/") && !u.endsWith("/") ? u : u + "index.html");
   const local = norm(readFileSync(`out/${u === "" ? "index.html" : u + "index.html"}`, "utf8"));
   const diff = prod.html !== local.html ? "CONTENIDO" : JSON.stringify(prod.ld) !== JSON.stringify(local.ld) ? "JSON-LD" : null;
   console.log(`${diff ? "✗" : "✓"} /${u || "(home)"}${diff ? " — " + diff : ""}`);
