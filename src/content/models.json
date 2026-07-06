@@ -186,7 +186,7 @@
     "cap": "360 kg",
     "range_lead": "25–40 km",
     "range_li": "60–70 km",
-    "desc": "Modelo Tempo de Club Car. Diseño moderno, manejo suave.",
+    "desc": "Modelo Tempo de Club Car: diseño moderno, manejo suave y silencioso, con asientos 2+2 para 4 pasajeros.",
     "pax": 4,
     "batteries": [
       {
@@ -232,7 +232,7 @@
     "cap": "540 kg",
     "range_lead": "25–40 km",
     "range_li": "60–70 km",
-    "desc": "Zycar extendido para 6 pasajeros. Diseño contemporáneo.",
+    "desc": "Zycar extendido para 6 pasajeros, con diseño contemporáneo y detalles tecnológicos para grupos grandes.",
     "pax": 6,
     "batteries": [
       {
