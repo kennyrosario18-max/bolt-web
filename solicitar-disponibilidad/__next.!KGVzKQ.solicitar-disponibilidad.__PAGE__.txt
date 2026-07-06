@@ -1,6 +1,125 @@
 1:"$Sreact.fragment"
-2:I[73593,["/_next/static/chunks/0ob_z_0z7sy-0.js","/_next/static/chunks/3dnu9kxy5kx8b.js"],"RequestForm"]
-3:I[97367,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/35ip4ctshr802.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[[["$","section",null,{"className":"bg-ink text-white","children":["$","div",null,{"className":"mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-14","children":[["$","p",null,{"className":"text-sm font-bold uppercase tracking-[0.2em] text-volt","children":"Solicitud de disponibilidad"}],["$","h1",null,{"className":"mt-3 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl","children":"Tu BOLT, a un paso"}],["$","p",null,{"className":"mt-3 text-white/70","children":"Completa el formulario y nuestro equipo verificará la disponibilidad de tu modelo. Ninguna reserva se confirma automáticamente — siempre te responde una persona."}],["$","p",null,{"lang":"en","className":"mt-1 text-sm italic text-white/60","children":"Send your request — our team confirms availability personally."}]]}]}],["$","section",null,{"className":"mx-auto max-w-3xl px-4 py-10 sm:px-6","children":["$","$L2",null,{}]}]],[["$","script","script-0",{"src":"/_next/static/chunks/3dnu9kxy5kx8b.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"wwoMR6_5FRi5CgSy3Qe_f"}
-5:null
+11:I[22016,["/_next/static/chunks/0ob_z_0z7sy-0.js"],""]
+13:I[97367,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/35ip4ctshr802.js"],"OutletBoundary"]
+14:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[[["$","section",null,{"className":"bg-ink text-white","children":["$","div",null,{"className":"mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-14","children":[["$","p",null,{"className":"text-sm font-bold uppercase tracking-[0.2em] text-volt","children":"Solicitud de disponibilidad"}],["$","h1",null,{"className":"mt-3 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl","children":"Tu BOLT, a un paso"}],["$","p",null,{"className":"mt-3 text-white/70","children":"Completa el formulario y nuestro equipo verificará la disponibilidad de tu modelo. Ninguna reserva se confirma automáticamente — siempre te responde una persona."}],["$","p",null,{"lang":"en","className":"mt-1 text-sm italic text-white/60","children":"Send your request — our team confirms availability personally."}]]}]}],["$","section",null,{"className":"mx-auto max-w-3xl px-4 py-10 sm:px-6","children":[["$","form",null,{"id":"req-form","className":"grid gap-5 sm:grid-cols-2","children":[["$","div",null,{"className":"sm:col-span-2","children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"nombre","children":"Nombre completo *"}],["$","input",null,{"id":"nombre","name":"nombre","required":true,"className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1","autoComplete":"name"}]]}],["$","div",null,{"children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"email","children":"Correo electrónico *"}],["$","input",null,{"id":"email","name":"email","type":"email","required":true,"className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1","autoComplete":"email"}]]}],["$","div",null,{"children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"whatsapp","children":"WhatsApp *"}],["$","input",null,{"id":"whatsapp","name":"whatsapp","type":"tel","required":true,"placeholder":"+1 809 000 0000","className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1","autoComplete":"tel"}]]}],["$","div",null,{"children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"llegada","children":"Fecha de llegada *"}],["$","input",null,{"id":"llegada","name":"llegada","type":"date","required":true,"className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1"}]]}],["$","div",null,{"children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"salida","children":"Fecha de salida *"}],["$","input",null,{"id":"salida","name":"salida","type":"date","required":true,"className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1"}]]}],["$","div",null,{"children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"zona","children":"Lugar de entrega *"}],["$","select",null,{"id":"zona","name":"zona","required":true,"className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1","children":[["$","option",null,{"value":"","children":"Selecciona la zona…"}],[["$","option","puntacana-resort",{"value":"puntacana-resort","data-name":"Puntacana Resort & Club","data-mindays":"","data-note":"","children":["Puntacana Resort & Club",""]}],"$L2","$L3","$L4","$L5"]]}],"$L6"]}],"$L7","$L8","$L9","$La","$Lb","$Lc","$Ld"]}],"$Le","$Lf"]}]],null,"$L10"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"uTLwy8y1XqDdC1cBzhQgX"}
+2:["$","option","cap-cana",{"value":"cap-cana","data-name":"Cap Cana","data-mindays":"","data-note":"","children":["Cap Cana",""]}]
+3:["$","option","bavaro",{"value":"bavaro","data-name":"Bávaro","data-mindays":"","data-note":"","children":["Bávaro",""]}]
+4:["$","option","casa-de-campo",{"value":"casa-de-campo","data-name":"Casa de Campo","data-mindays":7,"data-note":"Transporte sujeto a cotización.","children":["Casa de Campo"," (mínimo 7 días)"]}]
+5:["$","option","la-romana",{"value":"la-romana","data-name":"La Romana","data-mindays":7,"data-note":"Transporte sujeto a cotización.","children":["La Romana"," (mínimo 7 días)"]}]
+6:["$","p",null,{"id":"zona-note","hidden":true,"aria-live":"polite","className":"mt-1.5 text-xs font-semibold text-volt-dark"}]
+7:["$","div",null,{"children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"pasajeros","children":"Cantidad de pasajeros *"}],["$","select",null,{"id":"pasajeros","name":"pasajeros","required":true,"className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1","children":[["$","option",null,{"value":"","children":"Selecciona…"}],[["$","option","1",{"value":1,"children":1}],["$","option","2",{"value":2,"children":2}],["$","option","3",{"value":3,"children":3}],["$","option","4",{"value":4,"children":4}],["$","option","5",{"value":5,"children":5}],["$","option","6",{"value":6,"children":6}],["$","option","7+",{"value":"7+","children":"7+"}]]]}]]}]
+8:["$","div",null,{"className":"sm:col-span-2","children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"modelo","children":"Modelo"}],["$","select",null,{"id":"modelo","name":"modelo","className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1","children":[["$","option",null,{"value":"","children":"Recomiéndenme según mi grupo"}],[["$","option","eco-cross-4",{"value":"eco-cross-4","data-name":"ECO Cross","data-pax":4,"children":["ECO Cross"," · ",4," ","plazas"]}],["$","option","eco-cross-4-2",{"value":"eco-cross-4-2","data-name":"ECO Cross 4+2","data-pax":6,"children":["ECO Cross 4+2"," · ",6," ","plazas"]}],["$","option","eco-plus-2-2",{"value":"eco-plus-2-2","data-name":"ECO Plus 2+2","data-pax":4,"children":["ECO Plus 2+2"," · ",4," ","plazas"]}],["$","option","eco-plus-4-2",{"value":"eco-plus-4-2","data-name":"ECO Plus 4+2","data-pax":6,"children":["ECO Plus 4+2"," · ",6," ","plazas"]}],["$","option","eco-track-4-2",{"value":"eco-track-4-2","data-name":"ECO Track 4+2","data-pax":6,"children":["ECO Track 4+2"," · ",6," ","plazas"]}],["$","option","eco-sport-4-2",{"value":"eco-sport-4-2","data-name":"ECO Sport 4+2","data-pax":6,"children":["ECO Sport 4+2"," · ",6," ","plazas"]}],["$","option","cc-limo-4-2",{"value":"cc-limo-4-2","data-name":"Club Car Precedent Limo 4+2","data-pax":6,"children":["Club Car Precedent Limo 4+2"," · ",6," ","plazas"]}],["$","option","cc-precedent-2-2",{"value":"cc-precedent-2-2","data-name":"Club Car Precedent 2+2","data-pax":4,"children":["Club Car Precedent 2+2"," · ",4," ","plazas"]}],["$","option","cc-tempo-2-2",{"value":"cc-tempo-2-2","data-name":"Club Car Tempo 2+2","data-pax":4,"children":["Club Car Tempo 2+2"," · ",4," ","plazas"]}],["$","option","zycar-4",{"value":"zycar-4","data-name":"Zycar 4","data-pax":4,"children":["Zycar 4"," · ",4," ","plazas"]}],["$","option","zycar-4-2",{"value":"zycar-4-2","data-name":"Zycar 4+2","data-pax":6,"children":["Zycar 4+2"," · ",6," ","plazas"]}]]]}]]}]
+9:["$","div",null,{"className":"sm:col-span-2","children":[["$","label",null,{"className":"block text-sm font-bold text-ink","htmlFor":"comentarios","children":"Comentarios adicionales"}],["$","textarea",null,{"id":"comentarios","name":"comentarios","rows":3,"className":"w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1","placeholder":"Nombre de la villa, horario de llegada, ocasión especial…"}]]}]
+a:["$","div",null,{"className":"hidden","aria-hidden":"true","children":["$","label",null,{"htmlFor":"extra-notas","children":["No llenar",["$","input",null,{"id":"extra-notas","name":"empresa","tabIndex":-1,"autoComplete":"off"}]]}]}]
+b:["$","p",null,{"id":"min-warning","hidden":true,"aria-live":"polite","className":"rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2"}]
+c:["$","p",null,{"id":"form-error","hidden":true,"role":"alert","className":"rounded-box bg-red-50 px-4 py-3 text-sm font-semibold text-danger sm:col-span-2"}]
+d:["$","div",null,{"className":"sm:col-span-2","children":[["$","button",null,{"type":"submit","className":"w-full rounded-full bg-volt px-8 py-4 text-base font-bold text-ink transition-transform hover:scale-[1.02] sm:w-auto","children":[["$","svg",null,{"width":"10.8","height":15,"viewBox":"0 0 100 140","fill":"currentColor","aria-hidden":"true","className":"mr-1.5 inline-block align-[-0.15em]","children":["$","path",null,{"d":"M58 0 L0 78 L36 78 L28 140 L100 50 L60 50 L70 0 Z"}]}],"Enviar solicitud por WhatsApp"]}],["$","p",null,{"className":"mt-3 text-xs text-steel","children":["Al enviar se abrirá WhatsApp con tu solicitud lista — solo presiona enviar. También puedes escribirnos a"," ",["$","a",null,{"href":"mailto:info@krexpert.com","className":"underline","children":"info@krexpert.com"}],"."]}],["$","p",null,{"className":"mt-2 text-xs text-steel","children":["Al enviar tu solicitud aceptas nuestros"," ",["$","$L11",null,{"href":"/terminos","className":"underline","children":"Términos y Condiciones"}]," ","y nuestra"," ",["$","$L11",null,{"href":"/privacidad","className":"underline","children":"Política de Privacidad"}],"."]}]]}]
+e:["$","div",null,{"id":"req-success","hidden":true,"role":"status","tabIndex":-1,"className":"rounded-card border border-line bg-cream p-8 text-center outline-none","children":[["$","svg",null,{"width":"31.7","height":44,"viewBox":"0 0 100 140","fill":"currentColor","aria-hidden":"true","className":"mx-auto text-volt","children":["$","path",null,{"d":"M58 0 L0 78 L36 78 L28 140 L100 50 L60 50 L70 0 Z"}]}],["$","h2",null,{"className":"mt-3 font-display text-2xl font-extrabold","children":"Solicitud enviada"}],["$","p",null,{"className":"mx-auto mt-3 max-w-lg text-inktext","children":"Gracias por su solicitud. Nuestro equipo verificará la disponibilidad y se comunicará con usted lo antes posible para confirmar su reserva y ofrecerle la mejor opción disponible."}],["$","p",null,{"className":"mt-4 text-sm text-steel","children":["Si WhatsApp no se abrió automáticamente, escríbenos directo al"," ",["$","a",null,{"id":"wa-fallback","href":"https://wa.me/18098398515","className":"font-bold text-ink underline","target":"_blank","rel":"noopener noreferrer","children":"+1 809 839 8515"}],"."]}]]}]
+12:T14f7,
+(function(){
+  var P={"phone":"18098398515","header":"⚡ SOLICITUD DE DISPONIBILIDAD — boltgolfcars.com","plazas":"plazas","recommend":"Por recomendar","day":"día","days":"días","f":{"nombre":"Nombre","email":"Email","whatsapp":"WhatsApp","modelo":"Modelo","llegada":"Llegada","salida":"Salida","entrega":"Entrega","pasajeros":"Pasajeros","comentarios":"Comentarios"},"errFechas":"Selecciona tus fechas de llegada y salida.","errOrden":"La fecha de salida debe ser posterior a la fecha de llegada.","errMin":"Para entregas en {name} el mínimo es de {min} días. Ajusta tus fechas o elige otra zona de entrega.","warnMin":"Para {name} el mínimo es de {min} días — tu selección actual es de {days} {dayword}.","zoneNoteTpl":"{name}: reservas de {min}+ días · {note}"};
+  var form=document.getElementById('req-form');
+  if(!form)return;
+  var $=function(id){return document.getElementById(id);};
+  var llegada=$('llegada'),salida=$('salida'),zona=$('zona'),modelo=$('modelo');
+  var zonaNote=$('zona-note'),warn=$('min-warning'),err=$('form-error');
+
+  // Fechas RD locales: se parsean por componentes (no UTC) para un conteo exacto.
+  function diffDays(a,b){if(!a||!b)return 0;var x=a.split('-'),y=b.split('-');return Math.round((new Date(+y[0],+y[1]-1,+y[2])-new Date(+x[0],+x[1]-1,+x[2]))/86400000);}
+  function zopt(){return zona.options[zona.selectedIndex];}
+  function fill(tpl,map){return tpl.replace(/\{(\w+)\}/g,function(_,k){return map[k]!=null?map[k]:'';});}
+  function val(id){var el=$(id);return el?el.value.trim():'';}
+
+  function syncDeps(){
+    var o=zopt();
+    var md=o?o.getAttribute('data-mindays'):'';
+    var note=o?o.getAttribute('data-note'):'';
+    var name=o?o.getAttribute('data-name'):'';
+    if(md&&note){zonaNote.textContent=fill(P.zoneNoteTpl,{name:name,min:md,note:note});zonaNote.hidden=false;}
+    else{zonaNote.hidden=true;zonaNote.textContent='';}
+    var d=diffDays(llegada.value,salida.value);
+    if(md&&d>0&&d<+md){
+      warn.textContent=fill(P.warnMin,{name:name,min:md,days:d,dayword:d===1?P.day:P.days});
+      warn.hidden=false;
+    }else{warn.hidden=true;warn.textContent='';}
+  }
+
+  function clearError(){
+    err.hidden=true;err.textContent='';
+    [llegada,salida,zona].forEach(function(fld){fld.removeAttribute('aria-invalid');fld.removeAttribute('aria-describedby');});
+  }
+  function showError(msg,fld){
+    err.textContent=msg;err.hidden=false;
+    if(fld){fld.setAttribute('aria-invalid','true');fld.setAttribute('aria-describedby','form-error');fld.focus();}
+    err.scrollIntoView({block:'center',behavior:'smooth'});
+  }
+
+  function track(ev){(window.__boltEvents=window.__boltEvents||[]).push({event:ev,path:location.pathname,t:Date.now()});}
+
+  function buildMsg(d){
+    var o=zopt();
+    var zoneName=o&&o.value?o.getAttribute('data-name'):'';
+    var zoneNote=o?o.getAttribute('data-note'):'';
+    var mo=modelo.options[modelo.selectedIndex];
+    var modelStr=(mo&&mo.value)?(mo.getAttribute('data-name')+' ('+mo.getAttribute('data-pax')+' '+P.plazas+')'):P.recommend;
+    var f=P.f;
+    var lines=[
+      P.header,'',
+      f.nombre+': '+val('nombre'),
+      f.email+': '+val('email'),
+      f.whatsapp+': '+val('whatsapp'),
+      f.modelo+': '+modelStr,
+      f.llegada+': '+val('llegada'),
+      f.salida+': '+val('salida')+(d>0?(' ('+d+' '+(d===1?P.day:P.days)+')'):''),
+      f.entrega+': '+zoneName+(zoneNote?(' — '+zoneNote):''),
+      f.pasajeros+': '+val('pasajeros'),
+      val('comentarios')?(f.comentarios+': '+val('comentarios')):''
+    ];
+    return lines.filter(Boolean).join('\n');
+  }
+
+  function succeed(){
+    form.hidden=true;
+    var s=$('req-success');
+    s.hidden=false;
+    s.focus();
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    clearError();
+    if(val('empresa')){succeed();return;} // honeypot: éxito falso, sin abrir WhatsApp
+    var la=llegada.value,sa=salida.value;
+    if(!la||!sa){showError(P.errFechas,!la?llegada:salida);return;}
+    var d=diffDays(la,sa);
+    if(d<=0){showError(P.errOrden,salida);return;}
+    var o=zopt();
+    var md=o?+(o.getAttribute('data-mindays')||0):0;
+    if(md&&d<md){showError(fill(P.errMin,{name:o.getAttribute('data-name'),min:md}),salida);return;}
+    var url='https://wa.me/'+P.phone+'?text='+encodeURIComponent(buildMsg(d));
+    track('form_submit');track('form_open_whatsapp');
+    var fb=$('wa-fallback');if(fb)fb.setAttribute('href',url);
+    window.open(url,'_blank','noopener,noreferrer');
+    succeed();
+  });
+  // salida.min se ajusta al elegir la llegada — interacción del usuario, ya
+  // post-hidratación, así que mutar el atributo aquí no provoca mismatch.
+  llegada.addEventListener('change',function(){salida.min=llegada.value;syncDeps();});
+  salida.addEventListener('change',syncDeps);
+  zona.addEventListener('change',syncDeps);
+
+  // Preselección ?modelo y avisos iniciales. selectedIndex es una propiedad (no
+  // un atributo que React reconcilie en un <select> no controlado), así que no
+  // genera mismatch de hidratación.
+  function initState(){
+    var pre=new URLSearchParams(location.search).get('modelo');
+    if(pre){for(var i=0;i<modelo.options.length;i++){if(modelo.options[i].value===pre){modelo.selectedIndex=i;break;}}}
+    syncDeps();
+  }
+  if(document.readyState==='complete')initState();
+  else window.addEventListener('load',initState);
+})();
+f:["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$12"}}]
+10:["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]
+15:null
