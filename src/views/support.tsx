@@ -65,7 +65,7 @@ const T = {
     ],
     speedTitle: "Velocidades máximas",
     speeds: [
-      ["Modelos Club Car (Precedent, Tempo, Limo)", "20–31 km/h"],
+      ["Club Car Precedent (4 y 6 plazas)", "20–31 km/h"],
       ["Modelos Zycar", "30–35 km/h"],
       ["Modelos ECO (Plus, Sport, Cross, Track)", "30–35 km/h"],
       ["Zona residencial", "MAX 25 km/h"],
@@ -148,7 +148,7 @@ const T = {
     ],
     speedTitle: "Maximum speeds",
     speeds: [
-      ["Club Car models (Precedent, Tempo, Limo)", "20–31 km/h"],
+      ["Club Car Precedent (4 & 6 seats)", "20–31 km/h"],
       ["Zycar models", "30–35 km/h"],
       ["ECO models (Plus, Sport, Cross, Track)", "30–35 km/h"],
       ["Residential areas", "MAX 25 km/h"],
