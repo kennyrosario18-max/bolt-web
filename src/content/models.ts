@@ -42,8 +42,8 @@ export function lineName(line: Model["line"], locale: "es" | "en"): string {
 
 /** Traducciones EN de las descripciones (el JSON original solo trae ES). */
 export const DESC_EN: Record<string, string> = {
-  "eco-cross-4": "Compact ECO line for 4 passengers. Ideal for residential communities and resorts.",
-  "eco-cross-4-2": "Extended ECO Cross for up to 6 passengers, with premium lithium battery options.",
+  "eco-cross-4": "Compact ECO Cross for 4 passengers with all seats facing forward.",
+  "eco-cross-4-2": "ECO Cross 4+2: the extended 6-passenger version of the ECO Cross.",
   "eco-plus-2-2": "ECO Plus in a 2+2 layout with rear-facing seats for 4 passengers.",
   "eco-plus-4-2": "6-passenger ECO Plus — maximum comfort for families and groups.",
   "eco-track-4-2": "All-terrain ECO with reinforced suspension and 150 Ah lithium. Seats 6.",

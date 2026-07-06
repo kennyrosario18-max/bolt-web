@@ -7,7 +7,7 @@
     "cap": "360 kg",
     "range_lead": "25–40 km",
     "range_li": "60–70 km",
-    "desc": "Línea ECO compacta para 4 pasajeros. Ideal para residenciales y resorts.",
+    "desc": "ECO Cross compacto de 4 pasajeros con todos los asientos mirando hacia adelante.",
     "pax": 4,
     "batteries": [
       {
@@ -25,7 +25,7 @@
     "cap": "540 kg",
     "range_lead": "25–40 km",
     "range_li": "85–95 km",
-    "desc": "Versión extendida del ECO Cross para grupos de hasta 6 pasajeros.",
+    "desc": "ECO Cross 4+2: la versión extendida de 6 pasajeros del ECO Cross.",
     "pax": 6,
     "batteries": [
       {
