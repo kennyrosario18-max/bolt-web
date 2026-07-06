@@ -1,12 +1,13 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { MODELS, getModel } from "@/content/models";
-import { CONTACT, ZONES, waLink } from "@/content/site";
+import { MODELS } from "@/content/models";
+import { CONTACT, ZONES } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
+import { RequestFormEnhance } from "./request-form-enhance";
 import type { Locale } from "@/lib/i18n";
-import { track } from "@/lib/analytics";
+
+/** Formulario de disponibilidad — server component sin React. El HTML es nativo
+ *  (campos no controlados) y <RequestFormEnhance> añade validación, reglas de
+ *  negocio, armado del wa.me, captura dual y a11y en vanilla, sin hidratación. */
 
 const T = {
   es: {
@@ -15,17 +16,7 @@ const T = {
     sentTitle: "Solicitud enviada",
     waFallback: "Si WhatsApp no se abrió automáticamente, escríbenos directo al",
     header: "⚡ SOLICITUD DE DISPONIBILIDAD — boltgolfcars.com",
-    fields: {
-      nombre: "Nombre",
-      email: "Email",
-      whatsapp: "WhatsApp",
-      modelo: "Modelo",
-      llegada: "Llegada",
-      salida: "Salida",
-      entrega: "Entrega",
-      pasajeros: "Pasajeros",
-      comentarios: "Comentarios",
-    },
+    fields: { nombre: "Nombre", email: "Email", whatsapp: "WhatsApp", modelo: "Modelo", llegada: "Llegada", salida: "Salida", entrega: "Entrega", pasajeros: "Pasajeros", comentarios: "Comentarios" },
     recommend: "Por recomendar",
     day: "día",
     days: "días",
@@ -37,7 +28,7 @@ const T = {
     lZona: "Lugar de entrega *",
     zonaPlaceholder: "Selecciona la zona…",
     minDays: (n: number) => ` (mínimo ${n} días)`,
-    zoneNote: (name: string, n: number, note: string) => `${name}: reservas de ${n}+ días · ${note}`,
+    zoneNoteTpl: "{name}: reservas de {min}+ días · {note}",
     lPasajeros: "Cantidad de pasajeros *",
     pasajerosPlaceholder: "Selecciona…",
     lModelo: "Modelo",
@@ -47,10 +38,8 @@ const T = {
     comentariosPlaceholder: "Nombre de la villa, horario de llegada, ocasión especial…",
     errFechas: "Selecciona tus fechas de llegada y salida.",
     errOrden: "La fecha de salida debe ser posterior a la fecha de llegada.",
-    errMin: (name: string, min: number) =>
-      `Para entregas en ${name} el mínimo es de ${min} días. Ajusta tus fechas o elige otra zona de entrega.`,
-    warnMin: (name: string | undefined, min: number | undefined, days: number) =>
-      `Para ${name} el mínimo es de ${min} días — tu selección actual es de ${days} día${days === 1 ? "" : "s"}.`,
+    errMin: "Para entregas en {name} el mínimo es de {min} días. Ajusta tus fechas o elige otra zona de entrega.",
+    warnMin: "Para {name} el mínimo es de {min} días — tu selección actual es de {days} {dayword}.",
     submit: "Enviar solicitud por WhatsApp",
     legalPre: "Al enviar tu solicitud aceptas nuestros",
     legalTerms: "Términos y Condiciones",
@@ -58,8 +47,7 @@ const T = {
     legalPrivacy: "Política de Privacidad",
     termsHref: "/terminos",
     privacyHref: "/privacidad",
-    disclaimer:
-      "Al enviar se abrirá WhatsApp con tu solicitud lista — solo presiona enviar. También puedes escribirnos a",
+    disclaimer: "Al enviar se abrirá WhatsApp con tu solicitud lista — solo presiona enviar. También puedes escribirnos a",
   },
   en: {
     success:
@@ -67,17 +55,7 @@ const T = {
     sentTitle: "Request sent",
     waFallback: "If WhatsApp didn't open automatically, message us directly at",
     header: "⚡ AVAILABILITY REQUEST — boltgolfcars.com",
-    fields: {
-      nombre: "Name",
-      email: "Email",
-      whatsapp: "WhatsApp",
-      modelo: "Model",
-      llegada: "Arrival",
-      salida: "Departure",
-      entrega: "Delivery",
-      pasajeros: "Passengers",
-      comentarios: "Comments",
-    },
+    fields: { nombre: "Name", email: "Email", whatsapp: "WhatsApp", modelo: "Model", llegada: "Arrival", salida: "Departure", entrega: "Delivery", pasajeros: "Passengers", comentarios: "Comments" },
     recommend: "Recommend one for my group",
     day: "day",
     days: "days",
@@ -89,7 +67,7 @@ const T = {
     lZona: "Delivery location *",
     zonaPlaceholder: "Select your zone…",
     minDays: (n: number) => ` (${n}-day minimum)`,
-    zoneNote: (name: string, n: number, note: string) => `${name}: ${n}+ day rentals · ${note}`,
+    zoneNoteTpl: "{name}: {min}+ day rentals · {note}",
     lPasajeros: "Number of passengers *",
     pasajerosPlaceholder: "Select…",
     lModelo: "Model",
@@ -99,10 +77,8 @@ const T = {
     comentariosPlaceholder: "Villa name, arrival time, special occasion…",
     errFechas: "Select your arrival and departure dates.",
     errOrden: "The departure date must be after the arrival date.",
-    errMin: (name: string, min: number) =>
-      `Deliveries in ${name} require a minimum of ${min} days. Adjust your dates or choose another delivery zone.`,
-    warnMin: (name: string | undefined, min: number | undefined, days: number) =>
-      `${name} requires a ${min}-day minimum — your current selection is ${days} day${days === 1 ? "" : "s"}.`,
+    errMin: "Deliveries in {name} require a minimum of {min} days. Adjust your dates or choose another delivery zone.",
+    warnMin: "{name} requires a {min}-day minimum — your current selection is {days} {dayword}.",
     submit: "Send request via WhatsApp",
     legalPre: "By sending your request you accept our",
     legalTerms: "Terms & Conditions",
@@ -114,286 +90,152 @@ const T = {
   },
 } as const;
 
-interface FormState {
-  nombre: string;
-  email: string;
-  whatsapp: string;
-  llegada: string;
-  salida: string;
-  zona: string;
-  pasajeros: string;
-  modelo: string;
-  comentarios: string;
-  /** Honeypot anti-spam: los humanos no lo ven ni lo llenan. */
-  empresa: string;
-}
-
-function daysBetween(a: string, b: string): number {
-  if (!a || !b) return 0;
-  return Math.round((new Date(b).getTime() - new Date(a).getTime()) / 86_400_000);
-}
-
 const inputCls =
   "w-full rounded-box border border-steel/60 bg-white px-4 py-3 text-base text-ink outline-none transition-colors focus:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-1";
 const labelCls = "block text-sm font-bold text-ink";
 
 export function RequestForm({ locale = "es" }: { locale?: Locale }) {
   const t = T[locale];
+  const es = locale === "es";
 
-  const [form, setForm] = useState<FormState>({
-    nombre: "",
-    email: "",
-    whatsapp: "",
-    llegada: "",
-    salida: "",
-    zona: "",
-    pasajeros: "",
-    modelo: "",
-    comentarios: "",
-    empresa: "",
-  });
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState("");
+  const payload = {
+    phone: CONTACT.whatsapp,
+    header: t.header,
+    plazas: t.plazas,
+    recommend: t.recommend,
+    day: t.day,
+    days: t.days,
+    f: t.fields,
+    errFechas: t.errFechas,
+    errOrden: t.errOrden,
+    errMin: t.errMin,
+    warnMin: t.warnMin,
+    zoneNoteTpl: t.zoneNoteTpl,
+  };
 
-  // Preselección desde ?modelo= leída post-mount: permite prerenderizar el
-  // formulario completo sin useSearchParams/Suspense (export estático). El
-  // setState al montar es intencional — el SSG renderiza vacío y el cliente
-  // aplica el query una sola vez, evitando cualquier mismatch de hidratación.
-  useEffect(() => {
-    const id = new URLSearchParams(window.location.search).get("modelo") ?? "";
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (getModel(id)) setForm((f) => ({ ...f, modelo: id }));
-  }, []);
+  return (
+    <>
+      <form id="req-form" className="grid gap-5 sm:grid-cols-2">
+        <div className="sm:col-span-2">
+          <label className={labelCls} htmlFor="nombre">{t.lNombre}</label>
+          <input id="nombre" name="nombre" required className={inputCls} autoComplete="name" />
+        </div>
 
-  const zone = ZONES.find((z) => z.id === form.zona);
-  const days = daysBetween(form.llegada, form.salida);
-  const needsMinDays = Boolean(zone?.minDays) && days > 0 && days < (zone?.minDays ?? 0);
-  const zoneNote = locale === "es" ? zone?.note : zone?.noteEn;
+        <div>
+          <label className={labelCls} htmlFor="email">{t.lEmail}</label>
+          <input id="email" name="email" type="email" required className={inputCls} autoComplete="email" />
+        </div>
+        <div>
+          <label className={labelCls} htmlFor="whatsapp">{t.lWhatsapp}</label>
+          <input id="whatsapp" name="whatsapp" type="tel" required placeholder="+1 809 000 0000" className={inputCls} autoComplete="tel" />
+        </div>
 
-  const set =
-    (key: keyof FormState) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
-      setForm((f) => ({ ...f, [key]: e.target.value }));
+        <div>
+          <label className={labelCls} htmlFor="llegada">{t.lLlegada}</label>
+          <input id="llegada" name="llegada" type="date" required className={inputCls} />
+        </div>
+        <div>
+          <label className={labelCls} htmlFor="salida">{t.lSalida}</label>
+          <input id="salida" name="salida" type="date" required className={inputCls} />
+        </div>
 
-  const summary = useMemo(() => {
-    const model = getModel(form.modelo);
-    const f = t.fields;
-    return [
-      t.header,
-      "",
-      `${f.nombre}: ${form.nombre}`,
-      `${f.email}: ${form.email}`,
-      `${f.whatsapp}: ${form.whatsapp}`,
-      `${f.modelo}: ${model ? `${model.name} (${model.pax} ${t.plazas})` : t.recommend}`,
-      `${f.llegada}: ${form.llegada}`,
-      `${f.salida}: ${form.salida}${days > 0 ? ` (${days} ${days === 1 ? t.day : t.days})` : ""}`,
-      `${f.entrega}: ${zone?.name ?? ""}${zoneNote ? ` — ${zoneNote}` : ""}`,
-      `${f.pasajeros}: ${form.pasajeros}`,
-      form.comentarios ? `${f.comentarios}: ${form.comentarios}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-  }, [form, zone, zoneNote, days, t]);
+        <div>
+          <label className={labelCls} htmlFor="zona">{t.lZona}</label>
+          <select id="zona" name="zona" required className={inputCls}>
+            <option value="">{t.zonaPlaceholder}</option>
+            {ZONES.map((z) => (
+              <option
+                key={z.id}
+                value={z.id}
+                data-name={z.name}
+                data-mindays={z.minDays ?? ""}
+                data-note={(es ? z.note : z.noteEn) ?? ""}
+              >
+                {z.name}
+                {z.minDays ? t.minDays(z.minDays) : ""}
+              </option>
+            ))}
+          </select>
+          <p id="zona-note" hidden aria-live="polite" className="mt-1.5 text-xs font-semibold text-volt-dark" />
+        </div>
+        <div>
+          <label className={labelCls} htmlFor="pasajeros">{t.lPasajeros}</label>
+          <select id="pasajeros" name="pasajeros" required className={inputCls}>
+            <option value="">{t.pasajerosPlaceholder}</option>
+            {[1, 2, 3, 4, 5, 6, "7+"].map((n) => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
+        </div>
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setError("");
+        <div className="sm:col-span-2">
+          <label className={labelCls} htmlFor="modelo">{t.lModelo}</label>
+          <select id="modelo" name="modelo" className={inputCls}>
+            <option value="">{t.modeloPlaceholder}</option>
+            {MODELS.map((m) => (
+              <option key={m.id} value={m.id} data-name={m.name} data-pax={m.pax}>
+                {m.name} · {m.pax} {t.plazas}
+              </option>
+            ))}
+          </select>
+        </div>
 
-    if (form.empresa) {
-      // Bot atrapado por el honeypot: fingimos éxito sin abrir WhatsApp.
-      setSent(true);
-      return;
-    }
-    if (!form.llegada || !form.salida || Number.isNaN(days)) {
-      setError(t.errFechas);
-      return;
-    }
-    if (days <= 0) {
-      setError(t.errOrden);
-      return;
-    }
-    if (zone?.minDays && days < zone.minDays) {
-      setError(t.errMin(zone.name, zone.minDays));
-      return;
-    }
+        <div className="sm:col-span-2">
+          <label className={labelCls} htmlFor="comentarios">{t.lComentarios}</label>
+          <textarea id="comentarios" name="comentarios" rows={3} className={inputCls} placeholder={t.comentariosPlaceholder} />
+        </div>
 
-    track("form_submit", { zona: form.zona, pasajeros: form.pasajeros, modelo: form.modelo });
-    window.open(waLink(summary), "_blank", "noopener,noreferrer");
-    setSent(true);
-  }
+        {/* Honeypot invisible para bots */}
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="extra-notas">
+            No llenar
+            <input id="extra-notas" name="empresa" tabIndex={-1} autoComplete="off" />
+          </label>
+        </div>
 
-  if (sent) {
-    return (
-      <div className="rounded-card border border-line bg-cream p-8 text-center">
+        <p id="min-warning" hidden aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2" />
+        <p id="form-error" hidden role="alert" className="rounded-box bg-red-50 px-4 py-3 text-sm font-semibold text-danger sm:col-span-2" />
+
+        <div className="sm:col-span-2">
+          <button
+            type="submit"
+            className="w-full rounded-full bg-volt px-8 py-4 text-base font-bold text-ink transition-transform hover:scale-[1.02] sm:w-auto"
+          >
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.submit}
+          </button>
+          <p className="mt-3 text-xs text-steel">
+            {t.disclaimer}{" "}
+            <a href={`mailto:${CONTACT.email}`} className="underline">{CONTACT.email}</a>.
+          </p>
+          <p className="mt-2 text-xs text-steel">
+            {t.legalPre}{" "}
+            <Link href={t.termsHref} className="underline">{t.legalTerms}</Link>{" "}
+            {t.legalAnd}{" "}
+            <Link href={t.privacyHref} className="underline">{t.legalPrivacy}</Link>.
+          </p>
+        </div>
+      </form>
+
+      {/* Pantalla de éxito — oculta hasta el envío; role=status la anuncia. */}
+      <div
+        id="req-success"
+        hidden
+        role="status"
+        tabIndex={-1}
+        className="rounded-card border border-line bg-cream p-8 text-center outline-none"
+      >
         <BoltIcon className="mx-auto text-volt" size={44} />
         <h2 className="mt-3 font-display text-2xl font-extrabold">{t.sentTitle}</h2>
         <p className="mx-auto mt-3 max-w-lg text-inktext">{t.success}</p>
         <p className="mt-4 text-sm text-steel">
           {t.waFallback}{" "}
-          <a
-            href={waLink(summary)}
-            className="font-bold text-ink underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a id="wa-fallback" href={`https://wa.me/${CONTACT.whatsapp}`} className="font-bold text-ink underline" target="_blank" rel="noopener noreferrer">
             {CONTACT.phoneDisplay}
-          </a>
-          .
+          </a>.
         </p>
       </div>
-    );
-  }
 
-  return (
-    <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">
-      <div className="sm:col-span-2">
-        <label className={labelCls} htmlFor="nombre">
-          {t.lNombre}
-        </label>
-        <input id="nombre" required value={form.nombre} onChange={set("nombre")} className={inputCls} autoComplete="name" />
-      </div>
-
-      <div>
-        <label className={labelCls} htmlFor="email">
-          {t.lEmail}
-        </label>
-        <input id="email" type="email" required value={form.email} onChange={set("email")} className={inputCls} autoComplete="email" />
-      </div>
-      <div>
-        <label className={labelCls} htmlFor="whatsapp">
-          {t.lWhatsapp}
-        </label>
-        <input
-          id="whatsapp"
-          type="tel"
-          required
-          placeholder="+1 809 000 0000"
-          value={form.whatsapp}
-          onChange={set("whatsapp")}
-          className={inputCls}
-          autoComplete="tel"
-        />
-      </div>
-
-      <div>
-        <label className={labelCls} htmlFor="llegada">
-          {t.lLlegada}
-        </label>
-        <input id="llegada" type="date" required min={new Date().toISOString().slice(0, 10)} value={form.llegada} onChange={set("llegada")} className={inputCls} />
-      </div>
-      <div>
-        <label className={labelCls} htmlFor="salida">
-          {t.lSalida}
-        </label>
-        <input id="salida" type="date" required min={form.llegada || new Date().toISOString().slice(0, 10)} value={form.salida} onChange={set("salida")} className={inputCls} />
-      </div>
-
-      <div>
-        <label className={labelCls} htmlFor="zona">
-          {t.lZona}
-        </label>
-        <select id="zona" required value={form.zona} onChange={set("zona")} className={inputCls}>
-          <option value="">{t.zonaPlaceholder}</option>
-          {ZONES.map((z) => (
-            <option key={z.id} value={z.id}>
-              {z.name}
-              {z.minDays ? t.minDays(z.minDays) : ""}
-            </option>
-          ))}
-        </select>
-        {zoneNote && zone?.minDays ? (
-          <p className="mt-1.5 text-xs font-semibold text-volt-dark">
-            {t.zoneNote(zone.name, zone.minDays, zoneNote)}
-          </p>
-        ) : null}
-      </div>
-      <div>
-        <label className={labelCls} htmlFor="pasajeros">
-          {t.lPasajeros}
-        </label>
-        <select id="pasajeros" required value={form.pasajeros} onChange={set("pasajeros")} className={inputCls}>
-          <option value="">{t.pasajerosPlaceholder}</option>
-          {[1, 2, 3, 4, 5, 6, "7+"].map((n) => (
-            <option key={n} value={n}>
-              {n}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="sm:col-span-2">
-        <label className={labelCls} htmlFor="modelo">
-          {t.lModelo}
-        </label>
-        <select id="modelo" value={form.modelo} onChange={set("modelo")} className={inputCls}>
-          <option value="">{t.modeloPlaceholder}</option>
-          {MODELS.map((m) => (
-            <option key={m.id} value={m.id}>
-              {m.name} · {m.pax} {t.plazas}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="sm:col-span-2">
-        <label className={labelCls} htmlFor="comentarios">
-          {t.lComentarios}
-        </label>
-        <textarea
-          id="comentarios"
-          rows={3}
-          value={form.comentarios}
-          onChange={set("comentarios")}
-          className={inputCls}
-          placeholder={t.comentariosPlaceholder}
-        />
-      </div>
-
-      {/* Honeypot invisible para bots */}
-      <div className="hidden" aria-hidden="true">
-        <label htmlFor="extra-notas">
-          No llenar
-          <input id="extra-notas" tabIndex={-1} autoComplete="off" value={form.empresa} onChange={set("empresa")} />
-        </label>
-      </div>
-
-      {needsMinDays ? (
-        <p className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2">
-          {t.warnMin(zone?.name, zone?.minDays, days)}
-        </p>
-      ) : null}
-      {error ? (
-        <p role="alert" className="rounded-box bg-red-50 px-4 py-3 text-sm font-semibold text-danger sm:col-span-2">
-          {error}
-        </p>
-      ) : null}
-
-      <div className="sm:col-span-2">
-        <button
-          type="submit"
-          className="w-full rounded-full bg-volt px-8 py-4 text-base font-bold text-ink transition-transform hover:scale-[1.02] sm:w-auto"
-        >
-          <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.submit}
-        </button>
-        <p className="mt-3 text-xs text-steel">
-          {t.disclaimer}{" "}
-          <a href={`mailto:${CONTACT.email}`} className="underline">
-            {CONTACT.email}
-          </a>
-          .
-        </p>
-        <p className="mt-2 text-xs text-steel">
-          {t.legalPre}{" "}
-          <Link href={t.termsHref} className="underline">
-            {t.legalTerms}
-          </Link>{" "}
-          {t.legalAnd}{" "}
-          <Link href={t.privacyHref} className="underline">
-            {t.legalPrivacy}
-          </Link>
-          .
-        </p>
-      </div>
-    </form>
+      <RequestFormEnhance payload={payload} />
+    </>
   );
 }
