@@ -16,6 +16,7 @@ const TRUST_ICONS = [BoltIcon, PinIcon, ShieldIcon, ChatIcon];
 const T = {
   es: {
     kicker: "Punta Cana · República Dominicana",
+    h1: "Renta y venta de golf carts en Punta Cana",
     leadA: "Renta y venta de golf carts premium, entregados en tu villa en ",
     pcrc: "Puntacana Resort & Club",
     leadB: ", Cap Cana y Bávaro.",
@@ -74,6 +75,7 @@ const T = {
   },
   en: {
     kicker: "Punta Cana · Dominican Republic",
+    h1: "Golf cart rental & sales in Punta Cana",
     leadA: "Premium golf carts — rental & sales — delivered to your villa in ",
     pcrc: "Puntacana Resort & Club",
     leadB: ", Cap Cana and Bávaro.",
@@ -144,9 +146,12 @@ export function HomeView({ locale }: { locale: Locale }) {
       <section className="bg-ink text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 md:grid-cols-2 md:pb-24 md:pt-20">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-volt">{t.kicker}</p>
+            {/* F7: eslogan a kicker (marca) y H1 con keyword para SEO. */}
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-volt">
+              {SLOGAN.replace(/\.$/, "")} · {t.kicker}
+            </p>
             <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {SLOGAN}
+              {t.h1}
             </h1>
             <p className="mt-5 max-w-md text-lg text-white/75">
               {t.leadA}

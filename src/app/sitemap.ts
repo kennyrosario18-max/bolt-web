@@ -16,12 +16,12 @@ function pair(es: string, en: string, priority: number): MetadataRoute.Sitemap {
     {
       url: `${SITE}${es}`,
       priority,
-      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${es}` } },
+      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${en}` } },
     },
     {
       url: `${SITE}${en}`,
       priority,
-      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${es}` } },
+      alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${en}` } },
     },
   ];
 }

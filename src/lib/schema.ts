@@ -30,6 +30,14 @@ export const LOCAL_BUSINESS = {
     addressRegion: "La Altagracia",
     addressCountry: "DO",
   },
+  // Geo aproximado de Bávaro/Av. Barceló (refinar con la ubicación exacta de GBP).
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 18.6833,
+    longitude: -68.4167,
+  },
+  hasMap:
+    "https://www.google.com/maps/search/?api=1&query=Av.%20Barcel%C3%B3%20Km%203%201%2F2%2C%20B%C3%A1varo%2C%20La%20Altagracia",
   areaServed: ZONES.map((z) => ({ "@type": "Place", name: z.name })),
   sameAs: [CONTACT.instagram],
   priceRange: `US$${MIN_PRICE}–US$${MAX_PRICE}`,

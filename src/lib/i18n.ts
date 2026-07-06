@@ -49,7 +49,8 @@ export function hreflang(esPath: string, enPath: string) {
     languages: {
       "es": esPath,
       en: enPath,
-      "x-default": esPath,
+      // x-default → EN: capta la demanda internacional/anglófona (no hispanohablante).
+      "x-default": enPath,
     },
   };
 }
