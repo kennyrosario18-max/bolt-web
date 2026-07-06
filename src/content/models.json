@@ -74,9 +74,16 @@
     "speed": "30–35 km/h",
     "cap": "540 kg",
     "range_lead": "50–75 km",
-    "range_li": "80–110 km",
+    "range_li": "85–95 km",
     "desc": "Variante todoterreno con suspensión reforzada, para 6 pasajeros.",
-    "pax": 6
+    "pax": 6,
+    "batteries": [
+      {
+        "name": "Litio de largo alcance 150 Ah",
+        "nameEn": "Long-range lithium 150 Ah",
+        "range": "85–95 km"
+      }
+    ]
   },
   {
     "id": "eco-sport-4-2",
