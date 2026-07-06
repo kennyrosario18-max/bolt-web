@@ -71,6 +71,20 @@
 <priority>0.7</priority>
 </url>
 <url>
+<loc>https://boltgolfcars.com/venta/</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://boltgolfcars.com/venta/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://boltgolfcars.com/en/golf-carts-for-sale/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://boltgolfcars.com/venta/" />
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://boltgolfcars.com/en/golf-carts-for-sale/</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://boltgolfcars.com/venta/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://boltgolfcars.com/en/golf-carts-for-sale/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://boltgolfcars.com/venta/" />
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://boltgolfcars.com/nosotros/</loc>
 <xhtml:link rel="alternate" hreflang="es" href="https://boltgolfcars.com/nosotros/" />
 <xhtml:link rel="alternate" hreflang="en" href="https://boltgolfcars.com/en/about/" />
