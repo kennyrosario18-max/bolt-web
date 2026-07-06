@@ -9,6 +9,7 @@ import {
   type Model,
 } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
+import { BoltIcon, CheckIcon } from "@/components/icons";
 import { PRICING, priceFrom, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema, productSchema } from "@/lib/schema";
@@ -20,7 +21,7 @@ const T = {
     crumb: "Flota",
     crumbHref: "/flota",
     perDay: "/día",
-    reqCta: "⚡ Solicitar disponibilidad",
+    reqCta: "Solicitar disponibilidad",
     reqHref: (id: string) => `/solicitar-disponibilidad?modelo=${id}`,
     waCta: "Consultar por WhatsApp",
     waMsg: (m: Model) => `Hola BOLT ⚡ Quiero consultar disponibilidad del ${m.name} (${m.pax} plazas).`,
@@ -53,7 +54,7 @@ const T = {
     crumb: "Fleet",
     crumbHref: "/en/fleet",
     perDay: "/day",
-    reqCta: "⚡ Request availability",
+    reqCta: "Request availability",
     reqHref: (id: string) => `/en/request-availability?modelo=${id}`,
     waCta: "Ask on WhatsApp",
     waMsg: (m: Model) => `Hi BOLT ⚡ I'd like to check availability for the ${m.name} (${m.pax} seats).`,
@@ -161,7 +162,7 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
                 href={t.reqHref(model.id)}
                 className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
               >
-                {t.reqCta}
+                <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
               </Link>
               <a
                 href={waLink(t.waMsg(model))}
@@ -198,9 +199,7 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {INCLUDED.map((item) => (
             <li key={item.es} className="flex items-start gap-3 rounded-box bg-cream p-4">
-              <span className="font-bold text-ok" aria-hidden="true">
-                ✓
-              </span>
+              <CheckIcon className="mt-0.5 shrink-0 text-ok" size={18} />
               <div>
                 <p className="text-sm font-semibold text-ink">{es ? item.es : item.en}</p>
                 <p lang={es ? "en" : "es"} className="text-xs italic text-steel">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DELIVERY_POLICY, PRICE_GROUPS, PRICING_FOOTNOTE } from "@/content/pricing";
 import { waLink } from "@/content/site";
+import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
 /** Página de precios — vista única ES/EN. Consolida precios y en/pricing. */
@@ -15,7 +16,7 @@ const T = {
     withTax: "con ITBIS · ",
     deliveryTitle: "Entrega y recogida ",
     deliverySub: "· Delivery",
-    reqCta: "⚡ Solicitar disponibilidad",
+    reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
     fleetCta: "Ver la flota →",
     fleetHref: "/flota",
@@ -31,7 +32,7 @@ const T = {
     withTax: "with tax · ",
     deliveryTitle: "Delivery & pickup ",
     deliverySub: "· Entrega",
-    reqCta: "⚡ Request availability",
+    reqCta: "Request availability",
     reqHref: "/en/request-availability",
     fleetCta: "See the fleet →",
     fleetHref: "/en/fleet",
@@ -157,7 +158,7 @@ export function PricingView({ locale }: { locale: Locale }) {
             href={t.reqHref}
             className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
           >
-            {t.reqCta}
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
           </Link>
           <Link
             href={t.fleetHref}

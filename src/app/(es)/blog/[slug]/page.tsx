@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ARTICLES, getArticle } from "@/content/blog";
+import { BoltIcon } from "@/components/icons";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -88,9 +89,7 @@ export default async function BlogArticlePage({ params }: Props) {
               <ul className="mt-4 space-y-2">
                 {s.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-inktext">
-                    <span className="mt-1 font-bold text-volt-dark" aria-hidden="true">
-                      ⚡
-                    </span>
+                    <BoltIcon className="mt-1 shrink-0 text-volt-dark" size={14} />
                     {b}
                   </li>
                 ))}
@@ -119,7 +118,7 @@ export default async function BlogArticlePage({ params }: Props) {
             href="/solicitar-disponibilidad"
             className="mt-4 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
           >
-            ⚡ Solicitar disponibilidad
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />Solicitar disponibilidad
           </Link>
         </div>
       </article>

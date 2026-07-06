@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { MODELS, getModel } from "@/content/models";
 import { CONTACT, ZONES, waLink } from "@/content/site";
+import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 import { track } from "@/lib/analytics";
 
@@ -50,7 +51,7 @@ const T = {
       `Para entregas en ${name} el mínimo es de ${min} días. Ajusta tus fechas o elige otra zona de entrega.`,
     warnMin: (name: string | undefined, min: number | undefined, days: number) =>
       `Para ${name} el mínimo es de ${min} días — tu selección actual es de ${days} día${days === 1 ? "" : "s"}.`,
-    submit: "⚡ Enviar solicitud por WhatsApp",
+    submit: "Enviar solicitud por WhatsApp",
     legalPre: "Al enviar tu solicitud aceptas nuestros",
     legalTerms: "Términos y Condiciones",
     legalAnd: "y nuestra",
@@ -102,7 +103,7 @@ const T = {
       `Deliveries in ${name} require a minimum of ${min} days. Adjust your dates or choose another delivery zone.`,
     warnMin: (name: string | undefined, min: number | undefined, days: number) =>
       `${name} requires a ${min}-day minimum — your current selection is ${days} day${days === 1 ? "" : "s"}.`,
-    submit: "⚡ Send request via WhatsApp",
+    submit: "Send request via WhatsApp",
     legalPre: "By sending your request you accept our",
     legalTerms: "Terms & Conditions",
     legalAnd: "and our",
@@ -224,9 +225,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
   if (sent) {
     return (
       <div className="rounded-card border border-line bg-cream p-8 text-center">
-        <span className="text-4xl" aria-hidden="true">
-          ⚡
-        </span>
+        <BoltIcon className="mx-auto text-volt" size={44} />
         <h2 className="mt-3 font-display text-2xl font-extrabold">{t.sentTitle}</h2>
         <p className="mx-auto mt-3 max-w-lg text-inktext">{t.success}</p>
         <p className="mt-4 text-sm text-steel">
@@ -374,7 +373,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           type="submit"
           className="w-full rounded-full bg-volt px-8 py-4 text-base font-bold text-ink transition-transform hover:scale-[1.02] sm:w-auto"
         >
-          {t.submit}
+          <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.submit}
         </button>
         <p className="mt-3 text-xs text-steel">
           {t.disclaimer}{" "}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTACT, waLink } from "@/content/site";
+import { BoltIcon, CheckIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
 /** Contenido migrado de reservas.boltgolfcars.com/empresa (Identidad Corporativa, jul/2026). */
@@ -49,7 +50,7 @@ const T = {
       { t: "Cada temporada nos deja mejores", d: "Después de cada temporada alta revisamos qué funcionó y qué no: flota, tiempos, zonas, precios." },
       { t: "La venta empieza donde otros la terminan", d: "Entregar la unidad vendida no cierra el trato — lo abre. Cada carrito vendido rodando feliz por Punta Cana es nuestra mejor publicidad." },
     ],
-    cta: "⚡ Escríbenos por WhatsApp",
+    cta: "Escríbenos por WhatsApp",
     waMsg: "Hola BOLT, quiero conocer más sobre ustedes.",
     fleet: "Conoce la flota →",
     fleetHref: "/flota",
@@ -99,7 +100,7 @@ const T = {
       { t: "Every season makes us better", d: "After each high season we review what worked and what didn't: fleet, timing, zones, prices." },
       { t: "The sale starts where others end it", d: "Delivering a sold unit doesn't close the deal — it opens it. Every sold cart rolling happily around Punta Cana is our best advertising." },
     ],
-    cta: "⚡ Message us on WhatsApp",
+    cta: "Message us on WhatsApp",
     waMsg: "Hi BOLT, I would like to know more about you.",
     fleet: "Meet the fleet →",
     fleetHref: "/en/fleet",
@@ -155,7 +156,7 @@ export function AboutView({ locale }: { locale: Locale }) {
             <ul className="mt-3 space-y-2 text-sm text-inktext">
               {t.renta.map((r) => (
                 <li key={r} className="flex gap-2">
-                  <span className="font-bold text-ok" aria-hidden="true">✓</span>
+                  <CheckIcon className="mt-0.5 shrink-0 text-ok" size={16} />
                   {r}
                 </li>
               ))}
@@ -166,7 +167,7 @@ export function AboutView({ locale }: { locale: Locale }) {
             <ul className="mt-3 space-y-2 text-sm text-inktext">
               {t.compra.map((r) => (
                 <li key={r} className="flex gap-2">
-                  <span className="font-bold text-ok" aria-hidden="true">✓</span>
+                  <CheckIcon className="mt-0.5 shrink-0 text-ok" size={16} />
                   {r}
                 </li>
               ))}
@@ -194,7 +195,7 @@ export function AboutView({ locale }: { locale: Locale }) {
             rel="noopener noreferrer"
             className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
           >
-            {t.cta}
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.cta}
           </a>
           <Link
             href={t.fleetHref}

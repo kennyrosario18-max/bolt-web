@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BoltLogo } from "./logo";
+import { BoltIcon } from "@/components/icons";
 import { CONTACT, SLOGAN, ZONES, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
@@ -123,7 +124,7 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
             href={t.ctaHref}
             className="mt-5 inline-block rounded-full bg-volt px-5 py-2.5 text-sm font-bold text-ink"
           >
-            <span aria-hidden="true">⚡ </span>
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />
             {t.cta}
           </Link>
         </div>

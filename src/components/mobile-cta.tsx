@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { waLink } from "@/content/site";
+import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
 /** Barra fija inferior en móvil: la conversión siempre a un toque. */
@@ -23,7 +24,7 @@ export function MobileCta({ locale = "es" }: { locale?: Locale }) {
         href={es ? "/solicitar-disponibilidad" : "/en/request-availability"}
         className="flex h-12 flex-1 items-center justify-center rounded-full bg-volt text-sm font-bold text-ink"
       >
-        <span aria-hidden="true">⚡&nbsp;</span>
+        <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />
         {es ? "Solicitar disponibilidad" : "Request availability"}
       </Link>
     </div>

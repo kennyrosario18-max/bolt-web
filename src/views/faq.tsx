@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, faqSchema } from "@/lib/schema";
 
@@ -113,7 +114,7 @@ const T = {
     intro: "Todo lo que los huéspedes nos preguntan antes de reservar — respondido claro.",
     policy: "Ver política de cancelación completa →",
     policyHref: "/politica",
-    cta: "⚡ Solicitar disponibilidad",
+    cta: "Solicitar disponibilidad",
     ctaHref: "/solicitar-disponibilidad",
   },
   en: {
@@ -122,7 +123,7 @@ const T = {
     intro: "Everything guests ask us before booking — answered clearly.",
     policy: "See the full cancellation policy →",
     policyHref: "/en/policy",
-    cta: "⚡ Request availability",
+    cta: "Request availability",
     ctaHref: "/en/request-availability",
   },
 } as const;
@@ -162,7 +163,7 @@ export function FaqView({ locale }: { locale: Locale }) {
             href={t.ctaHref}
             className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
           >
-            {t.cta}
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.cta}
           </Link>
           <Link href={t.policyHref} className="text-sm font-bold text-ink underline underline-offset-4 hover:text-volt-dark">
             {t.policy}

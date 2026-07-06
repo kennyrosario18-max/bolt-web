@@ -67,6 +67,17 @@ body {
   color: var(--bolt-yellow);
 }
 
+/* Foco de marca unificado: amarillo BOLT visible en cualquier fondo.
+   Los inputs conservan su propio focus-visible:ring; aquí cubrimos navegación. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--bolt-yellow);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

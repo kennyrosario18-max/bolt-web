@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTACT, waLink } from "@/content/site";
+import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
 const T = {
@@ -77,7 +78,7 @@ export function ContactView({ locale }: { locale: Locale }) {
           href={t.requestHref}
           className="mt-8 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
         >
-          ⚡ {t.request}
+          <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.request}
         </Link>
         <p className="mt-8 text-xs text-steel">{CONTACT.legal}</p>
       </section>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getModel } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
+import { BoltIcon, CheckIcon } from "@/components/icons";
 import { ZONE_LANDINGS, type ZoneLanding } from "@/content/zones-landing";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema } from "@/lib/schema";
@@ -14,7 +15,7 @@ const T = {
     crumbZones: "Zonas",
     crumbAria: "Miga de pan",
     minDays: (d: number, note: string) => `Reservas de ${d} días o más · ${note}`,
-    reqCta: "⚡ Solicitar disponibilidad",
+    reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
     pricesCta: "Ver precios →",
     pricesHref: "/precios",
@@ -33,7 +34,7 @@ const T = {
     crumbZones: "Zones",
     crumbAria: "Breadcrumb",
     minDays: (d: number, note: string) => `Rentals of ${d}+ days · ${note}`,
-    reqCta: "⚡ Request availability",
+    reqCta: "Request availability",
     reqHref: "/en/request-availability",
     pricesCta: "See pricing →",
     pricesHref: "/en/pricing",
@@ -103,7 +104,7 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
               href={t.reqHref}
               className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
             >
-              {t.reqCta}
+              <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
             </Link>
             <Link
               href={t.pricesHref}
@@ -120,9 +121,7 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
           {landing.bullets.map((b) => (
             <li key={b.es} className="rounded-card bg-cream p-6">
               <p className="font-semibold text-ink">
-                <span className="mr-2 text-ok" aria-hidden="true">
-                  ✓
-                </span>
+                <CheckIcon className="mr-2 inline-block align-[-0.15em] text-ok" size={15} />
                 {es ? b.es : b.en}
               </p>
               <p lang={es ? "en" : "es"} className="mt-1 text-sm italic text-steel">
@@ -169,7 +168,7 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
               href={t.reqHref}
               className="mt-4 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
             >
-              {t.reqCta}
+              <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
             </Link>
           </div>
         </div>

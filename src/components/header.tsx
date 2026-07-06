@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { BoltLogo } from "./logo";
+import { BoltIcon } from "@/components/icons";
 import { CONTACT, waLink } from "@/content/site";
 import { counterpartPath, type Locale } from "@/lib/i18n";
 
@@ -98,7 +99,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
             href={CTA[locale].href}
             className="rounded-full bg-volt px-5 py-2.5 text-sm font-bold text-ink transition-transform hover:scale-105"
           >
-            <span aria-hidden="true">⚡ </span>
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />
             {CTA[locale].label}
           </Link>
         </nav>
@@ -151,7 +152,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
               className="rounded-full bg-volt px-5 py-3 text-center text-sm font-bold text-ink"
               onClick={() => setOpen(false)}
             >
-              <span aria-hidden="true">⚡ </span>
+              <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />
               {CTA[locale].label}
             </Link>
             <a

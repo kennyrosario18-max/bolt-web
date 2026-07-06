@@ -1,4 +1,5 @@
 import { CONTACT, waLink } from "@/content/site";
+import { BoltIcon, CheckIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
 /** Manual de operación migrado del manual interactivo (reservas.boltgolfcars.com/catalogo). */
@@ -84,7 +85,7 @@ const T = {
     supportTitle: "Contacto 24/7",
     supportBody: "Emergencias, dudas de uso o asistencia en ruta — un WhatsApp y respondemos.",
     waMsg: "Hola BOLT, necesito asistencia con un golf cart.",
-    cta: "⚡ WhatsApp 24/7",
+    cta: "WhatsApp 24/7",
   },
   en: {
     kicker: "Support & manual",
@@ -167,7 +168,7 @@ const T = {
     supportTitle: "24/7 contact",
     supportBody: "Emergencies, usage questions or roadside assistance — one WhatsApp away.",
     waMsg: "Hi BOLT, I need assistance with a golf cart.",
-    cta: "⚡ WhatsApp 24/7",
+    cta: "WhatsApp 24/7",
   },
 } as const;
 
@@ -249,7 +250,7 @@ export function SupportView({ locale }: { locale: Locale }) {
             <ul className="mt-4 space-y-2 text-sm text-inktext">
               {t.rulesOk.map((r) => (
                 <li key={r} className="flex gap-2">
-                  <span className="font-bold text-ok" aria-hidden="true">✓</span>
+                  <CheckIcon className="mt-0.5 shrink-0 text-ok" size={16} />
                   {r}
                 </li>
               ))}
@@ -312,7 +313,7 @@ export function SupportView({ locale }: { locale: Locale }) {
             rel="noopener noreferrer"
             className="mt-5 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
           >
-            {t.cta} · {CONTACT.phoneDisplay}
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.cta} · {CONTACT.phoneDisplay}
           </a>
         </div>
       </section>

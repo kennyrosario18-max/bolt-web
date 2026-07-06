@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { MODELS, modelImage } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
+import { BoltIcon, PinIcon, ShieldIcon, ChatIcon } from "@/components/icons";
 import { PRICING, SLOGAN, ZONES, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
 /** Home — vista única ES/EN. Consolida app/(es)/page.tsx y app/en/page.tsx. */
 
 const FEATURED_IDS = ["eco-cross-4-2", "eco-plus-4-2", "cc-precedent-2-2"];
+
+const TRUST_ICONS = [BoltIcon, PinIcon, ShieldIcon, ChatIcon];
 
 const T = {
   es: {
@@ -16,7 +19,7 @@ const T = {
     pcrc: "Puntacana Resort & Club",
     leadB: ", Cap Cana y Bávaro.",
     leadSub: "Premium golf carts delivered to your villa — rental & sales.",
-    fleetCta: "⚡ Ver la flota",
+    fleetCta: "Ver la flota",
     fleetHref: "/flota",
     reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
@@ -25,10 +28,10 @@ const T = {
     fromB: ` · ${MODELS.length} modelos · 3 líneas`,
     heroAlt: "Golf cart BOLT Zycar 4 frente a una villa en Punta Cana",
     trust: [
-      { icon: "⚡", main: "Confirmación por WhatsApp", sub: "WhatsApp confirmation" },
-      { icon: "📍", main: "Entrega en tu villa", sub: "Delivered to your villa" },
-      { icon: "🛡️", main: "Vehículos asegurados", sub: "Insured vehicles" },
-      { icon: "💬", main: "Soporte bilingüe 24/7", sub: "24/7 bilingual support" },
+      { main: "Confirmación por WhatsApp", sub: "WhatsApp confirmation" },
+      { main: "Entrega en tu villa", sub: "Delivered to your villa" },
+      { main: "Vehículos asegurados", sub: "Insured vehicles" },
+      { main: "Soporte bilingüe 24/7", sub: "24/7 bilingual support" },
     ],
     fleetKicker: "La flota",
     featA: "Modelos ",
@@ -61,7 +64,7 @@ const T = {
     ],
     ready: "¿Listo para moverte en el paraíso?",
     readyNote: "Nunca confirmamos automáticamente: cada solicitud la revisa nuestro equipo.",
-    readyCta: "⚡ Solicitar disponibilidad",
+    readyCta: "Solicitar disponibilidad",
     zonesAnchor: "zonas",
     howAnchor: "como-funciona",
   },
@@ -71,7 +74,7 @@ const T = {
     pcrc: "Puntacana Resort & Club",
     leadB: ", Cap Cana and Bávaro.",
     leadSub: "Renta y venta de golf carts premium, entregados en tu villa.",
-    fleetCta: "⚡ See the fleet",
+    fleetCta: "See the fleet",
     fleetHref: "/en/fleet",
     reqCta: "Request availability",
     reqHref: "/en/request-availability",
@@ -80,10 +83,10 @@ const T = {
     fromB: ` · ${MODELS.length} models · 3 lines`,
     heroAlt: "BOLT Zycar 4 golf cart in front of a villa in Punta Cana",
     trust: [
-      { icon: "⚡", main: "WhatsApp confirmation", sub: "Confirmación por WhatsApp" },
-      { icon: "📍", main: "Delivered to your villa", sub: "Entrega en tu villa" },
-      { icon: "🛡️", main: "Insured vehicles", sub: "Vehículos asegurados" },
-      { icon: "💬", main: "24/7 bilingual support", sub: "Soporte bilingüe 24/7" },
+      { main: "WhatsApp confirmation", sub: "Confirmación por WhatsApp" },
+      { main: "Delivered to your villa", sub: "Entrega en tu villa" },
+      { main: "Insured vehicles", sub: "Vehículos asegurados" },
+      { main: "24/7 bilingual support", sub: "Soporte bilingüe 24/7" },
     ],
     fleetKicker: "The fleet",
     featA: "Featured ",
@@ -116,7 +119,7 @@ const T = {
     ],
     ready: "Ready to ride in paradise?",
     readyNote: "We never auto-confirm: a real person reviews every request.",
-    readyCta: "⚡ Request availability",
+    readyCta: "Request availability",
     zonesAnchor: "zones",
     howAnchor: "how-it-works",
   },
@@ -151,7 +154,7 @@ export function HomeView({ locale }: { locale: Locale }) {
                 href={t.fleetHref}
                 className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
               >
-                {t.fleetCta}
+                <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.fleetCta}
               </Link>
               <Link
                 href={t.reqHref}
@@ -181,11 +184,11 @@ export function HomeView({ locale }: { locale: Locale }) {
         {/* Franja de confianza */}
         <div className="border-t border-white/10">
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 sm:px-6 md:grid-cols-4">
-            {t.trust.map((item) => (
+            {t.trust.map((item, i) => {
+              const Icon = TRUST_ICONS[i];
+              return (
               <div key={item.main} className="flex items-start gap-3">
-                <span aria-hidden="true" className="text-xl">
-                  {item.icon}
-                </span>
+                <Icon className="mt-0.5 shrink-0 text-volt" size={22} />
                 <div>
                   <p className="text-sm font-semibold text-white">{item.main}</p>
                   <p lang={es ? "en" : "es"} className="text-xs italic text-white/60">
@@ -193,7 +196,8 @@ export function HomeView({ locale }: { locale: Locale }) {
                   </p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -318,7 +322,7 @@ export function HomeView({ locale }: { locale: Locale }) {
               href={t.reqHref}
               className="mt-5 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
             >
-              {t.readyCta}
+              <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.readyCta}
             </Link>
           </div>
         </div>

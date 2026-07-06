@@ -1,4 +1,5 @@
 import { CONTACT, waLink } from "@/content/site";
+import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
 /** Datos de depósito — migrados 1:1 de reservas.boltgolfcars.com/deposito. */
@@ -110,7 +111,7 @@ export function DepositView({ locale }: { locale: Locale }) {
             rel="noopener noreferrer"
             className="mt-5 inline-block rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
           >
-            ⚡ {t.cta} — WhatsApp {CONTACT.phoneDisplay}
+            <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.cta} — WhatsApp {CONTACT.phoneDisplay}
           </a>
         </div>
       </section>
