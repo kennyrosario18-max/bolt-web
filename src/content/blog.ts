@@ -67,7 +67,7 @@ export const ARTICLES: BlogArticle[] = [
           "6 plazas (4+2, hasta 540 kg): la mejor opción para familias grandes o grupos de amigos. Desde US$65/día (Budget), US$70/día (Estándar) o US$85/día (Premium: ECO Cross con batería de litio 150 Ah y asientos de lujo).",
           "Plomo-ácido: 25–40 km por carga.",
           "Litio estándar (105 Ah): 60–70 km por carga.",
-          "Litio de largo alcance (150 Ah): 85–95 km por carga, disponible en los ECO Cross premium y ECO Track."
+          "Litio de largo alcance (150 Ah): 85–95 km por carga, disponible en los ECO Cross (4 y 6 plazas) y el ECO Track."
         ]
       },
       {
@@ -156,7 +156,7 @@ export const ARTICLES: BlogArticle[] = [
         "bullets": [
           "Plomo-ácido: 25–40 km por carga, suficiente para uso tranquilo dentro de la comunidad.",
           "Litio estándar 105 Ah: 60–70 km por carga.",
-          "Litio de largo alcance 150 Ah: 85–95 km por carga (ECO Cross premium y ECO Track).",
+          "Litio de largo alcance 150 Ah: 85–95 km por carga (ECO Cross de 4 y 6 plazas, y ECO Track).",
           "Carga completa en 8–10 horas en un tomacorriente estándar de la villa; el cargador va incluido."
         ]
       },

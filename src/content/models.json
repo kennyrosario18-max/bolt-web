@@ -6,7 +6,7 @@
     "speed": "30–35 km/h",
     "cap": "360 kg",
     "range_lead": "25–40 km",
-    "range_li": "60–70 km",
+    "range_li": "85–95 km",
     "desc": "ECO Cross compacto de 4 pasajeros con todos los asientos mirando hacia adelante.",
     "pax": 4,
     "batteries": [
@@ -14,6 +14,11 @@
         "name": "Litio estándar 105 Ah",
         "nameEn": "Standard lithium 105 Ah",
         "range": "60–70 km"
+      },
+      {
+        "name": "Litio de largo alcance 150 Ah",
+        "nameEn": "Long-range lithium 150 Ah",
+        "range": "85–95 km"
       }
     ]
   },
