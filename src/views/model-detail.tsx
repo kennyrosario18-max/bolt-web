@@ -9,6 +9,7 @@ import {
   type Model,
 } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
+import { ModelPhoto } from "@/components/model-photo";
 import { BoltIcon, CheckIcon } from "@/components/icons";
 import { PRICING, priceFrom, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
@@ -130,14 +131,7 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-16">
           <div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-white/5">
-              <Image
-                src={photos[0]}
-                alt={t.alt(model)}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
+              <ModelPhoto id={model.id} alt={t.alt(model)} priority sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             {/* Galería lista: aparece sola cuando el modelo tenga varias fotos. */}
             {photos.length > 1 ? (

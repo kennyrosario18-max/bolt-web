@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import { MODELS, modelImages } from "@/content/models";
+import { MODELS } from "@/content/models";
+import { ModelPhoto } from "@/components/model-photo";
 import { CONTACT, waLink } from "@/content/site";
 import { BoltIcon, CheckIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
@@ -200,12 +200,10 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
             {MODELS.map((m) => (
               <div key={m.id} className="overflow-hidden rounded-card border border-line bg-white">
                 <div className="relative aspect-[4/3] overflow-hidden bg-cream">
-                  <Image
-                    src={modelImages(m.id)[0]}
+                  <ModelPhoto
+                    id={m.id}
                     alt={es ? `Golf cart ${m.name} en venta` : `${m.name} golf cart for sale`}
-                    fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
                   />
                 </div>
                 <div className="flex items-center justify-between gap-3 p-5">

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import { DESC_EN, lineName, modelImage, type Model } from "@/content/models";
+import { DESC_EN, lineName, type Model } from "@/content/models";
+import { ModelPhoto } from "@/components/model-photo";
 import { priceFrom } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
@@ -14,16 +14,15 @@ export function ModelCard({ model, locale = "es" }: { model: Model; locale?: Loc
       className="group overflow-hidden rounded-card border border-line bg-white transition-shadow hover:shadow-xl"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-cream">
-        <Image
-          src={modelImage(model.id)}
+        <ModelPhoto
+          id={model.id}
           alt={
             es
               ? `Golf cart ${model.name} — ${model.pax} pasajeros`
               : `${model.name} golf cart — seats ${model.pax}`
           }
-          fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="transition-transform duration-500 group-hover:scale-105"
         />
         <span className="absolute left-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-xs font-bold uppercase tracking-wide text-volt">
           {lineName(model.line, locale)}

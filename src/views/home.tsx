@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import { MODELS, modelImage } from "@/content/models";
+import { MODELS } from "@/content/models";
+import { ModelPhoto } from "@/components/model-photo";
 import { TESTIMONIALS } from "@/content/testimonials";
 import { ModelCard } from "@/components/model-card";
 import { BoltIcon, PinIcon, ShieldIcon, ChatIcon, CheckIcon } from "@/components/icons";
@@ -177,14 +177,7 @@ export function HomeView({ locale }: { locale: Locale }) {
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-card">
-            <Image
-              src={modelImage("zycar-4")}
-              alt={t.heroAlt}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
+            <ModelPhoto id="zycar-4" alt={t.heroAlt} priority sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
 
