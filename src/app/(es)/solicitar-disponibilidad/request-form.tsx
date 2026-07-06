@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MODELS } from "@/content/models";
-import { CONTACT, ZONES, priceFrom } from "@/content/site";
+import { CONTACT, ZONES, priceFrom, WEB3FORMS_ACCESS_KEY } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
 import { RequestFormEnhance } from "./request-form-enhance";
 import type { Locale } from "@/lib/i18n";
@@ -125,6 +125,9 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     // Tarifa "desde" para el estimado: por plazas (fuente única priceFrom).
     price4: priceFrom(4),
     price6: priceFrom(6),
+    // Respaldo por email (Web3Forms) — cada lead llega también al correo.
+    web3key: WEB3FORMS_ACCESS_KEY,
+    emailSubject: es ? "Nueva solicitud de disponibilidad — BOLT" : "New availability request — BOLT",
   };
 
   return (

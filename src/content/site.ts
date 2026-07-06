@@ -11,6 +11,11 @@ export const CONTACT = {
 
 export const SLOGAN = "Your ride in paradise.";
 
+/** Web3Forms — respaldo por email de cada solicitud (F6-B). La access key es
+ *  pública por diseño (va en el HTML del formulario). El correo destino se
+ *  configura en el panel de web3forms.com, no aquí. */
+export const WEB3FORMS_ACCESS_KEY = "62ee470e-1f4c-460c-89b9-6e63082e9b3c";
+
 export function waLink(message: string): string {
   return `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
 }

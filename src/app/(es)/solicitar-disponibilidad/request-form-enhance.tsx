@@ -17,6 +17,7 @@ interface Payload {
   day: string; days: string; f: Fields;
   errFechas: string; errOrden: string; errMin: string; warnMin: string; zoneNoteTpl: string;
   estimateTpl: string; price4: number; price6: number;
+  web3key: string; emailSubject: string;
 }
 
 function script(p: Payload): string {
@@ -82,6 +83,36 @@ function script(p: Payload): string {
 
   function track(ev){(window.__boltEvents=window.__boltEvents||[]).push({event:ev,path:location.pathname,t:Date.now()});}
 
+  // Respaldo por email (Web3Forms) — fire-and-forget: nunca bloquea ni rompe el
+  // flujo de WhatsApp aunque el servicio falle. Garantiza que el lead quede
+  // registrado aunque wa.me no abra.
+  function sendEmail(summary){
+    if(!P.web3key)return;
+    var o=zopt(),mo=modelo.options[modelo.selectedIndex];
+    try{
+      fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          access_key:P.web3key,
+          subject:P.emailSubject,
+          from_name:'BOLT · boltgolfcars.com',
+          Nombre:val('nombre'),
+          WhatsApp:val('whatsapp'),
+          Email:val('email')||'(no indicado)',
+          Modelo:(mo&&mo.value)?mo.getAttribute('data-name'):P.recommend,
+          Llegada:val('llegada'),
+          Salida:val('salida'),
+          Entrega:(o&&o.value)?o.getAttribute('data-name'):'',
+          Pasajeros:val('pasajeros')||'(no indicado)',
+          Comentarios:val('comentarios'),
+          message:summary,
+          botcheck:''
+        })
+      }).catch(function(){});
+    }catch(e){}
+  }
+
   function buildMsg(d){
     var o=zopt();
     var zoneName=o&&o.value?o.getAttribute('data-name'):'';
@@ -122,8 +153,10 @@ function script(p: Payload): string {
     var o=zopt();
     var md=o?+(o.getAttribute('data-mindays')||0):0;
     if(md&&d<md){showError(fill(P.errMin,{name:o.getAttribute('data-name'),min:md}),salida);return;}
-    var url='https://wa.me/'+P.phone+'?text='+encodeURIComponent(buildMsg(d));
+    var summary=buildMsg(d);
+    var url='https://wa.me/'+P.phone+'?text='+encodeURIComponent(summary);
     track('form_submit');track('form_open_whatsapp');
+    sendEmail(summary); // respaldo por email (no bloquea)
     var fb=$('wa-fallback');if(fb)fb.setAttribute('href',url);
     window.open(url,'_blank','noopener,noreferrer');
     succeed();
