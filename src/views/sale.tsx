@@ -198,12 +198,13 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
           <p className="mt-2 max-w-2xl text-inktext">{t.modelsLead}</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {MODELS.map((m) => (
-              <div key={m.id} className="overflow-hidden rounded-card border border-line bg-white">
+              <div key={m.id} className="group lift overflow-hidden rounded-card border border-line bg-white hover:border-volt/40">
                 <div className="relative aspect-[4/3] overflow-hidden bg-cream">
                   <ModelPhoto
                     id={m.id}
                     alt={es ? `Golf cart ${m.name} en venta` : `${m.name} golf cart for sale`}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.08]"
                   />
                 </div>
                 <div className="flex items-center justify-between gap-3 p-5">
