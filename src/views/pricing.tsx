@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { DELIVERY_POLICY, PRICING_FOOTNOTE, pricedModels, withItbis } from "@/content/pricing";
 import { lineName } from "@/content/models";
@@ -62,14 +63,14 @@ export function PricingView({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <section className="bg-ink text-white">
+      <section className="relative isolate overflow-hidden mesh-ink grain text-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-16">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-volt">{t.kicker}</p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <p className="animate-rise stagger text-sm font-bold uppercase tracking-[0.2em] text-volt" style={{ "--i": 0 } as CSSProperties}>{t.kicker}</p>
+          <h1 className="animate-rise stagger mt-3 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl" style={{ "--i": 1 } as CSSProperties}>
             {t.h1}
           </h1>
-          <p className="mt-4 max-w-xl text-white/70">{t.lead}</p>
-          <p lang={es ? "en" : "es"} className="mt-1 text-sm italic text-white/60">
+          <p className="animate-rise stagger mt-4 max-w-xl text-white/70" style={{ "--i": 2 } as CSSProperties}>{t.lead}</p>
+          <p lang={es ? "en" : "es"} className="animate-rise stagger mt-1 text-sm italic text-white/60" style={{ "--i": 3 } as CSSProperties}>
             {t.leadSub}
           </p>
         </div>
@@ -92,18 +93,18 @@ export function PricingView({ locale }: { locale: Locale }) {
                   <Link
                     key={m.id}
                     href={`${t.reqHref}?modelo=${m.id}`}
-                    className="flex flex-wrap items-center justify-between gap-4 rounded-card border border-line bg-white p-6 transition-shadow hover:shadow-xl"
+                    className="lift flex flex-wrap items-center justify-between gap-4 rounded-card border border-line bg-white p-6 hover:border-volt/40"
                   >
                     <div className="min-w-0">
                       <h3 className="font-display text-lg font-extrabold">{m.name}</h3>
                       <p className="mt-1 text-sm text-steel">{lineName(m.line, locale)}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-display text-3xl font-extrabold text-ink">
+                      <p className="font-display text-3xl font-extrabold tabular-nums text-ink">
                         US${m.price}
                         <span className="text-sm font-semibold text-steel">{t.perDay}</span>
                       </p>
-                      <p className="text-xs text-steel">
+                      <p className="text-xs tabular-nums text-steel">
                         {t.withTax}
                         {withItbis(m.price)}
                       </p>
@@ -115,8 +116,10 @@ export function PricingView({ locale }: { locale: Locale }) {
           ))}
         </div>
 
+        <hr className="divider-volt mt-12 border-0" />
+
         {/* Entrega y recogida */}
-        <div className="mt-12 rounded-card bg-cream p-7">
+        <div className="reveal mt-8 rounded-card bg-cream p-7">
           {es ? (
             <>
               <h2 className="font-display text-xl font-extrabold">
@@ -141,18 +144,18 @@ export function PricingView({ locale }: { locale: Locale }) {
         </div>
 
         {/* Depósitos + temporada — transparencia (F6). */}
-        <div className="mt-8 rounded-card border border-line bg-white p-7">
+        <div className="reveal mt-8 rounded-card border border-line bg-white p-7">
           <h2 className="font-display text-xl font-extrabold">{t.depositTitle}</h2>
           <p className="mt-3 text-sm text-inktext">{t.depositBody}</p>
           <p className="mt-2 text-sm font-semibold text-volt-dark">{t.seasonBody}</p>
         </div>
 
-        <p className="mt-8 text-sm text-steel">{es ? PRICING_FOOTNOTE.es : PRICING_FOOTNOTE.en}</p>
+        <p className="reveal mt-8 text-sm text-steel">{es ? PRICING_FOOTNOTE.es : PRICING_FOOTNOTE.en}</p>
 
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="reveal mt-10 flex flex-wrap gap-3">
           <Link
             href={t.reqHref}
-            className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+            className="shine lift rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink"
           >
             <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
           </Link>

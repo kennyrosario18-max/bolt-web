@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { MODELS } from "@/content/models";
 import { ModelPhoto } from "@/components/model-photo";
@@ -131,25 +132,25 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
       />
 
       {/* Hero */}
-      <section className="bg-ink text-white">
+      <section className="relative isolate overflow-hidden mesh-ink grain text-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-16">
-          <nav aria-label={t.crumbAria} className="text-sm text-white/50">
+          <nav aria-label={t.crumbAria} className="animate-rise stagger text-sm text-white/70" style={{ "--i": 0 } as CSSProperties}>
             <Link href={t.crumbHomeHref} className="hover:text-volt">
               {t.crumbHome}
             </Link>{" "}
             / {t.crumb}
           </nav>
-          <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-volt">{t.kicker}</p>
-          <h1 className="mt-2 max-w-2xl font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <p className="animate-rise stagger mt-3 text-sm font-bold uppercase tracking-[0.2em] text-volt" style={{ "--i": 1 } as CSSProperties}>{t.kicker}</p>
+          <h1 className="animate-rise stagger mt-2 max-w-2xl font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl" style={{ "--i": 2 } as CSSProperties}>
             {t.h1}
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-white/75">{t.lead}</p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <p className="animate-rise stagger mt-4 max-w-xl text-lg text-white/75" style={{ "--i": 3 } as CSSProperties}>{t.lead}</p>
+          <div className="animate-rise stagger mt-7 flex flex-wrap gap-3" style={{ "--i": 4 } as CSSProperties}>
             <a
               href={waLink(t.buyMsg)}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+              className="shine lift rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
             >
               <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />
               {t.buyCta}
@@ -166,13 +167,13 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
 
       {/* Dos formas de comprar */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+        <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">
           {t.offersTitle}
           <span className="hl">{t.offersHl}</span>
         </h2>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div className="reveal-list mt-6 grid gap-6 md:grid-cols-2">
           {t.offers.map((o) => (
-            <div key={o.title} className="rounded-card border border-line p-7">
+            <div key={o.title} className="lift rounded-card border border-line p-7 hover:border-volt/40">
               <h3 className="font-display text-xl font-extrabold">{o.title}</h3>
               <p className="mt-2 text-inktext">{o.body}</p>
               <ul className="mt-4 space-y-2">
@@ -189,13 +190,13 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
       </section>
 
       {/* Modelos disponibles */}
-      <section className="bg-cream">
+      <section className="section-glow bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+          <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">
             {t.modelsTitle}
             <span className="hl">{t.modelsHl}</span>
           </h2>
-          <p className="mt-2 max-w-2xl text-inktext">{t.modelsLead}</p>
+          <p className="reveal mt-2 max-w-2xl text-inktext">{t.modelsLead}</p>
           <div className="reveal-list mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {MODELS.map((m) => (
               <div key={m.id} className="group lift overflow-hidden rounded-card border border-line bg-white hover:border-volt/40">
@@ -231,11 +232,11 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
 
       {/* Por qué comprar con BOLT */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+        <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">
           {t.whyTitle}
           <span className="hl">{t.whyHl}</span>
         </h2>
-        <ul className="mt-6 grid gap-4 md:grid-cols-2">
+        <ul className="reveal-list mt-6 grid gap-4 md:grid-cols-2">
           {t.why.map((w) => (
             <li key={w} className="flex items-start gap-3 rounded-box bg-cream p-4">
               <CheckIcon className="mt-0.5 shrink-0 text-ok" size={18} />
@@ -248,23 +249,23 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
       {/* FAQ */}
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-display text-2xl font-extrabold sm:text-3xl">{t.faqTitle}</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">{t.faqTitle}</h2>
+          <div className="reveal-list mt-6 grid gap-4 md:grid-cols-2">
             {t.faqs.map((f) => (
-              <div key={f.q} className="rounded-card border border-line bg-white p-6">
+              <div key={f.q} className="lift rounded-card border border-line bg-white p-6 hover:border-volt/40">
                 <h3 className="font-display text-base font-bold">{f.q}</h3>
                 <p className="mt-2 text-sm text-inktext">{f.a}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10 rounded-card bg-ink p-8 text-center">
+          <div className="reveal relative isolate mt-10 overflow-hidden rounded-card mesh-ink grain p-8 text-center">
             <p className="font-display text-xl font-bold text-white sm:text-2xl">{t.ready}</p>
-            <p className="mx-auto mt-1 max-w-lg text-sm text-white/60">{t.readyNote}</p>
+            <p className="mx-auto mt-1 max-w-lg text-sm text-white/70">{t.readyNote}</p>
             <a
               href={waLink(t.buyMsg)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+              className="shine lift mt-5 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
             >
               <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />
               {t.buyCta} · {CONTACT.phoneDisplay}

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { CONTACT, waLink } from "@/content/site";
 import { BoltIcon, CheckIcon } from "@/components/icons";
@@ -109,24 +110,42 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
         )}
       />
 
-      <section className="bg-ink text-white">
+      <section className="relative isolate overflow-hidden mesh-ink grain text-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-16">
-          <nav aria-label={t.crumbAria} className="text-sm text-white/50">
+          <nav
+            aria-label={t.crumbAria}
+            className="animate-rise stagger text-sm text-white/70"
+            style={{ "--i": 0 } as CSSProperties}
+          >
             <Link href={t.crumbHomeHref} className="hover:text-volt">
               {t.crumbHome}
             </Link>{" "}
             / {t.crumb}
           </nav>
-          <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-volt">{t.kicker}</p>
-          <h1 className="mt-2 max-w-3xl font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <p
+            className="animate-rise stagger mt-3 text-sm font-bold uppercase tracking-[0.2em] text-volt"
+            style={{ "--i": 1 } as CSSProperties}
+          >
+            {t.kicker}
+          </p>
+          <h1
+            className="animate-rise stagger mt-2 max-w-3xl font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl"
+            style={{ "--i": 2 } as CSSProperties}
+          >
             {t.h1}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/75">{t.lead}</p>
+          <p
+            className="animate-rise stagger mt-4 max-w-2xl text-lg text-white/75"
+            style={{ "--i": 3 } as CSSProperties}
+          >
+            {t.lead}
+          </p>
           <a
             href={waLink(t.waMsg)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-7 inline-flex items-center gap-1.5 rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+            className="shine lift animate-rise stagger mt-7 inline-flex items-center gap-1.5 rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
+            style={{ "--i": 4 } as CSSProperties}
           >
             <BoltIcon className="inline-block align-[-0.15em]" size={15} />
             {t.ctaBtn}
@@ -136,13 +155,16 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
 
       {/* Beneficios */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+        <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">
           {t.benefitsTitle}
           <span className="hl">{t.benefitsHl}</span>
         </h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="reveal-list mt-6 grid gap-4 md:grid-cols-2">
           {t.benefits.map((b) => (
-            <div key={b.t} className="flex items-start gap-3 rounded-card border border-line p-6">
+            <div
+              key={b.t}
+              className="lift flex items-start gap-3 rounded-card border border-line p-6 hover:border-volt/40"
+            >
               <CheckIcon className="mt-0.5 shrink-0 text-ok" size={20} />
               <div>
                 <h3 className="font-display text-lg font-extrabold">{b.t}</h3>
@@ -154,13 +176,13 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
       </section>
 
       {/* Cómo funciona */}
-      <section className="bg-cream">
+      <section className="section-glow bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+          <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">
             {t.howTitle}
             <span className="hl">{t.howHl}</span>
           </h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
+          <div className="reveal-list mt-6 grid gap-6 md:grid-cols-3">
             {t.steps.map((s, i) => (
               <div key={s}>
                 <span className="font-display text-4xl font-extrabold text-volt-dark">0{i + 1}</span>
@@ -173,16 +195,16 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
 
       {/* Herramientas del aliado */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+        <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">
           {t.toolsTitle}
           <span className="hl">{t.toolsHl}</span>
         </h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-3">
+        <div className="reveal-list mt-6 grid gap-6 sm:grid-cols-3">
           {t.tools.map((tool) => (
             <Link
               key={tool.href}
               href={tool.href}
-              className="group rounded-card border border-line p-6 transition-shadow hover:shadow-xl"
+              className="group lift rounded-card border border-line p-6 hover:border-volt/40"
             >
               <h3 className="font-display text-lg font-extrabold">{tool.title}</h3>
               <p className="mt-2 text-sm text-inktext">{tool.desc}</p>
@@ -195,25 +217,29 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
       </section>
 
       {/* FAQ + CTA */}
-      <section className="bg-cream">
+      <section className="section-glow bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-display text-2xl font-extrabold sm:text-3xl">{t.faqTitle}</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">{t.faqTitle}</h2>
+          <div className="reveal-list mt-6 grid gap-4 md:grid-cols-3">
             {t.faqs.map((f) => (
-              <div key={f.q} className="rounded-card border border-line bg-white p-6">
+              <div
+                key={f.q}
+                className="lift rounded-card border border-line bg-white p-6 hover:border-volt/40"
+              >
                 <h3 className="font-display text-base font-bold">{f.q}</h3>
                 <p className="mt-2 text-sm text-inktext">{f.a}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10 rounded-card bg-ink p-8 text-center">
+          <hr className="divider-volt mx-auto mt-12 max-w-3xl border-0" />
+          <div className="reveal relative isolate mt-10 overflow-hidden rounded-card mesh-ink grain p-8 text-center">
             <p className="font-display text-xl font-bold text-white sm:text-2xl">{t.ctaTitle}</p>
-            <p className="mx-auto mt-1 max-w-lg text-sm text-white/60">{t.ctaLead}</p>
+            <p className="mx-auto mt-1 max-w-lg text-sm text-white/70">{t.ctaLead}</p>
             <a
               href={waLink(t.waMsg)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+              className="shine lift mt-5 inline-flex items-center gap-1.5 rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
             >
               <BoltIcon className="inline-block align-[-0.15em]" size={15} />
               {t.ctaBtn} · {CONTACT.phoneDisplay}
