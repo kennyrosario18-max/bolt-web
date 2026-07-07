@@ -38,10 +38,29 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # F9 · capa 1 — tests unitarios (precios, i18n, pares de contenido ES/EN).
+      - name: Tests unitarios (Vitest)
+        run: npm test
+
       # `npm run build` corre el gate de contenido (prebuild → check-content.mjs)
       # y luego next build. Sin BASE_PATH = build de producción, indexable.
       - name: Build de producción (+ gate de contenido)
         run: npm run build
+
+      # F9 · capa 2 — build final íntegro: h1 único, 0 __next_f, enlaces
+      # internos y hreflang sin romper, canonicals presentes.
+      - name: Validar HTML y enlaces del build
+        run: npm run check:html
+
+      # F9 · capa 3 — E2E de los shims vanilla + axe WCAG AA sobre out/.
+      # channel:"chrome" usa el Chrome preinstalado del runner (sin descarga).
+      - name: Tests E2E + accesibilidad (Playwright + axe)
+        run: npm run test:e2e
+
+      # F9 · capa 4 — Lighthouse móvil sobre el build (Perf ≥85 anti-ruido de
+      # runner; la regla de producción ≥90 se valida en mediciones reales).
+      - name: Gate de Lighthouse
+        run: npm run lh:gate
 
       - name: CNAME y .nojekyll
         run: |

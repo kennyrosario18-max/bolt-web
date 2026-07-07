@@ -10,7 +10,12 @@
     "optimize:images": "node scripts/optimize-images.mjs",
     "gen:og": "node scripts/gen-og.mjs",
     "prebuild": "node scripts/check-content.mjs",
-    "postbuild": "node scripts/strip-hydration.mjs"
+    "postbuild": "node scripts/strip-hydration.mjs",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check:html": "node scripts/check-html.mjs",
+    "lh:gate": "node scripts/lighthouse-gate.mjs",
+    "qa": "npm run test && npm run check:html && npm run test:e2e"
   },
   "dependencies": {
     "next": "16.2.10",
@@ -18,15 +23,19 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "lighthouse": "^13.4.0",
     "sharp": "^0.35.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   },
   "overrides": {
     "postcss": ">=8.5.10"
