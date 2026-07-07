@@ -2,18 +2,20 @@ import Link from "next/link";
 import { BoltLogo } from "./logo";
 import { BoltIcon } from "@/components/icons";
 import { HeaderEnhance } from "./header-enhance";
+import { MODELS, lineName, type Model } from "@/content/models";
+import { modelPrice } from "@/content/pricing";
 import { CONTACT, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
 /** Cabecera del sitio — server component, sin hidratación React.
  *  · Menú móvil: Popover API nativo (toggle/Escape/click-fuera/foco sin JS).
- *  · Switcher de idioma: href de respaldo (home del otro idioma) mejorado por
- *    <HeaderEnhance> a la ruta equivalente exacta + query. El hreflang del
- *    <head> mantiene la paridad para buscadores pase lo que pase. */
+ *  · Mega-menú de Flota (desktop): panel glass con modelos por línea + precio,
+ *    abierto por CSS group-hover/focus-within (sin JS, teclado-accesible).
+ *  · Header gana glass+sombra al hacer scroll (clase .is-scrolled del shim).
+ *  · Switcher de idioma: href de respaldo mejorado por <HeaderEnhance>. */
 
 const NAV: Record<Locale, { href: string; label: string }[]> = {
   es: [
-    { href: "/flota", label: "Flota" },
     { href: "/precios", label: "Precios" },
     { href: "/venta", label: "Venta" },
     { href: "/#zonas", label: "Zonas" },
@@ -21,7 +23,6 @@ const NAV: Record<Locale, { href: string; label: string }[]> = {
     { href: "/blog", label: "Blog" },
   ],
   en: [
-    { href: "/en/fleet", label: "Fleet" },
     { href: "/en/pricing", label: "Pricing" },
     { href: "/en/golf-carts-for-sale", label: "For sale" },
     { href: "/en#zones", label: "Zones" },
@@ -39,26 +40,67 @@ const WA_MSG: Record<Locale, string> = {
   en: "Hi BOLT, I would like information about renting a golf cart.",
 };
 
+const LINES: Model["line"][] = ["eco", "clubcar", "zycar"];
+
 export function Header({ locale = "es" }: { locale?: Locale }) {
   const es = locale === "es";
   const otherLabel = es ? "EN" : "ES";
   const otherHome = es ? "/en" : "/"; // respaldo sin-JS; el shim lo hace exacto
   const langAria = es ? "Switch to English" : "Cambiar a español";
+  const fleetHref = es ? "/flota" : "/en/fleet";
+  const modelHref = (id: string) => (es ? `/flota/${id}` : `/en/fleet/${id}`);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink text-white">
+    <header id="site-header" className="sticky top-0 z-50 bg-ink text-white transition-shadow">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href={es ? "/" : "/en"} aria-label={es ? "BOLT — inicio" : "BOLT — home"}>
           <BoltLogo dark />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label={es ? "Principal" : "Main"}>
+          {/* Flota con mega-menú (CSS group-hover / focus-within). */}
+          <div className="group relative">
+            <Link href={fleetHref} className="nav-link flex items-center gap-1 text-sm font-medium text-white/80" aria-haspopup="true">
+              {es ? "Flota" : "Fleet"}
+              <span className="text-white/40 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true">⌄</span>
+            </Link>
+            <div className="mega invisible absolute left-1/2 top-full z-40 w-[min(92vw,720px)] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-300 ease-[cubic-bezier(.16,1,.3,1)] group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              <div className="glass grid grid-cols-3 gap-x-6 gap-y-1 rounded-2xl p-6 shadow-[var(--shadow-xl)]">
+                {LINES.map((line) => (
+                  <div key={line}>
+                    <p className="mb-2 text-xs font-bold uppercase tracking-wider text-volt">{lineName(line, locale)}</p>
+                    <ul className="space-y-0.5">
+                      {MODELS.filter((m) => m.line === line).map((m) => (
+                        <li key={m.id}>
+                          <Link
+                            href={modelHref(m.id)}
+                            className="flex items-baseline justify-between gap-3 rounded-lg px-2 py-1.5 text-sm text-white/85 transition-colors hover:bg-white/10 hover:text-white"
+                          >
+                            <span className="truncate">{m.name}</span>
+                            <span className="shrink-0 text-xs font-bold tabular-nums text-white/55">US${modelPrice(m.id)}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+                <div className="col-span-3 mt-3 flex flex-wrap items-center gap-4 border-t border-white/10 pt-3 text-sm">
+                  <Link href={fleetHref} className="font-bold text-volt hover:text-white">
+                    {es ? "Ver toda la flota →" : "See the full fleet →"}
+                  </Link>
+                  <Link href={es ? "/precios" : "/en/pricing"} className="text-white/70 hover:text-white">
+                    {es ? "Precios" : "Pricing"}
+                  </Link>
+                  <Link href={es ? "/venta" : "/en/golf-carts-for-sale"} className="text-white/70 hover:text-white">
+                    {es ? "Venta" : "For sale"}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {NAV[locale].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-white/80 transition-colors hover:text-volt"
-            >
+            <Link key={item.href} href={item.href} className="nav-link text-sm font-medium text-white/80">
               {item.label}
             </Link>
           ))}
@@ -72,7 +114,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
           </a>
           <Link
             href={CTA[locale].href}
-            className="rounded-full bg-volt px-5 py-2.5 text-sm font-bold text-ink transition-transform hover:scale-105"
+            className="shine rounded-full bg-volt px-5 py-2.5 text-sm font-bold text-ink transition-transform duration-[var(--dur-base)] hover:scale-105"
           >
             <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />
             {CTA[locale].label}
@@ -110,6 +152,9 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
         className="fixed inset-x-0 top-16 bottom-auto z-40 m-0 max-h-[calc(100dvh-4rem)] w-full max-w-full overflow-y-auto border-x-0 border-b-0 border-t border-white/10 bg-ink px-4 pb-6 pt-2 text-white md:hidden"
         aria-label={es ? "Principal móvil" : "Main mobile"}
       >
+        <Link href={fleetHref} className="block py-3 text-base font-medium text-white/90">
+          {es ? "Flota" : "Fleet"}
+        </Link>
         {NAV[locale].map((item) => (
           <Link key={item.href} href={item.href} className="block py-3 text-base font-medium text-white/90">
             {item.label}

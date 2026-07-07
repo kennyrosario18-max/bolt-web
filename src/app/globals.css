@@ -219,6 +219,50 @@ body {
   transform: translateX(120%);
 }
 
+/* ── U2 · Navegación premium ── */
+/* Header gana glass + sombra al hacer scroll (clase .is-scrolled del shim). */
+#site-header {
+  transition:
+    background var(--dur-base) var(--ease-out-expo),
+    box-shadow var(--dur-base) var(--ease-out-expo);
+}
+#site-header.is-scrolled {
+  background: rgb(10 10 10 / 0.72);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: 0 10px 30px rgb(10 10 10 / 0.35);
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+/* Link con subrayado que crece desde el centro. */
+.nav-link {
+  position: relative;
+  padding-block: 0.5rem;
+  transition: color var(--dur-base) var(--ease-out-expo);
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #fff;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0.15rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--bolt-yellow);
+  transition:
+    left var(--dur-base) var(--ease-out-expo),
+    right var(--dur-base) var(--ease-out-expo);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.group:hover .nav-link::after {
+  left: 0;
+  right: 0;
+}
+
 /* Foco de marca unificado: amarillo BOLT visible en cualquier fondo.
    Los inputs conservan su propio focus-visible:ring; aquí cubrimos navegación. */
 a:focus-visible,

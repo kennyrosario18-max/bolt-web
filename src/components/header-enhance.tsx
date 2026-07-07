@@ -61,7 +61,15 @@ const SCRIPT = `
       });
     }
   }
-  function init(){initLang();initMenu();}
+  // Header gana glass+sombra al hacer scroll (clase .is-scrolled → CSS).
+  function initScroll(){
+    var h=document.getElementById('site-header');
+    if(!h)return;
+    var on=function(){ if(window.pageYOffset>8)h.classList.add('is-scrolled');else h.classList.remove('is-scrolled'); };
+    on();
+    window.addEventListener('scroll',on,{passive:true});
+  }
+  function init(){initLang();initMenu();initScroll();}
   if(document.readyState!=='loading')init();
   else document.addEventListener('DOMContentLoaded',init);
 })();
