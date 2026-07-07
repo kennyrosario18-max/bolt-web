@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return articlesByLocale("es").map((a) => ({ slug: a.slug }));
+  return articlesByLocale("en").map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -20,15 +20,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: article.metaTitle,
     description: article.metaDescription,
     alternates: {
-      canonical: `/blog/${article.slug}/`,
-      ...hreflang(`/blog/${article.slug}/`, `/en/blog/${article.pairSlug}/`),
+      canonical: `/en/blog/${article.slug}/`,
+      ...hreflang(`/blog/${article.pairSlug}/`, `/en/blog/${article.slug}/`),
     },
   };
 }
 
-export default async function BlogArticlePage({ params }: Props) {
+export default async function BlogArticlePageEn({ params }: Props) {
   const { slug } = await params;
   const article = getArticle(slug);
-  if (!article || article.locale !== "es") notFound();
-  return <BlogArticleView article={article} locale="es" />;
+  if (!article || article.locale !== "en") notFound();
+  return <BlogArticleView article={article} locale="en" />;
 }

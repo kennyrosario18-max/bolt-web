@@ -1,9 +1,14 @@
+import { BLOG_SLUG_PAIRS } from "@/content/blog";
+
 export type Locale = "es" | "en";
 
 /** Mapa de segmentos ES → EN para el switcher de idioma y hreflang.
     Los ids de modelo y zona son idénticos en ambos idiomas. */
 export const SEGMENT_ES_TO_EN: Record<string, string> = {
   flota: "fleet",
+  // El blog vive en /blog y /en/blog (mismo segmento); los SLUGS sí difieren por
+  // idioma y se resuelven con BLOG_SLUG_PAIRS en counterpartPath.
+  blog: "blog",
   precios: "pricing",
   servicios: "services",
   venta: "golf-carts-for-sale",
@@ -38,11 +43,14 @@ export function counterpartPath(pathname: string): string {
     const [, first, ...rest] = parts;
     const es = SEGMENT_EN_TO_ES[first];
     if (!es) return "/";
+    // Artículo de blog: traducir también el slug (difiere por idioma).
+    if (first === "blog" && rest[0]) rest[0] = BLOG_SLUG_PAIRS[rest[0]] ?? rest[0];
     return "/" + [es, ...rest].join("/") + "/";
   }
   const [first, ...rest] = parts;
   const en = SEGMENT_ES_TO_EN[first];
   if (!en) return "/en/";
+  if (first === "blog" && rest[0]) rest[0] = BLOG_SLUG_PAIRS[rest[0]] ?? rest[0];
   return "/en/" + [en, ...rest].join("/") + "/";
 }
 

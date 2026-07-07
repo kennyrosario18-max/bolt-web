@@ -53,6 +53,7 @@ const T = {
       { href: "/en/privacy", label: "Privacy" },
       { href: "/en/deposit", label: "Deposit details" },
       { href: "/en/about", label: "About us" },
+      { href: "/en/blog", label: "Blog" },
       { href: "/en/contact", label: "Contact" },
     ],
     cta: "Request availability",

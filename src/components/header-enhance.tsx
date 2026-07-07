@@ -1,4 +1,5 @@
 import { SEGMENT_ES_TO_EN } from "@/lib/i18n";
+import { BLOG_SLUG_PAIRS } from "@/content/blog";
 
 /** Mejora progresiva del header — vanilla, sin hidratación React (shim del PRD
  *  F3). Hace dos cosas y nada más:
@@ -11,14 +12,23 @@ import { SEGMENT_ES_TO_EN } from "@/lib/i18n";
 const SCRIPT = `
 (function(){
   var MAP=${JSON.stringify(SEGMENT_ES_TO_EN)};
+  var BP=${JSON.stringify(BLOG_SLUG_PAIRS)};
   var REV={};for(var k in MAP)REV[MAP[k]]=k;
   function counterpart(p){
     var c=p.replace(/\\/+$/,'')||'/';
     if(c==='/')return '/en';
     if(c==='/en')return '/';
     var parts=c.split('/').filter(Boolean);
-    if(parts[0]==='en'){var es=REV[parts[1]];if(!es)return '/';return '/'+[es].concat(parts.slice(2)).join('/')+'/';}
-    var en=MAP[parts[0]];if(!en)return '/en/';return '/en/'+[en].concat(parts.slice(1)).join('/')+'/';
+    if(parts[0]==='en'){
+      var es=REV[parts[1]];if(!es)return '/';
+      var rest=parts.slice(2);
+      if(parts[1]==='blog'&&rest[0]&&BP[rest[0]])rest[0]=BP[rest[0]];
+      return '/'+[es].concat(rest).join('/')+'/';
+    }
+    var en=MAP[parts[0]];if(!en)return '/en/';
+    var rest2=parts.slice(1);
+    if(parts[0]==='blog'&&rest2[0]&&BP[rest2[0]])rest2[0]=BP[rest2[0]];
+    return '/en/'+[en].concat(rest2).join('/')+'/';
   }
   function initLang(){
     // Interceptamos el clic en vez de reescribir el href: así el atributo del DOM

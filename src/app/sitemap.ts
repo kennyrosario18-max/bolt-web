@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { MODELS } from "@/content/models";
 import { ZONES } from "@/content/site";
-import { ARTICLES } from "@/content/blog";
+import { articlesByLocale } from "@/content/blog";
 
 // Requerido por output:'export' — el sitemap se genera en build.
 export const dynamic = "force-static";
@@ -54,9 +54,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push(...pair(`/alquiler/${z.id}/`, `/en/rentals/${z.id}/`, 0.8));
   }
 
-  entries.push({ url: `${SITE}/blog/`, priority: 0.6 });
-  for (const a of ARTICLES) {
-    entries.push({ url: `${SITE}/blog/${a.slug}/`, priority: 0.6 });
+  // Blog: índice y cada artículo emparejados ES↔EN por su pairSlug.
+  entries.push(...pair("/blog/", "/en/blog/", 0.6));
+  for (const a of articlesByLocale("es")) {
+    entries.push(...pair(`/blog/${a.slug}/`, `/en/blog/${a.pairSlug}/`, 0.6));
   }
 
   return entries;
