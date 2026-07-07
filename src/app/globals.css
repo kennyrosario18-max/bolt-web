@@ -293,19 +293,68 @@ summary:focus-visible,
   margin: 0;
 }
 
-/* Filtro de flota — server component sin React (F3). Radios nativos + CSS
-   (`:checked ~` / `:not()`, evitando :has() que Lightning CSS poda). */
-/* !important para ganar a las utilidades Tailwind (bg-white…) del label, que por
-   el orden de capas de Tailwind v4 se imponen pese a la mayor especificidad. */
-input[name="fleet-filter"]:checked + label {
+/* ── U4 · Catálogo de flota premium ── */
+/* Filtro sin React (F3): radios sr-only a nivel <fieldset> (hermanos de
+   #fleet-grid) + CSS (`:checked ~` / `:not()`, evitando :has() que Lightning
+   CSS poda). Las labels viven en .fleet-pills (barra sticky glass); el enlace
+   radio→label es por id (`~ .fleet-pills label[for]`) porque ya no son
+   adyacentes. */
+
+/* Barra de filtros sticky con glass claro; se pega justo bajo el header. */
+.fleet-pills {
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid var(--bolt-line);
+  scrollbar-width: none; /* Firefox: sin barra de scroll visible */
+}
+.fleet-pills::-webkit-scrollbar {
+  display: none;
+}
+.fleet-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Píldora activa (invertida) — enlazada por id ya que label no es adyacente al
+   radio. !important para ganar a las utilidades bg-white/border del label. */
+#ff-all:checked ~ .fleet-pills label[for="ff-all"],
+#ff-eco:checked ~ .fleet-pills label[for="ff-eco"],
+#ff-clubcar:checked ~ .fleet-pills label[for="ff-clubcar"],
+#ff-zycar:checked ~ .fleet-pills label[for="ff-zycar"],
+#ff-p4:checked ~ .fleet-pills label[for="ff-p4"],
+#ff-p6:checked ~ .fleet-pills label[for="ff-p6"] {
   background: var(--bolt-ink) !important;
   color: var(--bolt-yellow) !important;
   border-color: var(--bolt-ink) !important;
 }
 /* Foco de teclado: el radio es sr-only, mostramos el anillo en su píldora. */
-.fleet-radio:focus-visible + label {
+#ff-all:focus-visible ~ .fleet-pills label[for="ff-all"],
+#ff-eco:focus-visible ~ .fleet-pills label[for="ff-eco"],
+#ff-clubcar:focus-visible ~ .fleet-pills label[for="ff-clubcar"],
+#ff-zycar:focus-visible ~ .fleet-pills label[for="ff-zycar"],
+#ff-p4:focus-visible ~ .fleet-pills label[for="ff-p4"],
+#ff-p6:focus-visible ~ .fleet-pills label[for="ff-p6"] {
   outline: 2px solid var(--bolt-yellow);
   outline-offset: 2px;
+}
+
+/* Transición al filtrar: los que SALEN colapsan al instante (display:none →
+   sin huecos en la rejilla) y los que ENTRAN (o al cargar) hacen fade-in con
+   @starting-style. CSS puro; si el motor no soporta @starting-style, el filtro
+   sigue perfecto (solo se pierde el fade de entrada). No metemos `display` en la
+   transición: allow-discrete dejaba la tarjeta en opacity:0 pero display:block
+   (hueco fantasma). */
+.fleet-item {
+  transition:
+    opacity var(--dur-base) var(--ease-out-expo),
+    transform var(--dur-base) var(--ease-out-expo);
+}
+@starting-style {
+  .fleet-item {
+    opacity: 0;
+    transform: scale(0.96);
+  }
 }
 #ff-eco:checked ~ #fleet-grid .fleet-item:not(.is-eco),
 #ff-clubcar:checked ~ #fleet-grid .fleet-item:not(.is-clubcar),
