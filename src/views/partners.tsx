@@ -21,7 +21,7 @@ const T = {
     benefitsTitle: "Beneficios de ",
     benefitsHl: "aliado",
     benefits: [
-      { t: "Tarifa de aliado fija todo el año", d: "Un precio preferencial que no cambia en temporada alta." },
+      { t: "Tarifa preferencial de aliado", d: "Siempre mejor que la tarifa pública; te la compartimos por WhatsApp." },
       { t: "Cuenta mensual con factura e-CF", d: "Sin depósito por reserva: consolidamos todo en una cuenta mensual." },
       { t: "Disponibilidad prioritaria", d: "Tus solicitudes primero, incluso en fechas pico." },
       { t: "Reporte mensual por villa", d: "Sabes exactamente qué se rentó en cada propiedad." },
@@ -29,7 +29,7 @@ const T = {
     howTitle: "Cómo ",
     howHl: "funciona",
     steps: [
-      "Te damos de alta como aliado con tu tarifa fija.",
+      "Te damos de alta como aliado con tu tarifa preferencial.",
       "Reservas por el formulario concierge con los datos del huésped.",
       "Cierras cada mes con una factura e-CF y tu reporte por villa.",
     ],
@@ -77,7 +77,7 @@ const T = {
       { q: "¿Quién puede ser aliado?", a: "Agencias de renta vacacional, concierges, property managers y villas que necesiten golf carts de forma recurrente." },
       { q: "¿Tiene costo el programa?", a: "No. Ser aliado es gratis; solo pagas las rentas a tu tarifa preferencial, consolidadas en tu cuenta mensual." },
       { q: "¿Cómo facturan?", a: "Con factura e-CF mensual (comprobante fiscal electrónico), sin depósito por cada reserva." },
-      { q: "Refiero clientes, ¿cómo me beneficio?", a: "Te damos de alta como aliado: reservas para tus huéspedes o referidos con tu tarifa preferencial fija y todo queda consolidado en tu cuenta mensual con factura e-CF." },
+      { q: "Refiero clientes, ¿cómo me beneficio?", a: "Te damos de alta como aliado: reservas para tus huéspedes o referidos con tu tarifa preferencial y todo queda consolidado en tu cuenta mensual con factura e-CF." },
     ],
   },
   en: {
@@ -91,7 +91,7 @@ const T = {
     benefitsTitle: "Partner ",
     benefitsHl: "benefits",
     benefits: [
-      { t: "Fixed partner rate all year", d: "A preferred price that doesn't change in high season." },
+      { t: "Preferred partner rate", d: "Always better than the public rate; we share it on WhatsApp." },
       { t: "Monthly account with e-CF invoice", d: "No per-booking deposit: we consolidate everything into a monthly account." },
       { t: "Priority availability", d: "Your requests come first, even on peak dates." },
       { t: "Monthly per-villa report", d: "You know exactly what was rented at each property." },
@@ -99,7 +99,7 @@ const T = {
     howTitle: "How it ",
     howHl: "works",
     steps: [
-      "We set you up as a partner with your fixed rate.",
+      "We set you up as a partner with your preferred rate.",
       "You book through the concierge form with the guest's details.",
       "You close each month with an e-CF invoice and your per-villa report.",
     ],
@@ -147,7 +147,7 @@ const T = {
       { q: "Who can become a partner?", a: "Vacation-rental agencies, concierges, property managers and villas that need golf carts on a recurring basis." },
       { q: "Does the program cost anything?", a: "No. Becoming a partner is free; you only pay for rentals at your preferred rate, consolidated in your monthly account." },
       { q: "How do you invoice?", a: "With a monthly e-CF invoice (electronic fiscal receipt), with no deposit per booking." },
-      { q: "I refer clients — what's in it for me?", a: "We set you up as a partner: you book for your guests or referrals at your fixed preferred rate, all consolidated in your monthly account with an e-CF invoice." },
+      { q: "I refer clients — what's in it for me?", a: "We set you up as a partner: you book for your guests or referrals at your preferred rate, all consolidated in your monthly account with an e-CF invoice." },
     ],
   },
 } as const;
