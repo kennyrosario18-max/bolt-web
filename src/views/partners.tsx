@@ -33,6 +33,34 @@ const T = {
       "Reservas por el formulario concierge con los datos del huésped.",
       "Cierras cada mes con una factura e-CF y tu reporte por villa.",
     ],
+    reqTitle: "Requisitos del ",
+    reqHl: "aliado",
+    reqGroups: [
+      {
+        t: "Para darte de alta",
+        items: [
+          "Ser agencia, concierge, property manager o villa con necesidad recurrente",
+          "Contacto completo: nombre/empresa, WhatsApp y correo electrónico",
+          "RNC o cédula para la facturación e-CF",
+        ],
+      },
+      {
+        t: "En cada reserva",
+        items: [
+          "Reservar por el formulario concierge con los datos completos del huésped",
+          "Avisar cambios con 24h: el 1er cambio es gratis; desde el 2do, US$40 + ITBIS",
+          "Pagar la cuenta mensual contra factura e-CF (sin depósito por reserva)",
+        ],
+      },
+      {
+        t: "Tu huésped debe cumplir",
+        items: [
+          "Conductor mayor de 18 años con licencia vigente",
+          "Uso solo en residenciales, villas y resorts — nunca playa ni carreteras públicas",
+          "Máx. 25 km/h, todos sentados y sin exceder la capacidad del carrito",
+        ],
+      },
+    ],
     toolsTitle: "Tus ",
     toolsHl: "herramientas",
     tools: [
@@ -49,6 +77,7 @@ const T = {
       { q: "¿Quién puede ser aliado?", a: "Agencias de renta vacacional, concierges, property managers y villas que necesiten golf carts de forma recurrente." },
       { q: "¿Tiene costo el programa?", a: "No. Ser aliado es gratis; solo pagas las rentas a tu tarifa preferencial, consolidadas en tu cuenta mensual." },
       { q: "¿Cómo facturan?", a: "Con factura e-CF mensual (comprobante fiscal electrónico), sin depósito por cada reserva." },
+      { q: "Refiero clientes, ¿cómo me beneficio?", a: "Te damos de alta como aliado: reservas para tus huéspedes o referidos con tu tarifa preferencial fija y todo queda consolidado en tu cuenta mensual con factura e-CF." },
     ],
   },
   en: {
@@ -74,6 +103,34 @@ const T = {
       "You book through the concierge form with the guest's details.",
       "You close each month with an e-CF invoice and your per-villa report.",
     ],
+    reqTitle: "Partner ",
+    reqHl: "requirements",
+    reqGroups: [
+      {
+        t: "To get set up",
+        items: [
+          "Be an agency, concierge, property manager or villa with recurring need",
+          "Full contact details: name/company, WhatsApp and email",
+          "RNC or ID for e-CF invoicing",
+        ],
+      },
+      {
+        t: "On every booking",
+        items: [
+          "Book through the concierge form with the guest's full details",
+          "Notify changes 24h ahead: 1st change free; from the 2nd, US$40 + tax",
+          "Settle the monthly account against the e-CF invoice (no per-booking deposit)",
+        ],
+      },
+      {
+        t: "Your guest must follow",
+        items: [
+          "Driver over 18 with a valid license",
+          "Use only in residential areas, villas and resorts — never the beach or public roads",
+          "Max 25 km/h, everyone seated, never over the cart's capacity",
+        ],
+      },
+    ],
     toolsTitle: "Your ",
     toolsHl: "tools",
     tools: [
@@ -90,6 +147,7 @@ const T = {
       { q: "Who can become a partner?", a: "Vacation-rental agencies, concierges, property managers and villas that need golf carts on a recurring basis." },
       { q: "Does the program cost anything?", a: "No. Becoming a partner is free; you only pay for rentals at your preferred rate, consolidated in your monthly account." },
       { q: "How do you invoice?", a: "With a monthly e-CF invoice (electronic fiscal receipt), with no deposit per booking." },
+      { q: "I refer clients — what's in it for me?", a: "We set you up as a partner: you book for your guests or referrals at your fixed preferred rate, all consolidated in your monthly account with an e-CF invoice." },
     ],
   },
 } as const;
@@ -190,6 +248,29 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Requisitos del aliado — la respuesta oficial a "¿qué debo cumplir?" */}
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <h2 className="reveal font-display text-2xl font-extrabold sm:text-3xl">
+          {t.reqTitle}
+          <span className="hl">{t.reqHl}</span>
+        </h2>
+        <div className="reveal-list mt-6 grid gap-6 md:grid-cols-3">
+          {t.reqGroups.map((g) => (
+            <div key={g.t} className="lift rounded-card border border-line bg-white p-6 hover:border-volt/40">
+              <h3 className="font-display text-lg font-extrabold">{g.t}</h3>
+              <ul className="mt-3 space-y-2">
+                {g.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-inktext">
+                    <CheckIcon className="mt-0.5 shrink-0 text-ok" size={15} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
