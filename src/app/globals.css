@@ -315,6 +315,82 @@ input[name="fleet-filter"]:checked + label {
   display: none;
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   UI/UX Premium U5 — Scroll reveal global + divisores + fondos dinámicos.
+   Reveal nativo con animation-timeline: view() (0 JS, GPU-composited).
+   SEGURIDAD: el estado inicial oculto (opacity:0) SOLO se aplica dentro de
+   @supports (animation-timeline: view()); un navegador o crawler sin soporte
+   —o con reduce-motion— nunca oculta nada: el contenido se ve siempre.
+   ───────────────────────────────────────────────────────────────────────────── */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      /* Revela mientras el bloque entra por abajo: de 5% de entrada a 32% cubierto. */
+      animation-range: entry 5% cover 32%;
+    }
+    /* Escalonado de hijos directos: cada uno arranca un poco más tarde en su rango. */
+    .reveal-list > * {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 26%;
+    }
+  }
+}
+
+/* Divisor de sección premium: hairline con degradado y chispa volt al centro. */
+.divider-volt {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--bolt-line) 20%,
+    var(--bolt-line) 80%,
+    transparent
+  );
+  position: relative;
+}
+.divider-volt::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 44px;
+  height: 3px;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  background: var(--bolt-yellow);
+  box-shadow: 0 0 16px rgb(255 214 10 / 0.5);
+}
+
+/* Fondo de sección con glow radial sutil (profundidad sin coste de repaint). */
+.section-glow {
+  position: relative;
+  isolation: isolate;
+}
+.section-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 85% 0%, rgb(255 214 10 / 0.07), transparent 60%),
+    radial-gradient(50% 50% at 0% 100%, rgb(255 214 10 / 0.05), transparent 55%);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

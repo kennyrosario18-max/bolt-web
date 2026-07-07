@@ -212,7 +212,7 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       {/* Modelos destacados */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="reveal flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-volt-dark">{t.fleetKicker}</p>
             <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -227,7 +227,7 @@ export function HomeView({ locale }: { locale: Locale }) {
             {t.seeAll}
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-list mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((m) => (
             <ModelCard key={m.id} model={m} locale={locale} />
           ))}
@@ -235,8 +235,8 @@ export function HomeView({ locale }: { locale: Locale }) {
       </section>
 
       {/* Renta / Venta */}
-      <section className="bg-cream">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-20">
+      <section className="section-glow bg-cream">
+        <div className="reveal-list mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-20">
           <div className="rounded-card border border-line bg-white p-8">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-volt-dark">{t.rentKicker}</p>
             <h2 className="mt-2 font-display text-2xl font-extrabold">{t.rentTitle}</h2>
@@ -277,7 +277,7 @@ export function HomeView({ locale }: { locale: Locale }) {
           <span className="hl">{t.coverB}</span>
         </h2>
         <p className="mt-3 max-w-xl text-inktext">{t.coverLead}</p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-list mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ZONES.map((z) => (
             <Link
               key={z.id}
@@ -329,7 +329,7 @@ export function HomeView({ locale }: { locale: Locale }) {
           <p className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink">
             <CheckIcon size={15} /> {t.sameDay}
           </p>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
+          <div className="reveal-list mt-10 grid gap-8 md:grid-cols-3">
             {t.steps.map((s) => (
               <div key={s.n}>
                 <span className="font-display text-4xl font-extrabold text-volt">{s.n}</span>

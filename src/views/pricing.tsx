@@ -76,7 +76,7 @@ export function PricingView({ locale }: { locale: Locale }) {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="reveal-list grid gap-10 lg:grid-cols-2">
           {[
             { label: t.group4, models: pricedModels(4) },
             { label: t.group6, models: pricedModels(6) },

@@ -196,7 +196,7 @@ export function SaleView({ locale = "es" }: { locale?: Locale }) {
             <span className="hl">{t.modelsHl}</span>
           </h2>
           <p className="mt-2 max-w-2xl text-inktext">{t.modelsLead}</p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="reveal-list mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {MODELS.map((m) => (
               <div key={m.id} className="group lift overflow-hidden rounded-card border border-line bg-white hover:border-volt/40">
                 <div className="relative aspect-[4/3] overflow-hidden bg-cream">
