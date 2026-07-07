@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { getModel } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
@@ -66,6 +67,10 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
   const intro = es ? landing.intro : landing.introEn;
   const faqs = es ? landing.faqs : landing.faqsEn;
   const note = es ? zone.note : zone.noteEn;
+  const sections = landing.sections.map((s) => ({
+    h: es ? s.h : s.hEn,
+    p: es ? s.p : s.pEn,
+  }));
 
   return (
     <>
@@ -79,36 +84,36 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
           ])
         )}
       />
-      <section className="bg-ink text-white">
+      <section className="relative isolate overflow-hidden mesh-ink grain text-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-16">
-          <nav aria-label={t.crumbAria} className="text-sm text-white/50">
+          <nav aria-label={t.crumbAria} className="animate-rise stagger text-sm text-white/70" style={{ "--i": 0 } as CSSProperties}>
             <Link href={t.crumbHomeHref} className="hover:text-volt">
               {t.crumbHome}
             </Link>{" "}
             / {t.crumbZones}
           </nav>
-          <h1 className="mt-3 max-w-3xl font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <h1 className="animate-rise-t stagger mt-3 max-w-3xl font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl" style={{ "--i": 1 } as CSSProperties}>
             {heroTitle}
           </h1>
-          <p lang={es ? "en" : "es"} className="mt-1 text-sm italic text-white/60">
+          <p lang={es ? "en" : "es"} className="animate-rise stagger mt-1 text-sm italic text-white/60" style={{ "--i": 2 } as CSSProperties}>
             {heroSub}
           </p>
-          <p className="mt-5 max-w-2xl text-lg text-white/75">{intro}</p>
+          <p className="animate-rise stagger mt-5 max-w-2xl text-lg text-white/75" style={{ "--i": 3 } as CSSProperties}>{intro}</p>
           {zone.minDays ? (
-            <p className="mt-4 inline-block rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink">
+            <p className="animate-rise stagger mt-4 inline-block rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink" style={{ "--i": 4 } as CSSProperties}>
               {t.minDays(zone.minDays, note ?? "")}
             </p>
           ) : null}
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="animate-rise stagger mt-7 flex flex-wrap gap-3" style={{ "--i": 5 } as CSSProperties}>
             <Link
               href={t.reqHref}
-              className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+              className="shine lift rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
             >
               <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
             </Link>
             <Link
               href={t.pricesHref}
-              className="rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white hover:border-volt hover:text-volt"
+              className="rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-[var(--dur-base)] hover:border-volt hover:text-volt"
             >
               {t.pricesCta}
             </Link>
@@ -117,7 +122,7 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <ul className="grid gap-4 md:grid-cols-3">
+        <ul className="reveal-list grid gap-4 md:grid-cols-3">
           {landing.bullets.map((b) => (
             <li key={b.es} className="rounded-card bg-cream p-6">
               <p className="font-semibold text-ink">
@@ -127,6 +132,20 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Cuerpo largo (F7-B): contenido único e indexable por zona. */}
+      <section className="mx-auto max-w-3xl px-4 pb-4 sm:px-6">
+        {sections.map((s, i) => (
+          <div key={s.h} className={i > 0 ? "reveal mt-10" : "reveal"}>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">{s.h}</h2>
+            {s.p.map((para, j) => (
+              <p key={j} className="mt-4 text-lg leading-relaxed text-inktext">
+                {para}
+              </p>
+            ))}
+          </div>
+        ))}
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-4 sm:px-6">
