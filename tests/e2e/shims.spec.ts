@@ -65,6 +65,7 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.goto("/solicitar-disponibilidad/");
     await page.locator("#nombre").fill("Test QA");
     await page.locator("#whatsapp").fill("+1 809 000 0000");
+    await page.locator("#email").fill("qa@example.com");
     await page.locator("#zona").selectOption("casa-de-campo");
     await page.locator("#llegada").fill("2027-01-10");
     await page.locator("#salida").fill("2027-01-12"); // 2 días < mínimo 7
@@ -86,6 +87,27 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.locator("#zona").selectOption({ index: 1 });
     // 3 días × US$85 × 1.18 = US$301 (redondeado)
     await expect(page.locator("#estimate")).toContainText("US$301");
+  });
+});
+
+test.describe("formulario concierge (email obligatorio)", () => {
+  test("el correo es required y el shim lo incluye en el resumen", async ({ page }) => {
+    await page.goto("/reserva-concierge/");
+    const email = page.locator("#cg-email");
+    await expect(email).toHaveAttribute("required", "");
+    await expect(email).toHaveAttribute("type", "email");
+
+    // Con todo lleno menos carritos, el shim corre (natives pasan) y bloquea
+    // por carritos — prueba de que el flujo del shim sigue vivo tras el cambio.
+    await page.locator("#cg-aliado").fill("QA Concierge");
+    await page.locator("#cg-whatsapp").fill("+1 809 000 0000");
+    await email.fill("concierge@example.com");
+    await page.locator("#cg-villa").fill("Villa QA");
+    await page.locator("#cg-zona").selectOption({ index: 1 });
+    await page.locator("#cg-checkin").fill("2027-02-01");
+    await page.locator("#cg-checkout").fill("2027-02-05");
+    await page.locator('#cg-form button[type="submit"]').click();
+    await expect(page.locator("#cg-error")).toContainText(/carrito|cart/i);
   });
 });
 

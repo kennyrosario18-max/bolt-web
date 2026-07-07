@@ -16,6 +16,7 @@ const T = {
     partnersHref: "/aliados",
     lAliado: "Aliado / villa / agencia *",
     lWhatsapp: "Tu WhatsApp *",
+    lEmail: "Tu correo electrónico *",
     lVilla: "Villa o residencial del huésped *",
     lZona: "Zona de entrega *",
     zonaPlaceholder: "Selecciona la zona…",
@@ -28,6 +29,7 @@ const T = {
     header: "⚡ RESERVA CONCIERGE — boltgolfcars.com",
     fAliado: "Aliado/Villa",
     fWhatsapp: "WhatsApp",
+    fEmail: "Email",
     fHuesped: "Villa del huésped",
     fZona: "Zona",
     fCheckin: "Check-in",
@@ -37,7 +39,7 @@ const T = {
     carts4Unit: "de 4 plazas",
     carts6Unit: "de 6 plazas",
     submit: "Enviar reserva por WhatsApp",
-    errReq: "Completa el aliado, tu WhatsApp, la villa y la zona.",
+    errReq: "Completa el aliado, tu WhatsApp, tu correo, la villa y la zona.",
     errFechas: "Selecciona check-in y check-out.",
     errOrden: "El check-out debe ser posterior al check-in.",
     errCarts: "Indica al menos 1 carrito (de 4 o de 6 plazas).",
@@ -56,6 +58,7 @@ const T = {
     partnersHref: "/en/partners",
     lAliado: "Partner / villa / agency *",
     lWhatsapp: "Your WhatsApp *",
+    lEmail: "Your email *",
     lVilla: "Guest's villa or community *",
     lZona: "Delivery zone *",
     zonaPlaceholder: "Select the zone…",
@@ -68,6 +71,7 @@ const T = {
     header: "⚡ CONCIERGE BOOKING — boltgolfcars.com",
     fAliado: "Partner/Villa",
     fWhatsapp: "WhatsApp",
+    fEmail: "Email",
     fHuesped: "Guest villa",
     fZona: "Zone",
     fCheckin: "Check-in",
@@ -77,7 +81,7 @@ const T = {
     carts4Unit: "4-seat",
     carts6Unit: "6-seat",
     submit: "Send booking via WhatsApp",
-    errReq: "Fill in the partner, your WhatsApp, the villa and the zone.",
+    errReq: "Fill in the partner, your WhatsApp, your email, the villa and the zone.",
     errFechas: "Select check-in and check-out.",
     errOrden: "Check-out must be after check-in.",
     errCarts: "Enter at least 1 cart (4 or 6 seats).",
@@ -100,7 +104,7 @@ export function ConciergeForm({ locale = "es" }: { locale?: Locale }) {
     phone: CONTACT.whatsapp,
     header: t.header,
     f: {
-      aliado: t.fAliado, whatsapp: t.fWhatsapp, huesped: t.fHuesped, zona: t.fZona,
+      aliado: t.fAliado, whatsapp: t.fWhatsapp, email: t.fEmail, huesped: t.fHuesped, zona: t.fZona,
       checkin: t.fCheckin, checkout: t.fCheckout, carts: t.fCarts, comentarios: t.fComentarios,
     },
     carts4Unit: t.carts4Unit,
@@ -133,6 +137,11 @@ export function ConciergeForm({ locale = "es" }: { locale?: Locale }) {
           <div className="sm:col-span-2">
             <label className={labelCls} htmlFor="cg-whatsapp">{t.lWhatsapp}</label>
             <input id="cg-whatsapp" name="whatsapp" type="tel" required placeholder="+1 809 000 0000" className={inputCls} autoComplete="tel" />
+          </div>
+          {/* Obligatorio: sin correo no hay hilo formal de cotización ni pago. */}
+          <div className="sm:col-span-2">
+            <label className={labelCls} htmlFor="cg-email">{t.lEmail}</label>
+            <input id="cg-email" name="email" type="email" required className={inputCls} autoComplete="email" />
           </div>
 
           <div className="sm:col-span-2">
@@ -223,6 +232,7 @@ function ConciergeEnhance({ payload }: { payload: unknown }) {
     return [P.header,'',
       f.aliado+': '+val('cg-aliado'),
       f.whatsapp+': '+val('cg-whatsapp'),
+      f.email+': '+val('cg-email'),
       f.huesped+': '+val('cg-villa'),
       f.zona+': '+zoneName(),
       f.checkin+': '+val('cg-checkin'),
@@ -235,14 +245,15 @@ function ConciergeEnhance({ payload }: { payload: unknown }) {
     if(!P.web3key)return;
     try{fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({access_key:P.web3key,subject:P.emailSubject,from_name:'BOLT concierge · boltgolfcars.com',
-        Aliado:val('cg-aliado'),WhatsApp:val('cg-whatsapp'),Villa:val('cg-villa'),Zona:zoneName(),
+        replyto:val('cg-email'),
+        Aliado:val('cg-aliado'),WhatsApp:val('cg-whatsapp'),Email:val('cg-email'),Villa:val('cg-villa'),Zona:zoneName(),
         Checkin:val('cg-checkin'),Checkout:val('cg-checkout'),message:summary,botcheck:''})}).catch(function(){});}catch(e){}
   }
   function succeed(){form.hidden=true;var s=$('cg-success');s.hidden=false;s.focus();}
   form.addEventListener('submit',function(e){
     e.preventDefault();err.hidden=true;
     if(val('empresa')){succeed();return;}
-    if(!val('cg-aliado')||!val('cg-whatsapp')||!val('cg-villa')||!zoneName()){showError(P.errReq);return;}
+    if(!val('cg-aliado')||!val('cg-whatsapp')||!val('cg-email')||!val('cg-villa')||!zoneName()){showError(P.errReq);return;}
     var ci=checkin.value,co=checkout.value;
     if(!ci||!co){showError(P.errFechas,!ci?checkin:checkout);return;}
     var d=diffDays(ci,co);

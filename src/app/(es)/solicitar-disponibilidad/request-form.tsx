@@ -23,7 +23,7 @@ const T = {
     days: "días",
     reqLegend: "Los campos marcados con * son obligatorios.",
     lNombre: "Nombre completo *",
-    lEmail: "Correo electrónico (opcional)",
+    lEmail: "Correo electrónico *",
     lWhatsapp: "WhatsApp *",
     lLlegada: "Fecha de llegada *",
     lSalida: "Fecha de salida *",
@@ -68,7 +68,7 @@ const T = {
     days: "days",
     reqLegend: "Fields marked * are required.",
     lNombre: "Full name *",
-    lEmail: "Email (optional)",
+    lEmail: "Email *",
     lWhatsapp: "WhatsApp *",
     lLlegada: "Arrival date *",
     lSalida: "Departure date *",
@@ -148,7 +148,8 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
 
         <div>
           <label className={labelCls} htmlFor="email">{t.lEmail}</label>
-          <input id="email" name="email" type="email" className={inputCls} autoComplete="email" />
+          {/* Obligatorio: sin correo no hay hilo formal de cotización ni pago. */}
+          <input id="email" name="email" type="email" required className={inputCls} autoComplete="email" />
         </div>
         <div>
           <label className={labelCls} htmlFor="whatsapp">{t.lWhatsapp}</label>
