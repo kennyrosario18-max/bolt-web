@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { MODELS } from "@/content/models";
 import { ModelPhoto } from "@/components/model-photo";
@@ -142,47 +143,52 @@ export function HomeView({ locale }: { locale: Locale }) {
 
   return (
     <>
-      {/* Hero — modo premium negro */}
-      <section className="bg-ink text-white">
+      {/* Hero premium (U1) — malla de gradiente viva + grano, entrada escalonada. */}
+      <section className="relative isolate overflow-hidden mesh-ink grain text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 md:grid-cols-2 md:pb-24 md:pt-20">
           <div>
             {/* F7: eslogan a kicker (marca) y H1 con keyword para SEO. */}
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-volt">
+            <p className="animate-rise stagger text-sm font-bold uppercase tracking-[0.2em] text-volt" style={{ "--i": 0 } as CSSProperties}>
               {SLOGAN.replace(/\.$/, "")} · {t.kicker}
             </p>
-            <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="animate-rise stagger mt-4 font-display text-4xl font-extrabold leading-[1.03] tracking-tight text-white sm:text-5xl lg:text-6xl" style={{ "--i": 1 } as CSSProperties}>
               {t.h1}
             </h1>
-            <p className="mt-5 max-w-md text-lg text-white/75">
+            <p className="animate-rise stagger mt-5 max-w-md text-lg text-white/75" style={{ "--i": 2 } as CSSProperties}>
               {t.leadA}
               <span className="hl-dark font-semibold">{t.pcrc}</span>
               {t.leadB}
             </p>
-            <p lang={es ? "en" : "es"} className="mt-2 max-w-md text-sm italic text-white/55">
+            <p lang={es ? "en" : "es"} className="animate-rise stagger mt-2 max-w-md text-sm italic text-white/55" style={{ "--i": 3 } as CSSProperties}>
               {t.leadSub}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="animate-rise stagger mt-8 flex flex-wrap gap-3" style={{ "--i": 4 } as CSSProperties}>
               <Link
                 href={t.fleetHref}
-                className="rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+                className="shine lift rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
               >
                 <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.fleetCta}
               </Link>
               <Link
                 href={t.reqHref}
-                className="rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:border-volt hover:text-volt"
+                className="rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-[var(--dur-base)] hover:border-volt hover:text-volt"
               >
                 {t.reqCta}
               </Link>
             </div>
-            <p className="mt-6 text-sm text-white/50">
+            <p className="animate-rise stagger mt-6 text-sm text-white/50" style={{ "--i": 5 } as CSSProperties}>
               {t.fromA}
               <span className="font-bold text-white">{t.fromPrice}</span>
               {t.fromB}
             </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card">
-            <ModelPhoto id="zycar-4" alt={t.heroAlt} priority sizes="(max-width: 768px) 100vw, 50vw" />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-card ring-1 ring-white/10 shadow-[var(--shadow-xl)] animate-fade stagger" style={{ "--i": 2 } as CSSProperties}>
+            <ModelPhoto id="zycar-4" alt={t.heroAlt} priority sizes="(max-width: 768px) 100vw, 50vw" className="ken-burns" />
+            {/* Badge glass de precio sobre la imagen (patrón automotor premium). */}
+            <div className="glass absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-white">
+              <BoltIcon className="text-volt" size={15} />
+              {t.fromPrice}
+            </div>
           </div>
         </div>
 

@@ -13,6 +13,20 @@
   /* verde oscurecido para cumplir AA como texto sobre fondos claros (antes #16a34a) */
   --bolt-success: #15803d;
   --bolt-danger: #b91c1c; /* red-700: AA sobre blanco y red-50 */
+
+  /* ── UI/UX Premium U0 — tokens de movimiento y profundidad (CSS puro, 0 JS) ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --dur-fast: 140ms;
+  --dur-base: 260ms;
+  --dur-slow: 560ms;
+  /* Sombras cálidas en escala (tinte ink, no gris frío) */
+  --shadow-sm: 0 1px 2px rgb(10 10 10 / 0.06), 0 1px 3px rgb(10 10 10 / 0.08);
+  --shadow-md: 0 6px 16px rgb(10 10 10 / 0.08), 0 2px 6px rgb(10 10 10 / 0.06);
+  --shadow-lg: 0 14px 36px rgb(10 10 10 / 0.12), 0 4px 12px rgb(10 10 10 / 0.08);
+  --shadow-xl: 0 28px 70px rgb(10 10 10 / 0.18), 0 10px 24px rgb(10 10 10 / 0.1);
+  --shadow-glow: 0 10px 44px rgb(255 214 10 / 0.22);
 }
 
 @theme inline {
@@ -65,6 +79,144 @@ body {
 /* Versión para fondos oscuros: el texto resaltado se mantiene legible */
 .hl-dark {
   color: var(--bolt-yellow);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UI/UX Premium U0 — utilidades (CSS puro, 0 JS, seguras sin JS y con AA).
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Glass de marca (sobre fondos oscuros e imágenes). */
+.glass {
+  background: rgb(10 10 10 / 0.5);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
+.glass-light {
+  background: rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgb(255 255 255 / 0.6);
+}
+
+/* Malla de gradiente viva: ink + brillo volt que deriva lento. La capa va en un
+   ::before y SOLO se anima `transform` (compositor/GPU: cero repaint, sin
+   penalización de Lighthouse por animación no-composited). */
+.mesh-ink {
+  background-color: var(--bolt-ink);
+}
+.mesh-ink::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  z-index: -1;
+  background-image:
+    radial-gradient(46% 60% at 12% 8%, rgb(255 214 10 / 0.16), transparent 60%),
+    radial-gradient(40% 50% at 92% 18%, rgb(255 214 10 / 0.1), transparent 60%),
+    radial-gradient(55% 55% at 62% 104%, rgb(138 106 0 / 0.22), transparent 60%);
+  animation: mesh-drift 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes mesh-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.07);
+  }
+}
+
+/* Grano/textura cinematográfica sutil (data-uri SVG, sin request extra). */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Animaciones de ENTRADA en carga (seguras: el estado final es visible; si no
+   corren, el contenido igual se ve; reduce-motion las vuelve instantáneas). */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes reveal-clip {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: scale(1.06);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+.animate-rise {
+  animation: rise-in var(--dur-slow) var(--ease-out-expo) both;
+}
+.animate-fade {
+  animation: fade-in var(--dur-slow) var(--ease-out-expo) both;
+}
+/* Escalonado por índice: style="--i:N" en el elemento. */
+.stagger {
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+.reveal-img {
+  animation: reveal-clip 900ms var(--ease-out-expo) both;
+}
+.ken-burns {
+  animation: ken-burns 14s ease-in-out infinite alternate;
+}
+
+/* Hover premium: elevación + easing de marca (reemplaza el scale-105 genérico). */
+.lift {
+  transition:
+    transform var(--dur-base) var(--ease-out-expo),
+    box-shadow var(--dur-base) var(--ease-out-expo);
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Botón con brillo (shine) que cruza al hover. */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform var(--dur-slow) var(--ease-out-quint);
+}
+.shine:hover::before {
+  transform: translateX(120%);
 }
 
 /* Foco de marca unificado: amarillo BOLT visible en cualquier fondo.
