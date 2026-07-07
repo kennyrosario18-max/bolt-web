@@ -21,6 +21,7 @@ const T = {
     recommend: "Por recomendar",
     day: "día",
     days: "días",
+    reqLegend: "Los campos marcados con * son obligatorios.",
     lNombre: "Nombre completo *",
     lEmail: "Correo electrónico (opcional)",
     lWhatsapp: "WhatsApp *",
@@ -65,6 +66,7 @@ const T = {
     recommend: "Recommend one for my group",
     day: "day",
     days: "days",
+    reqLegend: "Fields marked * are required.",
     lNombre: "Full name *",
     lEmail: "Email (optional)",
     lWhatsapp: "WhatsApp *",
@@ -137,6 +139,8 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           ES el CTA. La ocultamos solo en esta página, sin JS. */}
       <style>{`#mobile-cta{display:none}`}</style>
       <form id="req-form" className="grid gap-5 sm:grid-cols-2">
+        {/* WCAG 3.3.2: leyenda que explica el asterisco de obligatorio. */}
+        <p className="text-xs text-steel sm:col-span-2">{t.reqLegend}</p>
         <div className="sm:col-span-2">
           <label className={labelCls} htmlFor="nombre">{t.lNombre}</label>
           <input id="nombre" name="nombre" required className={inputCls} autoComplete="name" />
@@ -177,7 +181,9 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
               </option>
             ))}
           </select>
-          <p id="zona-note" hidden aria-live="polite" className="mt-1.5 text-xs font-semibold text-volt-dark" />
+          {/* aria-live SIN hidden: la región vive en el árbol de a11y desde la carga
+              (vacía se saca del flujo con la regla :empty de globals.css). */}
+          <p id="zona-note" aria-live="polite" className="mt-1.5 text-xs font-semibold text-volt-dark" />
         </div>
         <div>
           <label className={labelCls} htmlFor="pasajeros">{t.lPasajeros}</label>
@@ -216,7 +222,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
         </div>
 
         {/* Estimado en vivo — se muestra cuando hay fechas + modelo o pasajeros. */}
-        <p id="estimate" hidden aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-ink sm:col-span-2" />
+        <p id="estimate" aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-ink sm:col-span-2" />
 
         {/* Transparencia de depósitos + temporada (siempre visible). */}
         <div className="rounded-box border border-line bg-white px-4 py-3 text-xs text-steel sm:col-span-2">
@@ -224,7 +230,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           <p className="mt-1">{t.seasonNote}</p>
         </div>
 
-        <p id="min-warning" hidden aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2" />
+        <p id="min-warning" aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2" />
         <p id="form-error" hidden role="alert" className="rounded-box bg-red-50 px-4 py-3 text-sm font-semibold text-danger sm:col-span-2" />
 
         <div className="sm:col-span-2">

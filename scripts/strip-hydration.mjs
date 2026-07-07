@@ -5,18 +5,24 @@
  *  <script> planos, no React. Quita SOLO lo de Next; conserva shims, JSON-LD y CSS.
  *
  *  Se ejecuta como postbuild sobre out/**.html. Determinista, sin red ni sharp. */
-import { readdir, readFile, writeFile, stat } from "node:fs/promises";
+import { readdir, readFile, writeFile, stat, unlink } from "node:fs/promises";
 import { join } from "node:path";
 
 const OUT = "out";
 
-async function walk(dir) {
+// Payloads RSC en .txt: sin JS de React jamás se piden, pero duplican el peso del
+// deploy (~11MB de 20MB). Se borran SOLO los patrones conocidos de Next —
+// robots.txt y .well-known/security.txt se conservan.
+const isRscTxt = (name) => name === "index.txt" || (name.startsWith("__next") && name.endsWith(".txt"));
+
+async function walk(dir, txts) {
   const out = [];
   for (const name of await readdir(dir)) {
     const p = join(dir, name);
     const s = await stat(p);
-    if (s.isDirectory()) out.push(...(await walk(p)));
+    if (s.isDirectory()) out.push(...(await walk(p, txts)));
     else if (name.endsWith(".html")) out.push(p);
+    else if (isRscTxt(name)) txts.push(p);
   }
   return out;
 }
@@ -36,7 +42,8 @@ function strip(html) {
   );
 }
 
-const files = await walk(OUT);
+const txts = [];
+const files = await walk(OUT, txts);
 let before = 0, after = 0, nextf = 0;
 for (const f of files) {
   const html = await readFile(f, "utf8");
@@ -46,9 +53,10 @@ for (const f of files) {
   if (out.includes("__next_f")) nextf++;
   if (out !== html) await writeFile(f, out);
 }
+for (const t of txts) await unlink(t);
 const kb = (n) => (n / 1024).toFixed(0);
 console.log(
   `✓ strip-hydration: ${files.length} páginas · ${kb(before)}→${kb(after)} KB HTML ` +
-    `(-${kb(before - after)} KB) · páginas con __next_f restante: ${nextf}`
+    `(-${kb(before - after)} KB) · payloads RSC .txt borrados: ${txts.length} · páginas con __next_f restante: ${nextf}`
 );
 if (nextf > 0) { console.error("✗ quedó payload RSC en algunas páginas"); process.exit(1); }

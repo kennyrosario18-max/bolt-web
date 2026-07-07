@@ -199,7 +199,7 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
           {t.toolsTitle}
           <span className="hl">{t.toolsHl}</span>
         </h2>
-        <div className="reveal-list mt-6 grid gap-6 sm:grid-cols-3">
+        <div className="reveal-list mt-6 grid gap-6 md:grid-cols-3">
           {t.tools.map((tool) => (
             <Link
               key={tool.href}

@@ -5,8 +5,9 @@ import { modelPrice } from "@/content/pricing";
 import type { Locale } from "@/lib/i18n";
 
 /** Tarjeta de modelo premium (U3): lift, zoom lento con overlay, badge glass,
- *  revelado del CTA al hover y precio tabular. Todo CSS — 0 JS. */
-export function ModelCard({ model, locale = "es" }: { model: Model; locale?: Locale }) {
+ *  revelado del CTA al hover y precio tabular. Todo CSS — 0 JS.
+ *  `priority`: para tarjetas above-the-fold (candidatas a LCP) — carga eager. */
+export function ModelCard({ model, locale = "es", priority = false }: { model: Model; locale?: Locale; priority?: boolean }) {
   const es = locale === "es";
   const href = es ? `/flota/${model.id}` : `/en/fleet/${model.id}`;
   const cta = es ? "Ver modelo →" : "View model →";
@@ -25,6 +26,7 @@ export function ModelCard({ model, locale = "es" }: { model: Model; locale?: Loc
               : `${model.name} golf cart — seats ${model.pax}`
           }
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={priority}
           className="transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.08]"
         />
         {/* Overlay que aparece al hover (profundidad + legibilidad del CTA). */}

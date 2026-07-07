@@ -52,15 +52,18 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
 
   return (
     <header id="site-header" className="sticky top-0 z-50 bg-ink text-white transition-shadow">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      {/* relative: ancla del mega-menú (centrado al contenedor, no al link Flota,
+          que quedaba cortado fuera del viewport en 768-1100px). */}
+      <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href={es ? "/" : "/en"} aria-label={es ? "BOLT — inicio" : "BOLT — home"}>
           <BoltLogo dark />
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex" aria-label={es ? "Principal" : "Main"}>
+        {/* lg: en md (768-1023) la nav completa no cabe (CTA partido en 2 líneas) → menú móvil. */}
+        <nav className="hidden items-center gap-6 lg:flex" aria-label={es ? "Principal" : "Main"}>
           {/* Flota con mega-menú (CSS group-hover / focus-within). */}
-          <div className="group relative">
-            <Link href={fleetHref} className="nav-link flex items-center gap-1 text-sm font-medium text-white/80" aria-haspopup="true">
+          <div className="group">
+            <Link href={fleetHref} className="nav-link flex items-center gap-1 text-sm font-medium text-white/80">
               {es ? "Flota" : "Fleet"}
               <span className="text-white/40 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true">⌄</span>
             </Link>
@@ -121,12 +124,12 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <a
             data-langswitch
             href={otherHome}
             aria-label={langAria}
-            className="rounded-full border border-white/25 px-3 py-1.5 text-xs font-bold text-white/80"
+            className="inline-flex h-11 min-w-11 items-center justify-center rounded-full border border-white/25 px-3 text-xs font-bold text-white/80"
           >
             {otherLabel}
           </a>
@@ -134,7 +137,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
             type="button"
             id="nav-toggle"
             popoverTarget="nav-movil"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5"
             aria-expanded="false"
             aria-controls="nav-movil"
             aria-label={es ? "Menú" : "Menu"}
@@ -149,7 +152,7 @@ export function Header({ locale = "es" }: { locale?: Locale }) {
       <nav
         id="nav-movil"
         popover="auto"
-        className="fixed inset-x-0 top-16 bottom-auto z-40 m-0 max-h-[calc(100dvh-4rem)] w-full max-w-full overflow-y-auto border-x-0 border-b-0 border-t border-white/10 bg-ink px-4 pb-6 pt-2 text-white md:hidden"
+        className="fixed inset-x-0 top-16 bottom-auto z-40 m-0 max-h-[calc(100dvh-4rem)] w-full max-w-full overflow-y-auto border-x-0 border-b-0 border-t border-white/10 bg-ink px-4 pb-6 pt-2 text-white lg:hidden"
         aria-label={es ? "Principal móvil" : "Main mobile"}
       >
         <Link href={fleetHref} className="block py-3 text-base font-medium text-white/90">

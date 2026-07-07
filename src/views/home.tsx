@@ -12,6 +12,8 @@ import type { Locale } from "@/lib/i18n";
 
 const FEATURED_IDS = ["eco-cross-4-2", "eco-plus-4-2", "cc-precedent-2-2"];
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const TRUST_ICONS = [BoltIcon, PinIcon, ShieldIcon, ChatIcon];
 
 const T = {
@@ -143,6 +145,17 @@ export function HomeView({ locale }: { locale: Locale }) {
 
   return (
     <>
+      {/* Preload del AVIF del hero (LCP): React lo iza al <head>; el type hace que
+          navegadores sin AVIF lo ignoren. El strip de hidratación conserva
+          preloads de imagen (solo quita los de script). */}
+      <link
+        rel="preload"
+        as="image"
+        type="image/avif"
+        imageSrcSet={`${BASE}/images/models/opt/zycar-4-640.avif 640w, ${BASE}/images/models/opt/zycar-4-960.avif 960w`}
+        imageSizes="(max-width: 768px) 100vw, 50vw"
+        fetchPriority="high"
+      />
       {/* Hero premium (U1) — malla de gradiente viva + grano, entrada escalonada. */}
       <section className="relative isolate overflow-hidden mesh-ink grain text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 md:grid-cols-2 md:pb-24 md:pt-20">
@@ -151,7 +164,9 @@ export function HomeView({ locale }: { locale: Locale }) {
             <p className="animate-rise stagger text-sm font-bold uppercase tracking-[0.2em] text-volt" style={{ "--i": 0 } as CSSProperties}>
               {SLOGAN.replace(/\.$/, "")} · {t.kicker}
             </p>
-            <h1 className="animate-rise stagger mt-4 font-display text-4xl font-extrabold leading-[1.03] tracking-tight text-white sm:text-5xl lg:text-6xl" style={{ "--i": 1 } as CSSProperties}>
+            {/* animate-rise-t (solo transform): el H1 es candidato a LCP — con
+                opacity:0 inicial el LCP se retrasaba ~650ms (U7). */}
+            <h1 className="animate-rise-t stagger mt-4 font-display text-4xl font-extrabold leading-[1.03] tracking-tight text-white sm:text-5xl lg:text-6xl" style={{ "--i": 1 } as CSSProperties}>
               {t.h1}
             </h1>
             <p className="animate-rise stagger mt-5 max-w-md text-lg text-white/75" style={{ "--i": 2 } as CSSProperties}>
@@ -182,7 +197,7 @@ export function HomeView({ locale }: { locale: Locale }) {
               {t.fromB}
             </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card ring-1 ring-white/10 shadow-[var(--shadow-xl)] animate-fade stagger" style={{ "--i": 2 } as CSSProperties}>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-card ring-1 ring-white/10 shadow-[var(--shadow-xl)] animate-rise-t stagger" style={{ "--i": 2 } as CSSProperties}>
             <ModelPhoto id="zycar-4" alt={t.heroAlt} priority sizes="(max-width: 768px) 100vw, 50vw" className="ken-burns" />
             {/* Badge glass de precio sobre la imagen (patrón automotor premium). */}
             <div className="glass absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-white">

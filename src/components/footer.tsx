@@ -66,7 +66,7 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
   const t = T[locale];
   return (
     // pb-20 en móvil: deja libre la franja que ocupa la barra CTA fija (MobileCta)
-    <footer className="bg-ink pb-20 text-white md:pb-0" id="contacto">
+    <footer className="bg-ink pb-20 text-white lg:pb-0" id="contacto">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div>
           <BoltLogo dark />
@@ -79,10 +79,10 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
 
         <div>
           <h2 className="text-sm font-bold uppercase tracking-wider text-white/50">{t.zones}</h2>
-          <ul className="mt-3 space-y-2 text-sm text-white/80">
+          <ul className="mt-3 space-y-0.5 text-sm text-white/80">
             {ZONES.map((z) => (
               <li key={z.id}>
-                <Link href={t.zoneHref(z.id)} className="hover:text-volt">
+                <Link href={t.zoneHref(z.id)} className="inline-block py-1 hover:text-volt">
                   {z.name}
                 </Link>
                 {z.minDays ? <span className="text-white/55">{t.zoneNote}</span> : null}
@@ -93,10 +93,10 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
 
         <div>
           <h2 className="text-sm font-bold uppercase tracking-wider text-white/50">BOLT</h2>
-          <ul className="mt-3 space-y-2 text-sm text-white/80">
+          <ul className="mt-3 space-y-0.5 text-sm text-white/80">
             {t.links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="hover:text-volt">
+                <Link href={l.href} className="inline-block py-1 hover:text-volt">
                   {l.label}
                 </Link>
               </li>
@@ -106,11 +106,11 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
 
         <div>
           <h2 className="text-sm font-bold uppercase tracking-wider text-white/50">{t.contact}</h2>
-          <ul className="mt-3 space-y-2 text-sm text-white/80">
+          <ul className="mt-3 space-y-0.5 text-sm text-white/80">
             <li>
               <a
                 href={waLink(t.waMsg)}
-                className="hover:text-volt"
+                className="inline-block py-1 hover:text-volt"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -118,7 +118,7 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
               </a>
             </li>
             <li>
-              <a href={`mailto:${CONTACT.email}`} className="hover:text-volt">
+              <a href={`mailto:${CONTACT.email}`} className="inline-block py-1 hover:text-volt">
                 {CONTACT.email}
               </a>
             </li>

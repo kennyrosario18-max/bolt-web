@@ -1,8 +1,11 @@
-/** Optimización de imágenes de modelos (F5-C). Genera AVIF responsive a 2 anchos
- *  por foto, con upscale interim para heros nítidos hasta la sesión real. Se corre
- *  LOCAL (npm run optimize:images) y los resultados SE COMITEAN: así el build/CI no
- *  depende de sharp ni de scripts de instalación. El <ModelPhoto> usa estos AVIF
- *  con el JPG original como fallback. Reejecuta al añadir/cambiar fotos. */
+/** Optimización de imágenes de modelos (F5-C, ajustada en U7). Genera por foto:
+ *  · AVIF responsive a 2 anchos (quality 50: −33% vs 62 sin pérdida visible en
+ *    fotos — el LCP de home bajó de ~99KB a ~65KB).
+ *  · JPG responsive a los mismos anchos (fallback para navegadores sin AVIF:
+ *    antes descargaban el JPG original completo a resolución nativa).
+ *  Se corre LOCAL (npm run optimize:images) y los resultados SE COMITEAN: así el
+ *  build/CI no depende de sharp. El <ModelPhoto> usa AVIF con srcset JPG de
+ *  fallback. Reejecuta al añadir/cambiar fotos. */
 import sharp from "sharp";
 import { readdir, mkdir } from "node:fs/promises";
 import { join, basename, extname } from "node:path";
@@ -20,12 +23,15 @@ let made = 0;
 for (const file of files) {
   const id = basename(file, ".jpg");
   for (const w of WIDTHS) {
-    const dst = join(OUT, `${id}-${w}.avif`);
     await sharp(join(SRC, file))
       .resize({ width: w, withoutEnlargement: false }) // upscale interim permitido
-      .avif({ quality: 62, effort: 4 })
-      .toFile(dst);
-    made++;
+      .avif({ quality: 50, effort: 5 })
+      .toFile(join(OUT, `${id}-${w}.avif`));
+    await sharp(join(SRC, file))
+      .resize({ width: w, withoutEnlargement: false })
+      .jpeg({ quality: 72, mozjpeg: true })
+      .toFile(join(OUT, `${id}-${w}.jpg`));
+    made += 2;
   }
 }
-console.log(`✓ optimize-images: ${made} AVIF generados desde ${files.length} fotos → ${OUT}`);
+console.log(`✓ optimize-images: ${made} variantes (AVIF+JPG) desde ${files.length} fotos → ${OUT}`);

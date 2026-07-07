@@ -61,6 +61,24 @@ const SCRIPT = `
       });
     }
   }
+  // WCAG 1.4.13: Escape cierra el mega-menú de Flota (abierto por hover/foco CSS).
+  // Solo actúa si el mega está activo (hover o foco dentro); al salir se re-arma.
+  function initMegaEscape(){
+    document.addEventListener('keydown',function(e){
+      if(e.key!=='Escape')return;
+      var g=document.querySelector('header nav .group');
+      if(!g)return;
+      var mega=g.querySelector('.mega');
+      var focused=g.contains(document.activeElement);
+      if(!focused&&!(g.matches&&g.matches(':hover')))return;
+      g.classList.add('mega-off');
+      if(mega&&mega.contains(document.activeElement)){
+        var t=g.querySelector('a');if(t)t.focus();
+      }
+      g.addEventListener('mouseleave',function(){g.classList.remove('mega-off');},{once:true});
+      g.addEventListener('focusout',function(){g.classList.remove('mega-off');},{once:true});
+    });
+  }
   // Header gana glass+sombra al hacer scroll (clase .is-scrolled → CSS).
   function initScroll(){
     var h=document.getElementById('site-header');
@@ -69,7 +87,7 @@ const SCRIPT = `
     on();
     window.addEventListener('scroll',on,{passive:true});
   }
-  function init(){initLang();initMenu();initScroll();}
+  function init(){initLang();initMenu();initScroll();initMegaEscape();}
   if(document.readyState!=='loading')init();
   else document.addEventListener('DOMContentLoaded',init);
 })();

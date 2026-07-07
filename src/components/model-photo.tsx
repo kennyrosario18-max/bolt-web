@@ -30,6 +30,7 @@ export function ModelPhoto({
       />
       <img
         src={`${base}/${id}.jpg`}
+        srcSet={`${base}/opt/${id}-640.jpg 640w, ${base}/opt/${id}-960.jpg 960w`}
         alt={alt}
         sizes={sizes}
         loading={priority ? "eager" : "lazy"}

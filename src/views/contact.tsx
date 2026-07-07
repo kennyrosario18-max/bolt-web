@@ -14,7 +14,8 @@ const T = {
     mail: "Escribir un correo",
     visit: "Nuestra base",
     hours: "Soporte por WhatsApp 24/7 · Entregas coordinadas a tu horario",
-    request: "¿Ya tienes fechas? Solicita disponibilidad →",
+    datesQ: "¿Ya tienes fechas?",
+    request: "Solicitar disponibilidad →",
     requestHref: "/solicitar-disponibilidad",
   },
   en: {
@@ -27,7 +28,8 @@ const T = {
     mail: "Send an email",
     visit: "Our base",
     hours: "24/7 WhatsApp support · Deliveries scheduled around you",
-    request: "Got your dates? Request availability →",
+    datesQ: "Got your dates?",
+    request: "Request availability →",
     requestHref: "/en/request-availability",
   },
 } as const;
@@ -74,9 +76,11 @@ export function ContactView({ locale }: { locale: Locale }) {
           </div>
         </div>
 
+        {/* Pregunta fuera de la píldora: a 320px el texto completo partía el botón en 2 líneas. */}
+        <p className="mt-8 text-sm font-semibold text-ink">{t.datesQ}</p>
         <Link
           href={t.requestHref}
-          className="mt-8 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
+          className="mt-3 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
         >
           <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.request}
         </Link>

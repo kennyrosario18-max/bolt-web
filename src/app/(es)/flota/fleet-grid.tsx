@@ -22,7 +22,7 @@ const LINES: Model["line"][] = ["eco", "clubcar", "zycar"];
 const PAX = [4, 6] as const;
 
 const pillCls =
-  "fleet-pill mr-2 inline-flex shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-inktext transition-all select-none hover:border-ink";
+  "fleet-pill mr-2 inline-flex min-h-11 shrink-0 cursor-pointer items-center whitespace-nowrap rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-inktext transition-all select-none hover:border-ink";
 
 export function FleetGrid({ locale = "es" }: { locale?: Locale }) {
   const t = T[locale];
@@ -37,7 +37,9 @@ export function FleetGrid({ locale = "es" }: { locale?: Locale }) {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14">
-      <fieldset>
+      {/* min-w-0: anula el min-inline-size:min-content del UA en <fieldset>, que
+          impedía encoger bajo ~750px y causaba scroll horizontal en móvil (U7). */}
+      <fieldset className="min-w-0">
         <legend className="sr-only">{t.filterLabel}</legend>
 
         {/* Radios: nivel fieldset, sr-only → hermanos de #fleet-grid (combinador ~). */}
@@ -66,9 +68,10 @@ export function FleetGrid({ locale = "es" }: { locale?: Locale }) {
 
         <h2 className="sr-only">{t.srHeading}</h2>
         <div id="fleet-grid" className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {MODELS.map((m) => (
+          {/* priority en las 2 primeras: son el candidato LCP en móvil; lazy las penaliza. */}
+          {MODELS.map((m, i) => (
             <div key={m.id} className={`fleet-item is-${m.line} is-p${m.pax}`}>
-              <ModelCard model={m} locale={locale} />
+              <ModelCard model={m} locale={locale} priority={i < 2} />
             </div>
           ))}
         </div>

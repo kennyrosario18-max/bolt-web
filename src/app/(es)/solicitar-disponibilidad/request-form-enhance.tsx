@@ -41,13 +41,14 @@ function script(p: Payload): string {
     var md=o?o.getAttribute('data-mindays'):'';
     var note=o?o.getAttribute('data-note'):'';
     var name=o?o.getAttribute('data-name'):'';
-    if(md&&note){zonaNote.textContent=fill(P.zoneNoteTpl,{name:name,min:md,note:note});zonaNote.hidden=false;}
-    else{zonaNote.hidden=true;zonaNote.textContent='';}
+    // Sin toggles de hidden: las regiones aria-live viven siempre en el árbol de
+    // a11y; vacías las saca del flujo la regla :empty de globals.css.
+    if(md&&note){zonaNote.textContent=fill(P.zoneNoteTpl,{name:name,min:md,note:note});}
+    else{zonaNote.textContent='';}
     var d=diffDays(llegada.value,salida.value);
     if(md&&d>0&&d<+md){
       warn.textContent=fill(P.warnMin,{name:name,min:md,days:d,dayword:d===1?P.day:P.days});
-      warn.hidden=false;
-    }else{warn.hidden=true;warn.textContent='';}
+    }else{warn.textContent='';}
     updateEstimate();
   }
 
@@ -67,8 +68,7 @@ function script(p: Payload): string {
       var total=Math.round(d*daily*1.18);      // ITBIS 18% incluido
       var deposit=Math.round(total*0.30);       // depósito de confirmación 30%
       estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit});
-      estimate.hidden=false;
-    }else{estimate.hidden=true;estimate.textContent='';}
+    }else{estimate.textContent='';}
   }
 
   function clearError(){
