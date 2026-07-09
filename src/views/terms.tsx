@@ -44,7 +44,7 @@ const T: Record<
         n: "02",
         title: "El servicio",
         body: [
-          "BOLT renta golf carts con entrega y recogida en villas y residenciales dentro de sus zonas de cobertura, y vende unidades nuevas. La renta incluye cargador, orientación de uso, seguro del vehículo y soporte por WhatsApp 24/7 en español e inglés.",
+          "BOLT renta golf carts con entrega y recogida en villas y residenciales dentro de sus zonas de cobertura, y vende unidades nuevas. La renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés.",
           "Las solicitudes de reserva se confirman siempre por una persona del equipo — ninguna reserva se confirma automáticamente. La disponibilidad está sujeta a flota.",
         ],
       },
@@ -83,7 +83,7 @@ const T: Record<
         n: "07",
         title: "Seguro",
         body: [
-          "Las unidades BOLT están aseguradas. La cobertura no ampara daños ocasionados por uso en violación de estos términos (zonas prohibidas, conductor sin licencia o menor de edad, conducción bajo efectos de alcohol o drogas, sobrecarga o conducción temeraria).",
+          "Las unidades BOLT cuentan con seguro, pero este NO cubre los daños al carrito causados por el cliente. El cliente es responsable de cualquier daño, pérdida o robo de la unidad durante la renta y asume el costo de reparación o reposición, respaldado por el depósito de garantía. La conducción en violación de estos términos (zonas prohibidas, conductor sin licencia o menor de edad, conducción bajo efectos de alcohol o drogas, sobrecarga o conducción temeraria) es responsabilidad exclusiva del cliente.",
         ],
       },
       {
@@ -140,7 +140,7 @@ const T: Record<
         n: "02",
         title: "The service",
         body: [
-          "BOLT rents golf carts with delivery and pickup at villas and residential communities within its coverage areas, and sells new units. Rentals include a charger, usage briefing, vehicle insurance and 24/7 WhatsApp support in English and Spanish.",
+          "BOLT rents golf carts with delivery and pickup at villas and residential communities within its coverage areas, and sells new units. Rentals include a charger, usage briefing and 24/7 WhatsApp support in English and Spanish.",
           "Booking requests are always confirmed by a member of our team — no booking is ever confirmed automatically. Availability is subject to fleet.",
         ],
       },
@@ -179,7 +179,7 @@ const T: Record<
         n: "07",
         title: "Insurance",
         body: [
-          "BOLT units are insured. Coverage does not extend to damage caused by use in violation of these terms (prohibited areas, unlicensed or underage drivers, driving under the influence, overloading or reckless driving).",
+          "BOLT units carry insurance, but it does NOT cover damage to the cart caused by the customer. The customer is responsible for any damage, loss or theft of the unit during the rental and bears the cost of repair or replacement, backed by the security deposit. Driving in violation of these terms (prohibited areas, unlicensed or underage drivers, driving under the influence, overloading or reckless driving) is the customer's sole responsibility.",
         ],
       },
       {

@@ -38,7 +38,7 @@ export function PinIcon({ className, size = 24 }: IconProps) {
   );
 }
 
-/** Escudo — vehículo asegurado. */
+/** Escudo — confiabilidad / mantenimiento. */
 export function ShieldIcon({ className, size = 24 }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" className={className} {...stroke}>

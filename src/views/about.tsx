@@ -11,7 +11,7 @@ const T = {
     intro: "Renta y venta de carritos de golf en Puntacana Resort & Club, Cap Cana y Bávaro.",
     misionTitle: "Misión",
     mision:
-      "Resolver la movilidad en Punta Cana de principio a fin: rentamos carritos de golf confiables y asegurados, entregados donde está el cliente, y vendemos unidades nuevas para villas, familias y negocios que quieren su propio carrito — siempre con confirmación rápida, precios claros y atención personalizada de gente local que responde.",
+      "Resolver la movilidad en Punta Cana de principio a fin: rentamos carritos de golf confiables, entregados donde está el cliente, y vendemos unidades nuevas para villas, familias y negocios que quieren su propio carrito — siempre con confirmación rápida, precios claros y atención personalizada de gente local que responde.",
     visionTitle: "Visión",
     vision:
       "Ser la marca de movilidad turística líder del este dominicano: la primera opción para rentar, y también para comprar, carritos de golf en Puntacana Resort & Club, Cap Cana y Bávaro — reconocidos por velocidad, transparencia, una flota impecable y un respaldo post-venta que ningún importador ofrece.",
@@ -20,7 +20,7 @@ const T = {
       { t: "Velocidad con seriedad.", d: "Respondemos en minutos y cumplimos lo que confirmamos. El rayo es promesa, no adorno." },
       { t: "Claridad total.", d: "Precios publicados con ITBIS, políticas por escrito, facturación e-CF. En renta y en venta: sin sorpresas ni letra pequeña." },
       { t: "Servicio local, estándar internacional.", d: "Atendemos en español e inglés, con la calidez dominicana y la formalidad que espera el huésped extranjero." },
-      { t: "Seguridad primero.", d: "Unidades aseguradas, mantenidas y entregadas en condiciones óptimas, siempre." },
+      { t: "Seguridad primero.", d: "Unidades mantenidas y entregadas en condiciones óptimas, siempre." },
       { t: "Relaciones que crecen.", d: "Aliados, clientes de renta y compradores: cada cliente es una relación de años, no una transacción." },
       { t: "Vendemos lo que operamos.", d: "Rentamos la misma flota que vendemos. Conocemos cada modelo en el terreno real — sol, salitre, distancias — y eso respalda nuestra recomendación." },
     ],
@@ -28,7 +28,7 @@ const T = {
     rentaTitle: "Todo cliente tiene derecho a",
     renta: [
       "Recibir el carrito en la fecha, hora y lugar confirmados",
-      "Una unidad asegurada, cargada y en buen estado",
+      "Una unidad mantenida, cargada y en buen estado",
       "Precios claros por adelantado, con ITBIS detallado y factura formal",
       "Soporte por WhatsApp durante toda su renta, en español o inglés",
       "Políticas de cancelación, depósito y cambios por escrito antes de pagar",
@@ -61,7 +61,7 @@ const T = {
     intro: "Golf cart rental and sales in Puntacana Resort & Club, Cap Cana and Bávaro.",
     misionTitle: "Mission",
     mision:
-      "To solve mobility in Punta Cana end to end: we rent reliable, insured golf carts delivered wherever the client is, and we sell new units to villas, families and businesses that want their own cart — always with fast confirmation, clear pricing and personal attention from local people who answer.",
+      "To solve mobility in Punta Cana end to end: we rent reliable golf carts delivered wherever the client is, and we sell new units to villas, families and businesses that want their own cart — always with fast confirmation, clear pricing and personal attention from local people who answer.",
     visionTitle: "Vision",
     vision:
       "To be the leading tourist-mobility brand of the Dominican east: the first choice to rent — and to buy — golf carts in Puntacana Resort & Club, Cap Cana and Bávaro, known for speed, transparency, an impeccable fleet and after-sales backing no importer offers.",
@@ -70,7 +70,7 @@ const T = {
       { t: "Speed with seriousness.", d: "We reply in minutes and deliver what we confirm. The lightning bolt is a promise, not a decoration." },
       { t: "Total clarity.", d: "Published prices with tax, written policies, formal e-CF invoicing. Renting or buying: no surprises, no fine print." },
       { t: "Local service, international standard.", d: "We serve in Spanish and English, with Dominican warmth and the formality foreign guests expect." },
-      { t: "Safety first.", d: "Insured, maintained units delivered in optimal condition, always." },
+      { t: "Safety first.", d: "Maintained units delivered in optimal condition, always." },
       { t: "Relationships that grow.", d: "Partners, renters and buyers: every client is a years-long relationship, not a transaction." },
       { t: "We sell what we operate.", d: "We rent the same fleet we sell. We know every model in real terrain — sun, salt air, distances — and that backs our recommendation." },
     ],
@@ -78,7 +78,7 @@ const T = {
     rentaTitle: "Every client has the right to",
     renta: [
       "Receive the cart at the confirmed date, time and place",
-      "An insured unit, charged and in good condition",
+      "A maintained unit, charged and in good condition",
       "Clear prices up front, with itemized tax and a formal invoice",
       "WhatsApp support through the whole rental, in Spanish or English",
       "Written cancellation, deposit and change policies before paying",

@@ -35,7 +35,7 @@ const T = {
     trust: [
       { main: "Confirmación por WhatsApp", sub: "WhatsApp confirmation" },
       { main: "Entrega en tu villa", sub: "Delivered to your villa" },
-      { main: "Vehículos asegurados", sub: "Insured vehicles" },
+      { main: "Mantenimiento al día", sub: "Well-maintained fleet" },
       { main: "Soporte bilingüe 24/7", sub: "24/7 bilingual support" },
     ],
     fleetKicker: "La flota",
@@ -94,7 +94,7 @@ const T = {
     trust: [
       { main: "WhatsApp confirmation", sub: "Confirmación por WhatsApp" },
       { main: "Delivered to your villa", sub: "Entrega en tu villa" },
-      { main: "Insured vehicles", sub: "Vehículos asegurados" },
+      { main: "Well-maintained fleet", sub: "Mantenimiento al día" },
       { main: "24/7 bilingual support", sub: "Soporte bilingüe 24/7" },
     ],
     fleetKicker: "The fleet",

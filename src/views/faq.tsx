@@ -58,7 +58,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
   en: [
     {
       q: "What does a BOLT golf cart rental include?",
-      a: "Delivery and pickup at your villa, a charger for overnight charging, a usage briefing at delivery, vehicle insurance and 24/7 WhatsApp support in English and Spanish.",
+      a: "Delivery and pickup at your villa, a charger for overnight charging, a usage briefing at delivery and 24/7 WhatsApp support in English and Spanish.",
     },
     {
       q: "How much does it cost?",

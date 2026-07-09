@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!model) return {};
   return {
     title: `${model.name} rental in Punta Cana — ${model.pax} seats`,
-    description: `Rent the ${model.name} (${model.pax} seats) in Punta Cana from US$${modelPrice(model.id)}/day. Villa delivery, insurance and 24/7 support — same-day confirmation.`,
+    description: `Rent the ${model.name} (${model.pax} seats) in Punta Cana from US$${modelPrice(model.id)}/day. Villa delivery and 24/7 support — same-day confirmation.`,
     alternates: {
       canonical: `/en/fleet/${model.id}/`,
       ...hreflang(`/flota/${model.id}/`, `/en/fleet/${model.id}/`),

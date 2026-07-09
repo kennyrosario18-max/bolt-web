@@ -76,7 +76,7 @@ const T = {
     relA: "You may also ",
     relB: "like",
     faqs: (name: string, pax: number) => [
-      { q: "What does the rental include?", a: "Delivery and pickup at your villa, charger, usage briefing, vehicle insurance and 24/7 WhatsApp support." },
+      { q: "What does the rental include?", a: "Delivery and pickup at your villa, charger, usage briefing and 24/7 WhatsApp support." },
       { q: "Do I need a license to drive it?", a: "Yes. The driver must be 18 or older with a valid driver's license. Use is allowed only inside residential communities, villas and resorts." },
       { q: `How many people fit in the ${name}?`, a: `Up to ${pax} seated passengers. For safety, standing passengers and exceeding capacity are not allowed.` },
       { q: "How does it charge?", a: "It plugs into a standard outlet with the included charger. A full charge takes 8 to 10 hours — perfect overnight." },

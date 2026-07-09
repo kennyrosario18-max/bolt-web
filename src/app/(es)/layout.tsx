@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | BOLT Golf Cars",
   },
   description:
-    "Renta y venta de golf carts en Puntacana Resort & Club, Cap Cana y Bávaro. Entrega en tu villa, vehículos asegurados y soporte 24/7. Your ride in paradise.",
+    "Renta y venta de golf carts en Puntacana Resort & Club, Cap Cana y Bávaro. Entrega en tu villa y soporte 24/7. Your ride in paradise.",
   // Preview (GitHub Pages) = noindex; el build de producción es indexable solo con quitar BASE_PATH.
   robots: { index: !IS_PREVIEW, follow: !IS_PREVIEW },
   openGraph: {

@@ -53,7 +53,7 @@ export const ARTICLES: BlogArticle[] = [
           "Entrega y recogida directamente en tu villa",
           "Cargador incluido para la carga nocturna",
           "Orientación de uso al momento de la entrega",
-          "Seguro incluido",
+          "Unidad revisada antes de entregar",
           "Soporte por WhatsApp 24/7 en español e inglés"
         ]
       },
@@ -178,7 +178,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Qué incluye la renta y qué reglas aplican en las comunidades",
         "paragraphs": [
-          "Toda renta incluye entrega y recogida en la villa, cargador, orientación de uso, seguro y soporte por WhatsApp 24/7 en español e inglés. No hay que comprar nada aparte ni buscar estación de carga: el tomacorriente de la villa es suficiente.",
+          "Toda renta incluye entrega y recogida en la villa, cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés. No hay que comprar nada aparte ni buscar estación de carga: el tomacorriente de la villa es suficiente.",
           "Las comunidades privadas como Cap Cana cuidan mucho la seguridad y la tranquilidad de sus residentes, y las reglas de BOLT van en la misma línea:"
         ],
         "bullets": [
@@ -292,7 +292,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Asegura el tuyo antes de aterrizar",
         "paragraphs": [
-          "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: entrega y recogida en tu villa, cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso, seguro y soporte por WhatsApp 24/7 en español e inglés. El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
+          "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: entrega y recogida en tu villa, cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés. El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
           "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 30% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo o La Romana, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
         ]
       }
@@ -363,7 +363,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Cuándo conviene el tier premium ECO Cross (US$85/día)",
         "paragraphs": [
           "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$85/día + ITBIS. Frente a un 6 plazas estándar de US$75/día, hablamos de US$10 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
-          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye entrega y recogida en tu villa (incluida desde 2+ días de renta), cargador, seguro y soporte por WhatsApp 24/7 en español e inglés. El día de renta son 24 horas desde la entrega, no día calendario.",
+          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye entrega y recogida en tu villa (incluida desde 2+ días de renta), cargador y soporte por WhatsApp 24/7 en español e inglés. El día de renta son 24 horas desde la entrega, no día calendario.",
           "¿No estás seguro de cuál te conviene? Escríbenos por WhatsApp al +1 809 839 8515 y cuéntanos tu plan: cuántas personas son, dónde se hospedan y cuántos días. Trabajamos por solicitud de disponibilidad —nunca confirmación automática—, así que mientras antes nos escribas, mejor. Your ride in paradise."
         ]
       }
@@ -413,7 +413,7 @@ export const ARTICLES: BlogArticle[] = [
           "Delivery and pickup directly at your villa",
           "Charger included for overnight charging",
           "Usage briefing at the moment of delivery",
-          "Insurance included",
+          "Inspected before delivery",
           "24/7 WhatsApp support in English and Spanish"
         ]
       },
@@ -538,7 +538,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "What the rental includes and what rules apply in the communities",
         "paragraphs": [
-          "Every rental includes villa delivery and pickup, charger, usage briefing, insurance and 24/7 WhatsApp support in English and Spanish. There's nothing extra to buy and no charging station to find: the villa outlet is enough.",
+          "Every rental includes villa delivery and pickup, charger, usage briefing and 24/7 WhatsApp support in English and Spanish. There's nothing extra to buy and no charging station to find: the villa outlet is enough.",
           "Private communities like Cap Cana take the safety and quiet of their residents seriously, and BOLT's rules are in the same spirit:"
         ],
         "bullets": [
@@ -643,7 +643,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Secure yours before you land",
         "paragraphs": [
-          "Whatever you choose, the BOLT rental includes the same: villa delivery and pickup, charger (a full charge takes 8–10 hours on a standard outlet), usage briefing, insurance and 24/7 WhatsApp support in English and Spanish. The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
+          "Whatever you choose, the BOLT rental includes the same: villa delivery and pickup, charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish. The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
           "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. We confirm availability, you hold it with a 30% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo or La Romana, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
         ]
       }
@@ -723,7 +723,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "When the premium ECO Cross tier is worth it (US$85/day)",
         "paragraphs": [
           "The premium ECO Cross is our 6-seater with 150 Ah lithium: 85–95 km per charge and luxury seats, at US$85/day + tax. Against a standard 6-seater at US$75/day, we're talking about US$10 a day of difference. When is it worth it? When you travel as a full group (4+2), when your day is constant movement from morning to night, or when you simply don't want to count kilometers on holiday: with nearly triple the range of lead-acid, the battery stops being a concern.",
-          "For comparison, our 4-seaters start at US$50/day (up to US$65 depending on the model); 6-seaters go from US$65/day (up to US$100 for the all-terrain ECO Track), always + 18% tax. Every rental includes villa delivery and pickup (included from 2+ rental days), charger, insurance and 24/7 WhatsApp support in English and Spanish. The rental day is 24 hours from delivery, not a calendar day.",
+          "For comparison, our 4-seaters start at US$50/day (up to US$65 depending on the model); 6-seaters go from US$65/day (up to US$100 for the all-terrain ECO Track), always + 18% tax. Every rental includes villa delivery and pickup (included from 2+ rental days), charger and 24/7 WhatsApp support in English and Spanish. The rental day is 24 hours from delivery, not a calendar day.",
           "Not sure which suits you? Message us on WhatsApp at +1 809 839 8515 and tell us your plan: how many people, where you're staying and how many days. We work by availability request — never automatic confirmation — so the sooner you write, the better. Your ride in paradise."
         ]
       }

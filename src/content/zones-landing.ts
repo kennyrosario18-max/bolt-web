@@ -48,9 +48,9 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     heroTitleEn: "Golf cart rental in Puntacana Resort & Club",
     metaTitle: "Golf carts en Puntacana Resort & Club",
     metaDescription:
-      "Renta de golf carts con entrega en tu villa en Puntacana Resort & Club. Flota de 4 y 6 plazas, vehículos asegurados y soporte bilingüe 24/7.",
+      "Renta de golf carts con entrega en tu villa en Puntacana Resort & Club. Flota de 4 y 6 plazas y soporte bilingüe 24/7.",
     metaTitleEn: "Golf carts in Puntacana Resort & Club",
-    metaDescriptionEn: "Golf cart rental with villa delivery inside Puntacana Resort & Club. 4 and 6-seat fleet, insured vehicles and 24/7 bilingual support.",
+    metaDescriptionEn: "Golf cart rental with villa delivery inside Puntacana Resort & Club. 4 and 6-seat fleet and 24/7 bilingual support.",
     intro:
       "Es nuestra base principal y donde más carritos entregamos cada semana. Llevamos tu golf cart con carga completa hasta tu villa, coordinando el acceso con tu anfitrión o property manager.",
     introEn:
@@ -73,11 +73,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Delivery to your villa, coordinated with your host",
         p: [
           "Entregamos en villas y residenciales de todo el resort. Como el acceso a Puntacana Resort & Club es controlado, coordinamos directamente con tu anfitrión, concierge o property manager para que el carrito esté esperándote a tu llegada, con la batería completa y una breve orientación de uso.",
-          "El servicio incluye entrega y recogida dentro de nuestras zonas en rentas de dos días o más. Si algo falla durante tu estadía, nuestro soporte 24/7 por WhatsApp responde y, cuando hace falta, reponemos la unidad — no queremos que pierdas ni una tarde de tus vacaciones. Todos los vehículos van asegurados y respetamos el límite BOLT de 25 km/h en zonas residenciales por la seguridad de todos.",
+          "El servicio incluye entrega y recogida dentro de nuestras zonas en rentas de dos días o más. Si algo falla durante tu estadía, nuestro soporte 24/7 por WhatsApp responde y, cuando hace falta, reponemos la unidad — no queremos que pierdas ni una tarde de tus vacaciones. Respetamos el límite BOLT de 25 km/h en zonas residenciales por la seguridad de todos.",
         ],
         pEn: [
           "We deliver to villas and residences across the resort. Since access to Puntacana Resort & Club is controlled, we coordinate directly with your host, concierge or property manager so the cart is waiting for you on arrival, fully charged and with a short usage briefing.",
-          "The service includes delivery and pickup within our zones on rentals of two days or more. If anything fails during your stay, our 24/7 WhatsApp support answers and, when needed, we swap the unit — we don't want you to lose a single afternoon of your holiday. Every vehicle is insured, and we keep BOLT's 25 km/h limit in residential zones for everyone's safety.",
+          "The service includes delivery and pickup within our zones on rentals of two days or more. If anything fails during your stay, our 24/7 WhatsApp support answers and, when needed, we swap the unit — we don't want you to lose a single afternoon of your holiday. We keep BOLT's 25 km/h limit in residential zones for everyone's safety.",
         ],
       },
       {
@@ -155,11 +155,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Delivery to your villa inside Cap Cana",
         p: [
           "Entregamos en villas, apartamentos y residenciales dentro de Cap Cana. Al enviar tu solicitud solo necesitas indicarnos el nombre de tu comunidad o villa y coordinamos el acceso para dejarte el carrito con la batería completa y una breve orientación de uso a tu llegada.",
-          "En rentas de dos días o más, la entrega y la recogida están incluidas; para rentas de un solo día aplica un cargo de transporte de US$40 + ITBIS. Todos los vehículos van asegurados y cuentas con nuestro soporte 24/7 por WhatsApp en español e inglés durante toda tu estadía — si necesitas asistencia o una reposición, respondemos rápido.",
+          "En rentas de dos días o más, la entrega y la recogida están incluidas; para rentas de un solo día aplica un cargo de transporte de US$40 + ITBIS. Cuentas con nuestro soporte 24/7 por WhatsApp en español e inglés durante toda tu estadía — si necesitas asistencia o una reposición, respondemos rápido.",
         ],
         pEn: [
           "We deliver to villas, apartments and residences inside Cap Cana. In your request you just tell us the name of your community or villa and we coordinate access to leave the cart fully charged, with a short usage briefing, on your arrival.",
-          "On rentals of two days or more, delivery and pickup are included; for single-day rentals a US$40 + tax transport fee applies. Every vehicle is insured and you have our 24/7 WhatsApp support in English and Spanish throughout your stay — if you need assistance or a swap, we respond fast.",
+          "On rentals of two days or more, delivery and pickup are included; for single-day rentals a US$40 + tax transport fee applies. You have our 24/7 WhatsApp support in English and Spanish throughout your stay — if you need assistance or a swap, we respond fast.",
         ],
       },
       {
@@ -237,11 +237,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Delivery to residences and resorts in the area",
         p: [
           "Entregamos en residenciales, apartamentos y complejos turísticos de toda la zona de Bávaro. Llevamos el carrito hasta tu alojamiento con la batería completa y una orientación de uso rápida, y coordinamos el acceso donde haga falta. En rentas de dos días o más la entrega y la recogida están incluidas.",
-          "Todos los vehículos van asegurados y respetamos el límite BOLT de 25 km/h en zonas residenciales. Durante toda tu estadía cuentas con soporte 24/7 por WhatsApp en español e inglés: una sola conversación para reservar, resolver dudas o pedir asistencia. Nunca confirmamos automáticamente — una persona real revisa cada solicitud y te responde el mismo día.",
+          "Respetamos el límite BOLT de 25 km/h en zonas residenciales. Durante toda tu estadía cuentas con soporte 24/7 por WhatsApp en español e inglés: una sola conversación para reservar, resolver dudas o pedir asistencia. Nunca confirmamos automáticamente — una persona real revisa cada solicitud y te responde el mismo día.",
         ],
         pEn: [
           "We deliver to residences, apartments and resorts across the Bávaro area. We bring the cart to your accommodation fully charged with a quick usage briefing, and coordinate access where needed. On rentals of two days or more, delivery and pickup are included.",
-          "Every vehicle is insured and we keep BOLT's 25 km/h limit in residential zones. Throughout your stay you have 24/7 WhatsApp support in English and Spanish: one conversation to book, ask questions or request assistance. We never auto-confirm — a real person reviews every request and replies the same day.",
+          "We keep BOLT's 25 km/h limit in residential zones. Throughout your stay you have 24/7 WhatsApp support in English and Spanish: one conversation to book, ask questions or request assistance. We never auto-confirm — a real person reviews every request and replies the same day.",
         ],
       },
       {
@@ -331,11 +331,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Premium fleet and support throughout your stay",
         p: [
           "Para estadías largas conviene un modelo cómodo y con buena autonomía. Recomendamos las líneas premium de 4 y 6 plazas, con espacio de sobra para la familia y opción de batería de litio de largo alcance para moverte todo el día sin pensar en la carga. El precio exacto por día lo ves en cada ficha de modelo.",
-          "Aunque estés en Casa de Campo, cuentas con el mismo soporte 24/7 por WhatsApp en español e inglés durante toda la renta. Los vehículos van asegurados y te entregamos el carrito con carga completa y una orientación de uso. Si en algún momento necesitas asistencia, una sola conversación de WhatsApp lo resuelve.",
+          "Aunque estés en Casa de Campo, cuentas con el mismo soporte 24/7 por WhatsApp en español e inglés durante toda la renta. Te entregamos el carrito con carga completa y una orientación de uso. Si en algún momento necesitas asistencia, una sola conversación de WhatsApp lo resuelve.",
         ],
         pEn: [
           "For long stays a comfortable model with good range is ideal. We recommend the premium 4 and 6-seat lines, with plenty of room for the family and an optional long-range lithium battery so you can move all day without thinking about charge. The exact daily price is shown on each model's spec page.",
-          "Even in Casa de Campo, you have the same 24/7 WhatsApp support in English and Spanish throughout the rental. Vehicles are insured and we deliver the cart fully charged with a usage briefing. If you ever need assistance, a single WhatsApp conversation sorts it out.",
+          "Even in Casa de Campo, you have the same 24/7 WhatsApp support in English and Spanish throughout the rental. We deliver the cart fully charged with a usage briefing. If you ever need assistance, a single WhatsApp conversation sorts it out.",
         ],
       },
     ],
@@ -360,14 +360,14 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Tengo soporte durante la renta en Casa de Campo?",
-        a: "Sí. Aunque estés fuera de nuestra zona base, cuentas con el mismo soporte 24/7 por WhatsApp en español e inglés durante toda la estadía, y los vehículos van asegurados.",
+        a: "Sí. Aunque estés fuera de nuestra zona base, cuentas con el mismo soporte 24/7 por WhatsApp en español e inglés durante toda la estadía.",
       },
     ],
     faqsEn: [
       { q: "Why is there a 7-day minimum?", a: "Casa de Campo is outside our home base in Punta Cana. Transporting the cart only makes sense for longer stays — hence the 7-day minimum." },
       { q: "How much does transport to Casa de Campo cost?", a: "It's quoted based on your villa and dates. Send your request and we'll include the exact transport cost in the confirmation — no surprises." },
       { q: "Is the daily rate the same?", a: "Yes, the model's daily rate is the same. Only the quoted transport is added and, for 7+ nights, our discounted weekly rate applies." },
-      { q: "Do I have support during the rental in Casa de Campo?", a: "Yes. Even outside our home base, you have the same 24/7 WhatsApp support in English and Spanish throughout the stay, and the vehicles are insured." },
+      { q: "Do I have support during the rental in Casa de Campo?", a: "Yes. Even outside our home base, you have the same 24/7 WhatsApp support in English and Spanish throughout the stay." },
     ],
   },
   {
@@ -413,11 +413,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Which model to choose and how to book",
         p: [
           "Para una renta larga conviene un modelo cómodo y con buena autonomía. Los modelos de 4 plazas arrancan desde US$50 por día y los de 6 plazas desde US$65, con el precio exacto según el modelo; para grupos grandes, la opción de 4+2 plazas da espacio real para todos. Si no sabes cuál elegir, pídenos una recomendación y te orientamos según cuántas personas son.",
-          "Reservar es simple: envías tu solicitud con la villa, las fechas y el grupo, y una persona real la revisa y te responde el mismo día por WhatsApp con la disponibilidad y el costo total. Nunca confirmamos automáticamente. Los vehículos van asegurados y cuentas con soporte 24/7 durante toda tu estadía en La Romana.",
+          "Reservar es simple: envías tu solicitud con la villa, las fechas y el grupo, y una persona real la revisa y te responde el mismo día por WhatsApp con la disponibilidad y el costo total. Nunca confirmamos automáticamente. Cuentas con soporte 24/7 durante toda tu estadía en La Romana.",
         ],
         pEn: [
           "For a long rental a comfortable model with good range is ideal. 4-seat models start from US$50 a day and 6-seaters from US$65, with the exact price depending on the model; for large groups, the 4+2 option gives real room for everyone. If you're unsure which to choose, ask us for a recommendation and we'll guide you based on how many you are.",
-          "Booking is simple: you send your request with the villa, dates and group, and a real person reviews it and replies the same day on WhatsApp with availability and the full cost. We never auto-confirm. Vehicles are insured and you have 24/7 support throughout your stay in La Romana.",
+          "Booking is simple: you send your request with the villa, dates and group, and a real person reviews it and replies the same day on WhatsApp with availability and the full cost. We never auto-confirm. You have 24/7 support throughout your stay in La Romana.",
         ],
       },
     ],

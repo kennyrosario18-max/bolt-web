@@ -59,7 +59,7 @@ export const DESC_EN: Record<string, string> = {
 export const INCLUDED = [
   { es: "Entrega y recogida en tu villa o residencial", en: "Delivery & pickup at your villa" },
   { es: "Cargador y orientación de uso incluidos", en: "Charger and usage briefing included" },
-  { es: "Vehículo asegurado", en: "Insured vehicle" },
+  { es: "Unidad revisada antes de la entrega", en: "Inspected before delivery" },
   { es: "Soporte por WhatsApp 24/7 en español e inglés", en: "24/7 bilingual WhatsApp support" },
 ];
 

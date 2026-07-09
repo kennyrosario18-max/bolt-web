@@ -19,7 +19,7 @@ const T = {
     h1: `${MODELS.length} models, 3 lines`,
     leadA: "ECO, Club Car and Zycar — 4 and 6 seaters from ",
     price: `US$${PRICING.from4pax}/day`,
-    leadB: ". All with villa delivery, insurance and 24/7 support.",
+    leadB: ". All with villa delivery and 24/7 support.",
     leadSub: "Nuestra flota completa — de 4 y 6 plazas, entregada en tu villa.",
   },
 } as const;
