@@ -43,6 +43,7 @@ const T = {
     openWa: "Abrir WhatsApp",
     lPasajeros: "Cantidad de pasajeros",
     pasajerosPlaceholder: "Selecciona…",
+    pasajerosMas: "Más de 6 (varios carritos)",
     lModelo: "Modelo",
     modeloPlaceholder: "Recomiéndenme según mi grupo",
     plazas: "plazas",
@@ -93,6 +94,7 @@ const T = {
     openWa: "Open WhatsApp",
     lPasajeros: "Number of passengers",
     pasajerosPlaceholder: "Select…",
+    pasajerosMas: "More than 6 (multiple carts)",
     lModelo: "Model",
     modeloPlaceholder: "Recommend one for my group",
     plazas: "seats",
@@ -200,9 +202,10 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           <label className={labelCls} htmlFor="pasajeros">{t.lPasajeros}</label>
           <select id="pasajeros" name="pasajeros" className={inputCls}>
             <option value="">{t.pasajerosPlaceholder}</option>
-            {[1, 2, 3, 4, 5, 6, "7+"].map((n) => (
+            {[1, 2, 3, 4, 5, 6].map((n) => (
               <option key={n} value={n}>{n}</option>
             ))}
+            <option value={t.pasajerosMas}>{t.pasajerosMas}</option>
           </select>
         </div>
 
