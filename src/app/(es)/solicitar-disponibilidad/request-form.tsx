@@ -17,7 +17,7 @@ const T = {
     sentTitle: "Solicitud enviada",
     waFallback: "Si WhatsApp no se abrió automáticamente, escríbenos directo al",
     header: "⚡ SOLICITUD DE DISPONIBILIDAD — boltgolfcars.com",
-    fields: { nombre: "Nombre", email: "Email", whatsapp: "WhatsApp", modelo: "Modelo", llegada: "Llegada", salida: "Salida", entrega: "Entrega", pasajeros: "Pasajeros", comentarios: "Comentarios" },
+    fields: { nombre: "Nombre", email: "Email", whatsapp: "WhatsApp", modelo: "Modelo", llegada: "Llegada", salida: "Salida", entrega: "Entrega", alojamiento: "Alojamiento", pasajeros: "Pasajeros", comentarios: "Comentarios" },
     recommend: "Por recomendar",
     day: "día",
     days: "días",
@@ -27,8 +27,13 @@ const T = {
     lWhatsapp: "WhatsApp *",
     lLlegada: "Fecha de llegada *",
     lSalida: "Fecha de salida *",
-    lZona: "Lugar de entrega *",
+    lZona: "Zona de entrega *",
     zonaPlaceholder: "Selecciona la zona…",
+    lAlojamiento: "Tipo de alojamiento *",
+    alojamientoPlaceholder: "Villa, hotel…",
+    alojamientoOpts: { villa: "Villa", hotel: "Hotel", condo: "Apartamento o condominio", otro: "Otro" },
+    lLugar: "Nombre del hotel o villa *",
+    lugarPlaceholder: "Ej. Villa Tortuga B-12 · Hotel Meliá · Torre…",
     minDays: (n: number) => ` (mínimo ${n} días)`,
     zoneNoteTpl: "{name}: reservas de {min}+ días · {note}",
     perDayShort: "/día",
@@ -62,7 +67,7 @@ const T = {
     sentTitle: "Request sent",
     waFallback: "If WhatsApp didn't open automatically, message us directly at",
     header: "⚡ AVAILABILITY REQUEST — boltgolfcars.com",
-    fields: { nombre: "Name", email: "Email", whatsapp: "WhatsApp", modelo: "Model", llegada: "Arrival", salida: "Departure", entrega: "Delivery", pasajeros: "Passengers", comentarios: "Comments" },
+    fields: { nombre: "Name", email: "Email", whatsapp: "WhatsApp", modelo: "Model", llegada: "Arrival", salida: "Departure", entrega: "Delivery", alojamiento: "Accommodation", pasajeros: "Passengers", comentarios: "Comments" },
     recommend: "Recommend one for my group",
     day: "day",
     days: "days",
@@ -72,8 +77,13 @@ const T = {
     lWhatsapp: "WhatsApp *",
     lLlegada: "Arrival date *",
     lSalida: "Departure date *",
-    lZona: "Delivery location *",
+    lZona: "Delivery zone *",
     zonaPlaceholder: "Select your zone…",
+    lAlojamiento: "Accommodation type *",
+    alojamientoPlaceholder: "Villa, hotel…",
+    alojamientoOpts: { villa: "Villa", hotel: "Hotel", condo: "Apartment or condo", otro: "Other" },
+    lLugar: "Hotel or villa name *",
+    lugarPlaceholder: "e.g. Villa Tortuga B-12 · Meliá Hotel · Tower…",
     minDays: (n: number) => ` (${n}-day minimum)`,
     zoneNoteTpl: "{name}: {min}+ day rentals · {note}",
     perDayShort: "/day",
@@ -194,6 +204,21 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
               <option key={n} value={n}>{n}</option>
             ))}
           </select>
+        </div>
+
+        <div>
+          <label className={labelCls} htmlFor="alojamiento">{t.lAlojamiento}</label>
+          <select id="alojamiento" name="alojamiento" required className={inputCls}>
+            <option value="">{t.alojamientoPlaceholder}</option>
+            <option value="villa">{t.alojamientoOpts.villa}</option>
+            <option value="hotel">{t.alojamientoOpts.hotel}</option>
+            <option value="condo">{t.alojamientoOpts.condo}</option>
+            <option value="otro">{t.alojamientoOpts.otro}</option>
+          </select>
+        </div>
+        <div>
+          <label className={labelCls} htmlFor="lugar">{t.lLugar}</label>
+          <input id="lugar" name="lugar" type="text" required className={inputCls} placeholder={t.lugarPlaceholder} autoComplete="off" />
         </div>
 
         <div className="sm:col-span-2">

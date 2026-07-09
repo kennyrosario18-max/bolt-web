@@ -67,6 +67,8 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.locator("#whatsapp").fill("+1 809 000 0000");
     await page.locator("#email").fill("qa@example.com");
     await page.locator("#zona").selectOption("casa-de-campo");
+    await page.locator("#alojamiento").selectOption("villa");
+    await page.locator("#lugar").fill("Villa QA");
     await page.locator("#llegada").fill("2027-01-10");
     await page.locator("#salida").fill("2027-01-12"); // 2 días < mínimo 7
 

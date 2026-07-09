@@ -10,7 +10,7 @@
 
 interface Fields {
   nombre: string; email: string; whatsapp: string; modelo: string;
-  llegada: string; salida: string; entrega: string; pasajeros: string; comentarios: string;
+  llegada: string; salida: string; entrega: string; alojamiento: string; pasajeros: string; comentarios: string;
 }
 interface Payload {
   phone: string; header: string; plazas: string; recommend: string;
@@ -105,6 +105,7 @@ function script(p: Payload): string {
           Llegada:val('llegada'),
           Salida:val('salida'),
           Entrega:(o&&o.value)?o.getAttribute('data-name'):'',
+          Alojamiento:alojaStr()||'(no indicado)',
           Pasajeros:val('pasajeros')||'(no indicado)',
           Comentarios:val('comentarios'),
           message:summary,
@@ -114,13 +115,21 @@ function script(p: Payload): string {
     }catch(e){}
   }
 
+  function alojaStr(){
+    var a=$('alojamiento');
+    var tipo=(a&&a.value)?a.options[a.selectedIndex].text:'';
+    var lugar=val('lugar');
+    if(tipo&&lugar)return tipo+' · '+lugar;
+    return tipo||lugar;
+  }
+
   function buildMsg(d){
     var o=zopt();
     var zoneName=o&&o.value?o.getAttribute('data-name'):'';
     var zoneNote=o?o.getAttribute('data-note'):'';
     var mo=modelo.options[modelo.selectedIndex];
     var modelStr=(mo&&mo.value)?(mo.getAttribute('data-name')+' ('+mo.getAttribute('data-pax')+' '+P.plazas+')'):P.recommend;
-    var f=P.f;
+    var f=P.f,aloja=alojaStr();
     var lines=[
       P.header,'',
       f.nombre+': '+val('nombre'),
@@ -130,6 +139,7 @@ function script(p: Payload): string {
       f.llegada+': '+val('llegada'),
       f.salida+': '+val('salida')+(d>0?(' ('+d+' '+(d===1?P.day:P.days)+')'):''),
       f.entrega+': '+zoneName+(zoneNote?(' — '+zoneNote):''),
+      aloja?(f.alojamiento+': '+aloja):'',
       val('pasajeros')?(f.pasajeros+': '+val('pasajeros')):'',
       val('comentarios')?(f.comentarios+': '+val('comentarios')):''
     ];
