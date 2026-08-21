@@ -36,7 +36,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿Puedo cancelar o cambiar la fecha?",
-      a: "Tienes un cambio de fecha gratis avisando con 48 horas, sujeto a disponibilidad. Las cancelaciones se reembolsan según la antelación (100% con más de 48h en temporada estándar). En temporada alta (20 dic–6 ene y Semana Santa) el depósito no es reembolsable. Detalles completos en la política de cancelación.",
+      a: "Tienes un cambio de fecha gratis avisando con 48 horas, sujeto a disponibilidad. Si cancelas con más de 48 horas en temporada estándar, tu anticipo queda como crédito válido 12 meses; con menos de 48 horas o no-show se pierde. En temporada alta (20 dic–6 ene y Semana Santa) el anticipo no es reembolsable y solo queda como crédito si cancelas con 30 o más días. Detalles completos en la política de cancelación.",
     },
     {
       q: "¿Cómo se carga el carrito y cuánto dura la batería?",
@@ -86,7 +86,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "Can I cancel or change dates?",
-      a: "You get one free date change with 48h notice, subject to availability. Cancellations are refunded based on notice (100% with more than 48h in standard season). In high season (Dec 20–Jan 6 and Holy Week) the deposit is non-refundable. Full details on the cancellation policy page.",
+      a: "You get one free date change with 48h notice, subject to availability. If you cancel with more than 48h notice in standard season, your advance is kept as credit valid for 12 months; with less than 48h or a no-show it is forfeited. In high season (Dec 20–Jan 6 and Holy Week) the advance is non-refundable and is kept as credit only if you cancel 30+ days ahead. Full details on the cancellation policy page.",
     },
     {
       q: "How does charging work and how far does a charge go?",

@@ -20,17 +20,17 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
         n: "02",
         title: "Cancelación — Temporada estándar",
         body: [
-          { rows: [["Más de 48h antes de la entrega", "100%"], ["Entre 48h y 24h antes", "50%"], ["Menos de 24h o no-show", "0%"]] },
-          "Reembolso del depósito según la antelación.",
+          { rows: [["Más de 48h antes de la entrega", "El anticipo queda como crédito"], ["Menos de 48h o no-show", "Se pierde el anticipo"]] },
+          "El crédito es válido por 12 meses para cualquier fecha, sujeto a disponibilidad. No se devuelve en efectivo.",
         ],
       },
       {
         n: "03",
         title: "Cancelación — Temporada alta",
         body: [
-          "Aplica del 20 dic al 6 ene y Semana Santa (jue–dom). En esta temporada el depósito es no reembolsable.",
-          { rows: [["Más de 7 días antes", "100%*"], ["Entre 7 días y 72h antes", "50%*"], ["Menos de 72h o no-show", "0%"]] },
-          "*Sobre el saldo; el depósito de confirmación no se reembolsa.",
+          "Aplica del 20 dic al 6 ene y Semana Santa (jue–dom). En esta temporada el anticipo no es reembolsable.",
+          { rows: [["Más de 30 días antes", "El anticipo queda como crédito"], ["Menos de 30 días o no-show", "Se pierde el anticipo"]] },
+          "El carrito apartado en temporada alta es uno que dejamos de ofrecer a otro huésped; por eso el anticipo compensa esa reserva.",
         ],
       },
       {
@@ -72,17 +72,17 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
         n: "02",
         title: "Cancellation — Standard season",
         body: [
-          { rows: [["More than 48h before delivery", "100%"], ["Between 48h and 24h before", "50%"], ["Less than 24h or no-show", "0%"]] },
-          "Deposit refunded based on notice.",
+          { rows: [["More than 48h before delivery", "Advance kept as credit"], ["Less than 48h or no-show", "Advance forfeited"]] },
+          "Credit is valid for 12 months on any date, subject to availability. Not refunded in cash.",
         ],
       },
       {
         n: "03",
         title: "Cancellation — High season",
         body: [
-          "Applies Dec 20–Jan 6 and Holy Week (Thu–Sun). The deposit is non-refundable in high season.",
-          { rows: [["More than 7 days before", "100%*"], ["Between 7 days and 72h before", "50%*"], ["Less than 72h or no-show", "0%"]] },
-          "*On the balance; the confirmation deposit is not refunded.",
+          "Applies Dec 20–Jan 6 and Holy Week (Thu–Sun). The advance is non-refundable in high season.",
+          { rows: [["More than 30 days before", "Advance kept as credit"], ["Less than 30 days or no-show", "Advance forfeited"]] },
+          "A cart held in high season is one we stop offering to another guest; the advance compensates for that hold.",
         ],
       },
       {

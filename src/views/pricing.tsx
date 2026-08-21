@@ -30,7 +30,7 @@ const T = {
     waMsg: "Hola BOLT, tengo una pregunta sobre las tarifas de renta.",
     depositTitle: "Depósitos y temporada",
     depositBody: "Reserva: depósito de confirmación del 50% del total. A la entrega: depósito de garantía de US$200, reembolsable tras la inspección de devolución.",
-    seasonBody: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el depósito no es reembolsable.",
+    seasonBody: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el anticipo no es reembolsable (queda como crédito solo con 30+ días de aviso).",
   },
   en: {
     kicker: "Pricing",
@@ -53,7 +53,7 @@ const T = {
     waMsg: "Hi BOLT, I have a question about rental rates.",
     depositTitle: "Deposits & season",
     depositBody: "Booking: 50% confirmation deposit of the total. At delivery: a US$200 damage deposit, refundable after the return inspection.",
-    seasonBody: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the deposit is non-refundable on those dates.",
+    seasonBody: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the advance is non-refundable on those dates (kept as credit only with 30+ days’ notice).",
   },
 } as const;
 
