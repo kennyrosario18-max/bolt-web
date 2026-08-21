@@ -103,7 +103,7 @@ export const ARTICLES: BlogArticle[] = [
           "Para pedir disponibilidad, escríbenos por WhatsApp al +1 809 839 8515 con las fechas de tu estadía, cuántos viajan y el nombre de tu villa o residencial dentro de Puntacana Resort & Club. Te ayudamos a elegir el modelo ideal y coordinamos la entrega. Your ride in paradise."
         ],
         "bullets": [
-          "Depósito del 30% para asegurar tu reserva.",
+          "Depósito del 50% para asegurar tu reserva.",
           "Depósito de garantía de US$200, reembolsable.",
           "Cambio de fecha gratis avisando con 48 horas de anticipación."
         ]
@@ -196,7 +196,7 @@ export const ARTICLES: BlogArticle[] = [
         "bullets": [
           "Escribe por WhatsApp al +1 809 839 8515 con tus fechas, la comunidad o villa dentro de Cap Cana y cuántas personas viajan.",
           "Recibes las opciones de modelo disponibles y la cotización (tarifa más ITBIS 18%).",
-          "Confirmas con un depósito del 30%; al entregar el carro se toma un depósito de garantía de US$200, reembolsable al devolverlo.",
+          "Confirmas con un depósito del 50%; al entregar el carro se toma un depósito de garantía de US$200, reembolsable al devolverlo.",
           "Si cambian tus planes, puedes mover la fecha gratis avisando con 48 horas de antelación."
         ]
       },
@@ -218,7 +218,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿Qué necesito para reservar y qué pasa si cambian mis fechas?",
-        "a": "Se solicita disponibilidad por WhatsApp (+1 809 839 8515), se confirma con un depósito del 30% y a la entrega se toma un depósito de garantía de US$200 reembolsable. El cambio de fecha es gratis si avisas con al menos 48 horas de antelación."
+        "a": "Se solicita disponibilidad por WhatsApp (+1 809 839 8515), se confirma con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200 reembolsable. El cambio de fecha es gratis si avisas con al menos 48 horas de antelación."
       }
     ],
     "locale": "es"
@@ -273,7 +273,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Temporada alta: los 6 plazas vuelan primero",
         "paragraphs": [
           "Hay un dato que conviene saber antes de dejar la decisión para última hora: en fechas festivas y semanas de temporada alta, los 6 plazas son los primeros en agotarse. Tiene lógica: las familias grandes y los grupos los buscan primero, y la flota de 6 plazas no es infinita.",
-          "En BOLT toda reserva funciona por solicitud de disponibilidad —nunca por confirmación automática—, así que mientras antes escribas, más opciones tendrás. La reserva se asegura con un depósito del 30%, y si tus planes cambian, puedes mover la fecha gratis avisando con 48 horas de anticipación. Es decir: reservar temprano no te amarra, te protege."
+          "En BOLT toda reserva funciona por solicitud de disponibilidad —nunca por confirmación automática—, así que mientras antes escribas, más opciones tendrás. La reserva se asegura con un depósito del 50%, y si tus planes cambian, puedes mover la fecha gratis avisando con 48 horas de anticipación. Es decir: reservar temprano no te amarra, te protege."
         ]
       },
       {
@@ -293,7 +293,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Asegura el tuyo antes de aterrizar",
         "paragraphs": [
           "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: entrega y recogida en tu villa, cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés. El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
-          "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 30% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo o La Romana, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
+          "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo o La Romana, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
         ]
       }
     ],
@@ -463,7 +463,7 @@ export const ARTICLES: BlogArticle[] = [
           "To request availability, message us on WhatsApp at +1 809 839 8515 with your stay dates, how many are travelling and the name of your villa or residence inside Puntacana Resort & Club. We help you pick the ideal model and coordinate delivery. Your ride in paradise."
         ],
         "bullets": [
-          "30% deposit to secure your booking.",
+          "50% deposit to secure your booking.",
           "US$200 refundable damage deposit.",
           "Free date change with 48 hours' notice."
         ]
@@ -556,7 +556,7 @@ export const ARTICLES: BlogArticle[] = [
         "bullets": [
           "Message on WhatsApp at +1 809 839 8515 with your dates, the community or villa inside Cap Cana and how many people are travelling.",
           "You receive the available model options and the quote (rate plus 18% tax).",
-          "You confirm with a 30% deposit; on delivery a US$200 damage deposit is taken, refundable on return.",
+          "You confirm with a 50% deposit; on delivery a US$200 damage deposit is taken, refundable on return.",
           "If your plans change, you can move the date for free with 48 hours' notice."
         ]
       },
@@ -578,7 +578,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "What do I need to book and what if my dates change?",
-        "a": "You request availability on WhatsApp (+1 809 839 8515), confirm with a 30% deposit and on delivery a refundable US$200 damage deposit is taken. Date changes are free with at least 48 hours' notice."
+        "a": "You request availability on WhatsApp (+1 809 839 8515), confirm with a 50% deposit and on delivery a refundable US$200 damage deposit is taken. Date changes are free with at least 48 hours' notice."
       }
     ],
     "locale": "en"
@@ -624,7 +624,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "High season: the 6-seaters go first",
         "paragraphs": [
           "There's one thing worth knowing before leaving the decision to the last minute: on holidays and high-season weeks, the 6-seaters are the first to sell out. It makes sense: large families and groups look for them first, and the 6-seat fleet isn't infinite.",
-          "At BOLT every booking works by availability request — never automatic confirmation — so the sooner you write, the more options you'll have. The booking is secured with a 30% deposit, and if your plans change, you can move the date for free with 48 hours' notice. In other words: booking early doesn't tie you down, it protects you."
+          "At BOLT every booking works by availability request — never automatic confirmation — so the sooner you write, the more options you'll have. The booking is secured with a 50% deposit, and if your plans change, you can move the date for free with 48 hours' notice. In other words: booking early doesn't tie you down, it protects you."
         ]
       },
       {
@@ -644,7 +644,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Secure yours before you land",
         "paragraphs": [
           "Whatever you choose, the BOLT rental includes the same: villa delivery and pickup, charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish. The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
-          "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. We confirm availability, you hold it with a 30% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo or La Romana, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
+          "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo or La Romana, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
         ]
       }
     ],

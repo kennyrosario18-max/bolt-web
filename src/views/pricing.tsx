@@ -29,7 +29,7 @@ const T = {
     waCta: "Preguntar por WhatsApp",
     waMsg: "Hola BOLT, tengo una pregunta sobre las tarifas de renta.",
     depositTitle: "Depósitos y temporada",
-    depositBody: "Reserva: depósito de confirmación del 30% del total. A la entrega: depósito de garantía de US$200, reembolsable tras la inspección de devolución.",
+    depositBody: "Reserva: depósito de confirmación del 50% del total. A la entrega: depósito de garantía de US$200, reembolsable tras la inspección de devolución.",
     seasonBody: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el depósito no es reembolsable.",
   },
   en: {
@@ -52,7 +52,7 @@ const T = {
     waCta: "Ask on WhatsApp",
     waMsg: "Hi BOLT, I have a question about rental rates.",
     depositTitle: "Deposits & season",
-    depositBody: "Booking: 30% confirmation deposit of the total. At delivery: a US$200 damage deposit, refundable after the return inspection.",
+    depositBody: "Booking: 50% confirmation deposit of the total. At delivery: a US$200 damage deposit, refundable after the return inspection.",
     seasonBody: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the deposit is non-refundable on those dates.",
   },
 } as const;

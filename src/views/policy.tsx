@@ -15,7 +15,7 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       "Estas condiciones aplican a toda reserva de carrito BOLT. Al confirmar y pagar el depósito, el cliente acepta esta política.",
     accept: "Aceptación: al reservar, el cliente declara haber leído y aceptado esta política.",
     sections: [
-      { n: "01", title: "Depósito de confirmación", body: ["30% del total para apartar la reserva. El saldo se paga a la entrega."] },
+      { n: "01", title: "Depósito de confirmación", body: ["50% del total para apartar la reserva. El saldo se paga a la entrega."] },
       {
         n: "02",
         title: "Cancelación — Temporada estándar",
@@ -67,7 +67,7 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       "These terms apply to every BOLT cart booking. By confirming and paying the deposit, the client accepts this policy.",
     accept: "By booking, the client confirms they have read and accepted this policy.",
     sections: [
-      { n: "01", title: "Confirmation deposit", body: ["30% of the total to confirm the booking. Balance due on delivery."] },
+      { n: "01", title: "Confirmation deposit", body: ["50% of the total to confirm the booking. Balance due on delivery."] },
       {
         n: "02",
         title: "Cancellation — Standard season",

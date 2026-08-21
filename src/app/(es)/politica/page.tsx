@@ -4,7 +4,7 @@ import { hreflang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: 'Política de cancelación',
-  description: 'Política de cancelación y depósitos de BOLT: depósito de confirmación 30%, reembolsos por antelación, temporada alta, cambios de fecha y garantía.',
+  description: 'Política de cancelación y depósitos de BOLT: depósito de confirmación 50%, reembolsos por antelación, temporada alta, cambios de fecha y garantía.',
   alternates: { canonical: '/politica/', ...hreflang('/politica/', '/en/policy/') },
 };
 

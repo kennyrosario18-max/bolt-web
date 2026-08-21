@@ -66,7 +66,7 @@ function script(p: Payload): string {
     var d=diffDays(llegada.value,salida.value),daily=dailyPrice();
     if(d>0&&daily>0){
       var total=Math.round(d*daily*1.18);      // ITBIS 18% incluido
-      var deposit=Math.round(total*0.30);       // depósito de confirmación 30%
+      var deposit=Math.round(total*0.50);       // depósito de confirmación 50%
       estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit});
     }else{estimate.textContent='';}
   }

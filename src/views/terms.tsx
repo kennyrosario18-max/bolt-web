@@ -52,7 +52,7 @@ const T: Record<
         n: "03",
         title: "Reserva y pagos",
         body: [
-          "La reserva se asegura con un depósito de confirmación del 30% del total; el saldo se paga a la entrega. A la entrega se retiene además un depósito de garantía de US$200, reembolsable tras la inspección de devolución, descontando cargos por daños o penalidades si los hubiera.",
+          "La reserva se asegura con un depósito de confirmación del 50% del total; el saldo se paga a la entrega. A la entrega se retiene además un depósito de garantía de US$200, reembolsable tras la inspección de devolución, descontando cargos por daños o penalidades si los hubiera.",
           "Los precios se publican en US$ por día; el ITBIS (18%) se muestra por modelo. Un día de renta es un período de 24 horas desde la hora exacta de entrega, con 60 minutos de gracia en la devolución.",
         ],
       },
@@ -148,7 +148,7 @@ const T: Record<
         n: "03",
         title: "Booking and payments",
         body: [
-          "Bookings are secured with a 30% confirmation deposit; the balance is due on delivery. At delivery, a refundable US$200 damage deposit is also held and returned after the return inspection, less any damage charges or penalties if applicable.",
+          "Bookings are secured with a 50% confirmation deposit; the balance is due on delivery. At delivery, a refundable US$200 damage deposit is also held and returned after the return inspection, less any damage charges or penalties if applicable.",
           "Prices are published in US$ per day; tax (18% ITBIS) is shown per model. A rental day is a 24-hour period from the exact delivery time, with a 60-minute grace window on return.",
         ],
       },

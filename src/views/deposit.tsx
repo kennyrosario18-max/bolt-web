@@ -7,7 +7,7 @@ const T = {
   es: {
     kicker: "Pago",
     h1: "Datos para tu depósito",
-    lead: "Depósito de confirmación: 30% del total — confirma tu reserva.",
+    lead: "Depósito de confirmación: 50% del total — confirma tu reserva.",
     usd: "Cuenta en dólares · USD",
     dop: "¿Prefieres pagar en pesos? · Cuenta en DOP",
     bank: "Banco",
@@ -24,7 +24,7 @@ const T = {
   en: {
     kicker: "Payment",
     h1: "Deposit details",
-    lead: "Confirmation deposit: 30% of the total — confirms your booking.",
+    lead: "Confirmation deposit: 50% of the total — confirms your booking.",
     usd: "US dollar account · USD",
     dop: "Prefer to pay in DOP? · DOP account",
     bank: "Bank",

@@ -4,7 +4,7 @@ import { hreflang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: 'Datos para tu depósito',
-  description: 'Cuentas oficiales de BOLT (Banco López de Haro, US$ y DOP) para el depósito de confirmación del 30%. Envía tu comprobante por WhatsApp.',
+  description: 'Cuentas oficiales de BOLT (Banco López de Haro, US$ y DOP) para el depósito de confirmación del 50%. Envía tu comprobante por WhatsApp.',
   alternates: { canonical: '/deposito/', ...hreflang('/deposito/', '/en/deposit/') },
 };
 

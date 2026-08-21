@@ -28,7 +28,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿Cómo se confirma mi reserva?",
-      a: "Envías tu solicitud de disponibilidad, nuestro equipo la verifica y te responde por WhatsApp — nunca es una confirmación automática. La reserva se asegura con un depósito del 30% del total; el saldo se paga a la entrega.",
+      a: "Envías tu solicitud de disponibilidad, nuestro equipo la verifica y te responde por WhatsApp — nunca es una confirmación automática. La reserva se asegura con un depósito del 50% del total; el saldo se paga a la entrega.",
     },
     {
       q: "¿Piden depósito de garantía?",
@@ -78,7 +78,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "How is my booking confirmed?",
-      a: "You send an availability request, our team checks the fleet and replies on WhatsApp — never an automatic confirmation. The booking is secured with a 30% deposit; the balance is due on delivery.",
+      a: "You send an availability request, our team checks the fleet and replies on WhatsApp — never an automatic confirmation. The booking is secured with a 50% deposit; the balance is due on delivery.",
     },
     {
       q: "Is there a damage deposit?",
