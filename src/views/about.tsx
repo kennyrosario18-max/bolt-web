@@ -18,7 +18,7 @@ const T = {
     valoresTitle: "Valores",
     valores: [
       { t: "Velocidad con seriedad.", d: "Respondemos en minutos y cumplimos lo que confirmamos. El rayo es promesa, no adorno." },
-      { t: "Claridad total.", d: "Precios publicados con ITBIS, políticas por escrito, facturación e-CF. En renta y en venta: sin sorpresas ni letra pequeña." },
+      { t: "Claridad total.", d: "Precios publicados con ITBIS, políticas por escrito, facturación formal con comprobante fiscal. En renta y en venta: sin sorpresas ni letra pequeña." },
       { t: "Servicio local, estándar internacional.", d: "Atendemos en español e inglés, con la calidez dominicana y la formalidad que espera el huésped extranjero." },
       { t: "Seguridad primero.", d: "Unidades mantenidas y entregadas en condiciones óptimas, siempre." },
       { t: "Relaciones que crecen.", d: "Aliados, clientes de renta y compradores: cada cliente es una relación de años, no una transacción." },
@@ -68,7 +68,7 @@ const T = {
     valoresTitle: "Values",
     valores: [
       { t: "Speed with seriousness.", d: "We reply in minutes and deliver what we confirm. The lightning bolt is a promise, not a decoration." },
-      { t: "Total clarity.", d: "Published prices with tax, written policies, formal e-CF invoicing. Renting or buying: no surprises, no fine print." },
+      { t: "Total clarity.", d: "Published prices with tax, written policies, formal tax-receipt invoicing. Renting or buying: no surprises, no fine print." },
       { t: "Local service, international standard.", d: "We serve in Spanish and English, with Dominican warmth and the formality foreign guests expect." },
       { t: "Safety first.", d: "Maintained units delivered in optimal condition, always." },
       { t: "Relationships that grow.", d: "Partners, renters and buyers: every client is a years-long relationship, not a transaction." },

@@ -21,17 +21,17 @@ const T = {
     benefitsTitle: "Beneficios de ",
     benefitsHl: "aliado",
     benefits: [
-      { t: "Tarifa preferencial de aliado", d: "Siempre mejor que la tarifa pública; te la compartimos por WhatsApp." },
-      { t: "Cuenta mensual con factura e-CF", d: "Sin depósito por reserva: consolidamos todo en una cuenta mensual." },
+      { t: "Tarifa preferencial de aliado", d: "Siempre mejor que la tarifa pública; te la compartimos por WhatsApp. Puede variar en temporada alta." },
+      { t: "Cuenta mensual a crédito", d: "Para aliados aprobados con RNC y volumen sostenido (más de 5 rentas al mes): sin depósito por reserva, todo consolidado contra factura con comprobante fiscal." },
       { t: "Disponibilidad prioritaria", d: "Tus solicitudes primero, incluso en fechas pico." },
       { t: "Reporte mensual por villa", d: "Sabes exactamente qué se rentó en cada propiedad." },
     ],
     howTitle: "Cómo ",
     howHl: "funciona",
     steps: [
-      "Te damos de alta como aliado con tu tarifa preferencial.",
-      "Reservas por el formulario concierge con los datos del huésped.",
-      "Cierras cada mes con una factura e-CF y tu reporte por villa.",
+      "Te damos de alta como aliado con tu tarifa preferencial. Las primeras reservas van con 50% de depósito o prepago.",
+      "Reservas por el formulario concierge con los datos del huésped. Entrega a las 12:00 PM y recogida a las 11:00 AM.",
+      "Con historial y volumen (más de 5 rentas al mes por 2 meses) pasas a cuenta mensual a crédito, con factura y tu reporte por villa.",
     ],
     reqTitle: "Requisitos del ",
     reqHl: "aliado",
@@ -41,7 +41,7 @@ const T = {
         items: [
           "Ser agencia, concierge, property manager o villa con necesidad recurrente",
           "Contacto completo: nombre/empresa, WhatsApp y correo electrónico",
-          "RNC o cédula para la facturación e-CF",
+          "RNC o cédula para la facturación con comprobante fiscal",
         ],
       },
       {
@@ -49,7 +49,9 @@ const T = {
         items: [
           "Reservar por el formulario concierge con los datos completos del huésped",
           "Avisar cambios con 24h: el 1er cambio es gratis; desde el 2do, US$40 + ITBIS",
-          "Pagar la cuenta mensual contra factura e-CF (sin depósito por reserva)",
+          "Aliado nuevo o de bajo volumen: 50% de depósito o prepago; con crédito aprobado, cuenta mensual contra factura",
+          "Temporada alta: 50% de depósito para asegurar unidades, incluso con crédito, antes de la fecha límite de cada temporada",
+          "Registro fotográfico (F-01) en la entrega y la devolución; los daños son responsabilidad del huésped/aliado",
         ],
       },
       {
@@ -75,9 +77,11 @@ const T = {
     faqTitle: "Preguntas frecuentes",
     faqs: [
       { q: "¿Quién puede ser aliado?", a: "Agencias de renta vacacional, concierges, property managers y villas que necesiten golf carts de forma recurrente." },
-      { q: "¿Tiene costo el programa?", a: "No. Ser aliado es gratis; solo pagas las rentas a tu tarifa preferencial, consolidadas en tu cuenta mensual." },
-      { q: "¿Cómo facturan?", a: "Con factura e-CF mensual (comprobante fiscal electrónico), sin depósito por cada reserva." },
-      { q: "Refiero clientes, ¿cómo me beneficio?", a: "Te damos de alta como aliado: reservas para tus huéspedes o referidos con tu tarifa preferencial y todo queda consolidado en tu cuenta mensual con factura e-CF." },
+      { q: "¿Tiene costo el programa?", a: "No. Ser aliado es gratis; solo pagas las rentas a tu tarifa preferencial." },
+      { q: "¿Cómo facturan?", a: "Mensual, con comprobante fiscal válido (e-CF próximamente). Tarifas en US$; el ITBIS (18%) no está incluido." },
+      { q: "¿Cuándo tengo cuenta mensual a crédito?", a: "Es un beneficio para aliados aprobados: RNC y más de 5 rentas al mes durante 2 meses consecutivos. Mientras tanto, las reservas van con 50% de depósito o prepago. Un pago atrasado suspende el crédito y vuelve a depósito." },
+      { q: "¿Qué pasa en temporada alta?", a: "Para asegurar unidades en fechas festivas se requiere 50% de depósito, aun con crédito, antes de la fecha límite de cada temporada. La tarifa preferencial puede variar en temporada alta." },
+      { q: "Refiero clientes, ¿cómo me beneficio?", a: "Te damos de alta como aliado: reservas para tus huéspedes o referidos con tu tarifa preferencial y, una vez aprobado el crédito, todo queda consolidado en tu cuenta mensual con factura." },
     ],
   },
   en: {
@@ -91,17 +95,17 @@ const T = {
     benefitsTitle: "Partner ",
     benefitsHl: "benefits",
     benefits: [
-      { t: "Preferred partner rate", d: "Always better than the public rate; we share it on WhatsApp." },
-      { t: "Monthly account with e-CF invoice", d: "No per-booking deposit: we consolidate everything into a monthly account." },
+      { t: "Preferred partner rate", d: "Always better than the public rate; we share it on WhatsApp. May vary in high season." },
+      { t: "Monthly credit account", d: "For approved partners with a Tax ID and sustained volume (more than 5 rentals a month): no per-booking deposit, everything consolidated against a valid tax invoice." },
       { t: "Priority availability", d: "Your requests come first, even on peak dates." },
       { t: "Monthly per-villa report", d: "You know exactly what was rented at each property." },
     ],
     howTitle: "How it ",
     howHl: "works",
     steps: [
-      "We set you up as a partner with your preferred rate.",
-      "You book through the concierge form with the guest's details.",
-      "You close each month with an e-CF invoice and your per-villa report.",
+      "We set you up as a partner with your preferred rate. First reservations require a 50% deposit or prepayment.",
+      "You book through the concierge form with the guest's details. Delivery at 12:00 PM, pickup at 11:00 AM.",
+      "With history and volume (more than 5 rentals a month for 2 months) you move to a monthly credit account, with an invoice and your per-villa report.",
     ],
     reqTitle: "Partner ",
     reqHl: "requirements",
@@ -111,7 +115,7 @@ const T = {
         items: [
           "Be an agency, concierge, property manager or villa with recurring need",
           "Full contact details: name/company, WhatsApp and email",
-          "RNC or ID for e-CF invoicing",
+          "RNC or ID for tax-receipt invoicing",
         ],
       },
       {
@@ -119,7 +123,9 @@ const T = {
         items: [
           "Book through the concierge form with the guest's full details",
           "Notify changes 24h ahead: 1st change free; from the 2nd, US$40 + tax",
-          "Settle the monthly account against the e-CF invoice (no per-booking deposit)",
+          "New or low-volume partner: 50% deposit or prepayment; with approved credit, monthly account against invoice",
+          "Peak season: 50% deposit to secure units, even with credit, by the deadline set each season",
+          "Photo record (F-01) at handover and return; damages are the responsibility of the guest/partner",
         ],
       },
       {
@@ -145,9 +151,11 @@ const T = {
     faqTitle: "Frequently asked questions",
     faqs: [
       { q: "Who can become a partner?", a: "Vacation-rental agencies, concierges, property managers and villas that need golf carts on a recurring basis." },
-      { q: "Does the program cost anything?", a: "No. Becoming a partner is free; you only pay for rentals at your preferred rate, consolidated in your monthly account." },
-      { q: "How do you invoice?", a: "With a monthly e-CF invoice (electronic fiscal receipt), with no deposit per booking." },
-      { q: "I refer clients — what's in it for me?", a: "We set you up as a partner: you book for your guests or referrals at your preferred rate, all consolidated in your monthly account with an e-CF invoice." },
+      { q: "Does the program cost anything?", a: "No. Becoming a partner is free; you only pay for rentals at your preferred rate." },
+      { q: "How do you invoice?", a: "Monthly, with a valid tax receipt (e-CF coming soon). Rates in US$; 18% tax (ITBIS) not included." },
+      { q: "When do I get a monthly credit account?", a: "It's a benefit for approved partners: a Tax ID and more than 5 rentals a month for 2 consecutive months. Until then, reservations require a 50% deposit or prepayment. A late payment suspends credit and reverts to deposit." },
+      { q: "What about peak season?", a: "To secure units on holiday dates a 50% deposit is required, even with credit, by the deadline set each season. The preferred rate may vary in high season." },
+      { q: "I refer clients — what's in it for me?", a: "We set you up as a partner: you book for your guests or referrals at your preferred rate, and, once credit is approved, everything is consolidated in your monthly account with an invoice." },
     ],
   },
 } as const;

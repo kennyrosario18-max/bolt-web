@@ -52,7 +52,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿Trabajan con concierges y property managers?",
-      a: "Sí — el Programa de Aliados ofrece tarifa preferencial, cuenta mensual con factura e-CF sin depósito por reserva, disponibilidad prioritaria y reporte por villa. Escríbenos por WhatsApp para conocer la tarifa de aliado.",
+      a: "Sí — el Programa de Aliados ofrece tarifa preferencial, cuenta mensual a crédito para aliados aprobados, disponibilidad prioritaria y reporte por villa. Escríbenos por WhatsApp para conocer la tarifa de aliado.",
     },
   ],
   en: [
@@ -102,7 +102,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "Do you work with concierges and property managers?",
-      a: "Yes — the Partner Program offers preferred rates, a monthly account with e-CF invoicing and no per-booking deposit, priority availability and per-villa reporting. Message us on WhatsApp for partner rates.",
+      a: "Yes — the Partner Program offers preferred rates, a monthly credit account for approved partners, priority availability and per-villa reporting. Message us on WhatsApp for partner rates.",
     },
   ],
 };
