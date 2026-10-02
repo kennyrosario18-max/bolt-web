@@ -12,8 +12,8 @@ const T = {
   es: {
     kicker: "Precios",
     h1: "Tarifas claras, sin sorpresas",
-    lead: "Precios por día en US$ con el ITBIS mostrado en cada modelo. Lo que ves es lo que pagas.",
-    leadSub: "Daily rates in US$, tax shown per model — what you see is what you pay.",
+    lead: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Sin cargos ocultos.",
+    leadSub: "Daily rates in US$ plus 18% tax, shown per model — no hidden fees.",
     perDay: " /día",
     withTax: "con ITBIS · ",
     group4: "Hasta 4 personas",
@@ -35,8 +35,8 @@ const T = {
   en: {
     kicker: "Pricing",
     h1: "Clear rates, no surprises",
-    lead: "Daily rates in US$ with tax shown per model. What you see is what you pay.",
-    leadSub: "Precios por día en US$ con el ITBIS mostrado en cada modelo. Lo que ves es lo que pagas.",
+    lead: "Daily rates in US$ plus 18% tax, shown per model. No hidden fees.",
+    leadSub: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Sin cargos ocultos.",
     perDay: " /day",
     withTax: "with tax · ",
     group4: "Up to 4 people",
