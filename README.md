@@ -8,9 +8,15 @@ Next.js 16 · Tailwind 4 · export estático · bilingüe ES (raíz) + EN (/en) 
 ```bash
 npm run dev                  # desarrollo en localhost:3000
 npm run build                # build de PRODUCCIÓN (indexable, dominio raíz)
-./scripts/deploy-preview.sh  # publica el preview en github.io/bolt-web (noindex)
-./scripts/deploy-prod.sh     # publica PRODUCCIÓN en boltgolfcars.com
 ```
+
+**Publicar:** el sitio se publica solo con cada `git push` a `main`, después de pasar
+las pruebas (GitHub Actions, `.github/workflows/deploy.yml`). Push únicamente con el OK
+de Kenny.
+
+- **NO usar** `./scripts/deploy-prod.sh`: publica en boltgolfcars.com sin pasar las pruebas.
+- **NO usar** `./scripts/deploy-preview.sh`: hoy reemplazaría el sitio en vivo por el
+  preview (sin dominio y oculto a Google).
 
 El entorno se decide solo: `BASE_PATH=/bolt-web` = preview (noindex, robots
 Disallow, URLs del preview); sin `BASE_PATH` = producción (indexable, URLs de
@@ -26,7 +32,8 @@ boltgolfcars.com). No hay que tocar código para lanzar.
      `kennyrosario18-max.github.io` (hoy apunta al dominio raíz).
    - **NO tocar** el CNAME de `reservas` (sitio legado, sigue vivo).
 2. **Dominio en GitHub Pages:** `gh api -X PUT repos/kennyrosario18-max/bolt-web/pages -f cname=boltgolfcars.com`
-3. **Deploy:** `./scripts/deploy-prod.sh`
+3. **Deploy:** `git push` a `main` (solo con el OK de Kenny): GitHub Actions corre las
+   pruebas y publica solo si todo pasa. No usar `./scripts/deploy-prod.sh`.
 4. **HTTPS:** esperar el certificado (~15-60 min tras propagar el DNS) y
    activar "Enforce HTTPS": `gh api -X PUT repos/kennyrosario18-max/bolt-web/pages -F https_enforced=true`
 5. **Google Search Console:** agregar propiedad `boltgolfcars.com` (verificación
