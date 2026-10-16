@@ -293,7 +293,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Asegura el tuyo antes de aterrizar",
         "paragraphs": [
           "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte a tu villa es fijo por zona (US$60 + ITBIS por viaje, gratis en reservas de 5+ días, 10+ en Bávaro). El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
-          "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo o La Romana, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
+          "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
         ]
       }
     ],
@@ -644,7 +644,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Secure yours before you land",
         "paragraphs": [
           "Whatever you choose, the BOLT rental includes the same: charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa charged as fixed transport by zone (from US$60 per trip, free on longer stays). The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
-          "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo or La Romana, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
+          "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
         ]
       }
     ],

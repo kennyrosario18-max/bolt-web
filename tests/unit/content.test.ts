@@ -37,8 +37,8 @@ describe("blog — pares ES/EN", () => {
 });
 
 describe("zonas — landings", () => {
-  it("hay 5 zonas y cada una con cuerpo largo (3 secciones, ≥4 FAQs)", () => {
-    expect(ZONE_LANDINGS.length).toBe(5);
+  it("hay 4 zonas y cada una con cuerpo largo (3 secciones, ≥4 FAQs)", () => {
+    expect(ZONE_LANDINGS.length).toBe(4);
     for (const l of ZONE_LANDINGS) {
       expect(l.sections.length, l.zone.id).toBe(3);
       expect(l.faqs.length, l.zone.id).toBeGreaterThanOrEqual(4);

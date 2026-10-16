@@ -29,7 +29,7 @@ export interface Zone {
   short: string;
   blurb: string;
   blurbEn: string;
-  /** Mínimo de días de reserva (Casa de Campo / La Romana = 7). */
+  /** Mínimo de días de reserva (Casa de Campo = 7). */
   minDays?: number;
   note?: string;
   noteEn?: string;
@@ -94,16 +94,6 @@ export const ZONES: Zone[] = [
     noteEn: "Transport quoted separately.",
   },
   {
-    id: "la-romana",
-    name: "La Romana",
-    short: "La Romana",
-    blurb: "Disponible para reservas de 7 días o más.",
-    blurbEn: "Available for rentals of 7 days or more.",
-    minDays: 7,
-    note: "Transporte sujeto a cotización.",
-    noteEn: "Transport quoted separately.",
-  },
-  {
     id: "otra-zona",
     name: "Otro complejo privado o evento (cotizar)",
     nameEn: "Other private community or event (quote)",
@@ -115,6 +105,9 @@ export const ZONES: Zone[] = [
     noLanding: true,
   },
 ];
+
+/** Lugares reales que atiende BOLT (para el schema); excluye la opción genérica de cotizar. */
+export const SERVICE_AREAS = ZONES.filter((z) => z.id !== "otra-zona");
 
 /** Zonas con landing propia (/alquiler/{id}) — sitemap, home y footer. */
 export const LANDING_ZONES = ZONES.filter((z) => !z.noLanding);

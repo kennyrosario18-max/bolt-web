@@ -24,7 +24,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿En qué zonas entregan?",
-      a: "Puntacana Resort & Club, Cap Cana y Bávaro con transporte fijo de US$60 por viaje (gratis en reservas largas), y Uvero Alto / Macao a US$120. Casa de Campo y La Romana están disponibles para reservas de 7 días o más, con transporte sujeto a cotización.",
+      a: "Puntacana Resort & Club, Cap Cana y Bávaro con transporte fijo de US$60 por viaje (gratis en reservas largas), y Uvero Alto / Macao a US$120. Casa de Campo está disponible para reservas de 7 días o más, con transporte sujeto a cotización.",
     },
     {
       q: "¿Cómo se confirma mi reserva?",
@@ -74,7 +74,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "Which areas do you deliver to?",
-      a: "Puntacana Resort & Club, Cap Cana and Bávaro with a fixed US$60 transport fee per trip (free on longer stays), and Uvero Alto / Macao at US$120. Casa de Campo and La Romana are available for rentals of 7 days or more, with transport quoted separately.",
+      a: "Puntacana Resort & Club, Cap Cana and Bávaro with a fixed US$60 transport fee per trip (free on longer stays), and Uvero Alto / Macao at US$120. Casa de Campo is available for rentals of 7 days or more, with transport quoted separately.",
     },
     {
       q: "How is my booking confirmed?",

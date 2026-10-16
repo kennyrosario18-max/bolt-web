@@ -23,7 +23,7 @@ for (const m of models) {
 }
 
 // 2) Cada zona tiene meta EN en zones-landing.ts (fuente única, no dict paralelo).
-const zones = ["puntacana-resort", "cap-cana", "bavaro", "casa-de-campo", "la-romana"];
+const zones = ["puntacana-resort", "cap-cana", "bavaro", "casa-de-campo"];
 const zonesTs = read("src/content/zones-landing.ts");
 const metaEnCount = (zonesTs.match(/metaTitleEn:/g) || []).length;
 if (metaEnCount < zones.length)

@@ -1,4 +1,4 @@
-import { CONTACT, ZONES } from "@/content/site";
+import { CONTACT, SERVICE_AREAS } from "@/content/site";
 import { MIN_PRICE, MAX_PRICE, modelPrice } from "@/content/pricing";
 import { DESC_EN, type Model } from "@/content/models";
 import { SITE_URL } from "./site-url";
@@ -38,7 +38,7 @@ export const LOCAL_BUSINESS = {
   },
   hasMap:
     "https://www.google.com/maps/search/?api=1&query=Av.%20Barcel%C3%B3%20Km%203%201%2F2%2C%20B%C3%A1varo%2C%20La%20Altagracia",
-  areaServed: ZONES.map((z) => ({ "@type": "Place", name: z.name })),
+  areaServed: SERVICE_AREAS.map((z) => ({ "@type": "Place", name: z.name })),
   sameAs: [CONTACT.instagram],
   priceRange: `US$${MIN_PRICE}–US$${MAX_PRICE}`,
   openingHoursSpecification: {

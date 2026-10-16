@@ -41,8 +41,8 @@ const SERVICES: Service[] = [
   {
     title: "Entrega en toda la zona",
     titleEn: "Delivery across the area",
-    body: "Llevamos y recogemos tu carrito con carga completa y orientación de uso en tu villa. Transporte fijo por zona (ida y vuelta): US$60 por viaje en Puntacana Resort & Club, Cap Cana y Bávaro — gratis en reservas de 5+ días (Bávaro 10+) — y US$120 en Uvero Alto / Macao; Casa de Campo y La Romana en reservas de 7+ días con transporte cotizado. ITBIS 18% aparte.",
-    bodyEn: "We deliver and pick up your cart fully charged with a usage briefing at your villa. Fixed round-trip transport by zone: US$60 per trip to Puntacana Resort & Club, Cap Cana and Bávaro — free on 5+ day stays (Bávaro 10+) — and US$120 to Uvero Alto / Macao; Casa de Campo and La Romana on 7+ day rentals with quoted transport. 18% tax added.",
+    body: "Llevamos y recogemos tu carrito con carga completa y orientación de uso en tu villa. Transporte fijo por zona (ida y vuelta): US$60 por viaje en Puntacana Resort & Club, Cap Cana y Bávaro — gratis en reservas de 5+ días (Bávaro 10+) — y US$120 en Uvero Alto / Macao; Casa de Campo en reservas de 7+ días con transporte cotizado. ITBIS 18% aparte.",
+    bodyEn: "We deliver and pick up your cart fully charged with a usage briefing at your villa. Fixed round-trip transport by zone: US$60 per trip to Puntacana Resort & Club, Cap Cana and Bávaro — free on 5+ day stays (Bávaro 10+) — and US$120 to Uvero Alto / Macao; Casa de Campo on 7+ day rentals with quoted transport. 18% tax added.",
     ctaEs: "Ver zonas →",
     ctaEn: "See zones →",
     hrefEs: "/#zonas",

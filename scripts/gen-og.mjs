@@ -47,7 +47,6 @@ const ZONES = [
   { id: "cap-cana", name: "Cap Cana" },
   { id: "bavaro", name: "Bávaro" },
   { id: "casa-de-campo", name: "Casa de Campo" },
-  { id: "la-romana", name: "La Romana" },
 ];
 
 const cards = [
