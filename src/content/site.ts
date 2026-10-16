@@ -31,6 +31,15 @@ export interface Zone {
   minDays?: number;
   note?: string;
   noteEn?: string;
+  /** Transporte (entrega + recogida) por viaje de tráiler, US$ + ITBIS 18%.
+   *  Sin valor = se cotiza (fuera de ruta). Lista oficial 16/oct/2026. */
+  transport?: number;
+  /** Reservas de N días o más: transporte gratis (por reserva, todos los viajes). */
+  transportFreeFrom?: number;
+  /** Puntos de referencia que acompañan al nombre en la tabla de transporte. */
+  landmarks?: string;
+  /** Sin landing propia: no sale en sitemap, home ni footer (sí en los formularios). */
+  noLanding?: true;
 }
 
 export const ZONES: Zone[] = [
@@ -40,6 +49,8 @@ export const ZONES: Zone[] = [
     short: "PCRC",
     blurb: "Nuestra base principal. Entrega en villas y residenciales de todo el resort.",
     blurbEn: "Our home base. Delivery to villas and residences across the resort.",
+    transport: 60,
+    transportFreeFrom: 5,
   },
   {
     id: "cap-cana",
@@ -47,6 +58,8 @@ export const ZONES: Zone[] = [
     short: "Cap Cana",
     blurb: "Cobertura completa: marina, campos de golf y comunidades privadas.",
     blurbEn: "Full coverage: marina, golf courses and gated communities.",
+    transport: 60,
+    transportFreeFrom: 5,
   },
   {
     id: "bavaro",
@@ -54,6 +67,19 @@ export const ZONES: Zone[] = [
     short: "Bávaro",
     blurb: "Residenciales y complejos turísticos de la zona de Bávaro.",
     blurbEn: "Residential communities and resorts across Bávaro.",
+    transport: 60,
+    transportFreeFrom: 10,
+    landmarks: "Cocotal, Vista Cana",
+  },
+  {
+    id: "uvero-alto-macao",
+    name: "Uvero Alto / Macao",
+    short: "Uvero Alto",
+    blurb: "Caná Rock, Hard Rock, Bahía Príncipe y resorts de la costa norte.",
+    blurbEn: "Caná Rock, Hard Rock, Bahía Príncipe and resorts along the north coast.",
+    transport: 120,
+    landmarks: "Caná Rock, Hard Rock, Bahía Príncipe",
+    noLanding: true,
   },
   {
     id: "casa-de-campo",
@@ -76,6 +102,20 @@ export const ZONES: Zone[] = [
     noteEn: "Transport quoted separately.",
   },
 ];
+
+/** Zonas con landing propia (/alquiler/{id}) — sitemap, home y footer. */
+export const LANDING_ZONES = ZONES.filter((z) => !z.noLanding);
+
+/** Texto corto del transporte de una zona (pills, formularios, mensajes). */
+export function transportLabel(z: Zone, locale: "es" | "en"): string {
+  const es = locale === "es";
+  if (!z.transport) return es ? "Transporte sujeto a cotización" : "Transport quoted separately";
+  const base = es ? `Transporte US$${z.transport} por viaje + ITBIS` : `Transport US$${z.transport} per trip + tax`;
+  if (!z.transportFreeFrom) return base;
+  return es
+    ? `${base} · gratis en reservas de ${z.transportFreeFrom}+ días`
+    : `${base} · free on ${z.transportFreeFrom}+ day rentals`;
+}
 
 /** Tarifas oficiales (confirmadas jun/2026). Siempre en US$; ITBIS 18% aparte. */
 export const PRICING = {

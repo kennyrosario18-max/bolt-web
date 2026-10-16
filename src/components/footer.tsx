@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BoltLogo } from "./logo";
 import { BoltIcon } from "@/components/icons";
-import { CONTACT, SLOGAN, ZONES, waLink } from "@/content/site";
+import { CONTACT, LANDING_ZONES, SLOGAN, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
 const T = {
@@ -81,7 +81,7 @@ export function Footer({ locale = "es" }: { locale?: Locale }) {
         <div>
           <h2 className="text-sm font-bold uppercase tracking-wider text-white/50">{t.zones}</h2>
           <ul className="mt-3 space-y-0.5 text-sm text-white/80">
-            {ZONES.map((z) => (
+            {LANDING_ZONES.map((z) => (
               <li key={z.id}>
                 <Link href={t.zoneHref(z.id)} className="inline-block py-1 hover:text-volt">
                   {z.name}

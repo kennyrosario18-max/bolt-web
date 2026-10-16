@@ -26,7 +26,7 @@ export interface BlogArticle {
 export const ARTICLES: BlogArticle[] = [
   {
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "golf-cart-puntacana-resort-club",
     "pairSlug": "golf-cart-puntacana-resort-club-guide",
     "title": "Guía para moverte en golf cart por Puntacana Resort & Club",
@@ -47,10 +47,10 @@ export const ARTICLES: BlogArticle[] = [
         "paragraphs": [
           "Una de las mayores comodidades es que no tienes que ir a buscar el carrito a ningún lado: nosotros te lo llevamos y lo recogemos en la villa. Antes de entregártelo te damos una orientación rápida de uso, para que salgas a rodar con confianza aunque nunca hayas manejado un golf cart.",
           "Cada renta con BOLT incluye lo esencial para que solo te ocupes de disfrutar:",
-          "La entrega está incluida sin costo en rentas de 2 o más días. Si solo necesitas el carrito por 1 día, la entrega tiene un cargo de US$40 + ITBIS. Y si tu estadía es de 7 noches o más, manejamos tarifas semanales y mensuales con descuento; pregúntanos por tu caso. Un detalle que conviene saber: tu día de renta son 24 horas contadas desde la entrega, no el día de calendario, así que aprovechas el tiempo completo."
+          "El transporte (entrega + recogida, ida y vuelta) dentro de Puntacana Resort & Club es US$60 + ITBIS por viaje de tráiler, y es gratis en reservas de 5 días o más. Y si tu estadía es de 7 noches o más, manejamos tarifas semanales y mensuales con descuento; pregúntanos por tu caso. Un detalle que conviene saber: tu día de renta son 24 horas contadas desde la entrega, no el día de calendario, así que aprovechas el tiempo completo."
         ],
         "bullets": [
-          "Entrega y recogida directamente en tu villa",
+          "Entrega y recogida directamente en tu villa (transporte fijo por zona, gratis desde 5 días)",
           "Cargador incluido para la carga nocturna",
           "Orientación de uso al momento de la entrega",
           "Unidad revisada antes de entregar",
@@ -116,7 +116,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿La entrega en la villa tiene costo?",
-        "a": "Está incluida sin costo en rentas de 2 o más días. Para rentas de 1 día, la entrega tiene un cargo de US$40 + ITBIS. En estadías de 7 noches o más manejamos tarifas semanales y mensuales con descuento; pregúntanos por tu caso."
+        "a": "El transporte (entrega + recogida) en Puntacana Resort & Club es US$60 + ITBIS por viaje de tráiler y es gratis en reservas de 5 días o más; se paga con la reserva. En estadías de 7 noches o más manejamos tarifas semanales y mensuales con descuento; pregúntanos por tu caso."
       },
       {
         "q": "¿Cuánto tarda en cargar y cómo lo hago?",
@@ -127,7 +127,7 @@ export const ARTICLES: BlogArticle[] = [
   },
   {
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "golf-cart-cap-cana-guia",
     "pairSlug": "golf-cart-cap-cana-guide",
     "title": "Renta de golf cart en Cap Cana: la guía completa de BOLT",
@@ -147,7 +147,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Cobertura de BOLT en Cap Cana y entrega en tu villa",
         "paragraphs": [
           "BOLT renta golf carts premium en las tres zonas principales de Punta Cana: Puntacana Resort & Club (su base principal de clientes), Cap Cana y Bávaro, donde está la base de operaciones (Av. Barceló Km 3 1/2, Naves Montolio #17). En Cap Cana el servicio funciona con entrega directa: el equipo lleva el golf cart hasta tu villa, te da una orientación de uso y lo recoge en el mismo punto al final de la renta. No tienes que salir de la comunidad ni coordinar transporte adicional.",
-          "La entrega y recogida en la villa están incluidas en rentas de 2 días o más; para rentas de 1 día tiene un costo de US$40 más ITBIS. Un detalle que muchos agradecen: el día de renta se cuenta como 24 horas desde la entrega, no como día calendario. Si recibes el carro a las 3 de la tarde, es tuyo hasta las 3 de la tarde del día siguiente."
+          "El transporte a Cap Cana (entrega y recogida, ida y vuelta) cuesta US$60 más ITBIS por viaje de tráiler y es gratis en reservas de 5 días o más; se paga junto con la reserva. Un detalle que muchos agradecen: el día de renta se cuenta como 24 horas desde la entrega, no como día calendario. Si recibes el carro a las 3 de la tarde, es tuyo hasta las 3 de la tarde del día siguiente."
         ]
       },
       {
@@ -178,7 +178,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Qué incluye la renta y qué reglas aplican en las comunidades",
         "paragraphs": [
-          "Toda renta incluye entrega y recogida en la villa, cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés. No hay que comprar nada aparte ni buscar estación de carga: el tomacorriente de la villa es suficiente.",
+          "Toda renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés; la entrega y recogida en la villa van como transporte fijo por zona (US$60 más ITBIS en Cap Cana, gratis en reservas de 5 días o más). No hay que comprar nada aparte ni buscar estación de carga: el tomacorriente de la villa es suficiente.",
           "Las comunidades privadas como Cap Cana cuidan mucho la seguridad y la tranquilidad de sus residentes, y las reglas de BOLT van en la misma línea:"
         ],
         "bullets": [
@@ -195,7 +195,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "Escribe por WhatsApp al +1 809 839 8515 con tus fechas, la comunidad o villa dentro de Cap Cana y cuántas personas viajan.",
-          "Recibes las opciones de modelo disponibles y la cotización (tarifa más ITBIS 18%).",
+          "Recibes las opciones de modelo disponibles y la cotización (tarifa más transporte por zona, más ITBIS 18%).",
           "Confirmas con un depósito del 50%; al entregar el carro se toma un depósito de garantía de US$200, reembolsable al devolverlo.",
           "Si cambian tus planes, puedes mover la fecha gratis avisando con 48 horas de antelación."
         ]
@@ -210,7 +210,7 @@ export const ARTICLES: BlogArticle[] = [
     "faq": [
       {
         "q": "¿La entrega del golf cart en mi villa de Cap Cana tiene costo?",
-        "a": "En rentas de 2 días o más, la entrega y recogida en la villa están incluidas. Para rentas de 1 día tiene un costo de US$40 más ITBIS. Recuerda que el día de renta son 24 horas desde la entrega, no un día calendario."
+        "a": "Sí: el transporte (entrega y recogida, ida y vuelta) a Cap Cana es US$60 más ITBIS por viaje de tráiler y se paga con la reserva. En reservas de 5 días o más el transporte es gratis. Recuerda que el día de renta son 24 horas desde la entrega, no un día calendario."
       },
       {
         "q": "¿Dónde y cómo cargo el golf cart?",
@@ -232,7 +232,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿El precio por día incluye la entrega en mi villa?",
-        "a": "En rentas de 2 o más días, la entrega y recogida en tu villa están incluidas. Para rentas de 1 día, la entrega tiene un costo de US$40 + ITBIS. Ten en cuenta que todos los precios son en US$ por día y el ITBIS del 18% se cobra aparte."
+        "a": "No, el transporte (entrega + recogida) va aparte y se cobra por viaje de tráiler: US$60 en Puntacana Resort & Club, Cap Cana y Bávaro, gratis en reservas de 5 o más días (10 o más en Bávaro); US$120 en Uvero Alto / Macao. Ten en cuenta que todos los precios son en US$ por día y el ITBIS del 18% se cobra aparte."
       },
       {
         "q": "¿Qué hago si el 6 plazas ya no está disponible en mis fechas?",
@@ -265,7 +265,7 @@ export const ARTICLES: BlogArticle[] = [
         "bullets": [
           "Golf cart de 4 plazas: desde US$50/día según el modelo.",
           "Golf cart de 6 plazas: desde US$65/día según el modelo (el ECO Cross premium, con batería de litio de 150 Ah y asientos de lujo, US$85/día).",
-          "Entrega y recogida en tu villa incluidas en rentas de 2+ días; para rentas de 1 día, la entrega cuesta US$40 + ITBIS.",
+          "Transporte (entrega + recogida) por viaje de tráiler: US$60 en Puntacana Resort & Club, Cap Cana y Bávaro — gratis en reservas de 5+ días (10+ en Bávaro); US$120 en Uvero Alto / Macao. ITBIS aparte.",
           "Estadías de 7+ noches: pregunta por la tarifa semanal o mensual con descuento."
         ]
       },
@@ -292,13 +292,13 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Asegura el tuyo antes de aterrizar",
         "paragraphs": [
-          "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: entrega y recogida en tu villa, cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés. El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
+          "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte a tu villa es fijo por zona (US$60 + ITBIS por viaje, gratis en reservas de 5+ días, 10+ en Bávaro). El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
           "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo o La Romana, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
         ]
       }
     ],
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "golf-cart-4-o-6-plazas",
     "pairSlug": "golf-cart-4-or-6-seats",
     "title": "Golf cart de 4 o 6 plazas en Punta Cana: cómo elegir el ideal para tu grupo",
@@ -306,7 +306,7 @@ export const ARTICLES: BlogArticle[] = [
   },
   {
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "bateria-plomo-o-litio-golf-cart",
     "pairSlug": "lead-acid-or-lithium-golf-cart",
     "title": "¿Plomo-ácido o litio? La autonomía real de tu golf cart en Punta Cana",
@@ -363,7 +363,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Cuándo conviene el tier premium ECO Cross (US$85/día)",
         "paragraphs": [
           "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$85/día + ITBIS. Frente a un 6 plazas estándar de US$75/día, hablamos de US$10 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
-          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye entrega y recogida en tu villa (incluida desde 2+ días de renta), cargador y soporte por WhatsApp 24/7 en español e inglés. El día de renta son 24 horas desde la entrega, no día calendario.",
+          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte (entrega y recogida en tu villa) es fijo por zona: US$60 + ITBIS por viaje en Puntacana Resort & Club, Cap Cana y Bávaro, gratis en reservas de 5+ días (10+ en Bávaro). El día de renta son 24 horas desde la entrega, no día calendario.",
           "¿No estás seguro de cuál te conviene? Escríbenos por WhatsApp al +1 809 839 8515 y cuéntanos tu plan: cuántas personas son, dónde se hospedan y cuántos días. Trabajamos por solicitud de disponibilidad —nunca confirmación automática—, así que mientras antes nos escribas, mejor. Your ride in paradise."
         ]
       }
@@ -379,14 +379,14 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿El precio del ECO Cross premium incluye impuestos y entrega?",
-        "a": "El tier premium cuesta US$85/día + ITBIS 18%. La entrega y recogida en tu villa está incluida en rentas de 2+ días; para rentas de 1 día tiene un costo de US$40 + ITBIS. Recuerda que el día de renta son 24 horas desde la entrega."
+        "a": "El tier premium cuesta US$85/día + ITBIS 18%. El transporte (entrega y recogida en tu villa) va aparte, por viaje de tráiler: US$60 + ITBIS en Puntacana Resort & Club, Cap Cana y Bávaro, gratis en reservas de 5+ días (10+ en Bávaro); US$120 en Uvero Alto / Macao. Recuerda que el día de renta son 24 horas desde la entrega."
       }
     ],
     "locale": "es"
   },
   {
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "golf-cart-puntacana-resort-club-guide",
     "pairSlug": "golf-cart-puntacana-resort-club",
     "title": "How to get around Puntacana Resort & Club by golf cart",
@@ -407,10 +407,10 @@ export const ARTICLES: BlogArticle[] = [
         "paragraphs": [
           "One of the biggest conveniences is that you don't have to go pick the cart up anywhere: we bring it to and collect it from your villa. Before handing it over we give you a quick usage briefing, so you head out with confidence even if you've never driven a golf cart.",
           "Every BOLT rental includes the essentials so you only have to enjoy:",
-          "Delivery is included at no cost on rentals of 2 or more days. If you only need the cart for 1 day, delivery has a US$40 + tax charge. And if your stay is 7 nights or more, we handle discounted weekly and monthly rates; ask about your case. One detail worth knowing: your rental day is 24 hours counted from delivery, not the calendar day, so you get the full time."
+          "Transport to Puntacana Resort & Club (round trip, delivery + pickup) is US$60 per trailer trip + 18% tax, charged with your booking — and it's free on bookings of 5 days or more. If your stay is 7 nights or more, we also handle discounted weekly and monthly rates; ask about your case. One detail worth knowing: your rental day is 24 hours counted from delivery, not the calendar day, so you get the full time."
         ],
         "bullets": [
-          "Delivery and pickup directly at your villa",
+          "Delivery and pickup directly at your villa (transport by zone; free on 5+ day bookings)",
           "Charger included for overnight charging",
           "Usage briefing at the moment of delivery",
           "Inspected before delivery",
@@ -476,7 +476,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "Is villa delivery free?",
-        "a": "It's included at no cost on rentals of 2 or more days. For 1-day rentals, delivery has a US$40 + tax charge. On stays of 7 nights or more we handle discounted weekly and monthly rates; ask about your case."
+        "a": "In Puntacana Resort & Club it's free on bookings of 5 days or more. On shorter bookings, transport (round trip, delivery + pickup) is US$60 per trailer trip + 18% tax, charged with your booking. On stays of 7 nights or more we handle discounted weekly and monthly rates; ask about your case."
       },
       {
         "q": "How long does it take to charge and how do I do it?",
@@ -487,7 +487,7 @@ export const ARTICLES: BlogArticle[] = [
   },
   {
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "golf-cart-cap-cana-guide",
     "pairSlug": "golf-cart-cap-cana-guia",
     "title": "Golf cart rental in Cap Cana: the complete BOLT guide",
@@ -506,8 +506,8 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "BOLT coverage in Cap Cana and villa delivery",
         "paragraphs": [
-          "BOLT rents premium golf carts in the three main areas of Punta Cana: Puntacana Resort & Club (its main customer base), Cap Cana and Bávaro, where the operations base is (Av. Barceló Km 3 1/2, Naves Montolio #17). In Cap Cana the service runs on direct delivery: the team brings the golf cart to your villa, gives you a usage briefing and picks it up at the same spot at the end of the rental. You don't have to leave the community or arrange extra transport.",
-          "Delivery and pickup at the villa are included on rentals of 2 days or more; for 1-day rentals there's a US$40 plus tax charge. A detail many appreciate: the rental day counts as 24 hours from delivery, not a calendar day. If you get the cart at 3 pm, it's yours until 3 pm the next day."
+          "BOLT rents premium golf carts in the three main areas of Punta Cana: Puntacana Resort & Club (its main customer base), Cap Cana and Bávaro, where the operations base is (Av. Barceló Km 3 1/2, Naves Montolio #17). In Cap Cana the service runs on direct delivery: the team brings the golf cart to your villa, gives you a usage briefing and picks it up at the same spot at the end of the rental. You don't have to leave the community or arrange anything else.",
+          "Transport to Cap Cana (round trip, delivery + pickup) is US$60 per trailer trip plus 18% tax, charged with your booking, and it's free on bookings of 5 days or more. A detail many appreciate: the rental day counts as 24 hours from delivery, not a calendar day. If you get the cart at 3 pm, it's yours until 3 pm the next day."
         ]
       },
       {
@@ -538,7 +538,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "What the rental includes and what rules apply in the communities",
         "paragraphs": [
-          "Every rental includes villa delivery and pickup, charger, usage briefing and 24/7 WhatsApp support in English and Spanish. There's nothing extra to buy and no charging station to find: the villa outlet is enough.",
+          "Every rental includes charger, usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa (transport by zone, free on bookings of 5 days or more). There's nothing extra to buy and no charging station to find: the villa outlet is enough.",
           "Private communities like Cap Cana take the safety and quiet of their residents seriously, and BOLT's rules are in the same spirit:"
         ],
         "bullets": [
@@ -555,7 +555,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "Message on WhatsApp at +1 809 839 8515 with your dates, the community or villa inside Cap Cana and how many people are travelling.",
-          "You receive the available model options and the quote (rate plus 18% tax).",
+          "You receive the available model options and the quote (rate plus transport by zone, plus 18% tax).",
           "You confirm with a 50% deposit; on delivery a US$200 damage deposit is taken, refundable on return.",
           "If your plans change, you can move the date for free with 48 hours' notice."
         ]
@@ -570,7 +570,7 @@ export const ARTICLES: BlogArticle[] = [
     "faq": [
       {
         "q": "Is golf cart delivery to my Cap Cana villa free?",
-        "a": "On rentals of 2 days or more, villa delivery and pickup are included. For 1-day rentals there's a US$40 plus tax charge. Remember the rental day is 24 hours from delivery, not a calendar day."
+        "a": "On bookings of 5 days or more, yes: transport is free for the whole booking. On shorter bookings, transport to Cap Cana (round trip, delivery + pickup) is US$60 per trailer trip plus 18% tax, charged with your booking. Remember the rental day is 24 hours from delivery, not a calendar day."
       },
       {
         "q": "Where and how do I charge the golf cart?",
@@ -585,7 +585,7 @@ export const ARTICLES: BlogArticle[] = [
   },
   {
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "golf-cart-4-or-6-seats",
     "pairSlug": "golf-cart-4-o-6-plazas",
     "title": "4 or 6-seat golf cart in Punta Cana: how to choose the right one for your group",
@@ -616,7 +616,7 @@ export const ARTICLES: BlogArticle[] = [
         "bullets": [
           "4-seat golf cart: from US$50/day depending on the model.",
           "6-seat golf cart: from US$65/day depending on the model (the premium ECO Cross, with a 150 Ah lithium battery and luxury seats, US$85/day).",
-          "Villa delivery and pickup included on rentals of 2+ days; for 1-day rentals, delivery is US$40 + tax.",
+          "Transport (round trip, delivery + pickup): US$60 per trailer trip to Puntacana Resort & Club, Cap Cana and Bávaro, + 18% tax — free on longer stays (5+ days nearby, 10+ days in Bávaro). US$120 to Uvero Alto / Macao; other areas, ask for a quote.",
           "Stays of 7+ nights: ask about the discounted weekly or monthly rate."
         ]
       },
@@ -643,7 +643,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Secure yours before you land",
         "paragraphs": [
-          "Whatever you choose, the BOLT rental includes the same: villa delivery and pickup, charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish. The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
+          "Whatever you choose, the BOLT rental includes the same: charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa as a transport line by zone (from US$60 per trip, free on longer stays). The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
           "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo or La Romana, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
         ]
       }
@@ -655,7 +655,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "Does the daily price include delivery to my villa?",
-        "a": "On rentals of 2 or more days, villa delivery and pickup are included. For 1-day rentals, delivery is US$40 + tax. Note that all prices are in US$ per day and the 18% tax is charged separately."
+        "a": "Not in the daily rate: transport (round trip, delivery + pickup) is a separate line charged with your booking — US$60 per trailer trip to Puntacana Resort & Club, Cap Cana and Bávaro, free on longer stays (5+ days nearby, 10+ days in Bávaro); US$120 to Uvero Alto / Macao. Note that all prices are in US$ per day and the 18% tax is charged separately."
       },
       {
         "q": "What if the 6-seater is no longer available for my dates?",
@@ -666,7 +666,7 @@ export const ARTICLES: BlogArticle[] = [
   },
   {
     "published": "2026-07-05",
-    "updated": "2026-07-06",
+    "updated": "2026-10-16",
     "slug": "lead-acid-or-lithium-golf-cart",
     "pairSlug": "bateria-plomo-o-litio-golf-cart",
     "title": "Lead-acid or lithium? The real range of your golf cart in Punta Cana",
@@ -723,7 +723,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "When the premium ECO Cross tier is worth it (US$85/day)",
         "paragraphs": [
           "The premium ECO Cross is our 6-seater with 150 Ah lithium: 85–95 km per charge and luxury seats, at US$85/day + tax. Against a standard 6-seater at US$75/day, we're talking about US$10 a day of difference. When is it worth it? When you travel as a full group (4+2), when your day is constant movement from morning to night, or when you simply don't want to count kilometers on holiday: with nearly triple the range of lead-acid, the battery stops being a concern.",
-          "For comparison, our 4-seaters start at US$50/day (up to US$65 depending on the model); 6-seaters go from US$65/day (up to US$100 for the all-terrain ECO Track), always + 18% tax. Every rental includes villa delivery and pickup (included from 2+ rental days), charger and 24/7 WhatsApp support in English and Spanish. The rental day is 24 hours from delivery, not a calendar day.",
+          "For comparison, our 4-seaters start at US$50/day (up to US$65 depending on the model); 6-seaters go from US$65/day (up to US$100 for the all-terrain ECO Track), always + 18% tax. Every rental includes charger and 24/7 WhatsApp support in English and Spanish; delivery and pickup at your villa are a transport line by zone (US$60 per trailer trip + 18% tax to Puntacana Resort & Club, Cap Cana and Bávaro, free on longer stays: 5+ days nearby, 10+ days in Bávaro). The rental day is 24 hours from delivery, not a calendar day.",
           "Not sure which suits you? Message us on WhatsApp at +1 809 839 8515 and tell us your plan: how many people, where you're staying and how many days. We work by availability request — never automatic confirmation — so the sooner you write, the better. Your ride in paradise."
         ]
       }
@@ -739,7 +739,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "Does the premium ECO Cross price include tax and delivery?",
-        "a": "The premium tier is US$85/day + 18% tax. Villa delivery and pickup are included on rentals of 2+ days; for 1-day rentals there's a US$40 + tax charge. Remember the rental day is 24 hours from delivery."
+        "a": "The premium tier is US$85/day + 18% tax. Transport (round trip, delivery + pickup) is charged separately with your booking: US$60 per trailer trip to Puntacana Resort & Club, Cap Cana and Bávaro + 18% tax, free on longer stays (5+ days nearby, 10+ days in Bávaro); US$120 to Uvero Alto / Macao. Remember the rental day is 24 hours from delivery."
       }
     ],
     "locale": "en"

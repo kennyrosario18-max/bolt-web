@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { MODELS } from "@/content/models";
-import { ZONES } from "@/content/site";
+import { LANDING_ZONES } from "@/content/site";
 import { articlesByLocale } from "@/content/blog";
 
 // Requerido por output:'export' — el sitemap se genera en build.
@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const m of MODELS) {
     entries.push(...pair(`/flota/${m.id}/`, `/en/fleet/${m.id}/`, 0.8));
   }
-  for (const z of ZONES) {
+  for (const z of LANDING_ZONES) {
     entries.push(...pair(`/alquiler/${z.id}/`, `/en/rentals/${z.id}/`, 0.8));
   }
 

@@ -2,6 +2,7 @@
  *  (shim del PRD F3). Reglas de negocio portadas 1:1 del componente anterior:
  *   · fechas locales RD (mínimo = hoy local, no UTC),
  *   · mínimo de días por zona (aviso en vivo + bloqueo al enviar),
+ *   · transporte por zona (nota en vivo + 1 viaje en el estimado si no está exento),
  *   · armado del mensaje wa.me idéntico al resumen anterior,
  *   · captura dual (form_submit + form_open_whatsapp) en window.__boltEvents,
  *   · a11y: aria-invalid/aria-describedby, aria-live en avisos, role=status en éxito.
@@ -16,6 +17,7 @@ interface Payload {
   phone: string; header: string; plazas: string; recommend: string;
   day: string; days: string; f: Fields;
   errFechas: string; errOrden: string; errMin: string; warnMin: string; zoneNoteTpl: string;
+  transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string;
   estimateTpl: string; price4: number; price6: number;
   web3key: string; emailSubject: string;
 }
@@ -43,7 +45,10 @@ function script(p: Payload): string {
     var name=o?o.getAttribute('data-name'):'';
     // Sin toggles de hidden: las regiones aria-live viven siempre en el árbol de
     // a11y; vacías las saca del flujo la regla :empty de globals.css.
+    var tp=o?o.getAttribute('data-transport'):'',ff=o?o.getAttribute('data-freefrom'):'';
     if(md&&note){zonaNote.textContent=fill(P.zoneNoteTpl,{name:name,min:md,note:note});}
+    else if(tp&&ff){zonaNote.textContent=fill(P.transportTpl,{price:tp,free:ff});}
+    else if(tp){zonaNote.textContent=fill(P.transportNoFreeTpl,{price:tp});}
     else{zonaNote.textContent='';}
     var d=diffDays(llegada.value,salida.value);
     if(md&&d>0&&d<+md){
@@ -61,13 +66,18 @@ function script(p: Payload): string {
     if(pax){var n=parseInt(pax,10)||7;return n>=5?P.price6:P.price4;}
     return 0;
   }
+  // Transporte de la zona elegida: [tarifa por viaje, días desde los que es gratis].
+  function zoneTransport(){var o=zopt();return [o?+(o.getAttribute('data-transport')||0):0,o?+(o.getAttribute('data-freefrom')||0):0];}
   function updateEstimate(){
     if(!estimate)return;
     var d=diffDays(llegada.value,salida.value),daily=dailyPrice();
     if(d>0&&daily>0){
-      var total=Math.round(d*daily*1.18);      // ITBIS 18% incluido
+      var zt=zoneTransport(),exempt=!!(zt[0]&&zt[1]&&d>=zt[1]);
+      var tr=(zt[0]&&!exempt)?Math.round(zt[0]*1.18):0;   // 1 viaje con ITBIS; 0 si exento o se cotiza
+      var total=Math.round(d*daily*1.18)+tr;    // ITBIS 18% incluido
       var deposit=Math.round(total*0.50);       // depósito de confirmación 50%
-      estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit});
+      var trTxt=tr?fill(P.estTransport,{amount:tr}):(exempt?P.estTransportFree:'');
+      estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit,transport:trTxt});
     }else{estimate.textContent='';}
   }
 
@@ -126,7 +136,7 @@ function script(p: Payload): string {
   function buildMsg(d){
     var o=zopt();
     var zoneName=o&&o.value?o.getAttribute('data-name'):'';
-    var zoneNote=o?o.getAttribute('data-note'):'';
+    var zoneNote=zonaNote.textContent||'';   // misma nota que ve el cliente (mínimo o transporte)
     var mo=modelo.options[modelo.selectedIndex];
     var modelStr=(mo&&mo.value)?(mo.getAttribute('data-name')+' ('+mo.getAttribute('data-pax')+' '+P.plazas+')'):P.recommend;
     var f=P.f,aloja=alojaStr();

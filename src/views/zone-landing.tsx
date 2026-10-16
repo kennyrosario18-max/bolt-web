@@ -4,6 +4,7 @@ import { getModel } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
 import { BoltIcon, CheckIcon } from "@/components/icons";
 import { ZONE_LANDINGS, type ZoneLanding } from "@/content/zones-landing";
+import { transportLabel } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -102,6 +103,10 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
           {zone.minDays ? (
             <p className="animate-rise stagger mt-4 inline-block rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink" style={{ "--i": 4 } as CSSProperties}>
               {t.minDays(zone.minDays, note ?? "")}
+            </p>
+          ) : zone.transport ? (
+            <p className="animate-rise stagger mt-4 inline-block rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink" style={{ "--i": 4 } as CSSProperties}>
+              {transportLabel(zone, locale)}
             </p>
           ) : null}
           <div className="animate-rise stagger mt-7 flex flex-wrap gap-3" style={{ "--i": 5 } as CSSProperties}>

@@ -43,7 +43,7 @@ const T = {
     relA: "También te puede ",
     relB: "interesar",
     faqs: (name: string, pax: number) => [
-      { q: "¿Qué incluye la renta?", a: "Entrega y recogida en tu villa, cargador, orientación de uso, seguro del vehículo y soporte por WhatsApp 24/7." },
+      { q: "¿Qué incluye la renta?", a: "Cargador, orientación de uso, seguro del vehículo y soporte por WhatsApp 24/7. La entrega y recogida en tu villa llevan un transporte fijo por zona (desde US$60 por viaje, gratis en reservas largas)." },
       { q: "¿Necesito licencia para manejarlo?", a: "Sí. El conductor debe ser mayor de 18 años con licencia de conducir vigente. El uso es exclusivo dentro de residenciales, villas y resorts." },
       { q: `¿Cuántas personas pueden ir en el ${name}?`, a: `Hasta ${pax} pasajeros sentados. Por seguridad no se permiten pasajeros de pie ni exceder la capacidad.` },
       { q: "¿Cómo se carga?", a: "Se conecta a un tomacorriente estándar con el cargador incluido. Una carga completa toma entre 8 y 10 horas — ideal durante la noche." },
@@ -76,7 +76,7 @@ const T = {
     relA: "You may also ",
     relB: "like",
     faqs: (name: string, pax: number) => [
-      { q: "What does the rental include?", a: "Delivery and pickup at your villa, charger, usage briefing and 24/7 WhatsApp support." },
+      { q: "What does the rental include?", a: "Charger, usage briefing and 24/7 WhatsApp support. Delivery and pickup at your villa carry a fixed transport fee by zone (from US$60 per trip, free on longer stays)." },
       { q: "Do I need a license to drive it?", a: "Yes. The driver must be 18 or older with a valid driver's license. Use is allowed only inside residential communities, villas and resorts." },
       { q: `How many people fit in the ${name}?`, a: `Up to ${pax} seated passengers. For safety, standing passengers and exceeding capacity are not allowed.` },
       { q: "How does it charge?", a: "It plugs into a standard outlet with the included charger. A full charge takes 8 to 10 hours — perfect overnight." },

@@ -5,7 +5,7 @@ import { ModelPhoto } from "@/components/model-photo";
 import { TESTIMONIALS } from "@/content/testimonials";
 import { ModelCard } from "@/components/model-card";
 import { BoltIcon, PinIcon, ShieldIcon, ChatIcon, CheckIcon } from "@/components/icons";
-import { PRICING, SLOGAN, ZONES, waLink } from "@/content/site";
+import { LANDING_ZONES, PRICING, SLOGAN, transportLabel, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
 /** Home — vista única ES/EN. Consolida app/(es)/page.tsx y app/en/page.tsx. */
@@ -46,7 +46,7 @@ const T = {
     rentTitle: "Por día, semana o temporada",
     rentBodyA: "Modelos de 4 y 6 plazas desde ",
     rentPrice: `US$${PRICING.from4pax}/día`,
-    rentBodyB: ". Entrega y recogida incluidas dentro de nuestras zonas.",
+    rentBodyB: ". Transporte fijo por zona desde US$60, gratis en estadías largas.",
     rentItbis: PRICING.itbisNote,
     rentCta: "Explorar la flota →",
     salesKicker: "Venta · Nuevo",
@@ -55,10 +55,10 @@ const T = {
     salesCta: "Cotizar por WhatsApp →",
     salesMsg: "Hola BOLT, quiero información sobre la VENTA de golf carts nuevos.",
     coverKicker: "Cobertura",
-    coverA: "Entrega ",
-    coverB: "donde estés",
-    coverLead: "Llevamos tu golf cart con carga completa hasta tu villa o residencial.",
-    coverSub: "Delivered wherever you are, fully charged.",
+    coverA: "Entrega en ",
+    coverB: "toda la zona",
+    coverLead: "Llevamos tu golf cart con carga completa hasta tu villa o residencial. Transporte fijo por viaje desde US$60, gratis en estadías largas.",
+    coverSub: "Delivery across the area · fixed transport from US$60, free on longer stays.",
     zoneCta: "Ver zona →",
     howKicker: "Cómo funciona",
     howTitle: "Tu BOLT en 3 pasos",
@@ -68,7 +68,7 @@ const T = {
     steps: [
       { n: "01", title: "Elige tu modelo y envía la solicitud", sub: "Pick your cart and send the request", detail: "Selecciona fechas, zona de entrega y pasajeros. Toma menos de un minuto." },
       { n: "02", title: "Confirmamos disponibilidad", sub: "We confirm availability", detail: "Nuestro equipo verifica y te responde por WhatsApp con la mejor opción." },
-      { n: "03", title: "Recibe tu BOLT donde estés", sub: "Your BOLT arrives wherever you are", detail: "Entrega en tu villa con carga completa, orientación de uso y soporte 24/7." },
+      { n: "03", title: "Recibe tu BOLT en tu villa", sub: "Your BOLT arrives at your villa", detail: "Entrega en tu villa con carga completa, orientación de uso y soporte 24/7." },
     ],
     ready: "¿Listo para moverte en el paraíso?",
     readyNote: "Nunca confirmamos automáticamente: cada solicitud la revisa nuestro equipo.",
@@ -105,7 +105,7 @@ const T = {
     rentTitle: "By the day, week or season",
     rentBodyA: "4 and 6-seat models from ",
     rentPrice: `US$${PRICING.from4pax}/day`,
-    rentBodyB: ". Delivery and pickup included within our zones.",
+    rentBodyB: ". Fixed transport by zone from US$60, free on longer stays.",
     rentItbis: PRICING.itbisNoteEn,
     rentCta: "Explore the fleet →",
     salesKicker: "Sales · New",
@@ -114,10 +114,10 @@ const T = {
     salesCta: "Get a quote on WhatsApp →",
     salesMsg: "Hi BOLT, I would like information about BUYING a new golf cart.",
     coverKicker: "Coverage",
-    coverA: "Delivered ",
-    coverB: "wherever you are",
-    coverLead: "We bring your golf cart fully charged to your villa or residential community.",
-    coverSub: "Entrega donde estés, con carga completa.",
+    coverA: "Delivery ",
+    coverB: "across the area",
+    coverLead: "We bring your golf cart fully charged to your villa or residential community. Fixed transport per trip from US$60, free on longer stays.",
+    coverSub: "Entrega en toda la zona · transporte fijo desde US$60, gratis en estadías largas.",
     zoneCta: "View zone →",
     howKicker: "How it works",
     howTitle: "Your BOLT in 3 steps",
@@ -127,7 +127,7 @@ const T = {
     steps: [
       { n: "01", title: "Pick your cart and send the request", sub: "Elige tu modelo y envía la solicitud", detail: "Choose dates, delivery area and passengers. It takes less than a minute." },
       { n: "02", title: "We confirm availability", sub: "Confirmamos disponibilidad", detail: "Our team checks the fleet and replies on WhatsApp with the best option." },
-      { n: "03", title: "Your BOLT arrives wherever you are", sub: "Recibe tu BOLT donde estés", detail: "Delivered to your villa fully charged, with a usage briefing and 24/7 support." },
+      { n: "03", title: "Your BOLT arrives at your villa", sub: "Recibe tu BOLT en tu villa", detail: "Delivered to your villa fully charged, with a usage briefing and 24/7 support." },
     ],
     ready: "Ready to ride in paradise?",
     readyNote: "We never auto-confirm: a real person reviews every request.",
@@ -293,7 +293,7 @@ export function HomeView({ locale }: { locale: Locale }) {
         </h2>
         <p className="mt-3 max-w-xl text-inktext">{t.coverLead}</p>
         <div className="reveal-list mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {ZONES.map((z) => (
+          {LANDING_ZONES.map((z) => (
             <Link
               key={z.id}
               href={zoneHref(z.id)}
@@ -301,11 +301,9 @@ export function HomeView({ locale }: { locale: Locale }) {
             >
               <h3 className="font-display text-lg font-extrabold">{z.name}</h3>
               <p className="mt-2 text-sm text-inktext">{es ? z.blurb : z.blurbEn}</p>
-              {(es ? z.note : z.noteEn) ? (
-                <p className="mt-2 inline-block rounded-full bg-cream px-3 py-1 text-xs font-semibold text-volt-dark">
-                  {es ? z.note : z.noteEn}
-                </p>
-              ) : null}
+              <p className="mt-2 inline-block rounded-full bg-cream px-3 py-1 text-xs font-semibold text-volt-dark">
+                {z.minDays ? (es ? z.note : z.noteEn) : transportLabel(z, locale)}
+              </p>
               <p className="mt-3 text-sm font-bold text-volt-dark transition-transform group-hover:translate-x-1">
                 {t.zoneCta}
               </p>

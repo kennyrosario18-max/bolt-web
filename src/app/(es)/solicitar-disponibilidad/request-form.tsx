@@ -36,8 +36,12 @@ const T = {
     lugarPlaceholder: "Ej. Villa Tortuga B-12 · Hotel Meliá · Torre…",
     minDays: (n: number) => ` (mínimo ${n} días)`,
     zoneNoteTpl: "{name}: reservas de {min}+ días · {note}",
+    transportTpl: "Transporte (entrega + recogida): US${price} por viaje + ITBIS · gratis en reservas de {free} días o más",
+    transportNoFreeTpl: "Transporte (entrega + recogida): US${price} por viaje + ITBIS · sin exención",
+    estTransport: " · incluye transporte US${amount} (1 viaje)",
+    estTransportFree: " · transporte gratis",
     perDayShort: "/día",
-    estimateTpl: "Estimado desde US${total} por {days} {dayword} · ITBIS incluido · depósito 50%: US${deposit}",
+    estimateTpl: "Estimado desde US${total} por {days} {dayword} · ITBIS incluido{transport} · depósito 50%: US${deposit}",
     depositNote: "Reserva: depósito de confirmación 50%. A la entrega: depósito de garantía US$200, reembolsable tras la inspección.",
     seasonNote: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el anticipo no es reembolsable (queda como crédito solo con 30+ días de aviso).",
     openWa: "Abrir WhatsApp",
@@ -87,8 +91,12 @@ const T = {
     lugarPlaceholder: "e.g. Villa Tortuga B-12 · Meliá Hotel · Tower…",
     minDays: (n: number) => ` (${n}-day minimum)`,
     zoneNoteTpl: "{name}: {min}+ day rentals · {note}",
+    transportTpl: "Transport (delivery + pickup): US${price} per trip + tax · free on rentals of {free}+ days",
+    transportNoFreeTpl: "Transport (delivery + pickup): US${price} per trip + tax · no exemption",
+    estTransport: " · includes transport US${amount} (1 trip)",
+    estTransportFree: " · transport free",
     perDayShort: "/day",
-    estimateTpl: "Estimated from US${total} for {days} {dayword} · tax included · 50% deposit: US${deposit}",
+    estimateTpl: "Estimated from US${total} for {days} {dayword} · tax included{transport} · 50% deposit: US${deposit}",
     depositNote: "Booking: 50% confirmation deposit. At delivery: a US$200 damage deposit, refundable after inspection.",
     seasonNote: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the advance is non-refundable on those dates (kept as credit only with 30+ days’ notice).",
     openWa: "Open WhatsApp",
@@ -136,6 +144,10 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     errMin: t.errMin,
     warnMin: t.warnMin,
     zoneNoteTpl: t.zoneNoteTpl,
+    transportTpl: t.transportTpl,
+    transportNoFreeTpl: t.transportNoFreeTpl,
+    estTransport: t.estTransport,
+    estTransportFree: t.estTransportFree,
     estimateTpl: t.estimateTpl,
     // Tarifa "desde" para el estimado: por plazas (fuente única priceFrom).
     price4: priceFrom(4),
@@ -188,6 +200,8 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
                 data-name={z.name}
                 data-mindays={z.minDays ?? ""}
                 data-note={(es ? z.note : z.noteEn) ?? ""}
+                data-transport={z.transport ?? ""}
+                data-freefrom={z.transportFreeFrom ?? ""}
               >
                 {z.name}
                 {z.minDays ? t.minDays(z.minDays) : ""}

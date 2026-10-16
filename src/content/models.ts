@@ -57,7 +57,7 @@ export const DESC_EN: Record<string, string> = {
 
 /** Qué incluye cada renta (aplica a toda la flota). */
 export const INCLUDED = [
-  { es: "Entrega y recogida en tu villa o residencial", en: "Delivery & pickup at your villa" },
+  { es: "Entrega y recogida en tu villa (transporte fijo por zona, gratis en reservas largas)", en: "Delivery & pickup at your villa (fixed transport by zone, free on longer stays)" },
   { es: "Cargador y orientación de uso incluidos", en: "Charger and usage briefing included" },
   { es: "Unidad revisada antes de la entrega", en: "Inspected before delivery" },
   { es: "Soporte por WhatsApp 24/7 en español e inglés", en: "24/7 bilingual WhatsApp support" },

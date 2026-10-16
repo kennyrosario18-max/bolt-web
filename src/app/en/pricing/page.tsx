@@ -6,7 +6,7 @@ import { PricingView } from "@/views/pricing";
 export const metadata: Metadata = {
   title: "Pricing — golf carts from US$50/day",
   description:
-    "Official BOLT golf cart rental rates in Punta Cana: 4-seaters from US$50/day and 6-seaters from US$65/day. Tax shown per model. Free delivery on 2+ day rentals.",
+    "BOLT golf cart rental rates in Punta Cana: 4-seaters from US$50/day, 6-seaters from US$65/day. Fixed transport by zone from US$60, free on longer stays.",
   alternates: { canonical: "/en/pricing/", ...hreflang("/precios/", "/en/pricing/") },
   ...ogMeta("precios"),
 };

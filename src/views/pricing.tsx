@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import { DELIVERY_POLICY, PRICING_FOOTNOTE, pricedModels, withItbis } from "@/content/pricing";
+import { PRICING_FOOTNOTE, TRANSPORT_RULES, TRANSPORT_ZONES, pricedModels, withItbis } from "@/content/pricing";
 import { lineName } from "@/content/models";
 import { waLink } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
@@ -12,15 +12,25 @@ const T = {
   es: {
     kicker: "Precios",
     h1: "Tarifas claras, sin sorpresas",
-    lead: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Sin cargos ocultos.",
-    leadSub: "Daily rates in US$ plus 18% tax, shown per model — no hidden fees.",
+    lead: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Transporte fijo por zona, sin cargos ocultos.",
+    leadSub: "Daily rates in US$ plus 18% tax, shown per model — fixed transport by zone, no hidden fees.",
     perDay: " /día",
     withTax: "con ITBIS · ",
     group4: "Hasta 4 personas",
     group6: "Hasta 6 personas",
     tapModel: "Toca un modelo para solicitarlo →",
-    deliveryTitle: "Entrega y recogida ",
-    deliverySub: "· Delivery",
+    deliveryTitle: "Transporte ",
+    deliverySub: "· Transport",
+    transportLead: "Llevamos y recogemos tu carrito: un solo cargo por viaje de tráiler, ida y vuelta, fijo por zona.",
+    thZone: "Zona",
+    thTrip: "Por viaje",
+    thFree: "Gratis desde",
+    otherZones: "Otras zonas / fuera de ruta",
+    quote: "Cotización",
+    noFree: "Sin exención",
+    freeDays: (n: number) => `${n} días`,
+    transportFoot: "US$ + ITBIS 18% por línea. Transporte fijo por zona, sin sorpresas.",
+    weeklyNote: "7 noches o más: pregunta por la tarifa semanal y mensual con descuento.",
     reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
     chipsLabel: "Solicita tu modelo:",
@@ -35,15 +45,25 @@ const T = {
   en: {
     kicker: "Pricing",
     h1: "Clear rates, no surprises",
-    lead: "Daily rates in US$ plus 18% tax, shown per model. No hidden fees.",
-    leadSub: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Sin cargos ocultos.",
+    lead: "Daily rates in US$ plus 18% tax, shown per model. Fixed transport by zone — no hidden fees.",
+    leadSub: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Transporte fijo por zona, sin cargos ocultos.",
     perDay: " /day",
     withTax: "with tax · ",
     group4: "Up to 4 people",
     group6: "Up to 6 people",
     tapModel: "Tap a model to request it →",
-    deliveryTitle: "Delivery & pickup ",
-    deliverySub: "· Entrega",
+    deliveryTitle: "Transport ",
+    deliverySub: "· Transporte",
+    transportLead: "We deliver and pick up your cart: one charge per trailer trip, round trip, fixed by zone.",
+    thZone: "Zone",
+    thTrip: "Per trip",
+    thFree: "Free from",
+    otherZones: "Other areas / out of route",
+    quote: "Quoted",
+    noFree: "No exemption",
+    freeDays: (n: number) => `${n} days`,
+    transportFoot: "US$ + 18% tax per line. Fixed transport by zone, no surprises.",
+    weeklyNote: "7+ nights: ask about discounted weekly and monthly rates.",
     reqCta: "Request availability",
     reqHref: "/en/request-availability",
     chipsLabel: "Request your model:",
@@ -118,29 +138,52 @@ export function PricingView({ locale }: { locale: Locale }) {
 
         <hr className="divider-volt mt-12 border-0" />
 
-        {/* Entrega y recogida */}
+        {/* Transporte — lista oficial por zona (16/oct/2026); tarifas en ZONES. */}
         <div className="reveal mt-8 rounded-card bg-cream p-7">
-          {es ? (
-            <>
-              <h2 className="font-display text-xl font-extrabold">
-                {t.deliveryTitle}
-                <span className="text-base font-semibold text-steel">{t.deliverySub}</span>
-              </h2>
-              <ul className="mt-4 space-y-2 text-sm text-inktext">
-                {DELIVERY_POLICY.es.map((item) => (
-                  <li key={item.b}>
-                    <b>{item.b}</b>
-                    {item.rest}
-                  </li>
+          <h2 className="font-display text-xl font-extrabold">
+            {t.deliveryTitle}
+            <span className="text-base font-semibold text-steel">{t.deliverySub}</span>
+          </h2>
+          <p className="mt-2 text-sm text-inktext">{t.transportLead}</p>
+          <div className="mt-4 overflow-x-auto rounded-lg border border-line bg-white">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-ink text-xs uppercase tracking-[0.1em] text-white">
+                <tr>
+                  <th scope="col" className="px-4 py-3 font-bold">{t.thZone}</th>
+                  <th scope="col" className="px-4 py-3 text-right font-bold">{t.thTrip}</th>
+                  <th scope="col" className="px-4 py-3 text-right font-bold">{t.thFree}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line">
+                {TRANSPORT_ZONES.map((z) => (
+                  <tr key={z.id}>
+                    <td className="px-4 py-3">
+                      <span className="font-semibold text-ink">{z.name}</span>
+                      {z.landmarks ? <span className="block text-xs text-steel">{z.landmarks}</span> : null}
+                    </td>
+                    <td className="px-4 py-3 text-right font-display text-lg font-extrabold tabular-nums text-ink">US${z.transport}</td>
+                    <td className="px-4 py-3 text-right tabular-nums text-inktext">
+                      {z.transportFreeFrom ? t.freeDays(z.transportFreeFrom) : t.noFree}
+                    </td>
+                  </tr>
                 ))}
-              </ul>
-            </>
-          ) : (
-            <>
-              <h2 className="font-display text-xl font-extrabold">Delivery &amp; pickup</h2>
-              <p className="mt-4 text-sm text-inktext">{DELIVERY_POLICY.en}</p>
-            </>
-          )}
+                <tr>
+                  <td className="px-4 py-3 font-semibold text-ink">{t.otherZones}</td>
+                  <td className="px-4 py-3 text-right text-inktext">{t.quote}</td>
+                  <td className="px-4 py-3 text-right text-inktext">{t.noFree}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul className="mt-4 space-y-2 text-sm text-inktext">
+            {(es ? TRANSPORT_RULES.es : TRANSPORT_RULES.en).map((r) => (
+              <li key={r} className="flex gap-2">
+                <span aria-hidden="true" className="text-volt-dark">•</span>
+                <span>{r}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs font-semibold text-steel">{t.transportFoot}</p>
         </div>
 
         {/* Depósitos + temporada — transparencia (F6). */}
@@ -148,6 +191,7 @@ export function PricingView({ locale }: { locale: Locale }) {
           <h2 className="font-display text-xl font-extrabold">{t.depositTitle}</h2>
           <p className="mt-3 text-sm text-inktext">{t.depositBody}</p>
           <p className="mt-2 text-sm font-semibold text-volt-dark">{t.seasonBody}</p>
+          <p className="mt-2 text-sm text-inktext">{t.weeklyNote}</p>
         </div>
 
         <p className="reveal mt-8 text-sm text-steel">{es ? PRICING_FOOTNOTE.es : PRICING_FOOTNOTE.en}</p>

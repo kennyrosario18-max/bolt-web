@@ -87,8 +87,14 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.locator("#llegada").fill("2027-01-10");
     await page.locator("#salida").fill("2027-01-13");
     await page.locator("#zona").selectOption({ index: 1 });
-    // 3 días × US$85 × 1.18 = US$301 (redondeado)
-    await expect(page.locator("#estimate")).toContainText("US$301");
+    // PCRC: 3 días × US$85 × 1.18 = 301 + transporte (1 viaje, < 5 días) 60 × 1.18 = 71 → US$372
+    await expect(page.locator("#zona-note")).toContainText("US$60");
+    await expect(page.locator("#estimate")).toContainText("US$372");
+    await expect(page.locator("#estimate")).toContainText(/transporte|transport/i);
+    // 5 días o más en PCRC: transporte gratis → 5 × 85 × 1.18 = US$502
+    await page.locator("#salida").fill("2027-01-15");
+    await expect(page.locator("#estimate")).toContainText("US$502");
+    await expect(page.locator("#estimate")).toContainText(/gratis|free/i);
   });
 });
 

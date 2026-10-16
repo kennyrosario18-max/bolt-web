@@ -48,9 +48,9 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     heroTitleEn: "Golf cart rental in Puntacana Resort & Club",
     metaTitle: "Golf carts en Puntacana Resort & Club",
     metaDescription:
-      "Renta de golf carts con entrega en tu villa en Puntacana Resort & Club. Flota de 4 y 6 plazas y soporte bilingüe 24/7.",
+      "Renta de golf carts con entrega en tu villa en Puntacana Resort & Club. Transporte gratis en reservas de 5+ días. Flota de 4 y 6 plazas, soporte 24/7.",
     metaTitleEn: "Golf carts in Puntacana Resort & Club",
-    metaDescriptionEn: "Golf cart rental with villa delivery inside Puntacana Resort & Club. 4 and 6-seat fleet and 24/7 bilingual support.",
+    metaDescriptionEn: "Golf cart rental with villa delivery inside Puntacana Resort & Club. Free transport on 5+ day stays. 4 and 6-seat fleet, 24/7 bilingual support.",
     intro:
       "Es nuestra base principal y donde más carritos entregamos cada semana. Llevamos tu golf cart con carga completa hasta tu villa, coordinando el acceso con tu anfitrión o property manager.",
     introEn:
@@ -73,11 +73,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Delivery to your villa, coordinated with your host",
         p: [
           "Entregamos en villas y residenciales de todo el resort. Como el acceso a Puntacana Resort & Club es controlado, coordinamos directamente con tu anfitrión, concierge o property manager para que el carrito esté esperándote a tu llegada, con la batería completa y una breve orientación de uso.",
-          "El servicio incluye entrega y recogida dentro de nuestras zonas en rentas de dos días o más. Si algo falla durante tu estadía, nuestro soporte 24/7 por WhatsApp responde y, cuando hace falta, reponemos la unidad — no queremos que pierdas ni una tarde de tus vacaciones. Respetamos el límite BOLT de 25 km/h en zonas residenciales por la seguridad de todos.",
+          "El transporte (entrega + recogida) se cobra por viaje de tráiler: US$60 + ITBIS en Puntacana Resort & Club, y es gratis en reservas de 5 días o más. Si algo falla durante tu estadía, nuestro soporte 24/7 por WhatsApp responde y, cuando hace falta, reponemos la unidad — no queremos que pierdas ni una tarde de tus vacaciones. Respetamos el límite BOLT de 25 km/h en zonas residenciales por la seguridad de todos.",
         ],
         pEn: [
           "We deliver to villas and residences across the resort. Since access to Puntacana Resort & Club is controlled, we coordinate directly with your host, concierge or property manager so the cart is waiting for you on arrival, fully charged and with a short usage briefing.",
-          "The service includes delivery and pickup within our zones on rentals of two days or more. If anything fails during your stay, our 24/7 WhatsApp support answers and, when needed, we swap the unit — we don't want you to lose a single afternoon of your holiday. We keep BOLT's 25 km/h limit in residential zones for everyone's safety.",
+          "Transport (delivery + pickup) is charged per trailer trip: US$60 + 18% tax in Puntacana Resort & Club, and free on rentals of 5 days or more. If anything fails during your stay, our 24/7 WhatsApp support answers and, when needed, we swap the unit — we don't want you to lose a single afternoon of your holiday. We keep BOLT's 25 km/h limit in residential zones for everyone's safety.",
         ],
       },
       {
@@ -114,14 +114,14 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿La entrega tiene costo en el resort?",
-        a: "En rentas de dos días o más, la entrega y la recogida dentro de nuestras zonas están incluidas. Para rentas de un solo día aplica un cargo de transporte de US$40 + ITBIS.",
+        a: "El transporte (entrega + recogida) en Puntacana Resort & Club es US$60 + ITBIS por viaje de tráiler y se paga con la reserva. En reservas de 5 días o más es gratis — todos los viajes de esa reserva.",
       },
     ],
     faqsEn: [
       { q: "Do you deliver inside Puntacana Resort & Club?", a: "Yes, to villas and residences across the resort. We coordinate delivery with your host, concierge or property manager for access." },
       { q: "Can I drive anywhere in the resort?", a: "The golf cart is for use inside residential areas, villas and permitted resort areas, following the resort's internal rules and BOLT's 25 km/h limit in residential zones." },
       { q: "How far in advance should I book?", a: "We recommend requesting availability as soon as you have your dates — in high season the fleet sells out. We confirm on WhatsApp as soon as possible." },
-      { q: "Is delivery free inside the resort?", a: "On rentals of two days or more, delivery and pickup within our zones are included. For single-day rentals a US$40 + tax transport fee applies." },
+      { q: "Is delivery free inside the resort?", a: "Transport (delivery + pickup) in Puntacana Resort & Club is US$60 + 18% tax per trailer trip, paid with the booking. On rentals of 5 days or more it's free — every trip on that booking." },
     ],
   },
   {
@@ -130,9 +130,9 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     heroTitleEn: "Golf cart rental in Cap Cana",
     metaTitle: "Golf carts en Cap Cana desde US$50/día",
     metaDescription:
-      "Golf carts de 4 y 6 plazas entregados en tu villa en Cap Cana desde US$50/día. Entrega incluida en rentas de 2+ días y soporte bilingüe 24/7.",
+      "Golf carts de 4 y 6 plazas entregados en tu villa en Cap Cana desde US$50/día. Transporte gratis en reservas de 5+ días y soporte bilingüe 24/7.",
     metaTitleEn: "Golf carts in Cap Cana from US$50/day",
-    metaDescriptionEn: "4 and 6-seat golf carts delivered to your villa in Cap Cana from US$50/day. Free delivery on 2+ day rentals and 24/7 bilingual support.",
+    metaDescriptionEn: "4 and 6-seat golf carts delivered to your villa in Cap Cana from US$50/day. Free transport on 5+ day rentals and 24/7 bilingual support.",
     intro:
       "Cobertura completa dentro de Cap Cana: desde la zona de la marina hasta los campos de golf y las comunidades privadas. Entregamos en tu villa o apartamento con todo listo para rodar.",
     introEn:
@@ -155,11 +155,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Delivery to your villa inside Cap Cana",
         p: [
           "Entregamos en villas, apartamentos y residenciales dentro de Cap Cana. Al enviar tu solicitud solo necesitas indicarnos el nombre de tu comunidad o villa y coordinamos el acceso para dejarte el carrito con la batería completa y una breve orientación de uso a tu llegada.",
-          "En rentas de dos días o más, la entrega y la recogida están incluidas; para rentas de un solo día aplica un cargo de transporte de US$40 + ITBIS. Cuentas con nuestro soporte 24/7 por WhatsApp en español e inglés durante toda tu estadía — si necesitas asistencia o una reposición, respondemos rápido.",
+          "El transporte (entrega + recogida) en Cap Cana es US$60 + ITBIS por viaje de tráiler y se paga con la reserva; en reservas de 5 días o más es gratis. Cuentas con nuestro soporte 24/7 por WhatsApp en español e inglés durante toda tu estadía — si necesitas asistencia o una reposición, respondemos rápido.",
         ],
         pEn: [
           "We deliver to villas, apartments and residences inside Cap Cana. In your request you just tell us the name of your community or villa and we coordinate access to leave the cart fully charged, with a short usage briefing, on your arrival.",
-          "On rentals of two days or more, delivery and pickup are included; for single-day rentals a US$40 + tax transport fee applies. You have our 24/7 WhatsApp support in English and Spanish throughout your stay — if you need assistance or a swap, we respond fast.",
+          "Transport (delivery + pickup) in Cap Cana is US$60 + 18% tax per trailer trip, paid with the booking; on rentals of 5 days or more it's free. You have our 24/7 WhatsApp support in English and Spanish throughout your stay — if you need assistance or a swap, we respond fast.",
         ],
       },
       {
@@ -192,7 +192,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿La entrega tiene costo?",
-        a: "En rentas de 2 días o más la entrega y recogida están incluidas. Para rentas de 1 día aplica un cargo de transporte de US$40 + ITBIS.",
+        a: "El transporte (entrega + recogida) en Cap Cana es US$60 + ITBIS por viaje de tráiler y se paga con la reserva. En reservas de 5 días o más es gratis — todos los viajes de esa reserva.",
       },
       {
         q: "¿Cuánto dura la carga de la batería?",
@@ -202,7 +202,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     faqsEn: [
       { q: "Do you deliver to any community in Cap Cana?", a: "We deliver to villas and residences inside Cap Cana. Tell us the name of your community or villa in your request and we coordinate access." },
       { q: "Which model is best for a large group?", a: "For 5 or 6 people we recommend the 6-seat ECO line (4+2). For maximum comfort, the premium ECO Cross with long-range lithium (150 Ah) does up to 95 km per charge." },
-      { q: "Is delivery free?", a: "For rentals of 2+ days, delivery and pickup are included. For 1-day rentals a US$40 + tax transport fee applies." },
+      { q: "Is delivery free?", a: "Transport (delivery + pickup) in Cap Cana is US$60 + 18% tax per trailer trip, paid with the booking. On rentals of 5 days or more it's free — every trip on that booking." },
       { q: "How long does the battery last?", a: "It depends on the model and your usage, but a full charge easily covers a normal day inside Cap Cana. Long-range lithium models go further; we deliver the cart fully charged." },
     ],
   },
@@ -236,11 +236,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         h: "Entrega en residenciales y complejos de la zona",
         hEn: "Delivery to residences and resorts in the area",
         p: [
-          "Entregamos en residenciales, apartamentos y complejos turísticos de toda la zona de Bávaro. Llevamos el carrito hasta tu alojamiento con la batería completa y una orientación de uso rápida, y coordinamos el acceso donde haga falta. En rentas de dos días o más la entrega y la recogida están incluidas.",
+          "Entregamos en residenciales, apartamentos y complejos turísticos de toda la zona de Bávaro. Llevamos el carrito hasta tu alojamiento con la batería completa y una orientación de uso rápida, y coordinamos el acceso donde haga falta. El transporte (entrega + recogida) es US$60 + ITBIS por viaje de tráiler y es gratis en reservas de 10 días o más.",
           "Respetamos el límite BOLT de 25 km/h en zonas residenciales. Durante toda tu estadía cuentas con soporte 24/7 por WhatsApp en español e inglés: una sola conversación para reservar, resolver dudas o pedir asistencia. Nunca confirmamos automáticamente — una persona real revisa cada solicitud y te responde el mismo día.",
         ],
         pEn: [
-          "We deliver to residences, apartments and resorts across the Bávaro area. We bring the cart to your accommodation fully charged with a quick usage briefing, and coordinate access where needed. On rentals of two days or more, delivery and pickup are included.",
+          "We deliver to residences, apartments and resorts across the Bávaro area. We bring the cart to your accommodation fully charged with a quick usage briefing, and coordinate access where needed. Transport (delivery + pickup) is US$60 + 18% tax per trailer trip and free on rentals of 10 days or more.",
           "We keep BOLT's 25 km/h limit in residential zones. Throughout your stay you have 24/7 WhatsApp support in English and Spanish: one conversation to book, ask questions or request assistance. We never auto-confirm — a real person reviews every request and replies the same day.",
         ],
       },
@@ -248,11 +248,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         h: "Ideal para estadías largas: tarifa semanal y mensual",
         hEn: "Great for long stays: weekly and monthly rates",
         p: [
-          "Si te quedas una semana o más, Bávaro es la zona perfecta para una renta larga. Para siete noches o más tenemos tarifa semanal y mensual con descuento — pregunta al enviar tu solicitud y te preparamos una cotización a la medida de tus fechas.",
+          "Si te quedas una semana o más, Bávaro es la zona perfecta para una renta larga. Para siete noches o más tenemos tarifa semanal y mensual con descuento — pregunta al enviar tu solicitud y te preparamos una cotización a la medida de tus fechas. Y en reservas de 10 días o más, el transporte es gratis.",
           "Los modelos de 4 plazas arrancan desde US$50 por día y los de 6 plazas desde US$65, con el precio exacto según el modelo. Para estadías largas, un modelo con buena autonomía marca la diferencia; si no estás seguro de cuál elegir, pídenos una recomendación y te orientamos según cuántas personas son y cómo piensan moverse.",
         ],
         pEn: [
-          "If you're staying a week or more, Bávaro is the perfect area for a long rental. For seven nights or more we offer discounted weekly and monthly rates — ask when you send your request and we'll prepare a quote tailored to your dates.",
+          "If you're staying a week or more, Bávaro is the perfect area for a long rental. For seven nights or more we offer discounted weekly and monthly rates — ask when you send your request and we'll prepare a quote tailored to your dates. And on rentals of 10 days or more, transport is free.",
           "4-seat models start from US$50 a day and 6-seaters from US$65, with the exact price depending on the model. For long stays, a model with good range makes the difference; if you're unsure which to choose, ask us for a recommendation and we'll guide you based on how many you are and how you plan to get around.",
         ],
       },
@@ -270,7 +270,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Puedo recoger el carrito yo mismo?",
-        a: "Nuestro servicio estándar es entrega a domicilio dentro de la zona. Si prefieres coordinar diferente, escríbenos por WhatsApp y lo evaluamos.",
+        a: "Nuestro servicio estándar es entrega en tu alojamiento dentro de la zona (transporte por viaje de tráiler, gratis en reservas de 10+ días). Si prefieres coordinar diferente, escríbenos por WhatsApp y lo evaluamos.",
       },
       {
         q: "¿Rentan por semanas o meses?",
@@ -278,14 +278,14 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Cuál es la tarifa por día en Bávaro?",
-        a: "Desde US$50 por día los modelos de 4 plazas y desde US$65 los de 6 plazas, con el precio exacto según el modelo. En rentas de 2+ días la entrega está incluida.",
+        a: "Desde US$50 por día los modelos de 4 plazas y desde US$65 los de 6 plazas, con el precio exacto según el modelo. El transporte (entrega + recogida) en Bávaro es US$60 + ITBIS por viaje y es gratis en reservas de 10 días o más.",
       },
     ],
     faqsEn: [
       { q: "Where are you located?", a: "Our base is at Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro. The whole fleet dispatches from there." },
-      { q: "Can I pick up the cart myself?", a: "Our standard service is home delivery within the area. If you'd rather arrange something different, message us on WhatsApp and we'll look into it." },
+      { q: "Can I pick up the cart myself?", a: "Our standard service is delivery to your accommodation within the area (transport billed per trailer trip, free on 10+ day bookings). If you'd rather arrange something different, message us on WhatsApp and we'll look into it." },
       { q: "Do you rent by the week or month?", a: "Yes. For 7+ nights we offer discounted weekly and monthly rates — ask on WhatsApp when you send your request." },
-      { q: "What's the daily rate in Bávaro?", a: "From US$50 a day for 4-seat models and from US$65 for 6-seaters, with the exact price depending on the model. On 2+ day rentals delivery is included." },
+      { q: "What's the daily rate in Bávaro?", a: "From US$50 a day for 4-seat models and from US$65 for 6-seaters, with the exact price depending on the model. Transport (delivery + pickup) in Bávaro is US$60 + 18% tax per trip and free on rentals of 10 days or more." },
     ],
   },
   {
@@ -319,11 +319,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "How the 7-day-plus rental works",
         p: [
           "Casa de Campo está fuera de nuestra zona base en Punta Cana, así que trasladar el carrito solo tiene sentido en estadías largas — por eso el mínimo es de siete días. El transporte de ida y vuelta se cotiza según la ubicación exacta de tu villa y tus fechas, y te lo incluimos en la confirmación de la solicitud, sin sorpresas de último momento.",
-          "La tarifa por día del modelo es la misma que en el resto de nuestras zonas; solo se suma el transporte cotizado y, al ser 7 noches o más, aplica nuestra tarifa semanal con descuento. Envía tu solicitud con la villa y las fechas y te devolvemos por WhatsApp el costo total claro — carrito, transporte y depósito — para que decidas con toda la información.",
+          "La tarifa por día del modelo es la misma que en el resto de nuestras zonas; solo cambia el transporte, que aquí se cotiza según tu villa en lugar de la tarifa fija por zona y, al ser 7 noches o más, aplica nuestra tarifa semanal con descuento. Envía tu solicitud con la villa y las fechas y te devolvemos por WhatsApp el costo total claro — carrito, transporte y depósito — para que decidas con toda la información.",
         ],
         pEn: [
           "Casa de Campo is outside our home base in Punta Cana, so moving the cart only makes sense for longer stays — hence the seven-day minimum. Round-trip transport is quoted based on your villa's exact location and your dates, and we include it in your request confirmation, with no last-minute surprises.",
-          "The model's daily rate is the same as in the rest of our zones; only the quoted transport is added and, being seven nights or more, our discounted weekly rate applies. Send your request with the villa and dates and we'll get back to you on WhatsApp with the clear total — cart, transport and deposit — so you decide with full information.",
+          "The model's daily rate is the same as in the rest of our zones; only the transport differs — here it's quoted by villa instead of the fixed zone rate and, being seven nights or more, our discounted weekly rate applies. Send your request with the villa and dates and we'll get back to you on WhatsApp with the clear total — cart, transport and deposit — so you decide with full information.",
         ],
       },
       {
@@ -352,11 +352,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Cuánto cuesta el transporte hasta Casa de Campo?",
-        a: "Se cotiza según tu villa y fechas. Envía tu solicitud y te incluimos el costo exacto de transporte en la confirmación, sin sorpresas.",
+        a: "Se cotiza según tu villa, tus fechas y la cantidad de carritos (viajes de tráiler). Envía tu solicitud y te incluimos el costo exacto de transporte en la confirmación, sin sorpresas.",
       },
       {
         q: "¿La tarifa diaria es la misma?",
-        a: "Sí, la tarifa por día del modelo es la misma. Solo se suma el transporte cotizado y, para 7+ noches, aplica nuestra tarifa semanal con descuento.",
+        a: "Sí, la tarifa por día del modelo es la misma. Solo cambia el transporte, que aquí se cotiza en lugar de la tarifa fija por zona, y para 7+ noches aplica nuestra tarifa semanal con descuento.",
       },
       {
         q: "¿Tengo soporte durante la renta en Casa de Campo?",
@@ -365,8 +365,8 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     ],
     faqsEn: [
       { q: "Why is there a 7-day minimum?", a: "Casa de Campo is outside our home base in Punta Cana. Transporting the cart only makes sense for longer stays — hence the 7-day minimum." },
-      { q: "How much does transport to Casa de Campo cost?", a: "It's quoted based on your villa and dates. Send your request and we'll include the exact transport cost in the confirmation — no surprises." },
-      { q: "Is the daily rate the same?", a: "Yes, the model's daily rate is the same. Only the quoted transport is added and, for 7+ nights, our discounted weekly rate applies." },
+      { q: "How much does transport to Casa de Campo cost?", a: "It's quoted based on your villa, dates and number of carts (trailer trips). Send your request and we'll include the exact transport cost in the confirmation — no surprises." },
+      { q: "Is the daily rate the same?", a: "Yes, the model's daily rate is the same. Only the transport differs — quoted here instead of the fixed zone rate — and for 7+ nights our discounted weekly rate applies." },
       { q: "Do I have support during the rental in Casa de Campo?", a: "Yes. Even outside our home base, you have the same 24/7 WhatsApp support in English and Spanish throughout the stay." },
     ],
   },
@@ -401,11 +401,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "7-day rentals with quoted transport",
         p: [
           "La Romana está fuera de nuestra zona base en Punta Cana, así que el traslado del carrito solo se justifica en estadías largas — por eso el mínimo es de siete días. El transporte se cotiza según la ubicación exacta de tu villa y tus fechas, y te lo confirmamos por WhatsApp junto con el resto del costo antes de que decidas.",
-          "La tarifa por día del modelo es la misma que en nuestras demás zonas; solo se suma el transporte cotizado y, al ser 7 noches o más, aplica nuestra tarifa semanal con descuento. Indícanos la ubicación exacta en tu solicitud y te confirmamos cobertura, transporte y el total claro, sin sorpresas de último momento.",
+          "La tarifa por día del modelo es la misma que en nuestras demás zonas; solo cambia el transporte, que aquí se cotiza según la ubicación en lugar de la tarifa fija por zona y, al ser 7 noches o más, aplica nuestra tarifa semanal con descuento. Indícanos la ubicación exacta en tu solicitud y te confirmamos cobertura, transporte y el total claro, sin sorpresas de último momento.",
         ],
         pEn: [
           "La Romana is outside our home base in Punta Cana, so moving the cart only makes sense for longer stays — hence the seven-day minimum. Transport is quoted based on your villa's exact location and your dates, and we confirm it on WhatsApp along with the rest of the cost before you decide.",
-          "The model's daily rate is the same as in our other zones; only the quoted transport is added and, being seven nights or more, our discounted weekly rate applies. Give us the exact location in your request and we'll confirm coverage, transport and the clear total — no last-minute surprises.",
+          "The model's daily rate is the same as in our other zones; only the transport differs — here it's quoted by location instead of the fixed zone rate and, being seven nights or more, our discounted weekly rate applies. Give us the exact location in your request and we'll confirm coverage, transport and the clear total — no last-minute surprises.",
         ],
       },
       {
@@ -438,7 +438,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Cómo se cotiza el transporte?",
-        a: "Según la ubicación de tu villa y las fechas. Envía la solicitud y recibirás el costo exacto en la confirmación por WhatsApp.",
+        a: "Según la ubicación de tu villa, las fechas y la cantidad de carritos (viajes de tráiler). Envía la solicitud y recibirás el costo exacto en la confirmación por WhatsApp.",
       },
       {
         q: "¿Qué tarifa por día aplica en La Romana?",
@@ -448,7 +448,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     faqsEn: [
       { q: "Do you serve villas across La Romana?", a: "We serve villas and residences in the area for rentals of 7 days or more. Give us the exact location in your request and we'll confirm coverage and transport." },
       { q: "What's the minimum rental?", a: "7 days. Being outside our Punta Cana home base, the transfer only makes sense for longer stays." },
-      { q: "How is transport quoted?", a: "Based on your villa's location and your dates. Send the request and you'll get the exact cost in your WhatsApp confirmation." },
+      { q: "How is transport quoted?", a: "Based on your villa's location, your dates and the number of carts (trailer trips). Send the request and you'll get the exact cost in your WhatsApp confirmation." },
       { q: "What daily rate applies in La Romana?", a: "The same as our other zones: from US$50 for 4-seat models and from US$65 for 6-seaters, depending on the model. For 7+ nights the discounted weekly rate applies, plus quoted transport." },
     ],
   },
