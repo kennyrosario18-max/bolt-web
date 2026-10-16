@@ -41,17 +41,47 @@ export function priceFromPax(pax: number): number {
   return of.length ? Math.min(...of) : MIN_PRICE;
 }
 
+/** Tarifa de TEMPORADA ALTA, US$/día por modelo (Kenny, 16/oct/2026). Fechas en HIGH_SEASON
+ *  (site.ts): 20 dic – 6 ene y Semana Santa. Solo cliente directo y solo por las noches que caen
+ *  en temporada alta. Regla: por debajo de Eco Planeta y al menos US$10 sobre la tarifa festiva
+ *  de los aliados (4pl US$50–60, 6pl US$80), para no dejar al aliado sin margen. */
+export const HIGH_SEASON_PRICES: Record<string, number> = {
+  "cc-precedent-2-2": 70,
+  "cc-tempo-2-2": 75,
+  "eco-plus-2-2": 75,
+  "eco-cross-4": 80,
+  "zycar-4": 80,
+  "cc-limo-4-2": 90,
+  "eco-plus-4-2": 95,
+  "eco-sport-4-2": 95,
+  "eco-cross-4-2": 105,
+  "eco-track-4-2": 125,
+  "zycar-4-2": 125,
+};
+
+/** Precio de temporada alta US$/día de un modelo. */
+export function modelHighPrice(id: string): number {
+  return HIGH_SEASON_PRICES[id] ?? modelPrice(id);
+}
+
+/** "Desde" de temporada alta por capacidad. */
+export function highPriceFromPax(pax: number): number {
+  const of = MODELS.filter((m) => m.pax === pax).map((m) => modelHighPrice(m.id));
+  return of.length ? Math.min(...of) : modelHighPrice("");
+}
+
 export interface PricedModel {
   id: string;
   name: string;
   line: Model["line"];
   price: number;
+  highPrice: number;
 }
 
 /** Modelos con su precio, ordenados por precio — para la página /precios. */
 export function pricedModels(pax: 4 | 6): PricedModel[] {
   return MODELS.filter((m) => m.pax === pax)
-    .map((m) => ({ id: m.id, name: m.name, line: m.line, price: modelPrice(m.id) }))
+    .map((m) => ({ id: m.id, name: m.name, line: m.line, price: modelPrice(m.id), highPrice: modelHighPrice(m.id) }))
     .sort((a, b) => a.price - b.price);
 }
 

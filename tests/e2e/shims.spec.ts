@@ -107,6 +107,21 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await expect(page.locator("#min-warning")).toBeEmpty();
   });
 
+  test("estimado con temporada alta: cada noche a su tarifa", async ({ page }) => {
+    await page.goto("/solicitar-disponibilidad/?modelo=eco-cross-4-2");
+    await page.locator("#zona").selectOption("puntacana-resort");
+    // 5 noches en temporada alta: 5 × US$105 × 1.18 = 619.5 → US$620 (transporte gratis, 5+ días en PCRC)
+    await page.locator("#llegada").fill("2026-12-28");
+    await page.locator("#salida").fill("2027-01-02");
+    await expect(page.locator("#estimate")).toContainText("US$620");
+    await expect(page.locator("#estimate")).toContainText(/5 noches a tarifa de temporada alta/);
+    // Mixta: 4–9 ene = 3 noches alta (4, 5, 6) + 2 regular: (3×105 + 2×85) × 1.18 = 572.3 → US$572
+    await page.locator("#llegada").fill("2027-01-04");
+    await page.locator("#salida").fill("2027-01-09");
+    await expect(page.locator("#estimate")).toContainText("US$572");
+    await expect(page.locator("#estimate")).toContainText(/3 noches a tarifa de temporada alta/);
+  });
+
   test("link prellenado de la villa: zona, alojamiento y lugar", async ({ page }) => {
     await page.goto("/solicitar-disponibilidad/?zona=cap-cana&alojamiento=villa&lugar=Las%20Palmas%20108");
     await expect(page.locator("#zona")).toHaveValue("cap-cana");

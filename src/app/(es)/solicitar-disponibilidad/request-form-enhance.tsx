@@ -22,6 +22,7 @@ interface Payload {
   errBaseMin: string; warnBaseMin: string; errHighMin: string; warnHighMin: string;
   minBase: number; minHigh: number; high: ReadonlyArray<readonly [string, string]>;
   transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string; estTransportQuoted: string;
+  estHigh: string; night: string; nights: string; high4: number; high6: number;
   estimateTpl: string; price4: number; price6: number;
   web3key: string; emailSubject: string;
 }
@@ -71,27 +72,38 @@ function script(p: Payload): string {
     updateEstimate();
   }
 
-  // Tarifa "desde" del día: la del modelo elegido; si no, por pasajeros
-  // (5+ personas => tarifa de 6 plazas). Devuelve 0 si no hay con qué estimar.
-  function dailyPrice(){
+  // Tarifas "desde" del día [regular, temporada alta]: las del modelo elegido; si no, por pasajeros
+  // (5+ personas => 6 plazas). [0,0] si no hay con qué estimar.
+  function dailyPrices(){
     var mo=modelo.options[modelo.selectedIndex];
-    if(mo&&mo.value&&mo.getAttribute('data-price'))return +mo.getAttribute('data-price');
+    if(mo&&mo.value&&mo.getAttribute('data-price'))return [+mo.getAttribute('data-price'),+(mo.getAttribute('data-hprice')||mo.getAttribute('data-price'))];
     var pax=pasajeros?pasajeros.value:'';
-    if(pax){var n=parseInt(pax,10)||7;return n>=5?P.price6:P.price4;}
-    return 0;
+    if(pax){var n=parseInt(pax,10)||7;return n>=5?[P.price6,P.high6]:[P.price4,P.high4];}
+    return [0,0];
+  }
+  // Noches de la renta que caen en temporada alta (cada noche = fecha de inicio de ese día de renta).
+  function highNights(a,d){
+    if(!a)return 0;var x=a.split('-'),c=0;
+    for(var i=0;i<d;i++){
+      var t=new Date(+x[0],+x[1]-1,+x[2]+i),iso=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);
+      for(var k=0;k<P.high.length;k++){if(iso>=P.high[k][0]&&iso<=P.high[k][1]){c++;break;}}
+    }
+    return c;
   }
   // Transporte de la zona elegida: [tarifa por viaje, días desde los que es gratis].
   function zoneTransport(){var o=zopt();return [o?+(o.getAttribute('data-transport')||0):0,o?+(o.getAttribute('data-freefrom')||0):0];}
   function updateEstimate(){
     if(!estimate)return;
-    var d=diffDays(llegada.value,salida.value),daily=dailyPrice();
+    var d=diffDays(llegada.value,salida.value),pr=dailyPrices(),daily=pr[0];
     if(d>0&&daily>0){
+      var hn=highNights(llegada.value,d);
       var zt=zoneTransport(),exempt=!!(zt[0]&&zt[1]&&d>=zt[1]);
       var tr=(zt[0]&&!exempt)?Math.round(zt[0]*1.18):0;   // 1 viaje con ITBIS; 0 si exento o se cotiza
-      var total=Math.round(d*daily*1.18)+tr;    // ITBIS 18% incluido
+      var total=Math.round(((d-hn)*daily+hn*pr[1])*1.18)+tr;    // ITBIS 18% incluido; noches de temporada alta a su tarifa
       var deposit=Math.round(total*0.50);       // depósito de confirmación 50%
       var trTxt=tr?fill(P.estTransport,{amount:tr}):(exempt?P.estTransportFree:(zt[0]?'':P.estTransportQuoted));
-      estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit,transport:trTxt});
+      var hsTxt=hn?fill(P.estHigh,{n:hn,nightword:hn===1?P.night:P.nights}):'';
+      estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit,transport:trTxt,season:hsTxt});
     }else{estimate.textContent='';}
   }
 

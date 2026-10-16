@@ -8,6 +8,8 @@ import {
   priceFromPax,
   pricedModels,
   withItbis,
+  HIGH_SEASON_PRICES,
+  modelHighPrice,
 } from "@/content/pricing";
 
 /** Guardas de la fuente única de precios (confirmados por Kenny, jul/2026).
@@ -51,6 +53,24 @@ describe("pricing — fuente única", () => {
 
   it("Zycar 4+2 (6 personas, levantado) cuesta lo mismo que el ECO Track 4+2 (regla de Kenny, 16/oct/2026)", () => {
     expect(modelPrice("zycar-4-2")).toBe(modelPrice("eco-track-4-2"));
+  });
+
+  it("temporada alta: precios aprobados por Kenny (16/oct/2026), uno por modelo y siempre mayor que el regular", () => {
+    expect(HIGH_SEASON_PRICES).toEqual({
+      "cc-precedent-2-2": 70, "cc-tempo-2-2": 75, "eco-plus-2-2": 75, "eco-cross-4": 80, "zycar-4": 80,
+      "cc-limo-4-2": 90, "eco-plus-4-2": 95, "eco-sport-4-2": 95, "eco-cross-4-2": 105, "eco-track-4-2": 125, "zycar-4-2": 125,
+    });
+    for (const m of MODELS) {
+      expect(modelHighPrice(m.id), `temporada alta de ${m.id}`).toBeGreaterThan(modelPrice(m.id));
+    }
+    expect(modelHighPrice("zycar-4")).toBe(modelHighPrice("eco-cross-4"));
+    expect(modelHighPrice("zycar-4-2")).toBe(modelHighPrice("eco-track-4-2"));
+  });
+
+  it("temporada alta deja margen al aliado: 4 plazas ≥ US$70 y 6 plazas ≥ US$90 (festivo aliado US$60 / US$80 + US$10)", () => {
+    for (const m of MODELS) {
+      expect(modelHighPrice(m.id), m.id).toBeGreaterThanOrEqual(m.pax === 4 ? 70 : 90);
+    }
   });
 
   it("mínimos por capacidad: 4 plazas desde US$50, 6 plazas desde US$65", () => {

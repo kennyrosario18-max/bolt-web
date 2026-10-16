@@ -12,7 +12,7 @@ import { ModelCard } from "@/components/model-card";
 import { ModelPhoto } from "@/components/model-photo";
 import { BoltIcon, CheckIcon } from "@/components/icons";
 import { PRICING, waLink } from "@/content/site";
-import { modelPrice } from "@/content/pricing";
+import { modelHighPrice, modelPrice } from "@/content/pricing";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema, productSchema } from "@/lib/schema";
 
@@ -51,6 +51,7 @@ const T = {
     alt: (m: Model) => `Golf cart ${m.name} de ${m.pax} plazas`,
     crumbAria: "Miga de pan",
     itbis: PRICING.itbisNote,
+    high: (p: number) => `Temporada alta (20 dic – 6 ene y Semana Santa): US$${p}/día + ITBIS`,
   },
   en: {
     crumb: "Fleet",
@@ -84,6 +85,7 @@ const T = {
     alt: (m: Model) => `${m.name} golf cart — seats ${m.pax}`,
     crumbAria: "Breadcrumb",
     itbis: PRICING.itbisNoteEn,
+    high: (p: number) => `High season (Dec 20 – Jan 6 & Holy Week): US$${p}/day + tax`,
   },
 } as const;
 
@@ -165,6 +167,7 @@ export function ModelDetailView({ model, locale }: { model: Model; locale: Local
               <span className="text-base font-semibold text-white/60">{t.perDay}</span>
             </p>
             <p className="text-xs text-white/60">{t.itbis}</p>
+            <p className="mt-1 text-xs font-semibold text-volt">{t.high(modelHighPrice(model.id))}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href={t.reqHref(model.id)}

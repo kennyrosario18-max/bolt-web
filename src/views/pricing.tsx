@@ -16,6 +16,7 @@ const T = {
     leadSub: "Daily rates in US$ plus 18% tax, shown per model — fixed transport by zone, no hidden fees.",
     perDay: " /día",
     withTax: "con ITBIS · ",
+    highLabel: "Temporada alta: ",
     group4: "Hasta 4 personas",
     group6: "Hasta 6 personas",
     tapModel: "Toca un modelo para solicitarlo →",
@@ -41,7 +42,7 @@ const T = {
     waMsg: "Hola BOLT, tengo una pregunta sobre las tarifas de renta.",
     depositTitle: "Depósitos y temporada",
     depositBody: "Reserva: depósito de confirmación del 50% del total. A la entrega: depósito de garantía de US$200, reembolsable tras la inspección de devolución.",
-    seasonBody: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el anticipo no es reembolsable (queda como crédito solo con 30+ días de aviso).",
+    seasonBody: "Temporada alta (20 dic–6 ene y Semana Santa): las noches que caen en esas fechas se cobran a la tarifa de temporada alta de cada modelo (en la tabla), con renta mínima de 5 días. Reserva con anticipación: en esas fechas el anticipo no es reembolsable (queda como crédito solo con 30+ días de aviso).",
   },
   en: {
     kicker: "Pricing",
@@ -50,6 +51,7 @@ const T = {
     leadSub: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Transporte fijo por zona, sin cargos ocultos.",
     perDay: " /day",
     withTax: "with tax · ",
+    highLabel: "High season: ",
     group4: "Up to 4 people",
     group6: "Up to 6 people",
     tapModel: "Tap a model to request it →",
@@ -75,7 +77,7 @@ const T = {
     waMsg: "Hi BOLT, I have a question about rental rates.",
     depositTitle: "Deposits & season",
     depositBody: "Booking: 50% confirmation deposit of the total. At delivery: a US$200 damage deposit, refundable after the return inspection.",
-    seasonBody: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the advance is non-refundable on those dates (kept as credit only with 30+ days’ notice).",
+    seasonBody: "High season (Dec 20–Jan 6 & Holy Week): nights on those dates are charged at each model’s high-season rate (in the table), with a 5-day minimum. Book ahead: the advance is non-refundable on those dates (kept as credit only with 30+ days’ notice).",
   },
 } as const;
 
@@ -129,6 +131,10 @@ export function PricingView({ locale }: { locale: Locale }) {
                       <p className="text-xs tabular-nums text-steel">
                         {t.withTax}
                         {withItbis(m.price)}
+                      </p>
+                      <p className="mt-0.5 text-xs font-semibold tabular-nums text-volt-dark">
+                        {t.highLabel}US${m.highPrice}
+                        {t.perDay}
                       </p>
                     </div>
                   </Link>

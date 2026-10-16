@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MODELS } from "@/content/models";
 import { CONTACT, HIGH_SEASON, MIN_DAYS, ZONES, priceFrom, WEB3FORMS_ACCESS_KEY } from "@/content/site";
-import { modelPrice } from "@/content/pricing";
+import { highPriceFromPax, modelHighPrice, modelPrice } from "@/content/pricing";
 import { BoltIcon } from "@/components/icons";
 import { RequestFormEnhance } from "./request-form-enhance";
 import type { Locale } from "@/lib/i18n";
@@ -41,8 +41,11 @@ const T = {
     estTransport: " · incluye transporte US${amount} (1 viaje)",
     estTransportFree: " · transporte gratis",
     estTransportQuoted: " · transporte cotizado aparte",
+    estHigh: " · {n} {nightword} a tarifa de temporada alta",
+    night: "noche",
+    nights: "noches",
     perDayShort: "/día",
-    estimateTpl: "Estimado desde US${total} por {days} {dayword} · ITBIS incluido{transport} · depósito 50%: US${deposit}",
+    estimateTpl: "Estimado desde US${total} por {days} {dayword}{season} · ITBIS incluido{transport} · depósito 50%: US${deposit}",
     depositNote: "Reserva: depósito de confirmación 50%. A la entrega: depósito de garantía US$200, reembolsable tras la inspección.",
     seasonNote: "Temporada alta (20 dic–6 ene y Semana Santa): reserva con anticipación; en esas fechas el anticipo no es reembolsable (queda como crédito solo con 30+ días de aviso).",
     openWa: "Abrir WhatsApp",
@@ -101,8 +104,11 @@ const T = {
     estTransport: " · includes transport US${amount} (1 trip)",
     estTransportFree: " · transport free",
     estTransportQuoted: " · transport quoted separately",
+    estHigh: " · {n} {nightword} at the high-season rate",
+    night: "night",
+    nights: "nights",
     perDayShort: "/day",
-    estimateTpl: "Estimated from US${total} for {days} {dayword} · tax included{transport} · 50% deposit: US${deposit}",
+    estimateTpl: "Estimated from US${total} for {days} {dayword}{season} · tax included{transport} · 50% deposit: US${deposit}",
     depositNote: "Booking: 50% confirmation deposit. At delivery: a US$200 damage deposit, refundable after inspection.",
     seasonNote: "High season (Dec 20–Jan 6 & Holy Week): book ahead; the advance is non-refundable on those dates (kept as credit only with 30+ days’ notice).",
     openWa: "Open WhatsApp",
@@ -166,6 +172,11 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     estTransport: t.estTransport,
     estTransportFree: t.estTransportFree,
     estTransportQuoted: t.estTransportQuoted,
+    estHigh: t.estHigh,
+    night: t.night,
+    nights: t.nights,
+    high4: highPriceFromPax(4),
+    high6: highPriceFromPax(6),
     estimateTpl: t.estimateTpl,
     // Tarifa "desde" para el estimado: por plazas (fuente única priceFrom).
     price4: priceFrom(4),
@@ -261,7 +272,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           <select id="modelo" name="modelo" className={inputCls}>
             <option value="">{t.modeloPlaceholder}</option>
             {MODELS.map((m) => (
-              <option key={m.id} value={m.id} data-name={m.name} data-pax={m.pax} data-price={modelPrice(m.id)}>
+              <option key={m.id} value={m.id} data-name={m.name} data-pax={m.pax} data-price={modelPrice(m.id)} data-hprice={modelHighPrice(m.id)}>
                 {m.name} · {m.pax} {t.plazas} · US${modelPrice(m.id)}
                 {t.perDayShort}
               </option>
