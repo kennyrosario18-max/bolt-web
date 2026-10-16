@@ -260,9 +260,14 @@
   // Preselección ?modelo y avisos iniciales. selectedIndex es una propiedad (no
   // un atributo que React reconcilie en un <select> no controlado), así que no
   // genera mismatch de hidratación.
+  function preselect(el,v){if(!el||!v)return;for(var i=0;i<el.options.length;i++){if(el.options[i].value===v){el.selectedIndex=i;return;}}}
   function initState(){
-    var pre=new URLSearchParams(location.search).get('modelo');
-    if(pre){for(var i=0;i<modelo.options.length;i++){if(modelo.options[i].value===pre){modelo.selectedIndex=i;break;}}}
+    var q=new URLSearchParams(location.search);
+    preselect(modelo,q.get('modelo'));
+    preselect(zona,q.get('zona'));
+    preselect($('alojamiento'),q.get('alojamiento'));
+    var lugar=$('lugar'),lg=q.get('lugar');
+    if(lugar&&lg&&!lugar.value)lugar.value=lg.slice(0,80);   // propiedad value: no toca el HTML
     syncDeps();
   }
   if(document.readyState==='complete')initState();
