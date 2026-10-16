@@ -8,7 +8,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
   es: [
     {
       q: "¿Qué incluye la renta de un golf cart BOLT?",
-      a: "Cargador para carga nocturna, orientación de uso al entregarte el carrito, seguro del vehículo y soporte por WhatsApp 24/7 en español e inglés. La entrega y recogida en tu villa o residencial llevan un transporte fijo por zona (desde US$60 por viaje, gratis en reservas largas).",
+      a: "Cargador para carga nocturna, orientación de uso al entregarte el carrito y soporte por WhatsApp 24/7 en español e inglés. La entrega y recogida en tu villa o residencial llevan un transporte fijo por zona (desde US$60 por viaje, gratis en reservas largas).",
     },
     {
       q: "¿Cuánto cuesta la renta?",

@@ -95,6 +95,10 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.locator("#salida").fill("2027-01-15");
     await expect(page.locator("#estimate")).toContainText("US$502");
     await expect(page.locator("#estimate")).toContainText(/gratis|free/i);
+    // Zona cotizada (Casa de Campo, 7+ días): el estimado avisa que el transporte va aparte.
+    await page.locator("#salida").fill("2027-01-18");
+    await page.locator("#zona").selectOption("casa-de-campo");
+    await expect(page.locator("#estimate")).toContainText(/cotizado|quoted/i);
   });
 });
 

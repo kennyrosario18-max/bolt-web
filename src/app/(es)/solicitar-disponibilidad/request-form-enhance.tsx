@@ -17,7 +17,7 @@ interface Payload {
   phone: string; header: string; plazas: string; recommend: string;
   day: string; days: string; f: Fields;
   errFechas: string; errOrden: string; errMin: string; warnMin: string; zoneNoteTpl: string;
-  transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string;
+  transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string; estTransportQuoted: string;
   estimateTpl: string; price4: number; price6: number;
   web3key: string; emailSubject: string;
 }
@@ -76,7 +76,7 @@ function script(p: Payload): string {
       var tr=(zt[0]&&!exempt)?Math.round(zt[0]*1.18):0;   // 1 viaje con ITBIS; 0 si exento o se cotiza
       var total=Math.round(d*daily*1.18)+tr;    // ITBIS 18% incluido
       var deposit=Math.round(total*0.50);       // depósito de confirmación 50%
-      var trTxt=tr?fill(P.estTransport,{amount:tr}):(exempt?P.estTransportFree:'');
+      var trTxt=tr?fill(P.estTransport,{amount:tr}):(exempt?P.estTransportFree:(zt[0]?'':P.estTransportQuoted));
       estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit,transport:trTxt});
     }else{estimate.textContent='';}
   }
@@ -136,7 +136,7 @@ function script(p: Payload): string {
   function buildMsg(d){
     var o=zopt();
     var zoneName=o&&o.value?o.getAttribute('data-name'):'';
-    var zoneNote=zonaNote.textContent||'';   // misma nota que ve el cliente (mínimo o transporte)
+    var zoneNote=(zonaNote.textContent||'').replace(zoneName+': ','');   // misma nota que ve el cliente, sin repetir la zona
     var mo=modelo.options[modelo.selectedIndex];
     var modelStr=(mo&&mo.value)?(mo.getAttribute('data-name')+' ('+mo.getAttribute('data-pax')+' '+P.plazas+')'):P.recommend;
     var f=P.f,aloja=alojaStr();

@@ -110,7 +110,7 @@ export const LANDING_ZONES = ZONES.filter((z) => !z.noLanding);
 export function transportLabel(z: Zone, locale: "es" | "en"): string {
   const es = locale === "es";
   if (!z.transport) return es ? "Transporte sujeto a cotización" : "Transport quoted separately";
-  const base = es ? `Transporte US$${z.transport} por viaje + ITBIS` : `Transport US$${z.transport} per trip + tax`;
+  const base = es ? `Transporte US$${z.transport} por viaje + ITBIS 18%` : `Transport US$${z.transport} per trip + 18% tax`;
   if (!z.transportFreeFrom) return base;
   return es
     ? `${base} · gratis en reservas de ${z.transportFreeFrom}+ días`

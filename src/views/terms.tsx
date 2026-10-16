@@ -45,7 +45,7 @@ const T: Record<
         title: "El servicio",
         body: [
           "BOLT renta golf carts con entrega y recogida en villas y residenciales dentro de sus zonas de cobertura, y vende unidades nuevas. La renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés.",
-          "El transporte (entrega + recogida) se cobra por viaje de tráiler según la tarifa publicada por zona en la página de precios, en US$ más ITBIS. Es gratis en las reservas que cumplen los días mínimos de su zona, se paga con la reserva y sigue la misma política de cancelación de la renta.",
+          "El transporte (entrega + recogida) se cobra por viaje de tráiler según la tarifa publicada por zona en la página de precios, en US$ más ITBIS. Es gratis solo en las zonas con exención publicada, cuando la reserva alcanza los días indicados para esa zona (5 o más en Puntacana Resort & Club y Cap Cana, 10 o más en Bávaro; Uvero Alto / Macao y las zonas cotizadas no tienen exención). Se paga con la reserva y sigue la misma política de cancelación de la renta.",
           "Las solicitudes de reserva se confirman siempre por una persona del equipo — ninguna reserva se confirma automáticamente. La disponibilidad está sujeta a flota.",
         ],
       },
@@ -142,7 +142,7 @@ const T: Record<
         title: "The service",
         body: [
           "BOLT rents golf carts with delivery and pickup at villas and residential communities within its coverage areas, and sells new units. Rentals include a charger, usage briefing and 24/7 WhatsApp support in English and Spanish.",
-          "Transport (delivery + pickup) is charged per trailer trip at the published rate for each zone on the pricing page, in US$ plus tax. It is free on rentals that meet the zone's minimum days, is paid with the booking and follows the same cancellation policy as the rental.",
+          "Transport (delivery + pickup) is charged per trailer trip at the published rate for each zone on the pricing page, in US$ plus tax. It is free only in zones with a published exemption, when the booking reaches the days listed for that zone (5+ in Puntacana Resort & Club and Cap Cana, 10+ in Bávaro; no exemption in Uvero Alto / Macao or quoted areas). It is paid with the booking and follows the same cancellation policy as the rental.",
           "Booking requests are always confirmed by a member of our team — no booking is ever confirmed automatically. Availability is subject to fleet.",
         ],
       },

@@ -56,14 +56,14 @@ export function pricedModels(pax: 4 | 6): PricedModel[] {
 }
 
 /** Transporte (entrega + recogida, ida y vuelta) — lista oficial del 16/oct/2026.
- *  Se cobra POR VIAJE de tráiler (2 carritos de 4 plazas, ó 1 de 6 + 1 de 4), en
+ *  Se cobra POR VIAJE de tráiler (2 carritos de 4 plazas, o 1 de 6 + 1 de 4), en
  *  US$ + ITBIS 18%. La exención es POR RESERVA: si cumple los días de la zona,
  *  todos los viajes van gratis. Tarifas y umbrales viven en ZONES (site.ts). */
 export const TRANSPORT_ZONES = ZONES.filter((z) => z.transport);
 
 export const TRANSPORT_RULES = {
   es: [
-    "Se cobra por viaje de tráiler, no por carrito: en un viaje van 2 carritos de 4 plazas, ó 1 de 6 y 1 de 4. Dos de 6 plazas son 2 viajes.",
+    "Se cobra por viaje de tráiler, no por carrito: en un viaje van 2 carritos de 4 plazas, o 1 de 6 y 1 de 4. Dos de 6 plazas son 2 viajes.",
     "Entrega gratis por reserva: si tu reserva cumple los días de la zona, todos los viajes van gratis (ej. 3 carritos a Bávaro por 12 días = US$0).",
     "Uvero Alto / Macao y las zonas fuera de ruta no tienen exención.",
     "Se paga con la reserva y sigue la misma política de cancelación de la renta.",
