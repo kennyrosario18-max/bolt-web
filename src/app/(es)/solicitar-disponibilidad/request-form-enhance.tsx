@@ -1,7 +1,8 @@
 /** Lógica del formulario de disponibilidad — vanilla, sin hidratación React
  *  (shim del PRD F3). Reglas de negocio portadas 1:1 del componente anterior:
  *   · fechas locales RD (mínimo = hoy local, no UTC),
- *   · mínimo de días por zona (aviso en vivo + bloqueo al enviar),
+ *   · mínimo de días: por zona, general (2) y de temporada alta (5); manda el mayor
+ *     (aviso en vivo + bloqueo al enviar),
  *   · transporte por zona (nota en vivo + 1 viaje en el estimado si no está exento),
  *   · links prellenados: ?modelo= ?zona= ?alojamiento= ?lugar= (ej. el link de la villa),
  *   · armado del mensaje wa.me idéntico al resumen anterior,
@@ -18,6 +19,8 @@ interface Payload {
   phone: string; header: string; plazas: string; recommend: string;
   day: string; days: string; f: Fields;
   errFechas: string; errOrden: string; errMin: string; warnMin: string; zoneNoteTpl: string;
+  errBaseMin: string; warnBaseMin: string; errHighMin: string; warnHighMin: string;
+  minBase: number; minHigh: number; high: ReadonlyArray<readonly [string, string]>;
   transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string; estTransportQuoted: string;
   estimateTpl: string; price4: number; price6: number;
   web3key: string; emailSubject: string;
@@ -39,6 +42,15 @@ function script(p: Payload): string {
   function fill(tpl,map){return tpl.replace(/\\{(\\w+)\\}/g,function(_,k){return map[k]!=null?map[k]:'';});}
   function val(id){var el=$(id);return el?el.value.trim():'';}
 
+  // ¿Alguna noche de la renta [llegada, salida) cae en temporada alta? Fechas ISO: se comparan como texto.
+  function isHigh(a,b){if(!a||!b)return false;for(var i=0;i<P.high.length;i++){if(a<=P.high[i][1]&&b>P.high[i][0])return true;}return false;}
+  // Mínimo que manda: el de la zona si es mayor; si no, el general o el de temporada alta.
+  function minRule(){
+    var o=zopt(),zm=o?+(o.getAttribute('data-mindays')||0):0;
+    var hs=isHigh(llegada.value,salida.value),base=hs?P.minHigh:P.minBase;
+    if(zm>=base)return{min:zm,kind:'zone',name:o.getAttribute('data-name')};
+    return{min:base,kind:hs?'high':'base',name:''};
+  }
   function syncDeps(){
     var o=zopt();
     var md=o?o.getAttribute('data-mindays'):'';
@@ -51,9 +63,10 @@ function script(p: Payload): string {
     else if(tp&&ff){zonaNote.textContent=fill(P.transportTpl,{price:tp,free:ff});}
     else if(tp){zonaNote.textContent=fill(P.transportNoFreeTpl,{price:tp});}
     else{zonaNote.textContent='';}
-    var d=diffDays(llegada.value,salida.value);
-    if(md&&d>0&&d<+md){
-      warn.textContent=fill(P.warnMin,{name:name,min:md,days:d,dayword:d===1?P.day:P.days});
+    var d=diffDays(llegada.value,salida.value),r=minRule();
+    if(d>0&&d<r.min){
+      var tpl=r.kind==='zone'?P.warnMin:(r.kind==='high'?P.warnHighMin:P.warnBaseMin);
+      warn.textContent=fill(tpl,{name:r.name,min:r.min,days:d,dayword:d===1?P.day:P.days});
     }else{warn.textContent='';}
     updateEstimate();
   }
@@ -172,9 +185,11 @@ function script(p: Payload): string {
     if(!la||!sa){showError(P.errFechas,!la?llegada:salida);return;}
     var d=diffDays(la,sa);
     if(d<=0){showError(P.errOrden,salida);return;}
-    var o=zopt();
-    var md=o?+(o.getAttribute('data-mindays')||0):0;
-    if(md&&d<md){showError(fill(P.errMin,{name:o.getAttribute('data-name'),min:md}),salida);return;}
+    var r=minRule();
+    if(d<r.min){
+      var etpl=r.kind==='zone'?P.errMin:(r.kind==='high'?P.errHighMin:P.errBaseMin);
+      showError(fill(etpl,{name:r.name,min:r.min}),salida);return;
+    }
     var summary=buildMsg(d);
     var url='https://wa.me/'+P.phone+'?text='+encodeURIComponent(summary);
     track('form_submit');track('form_open_whatsapp');

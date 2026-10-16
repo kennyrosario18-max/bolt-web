@@ -82,6 +82,31 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await expect(page.locator("#salida")).toHaveAttribute("aria-invalid", "true");
   });
 
+  test("renta mínima: 2 días en temporada regular y 5 en temporada alta", async ({ page }) => {
+    await page.goto("/solicitar-disponibilidad/");
+    await page.locator("#nombre").fill("Test QA");
+    await page.locator("#whatsapp").fill("+1 809 000 0000");
+    await page.locator("#email").fill("qa@example.com");
+    await page.locator("#zona").selectOption("cap-cana");
+    await page.locator("#alojamiento").selectOption("villa");
+    await page.locator("#lugar").fill("Villa QA");
+    // 1 día en temporada regular: bloquea y manda a WhatsApp.
+    await page.locator("#llegada").fill("2027-02-10");
+    await page.locator("#salida").fill("2027-02-11");
+    await expect(page.locator("#min-warning")).toContainText(/WhatsApp/);
+    await page.locator('#req-form button[type="submit"]').click();
+    await expect(page.locator("#form-error")).toContainText(/mínima es de 2 días/);
+    // 3 días que tocan la temporada alta: bloquea con mínimo 5.
+    await page.locator("#llegada").fill("2026-12-26");
+    await page.locator("#salida").fill("2026-12-29");
+    await expect(page.locator("#min-warning")).toContainText(/Temporada alta/);
+    await page.locator('#req-form button[type="submit"]').click();
+    await expect(page.locator("#form-error")).toContainText(/5 días/);
+    // 5 días en temporada alta: sin aviso.
+    await page.locator("#salida").fill("2026-12-31");
+    await expect(page.locator("#min-warning")).toBeEmpty();
+  });
+
   test("link prellenado de la villa: zona, alojamiento y lugar", async ({ page }) => {
     await page.goto("/solicitar-disponibilidad/?zona=cap-cana&alojamiento=villa&lugar=Las%20Palmas%20108");
     await expect(page.locator("#zona")).toHaveValue("cap-cana");

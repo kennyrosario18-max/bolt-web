@@ -117,6 +117,18 @@ export function transportLabel(z: Zone, locale: "es" | "en"): string {
     : `${base} · free on ${z.transportFreeFrom}+ day rentals`;
 }
 
+/** Mínimo de días para CLIENTES DIRECTOS (Kenny, 16/oct/2026): una renta de 1 día puede tumbar
+ *  una reserva de varios días de un aliado (PCC, VOLALTO). A los aliados no les aplica. */
+export const MIN_DAYS = { regular: 2, high: 5 } as const;
+
+/** Temporada alta (noches, ISO inclusive): 20 dic – 6 ene y Semana Santa (jueves a domingo). */
+export const HIGH_SEASON: ReadonlyArray<readonly [string, string]> = [
+  ["2026-12-20", "2027-01-06"],
+  ["2027-03-25", "2027-03-28"],
+  ["2027-12-20", "2028-01-06"],
+  ["2028-04-13", "2028-04-16"],
+];
+
 /** Tarifas oficiales (confirmadas jun/2026). Siempre en US$; ITBIS 18% aparte. */
 export const PRICING = {
   from4pax: 50,

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MODELS } from "@/content/models";
-import { CONTACT, ZONES, priceFrom, WEB3FORMS_ACCESS_KEY } from "@/content/site";
+import { CONTACT, HIGH_SEASON, MIN_DAYS, ZONES, priceFrom, WEB3FORMS_ACCESS_KEY } from "@/content/site";
 import { modelPrice } from "@/content/pricing";
 import { BoltIcon } from "@/components/icons";
 import { RequestFormEnhance } from "./request-form-enhance";
@@ -58,6 +58,10 @@ const T = {
     errOrden: "La fecha de salida debe ser posterior a la fecha de llegada.",
     errMin: "Para entregas en {name} el mínimo es de {min} días. Ajusta tus fechas o elige otra zona de entrega.",
     warnMin: "Para {name} el mínimo es de {min} días — tu selección actual es de {days} {dayword}.",
+    errBaseMin: "La renta mínima es de {min} días. Para un solo día, escríbenos por WhatsApp y te confirmamos si hay carro libre.",
+    warnBaseMin: "La renta mínima es de {min} días. Para un solo día, escríbenos por WhatsApp.",
+    errHighMin: "En temporada alta (20 dic – 6 ene y Semana Santa) la renta mínima es de {min} días. Ajusta tus fechas.",
+    warnHighMin: "Temporada alta: la renta mínima es de {min} días — tu selección actual es de {days} {dayword}.",
     submit: "Enviar solicitud por WhatsApp",
     legalPre: "Al enviar tu solicitud aceptas nuestros",
     legalTerms: "Términos y Condiciones",
@@ -114,6 +118,10 @@ const T = {
     errOrden: "The departure date must be after the arrival date.",
     errMin: "Deliveries in {name} require a minimum of {min} days. Adjust your dates or choose another delivery zone.",
     warnMin: "{name} requires a {min}-day minimum — your current selection is {days} {dayword}.",
+    errBaseMin: "The minimum rental is {min} days. For a single day, message us on WhatsApp and we'll check availability.",
+    warnBaseMin: "The minimum rental is {min} days. For a single day, message us on WhatsApp.",
+    errHighMin: "In high season (Dec 20 – Jan 6 and Holy Week) the minimum rental is {min} days. Please adjust your dates.",
+    warnHighMin: "High season: the minimum rental is {min} days — your current selection is {days} {dayword}.",
     submit: "Send request via WhatsApp",
     legalPre: "By sending your request you accept our",
     legalTerms: "Terms & Conditions",
@@ -145,6 +153,13 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     errOrden: t.errOrden,
     errMin: t.errMin,
     warnMin: t.warnMin,
+    errBaseMin: t.errBaseMin,
+    warnBaseMin: t.warnBaseMin,
+    errHighMin: t.errHighMin,
+    warnHighMin: t.warnHighMin,
+    minBase: MIN_DAYS.regular,
+    minHigh: MIN_DAYS.high,
+    high: HIGH_SEASON,
     zoneNoteTpl: t.zoneNoteTpl,
     transportTpl: t.transportTpl,
     transportNoFreeTpl: t.transportNoFreeTpl,

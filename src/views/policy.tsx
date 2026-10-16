@@ -58,6 +58,7 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       },
       { n: "09", title: "Fuerza mayor / clima", body: ["Ante huracán, tormenta o cierre oficial del resort, se ofrece reprogramación o crédito, no reembolso en efectivo."] },
       { n: "10", title: "Comisiones bancarias", body: ["Los reembolsos se procesan menos las comisiones bancarias o de procesador de pago aplicables."] },
+      { n: "11", title: "Renta mínima", body: ["Temporada estándar: 2 días. Temporada alta (20 dic – 6 ene y Semana Santa): 5 días. Casa de Campo y La Romana: 7 días.", "Para un solo día, escríbenos por WhatsApp: lo confirmamos solo si hay un carro libre que no esté comprometido."] },
     ],
   },
   en: {
@@ -110,6 +111,7 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       },
       { n: "09", title: "Force majeure / weather", body: ["In case of hurricane, storm or official resort closure, we offer rescheduling or credit, not a cash refund."] },
       { n: "10", title: "Bank fees", body: ["Refunds are processed less applicable bank or payment-processor fees."] },
+      { n: "11", title: "Minimum rental", body: ["Standard season: 2 days. High season (Dec 20 – Jan 6 and Holy Week): 5 days. Casa de Campo and La Romana: 7 days.", "For a single day, message us on WhatsApp: we confirm it only if a cart is free and not already committed."] },
     ],
   },
 };

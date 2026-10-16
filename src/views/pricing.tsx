@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { PRICING_FOOTNOTE, TRANSPORT_RULES, TRANSPORT_ZONES, pricedModels, withItbis } from "@/content/pricing";
 import { lineName } from "@/content/models";
-import { waLink } from "@/content/site";
+import { MIN_DAYS, waLink } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
@@ -31,6 +31,7 @@ const T = {
     freeDays: (n: number) => `${n} días`,
     transportFoot: "Tarifas en US$ por viaje de tráiler + ITBIS 18% aparte. Transporte fijo por zona, sin sorpresas.",
     weeklyNote: "7 noches o más: pregunta por la tarifa semanal y mensual con descuento.",
+    minNote: `Renta mínima: ${MIN_DAYS.regular} días (${MIN_DAYS.high} días en temporada alta). Para un solo día, escríbenos por WhatsApp.`,
     reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
     chipsLabel: "Solicita tu modelo:",
@@ -64,6 +65,7 @@ const T = {
     freeDays: (n: number) => `${n} days`,
     transportFoot: "Rates in US$ per trailer trip + 18% tax. Fixed transport by zone, no surprises.",
     weeklyNote: "7+ nights: ask about discounted weekly and monthly rates.",
+    minNote: `Minimum rental: ${MIN_DAYS.regular} days (${MIN_DAYS.high} days in high season). For a single day, message us on WhatsApp.`,
     reqCta: "Request availability",
     reqHref: "/en/request-availability",
     chipsLabel: "Request your model:",
@@ -191,6 +193,7 @@ export function PricingView({ locale }: { locale: Locale }) {
           <h2 className="font-display text-xl font-extrabold">{t.depositTitle}</h2>
           <p className="mt-3 text-sm text-inktext">{t.depositBody}</p>
           <p className="mt-2 text-sm font-semibold text-volt-dark">{t.seasonBody}</p>
+          <p className="mt-2 text-sm font-semibold text-inktext">{t.minNote}</p>
           <p className="mt-2 text-sm text-inktext">{t.weeklyNote}</p>
         </div>
 
