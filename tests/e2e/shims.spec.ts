@@ -82,6 +82,14 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await expect(page.locator("#salida")).toHaveAttribute("aria-invalid", "true");
   });
 
+  test("link prellenado de la villa: zona, alojamiento y lugar", async ({ page }) => {
+    await page.goto("/solicitar-disponibilidad/?zona=cap-cana&alojamiento=villa&lugar=Las%20Palmas%20108");
+    await expect(page.locator("#zona")).toHaveValue("cap-cana");
+    await expect(page.locator("#alojamiento")).toHaveValue("villa");
+    await expect(page.locator("#lugar")).toHaveValue("Las Palmas 108");
+    await expect(page.locator("#zona-note")).toContainText("US$60");
+  });
+
   test("muestra el estimado en vivo con fechas + modelo", async ({ page }) => {
     await page.goto("/solicitar-disponibilidad/?modelo=eco-cross-4-2");
     await page.locator("#llegada").fill("2027-01-10");

@@ -3,6 +3,7 @@
  *   · fechas locales RD (mínimo = hoy local, no UTC),
  *   · mínimo de días por zona (aviso en vivo + bloqueo al enviar),
  *   · transporte por zona (nota en vivo + 1 viaje en el estimado si no está exento),
+ *   · links prellenados: ?modelo= ?zona= ?alojamiento= ?lugar= (ej. el link de la villa),
  *   · armado del mensaje wa.me idéntico al resumen anterior,
  *   · captura dual (form_submit + form_open_whatsapp) en window.__boltEvents,
  *   · a11y: aria-invalid/aria-describedby, aria-live en avisos, role=status en éxito.
@@ -193,9 +194,14 @@ function script(p: Payload): string {
   // Preselección ?modelo y avisos iniciales. selectedIndex es una propiedad (no
   // un atributo que React reconcilie en un <select> no controlado), así que no
   // genera mismatch de hidratación.
+  function preselect(el,v){if(!el||!v)return;for(var i=0;i<el.options.length;i++){if(el.options[i].value===v){el.selectedIndex=i;return;}}}
   function initState(){
-    var pre=new URLSearchParams(location.search).get('modelo');
-    if(pre){for(var i=0;i<modelo.options.length;i++){if(modelo.options[i].value===pre){modelo.selectedIndex=i;break;}}}
+    var q=new URLSearchParams(location.search);
+    preselect(modelo,q.get('modelo'));
+    preselect(zona,q.get('zona'));
+    preselect($('alojamiento'),q.get('alojamiento'));
+    var lugar=$('lugar'),lg=q.get('lugar');
+    if(lugar&&lg&&!lugar.value)lugar.value=lg.slice(0,80);   // propiedad value: no toca el HTML
     syncDeps();
   }
   if(document.readyState==='complete')initState();
