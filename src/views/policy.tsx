@@ -45,10 +45,10 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       { n: "06", title: "Devolución anticipada", body: ["Los días no utilizados no se reembolsan; la tarifa se basa en la estadía contratada."] },
       {
         n: "07",
-        title: "Renta fraccionada / pausada",
+        title: "Renta continua",
         body: [
-          "Si se solicita pausar el uso del carrito dentro del mismo período de renta (días no consecutivos), la tarifa se cobra por el tramo completo — incluyendo los días de pausa — sin importar si el carrito permanece en la villa o es retirado temporalmente.",
-          "Si se solicita que BOLT retire y reentregue el carrito durante la pausa, aplica US$40 + ITBIS por cada viaje adicional. Mientras el carrito permanezca en la villa, la custodia y responsabilidad son del cliente.",
+          "La renta corre de forma continua desde la entrega hasta la devolución: no se pausa ni se fracciona. Los días en que no uses el carrito se cobran igual, porque queda reservado para ti.",
+          "Mientras el carrito está en tu villa, su custodia y responsabilidad son tuyas. Si pides que lo retiremos antes de la fecha, cuenta como devolución anticipada (punto 06), y volver a usarlo después es una reserva nueva, sujeta a disponibilidad.",
         ],
       },
       {
@@ -98,10 +98,10 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       { n: "06", title: "Early return", body: ["Unused days are not refunded; the rate is based on the booked rental period."] },
       {
         n: "07",
-        title: "Split / paused rental",
+        title: "Continuous rental",
         body: [
-          "Pausing use within the same rental period (non-consecutive days) is billed for the full span, including paused days, regardless of whether the cart stays at the villa or is temporarily picked up.",
-          "If BOLT is asked to pick up and redeliver during the pause, US$40 + tax applies per extra trip. While the cart stays at the villa, custody and liability remain with the client.",
+          "The rental runs continuously from delivery to return: it cannot be paused or split. Days you don't use the cart are still charged, since it stays reserved for you.",
+          "While the cart is at your villa, custody and liability are yours. If you ask us to pick it up early, it counts as an early return (point 06), and using it again later is a new booking, subject to availability.",
         ],
       },
       {

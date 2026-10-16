@@ -122,6 +122,15 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await expect(page.locator("#estimate")).toContainText(/3 noches a tarifa de temporada alta/);
   });
 
+  test("otro complejo privado o evento: transporte cotizado", async ({ page }) => {
+    await page.goto("/solicitar-disponibilidad/?modelo=eco-cross-4-2");
+    await page.locator("#zona").selectOption("otra-zona");
+    await expect(page.locator("#zona-note")).toContainText(/complejos privados/);
+    await page.locator("#llegada").fill("2027-02-10");
+    await page.locator("#salida").fill("2027-02-14");
+    await expect(page.locator("#estimate")).toContainText(/transporte cotizado aparte/);
+  });
+
   test("link prellenado de la villa: zona, alojamiento y lugar", async ({ page }) => {
     await page.goto("/solicitar-disponibilidad/?zona=cap-cana&alojamiento=villa&lugar=Las%20Palmas%20108");
     await expect(page.locator("#zona")).toHaveValue("cap-cana");

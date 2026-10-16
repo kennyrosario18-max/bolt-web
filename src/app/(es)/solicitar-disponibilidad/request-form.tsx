@@ -29,6 +29,7 @@ const T = {
     lSalida: "Fecha de salida *",
     lZona: "Zona de entrega *",
     zonaPlaceholder: "Selecciona la zona…",
+    zonaHint: "Rentamos para uso dentro de complejos privados (residenciales y resorts) de Bávaro, Punta Cana y Casa de Campo, y en eventos. No se circula por vías públicas.",
     lAlojamiento: "Tipo de alojamiento *",
     alojamientoPlaceholder: "Villa, hotel…",
     alojamientoOpts: { villa: "Villa", hotel: "Hotel", condo: "Apartamento o condominio", otro: "Otro" },
@@ -92,6 +93,7 @@ const T = {
     lSalida: "Departure date *",
     lZona: "Delivery zone *",
     zonaPlaceholder: "Select your zone…",
+    zonaHint: "We rent for use inside private communities (residences and resorts) in Bávaro, Punta Cana and Casa de Campo, and at events. No driving on public roads.",
     lAlojamiento: "Accommodation type *",
     alojamientoPlaceholder: "Villa, hotel…",
     alojamientoOpts: { villa: "Villa", hotel: "Hotel", condo: "Apartment or condo", otro: "Other" },
@@ -220,23 +222,24 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
 
         <div>
           <label className={labelCls} htmlFor="zona">{t.lZona}</label>
-          <select id="zona" name="zona" required className={inputCls}>
+          <select id="zona" name="zona" required aria-describedby="zona-hint" className={inputCls}>
             <option value="">{t.zonaPlaceholder}</option>
             {ZONES.map((z) => (
               <option
                 key={z.id}
                 value={z.id}
-                data-name={z.name}
+                data-name={es ? z.name : (z.nameEn ?? z.name)}
                 data-mindays={z.minDays ?? ""}
                 data-note={(es ? z.note : z.noteEn) ?? ""}
                 data-transport={z.transport ?? ""}
                 data-freefrom={z.transportFreeFrom ?? ""}
               >
-                {z.name}
+                {es ? z.name : (z.nameEn ?? z.name)}
                 {z.minDays ? t.minDays(z.minDays) : ""}
               </option>
             ))}
           </select>
+          <p id="zona-hint" className="mt-1.5 text-xs text-steel">{t.zonaHint}</p>
           {/* aria-live SIN hidden: la región vive en el árbol de a11y desde la carga
               (vacía se saca del flujo con la regla :empty de globals.css). */}
           <p id="zona-note" aria-live="polite" className="mt-1.5 text-xs font-semibold text-volt-dark" />

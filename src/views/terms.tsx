@@ -91,7 +91,7 @@ const T: Record<
         n: "08",
         title: "Cancelaciones, cambios y devoluciones",
         body: [
-          "Aplica la Política de Cancelación y Depósitos publicada en este sitio, que incluye los plazos de reembolso, las condiciones de temporada alta, el cambio de fecha gratuito con 48 horas de aviso y las reglas de devolución anticipada y renta pausada. La misma política aplica al cargo de transporte, que se paga junto con la reserva.",
+          "Aplica la Política de Cancelación y Depósitos publicada en este sitio, que incluye los plazos de reembolso, las condiciones de temporada alta, el cambio de fecha gratuito con 48 horas de aviso y las reglas de devolución anticipada y renta continua (la renta no se pausa ni se fracciona). La misma política aplica al cargo de transporte, que se paga junto con la reserva.",
         ],
       },
       {
@@ -188,7 +188,7 @@ const T: Record<
         n: "08",
         title: "Cancellations, changes and returns",
         body: [
-          "The Cancellation & Deposit Policy published on this site applies, including refund windows, high-season conditions, the free date change with 48-hour notice, and the rules for early returns and paused rentals. The same policy applies to the transport charge, which is paid with the booking.",
+          "The Cancellation & Deposit Policy published on this site applies, including refund windows, high-season conditions, the free date change with 48-hour notice, and the rules for early returns and continuous rental (rentals cannot be paused or split). The same policy applies to the transport charge, which is paid with the booking.",
         ],
       },
       {

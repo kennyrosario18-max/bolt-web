@@ -63,6 +63,7 @@ function script(p: Payload): string {
     if(md&&note){zonaNote.textContent=fill(P.zoneNoteTpl,{name:name,min:md,note:note});}
     else if(tp&&ff){zonaNote.textContent=fill(P.transportTpl,{price:tp,free:ff});}
     else if(tp){zonaNote.textContent=fill(P.transportNoFreeTpl,{price:tp});}
+    else if(note){zonaNote.textContent=note;}
     else{zonaNote.textContent='';}
     var d=diffDays(llegada.value,salida.value),r=minRule();
     if(d>0&&d<r.min){

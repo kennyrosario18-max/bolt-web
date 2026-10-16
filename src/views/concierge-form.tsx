@@ -153,7 +153,7 @@ export function ConciergeForm({ locale = "es" }: { locale?: Locale }) {
             <select id="cg-zona" name="zona" required className={inputCls}>
               <option value="">{t.zonaPlaceholder}</option>
               {ZONES.map((z) => (
-                <option key={z.id} value={z.id} data-name={z.name}>{z.name}</option>
+                <option key={z.id} value={z.id} data-name={locale === "es" ? z.name : (z.nameEn ?? z.name)}>{locale === "es" ? z.name : (z.nameEn ?? z.name)}</option>
               ))}
             </select>
           </div>

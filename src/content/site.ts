@@ -24,6 +24,8 @@ export function waLink(message: string): string {
 export interface Zone {
   id: string;
   name: string;
+  /** Nombre en inglés cuando no es un nombre propio. */
+  nameEn?: string;
   short: string;
   blurb: string;
   blurbEn: string;
@@ -100,6 +102,17 @@ export const ZONES: Zone[] = [
     minDays: 7,
     note: "Transporte sujeto a cotización.",
     noteEn: "Transport quoted separately.",
+  },
+  {
+    id: "otra-zona",
+    name: "Otro complejo privado o evento (cotizar)",
+    nameEn: "Other private community or event (quote)",
+    short: "Otro",
+    blurb: "Complejos privados de Bávaro, Punta Cana y Casa de Campo que no están en la lista, y eventos.",
+    blurbEn: "Private communities in Bávaro, Punta Cana and Casa de Campo not listed above, and events.",
+    note: "Solo rentamos para uso dentro de complejos privados (residenciales y resorts) y en eventos; el transporte se cotiza.",
+    noteEn: "We only rent for use inside private communities (residences and resorts) and at events; transport is quoted.",
+    noLanding: true,
   },
 ];
 
