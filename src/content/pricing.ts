@@ -18,7 +18,7 @@ export const MODEL_PRICES: Record<string, number> = {
   "cc-precedent-2-2": 50,
   "cc-tempo-2-2": 60,
   "zycar-4": 65,
-  "zycar-4-2": 75,
+  "zycar-4-2": 100,
 };
 
 /** Precio base US$/día de un modelo. */

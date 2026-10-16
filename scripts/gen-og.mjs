@@ -13,7 +13,7 @@ await mkdir(OUT, { recursive: true });
 const MODEL_PRICES = {
   "eco-cross-4": 65, "eco-cross-4-2": 85, "eco-plus-2-2": 60, "eco-plus-4-2": 75,
   "eco-track-4-2": 100, "eco-sport-4-2": 75, "cc-limo-4-2": 65, "cc-precedent-2-2": 50,
-  "cc-tempo-2-2": 60, "zycar-4": 65, "zycar-4-2": 75,
+  "cc-tempo-2-2": 60, "zycar-4": 65, "zycar-4-2": 100,
 };
 const modelPrice = (id) => MODEL_PRICES[id] ?? 50;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

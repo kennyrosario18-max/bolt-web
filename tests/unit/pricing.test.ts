@@ -22,7 +22,7 @@ const OFFICIAL: Record<string, number> = {
   "cc-limo-4-2": 65,
   "eco-plus-4-2": 75,
   "eco-sport-4-2": 75,
-  "zycar-4-2": 75,
+  "zycar-4-2": 100,
   "eco-cross-4-2": 85,
   "eco-track-4-2": 100,
 };
@@ -47,6 +47,10 @@ describe("pricing — fuente única", () => {
 
   it("Zycar 4 (todos hacia adelante) cuesta lo mismo que el ECO Cross 4 (regla de Kenny, 16/oct/2026)", () => {
     expect(modelPrice("zycar-4")).toBe(modelPrice("eco-cross-4"));
+  });
+
+  it("Zycar 4+2 (6 personas, levantado) cuesta lo mismo que el ECO Track 4+2 (regla de Kenny, 16/oct/2026)", () => {
+    expect(modelPrice("zycar-4-2")).toBe(modelPrice("eco-track-4-2"));
   });
 
   it("mínimos por capacidad: 4 plazas desde US$50, 6 plazas desde US$65", () => {

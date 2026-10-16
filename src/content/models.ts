@@ -52,7 +52,7 @@ export const DESC_EN: Record<string, string> = {
   "cc-precedent-2-2": "Classic Precedent 2+2 with rear-facing seats for 4 passengers.",
   "cc-tempo-2-2": "Club Car Tempo: modern design, smooth quiet ride, 2+2 seats for 4.",
   "zycar-4": "Compact Zycar for 4 passengers with all seats facing forward — the modern line with tech details.",
-  "zycar-4-2": "Extended Zycar for 6 passengers with contemporary design.",
+  "zycar-4-2": "Lifted Zycar for 6 passengers, on par with the ECO Track: contemporary design and tech details.",
 };
 
 /** Qué incluye cada renta (aplica a toda la flota). */
