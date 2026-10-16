@@ -449,20 +449,6 @@
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://boltgolfcars.com/alquiler/la-romana/</loc>
-<xhtml:link rel="alternate" hreflang="es" href="https://boltgolfcars.com/alquiler/la-romana/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://boltgolfcars.com/en/rentals/la-romana/" />
-<xhtml:link rel="alternate" hreflang="x-default" href="https://boltgolfcars.com/en/rentals/la-romana/" />
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://boltgolfcars.com/en/rentals/la-romana/</loc>
-<xhtml:link rel="alternate" hreflang="es" href="https://boltgolfcars.com/alquiler/la-romana/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://boltgolfcars.com/en/rentals/la-romana/" />
-<xhtml:link rel="alternate" hreflang="x-default" href="https://boltgolfcars.com/en/rentals/la-romana/" />
-<priority>0.8</priority>
-</url>
-<url>
 <loc>https://boltgolfcars.com/blog/</loc>
 <xhtml:link rel="alternate" hreflang="es" href="https://boltgolfcars.com/blog/" />
 <xhtml:link rel="alternate" hreflang="en" href="https://boltgolfcars.com/en/blog/" />
