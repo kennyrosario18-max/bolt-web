@@ -153,7 +153,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Qué modelo elegir: familias, grupos y el ECO Cross premium",
         "paragraphs": [
-          "La flota de BOLT tiene 11 modelos en 3 líneas — ECO (Cross, Plus, Sport, Track), Club Car (Precedent, Tempo, Limo) y Zycar — en dos formatos: 4 plazas (configuración 2+2, hasta 360 kg) y 6 plazas (4+2, hasta 540 kg). La regla práctica es simple: si viajan más de 4 personas, o son 4 adultos con niños y bolsos, ve directo al de 6 plazas. Dentro de las comunidades todos deben ir sentados, así que conviene contar los asientos antes de reservar, no después.",
+          "La flota de BOLT tiene 11 modelos en 3 líneas — ECO (Cross, Plus, Sport, Track), Club Car (Precedent, Tempo, Limo) y Zycar — en dos formatos: 4 plazas (2+2 o todos mirando hacia adelante, hasta 360 kg) y 6 plazas (4+2, hasta 540 kg). La regla práctica es simple: si viajan más de 4 personas, o son 4 adultos con niños y bolsos, ve directo al de 6 plazas. Dentro de las comunidades todos deben ir sentados, así que conviene contar los asientos antes de reservar, no después.",
           "Para familias y grupos en Cap Cana, la opción tope es el ECO Cross premium: 6 plazas, batería de litio de largo alcance de 150 Ah con 85 a 95 km de autonomía por carga y asientos de lujo. Es una opción pensada para huéspedes exigentes, porque prácticamente elimina la preocupación por la batería incluso en días de mucho movimiento.",
           "La autonomía varía según el tipo de batería, y vale la pena tenerla clara al elegir:"
         ],
@@ -513,7 +513,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Which model to choose: families, groups and the premium ECO Cross",
         "paragraphs": [
-          "BOLT's fleet has 11 models across 3 lines — ECO (Cross, Plus, Sport, Track), Club Car (Precedent, Tempo, Limo) and Zycar — in two formats: 4 seats (2+2 configuration, up to 360 kg) and 6 seats (4+2, up to 540 kg). The practical rule is simple: if more than 4 people are travelling, or you're 4 adults with kids and bags, go straight for the 6-seater. Inside the communities everyone must be seated, so it's worth counting seats before booking, not after.",
+          "BOLT's fleet has 11 models across 3 lines — ECO (Cross, Plus, Sport, Track), Club Car (Precedent, Tempo, Limo) and Zycar — in two formats: 4 seats (2+2 or all forward-facing, up to 360 kg) and 6 seats (4+2, up to 540 kg). The practical rule is simple: if more than 4 people are travelling, or you're 4 adults with kids and bags, go straight for the 6-seater. Inside the communities everyone must be seated, so it's worth counting seats before booking, not after.",
           "For families and groups in Cap Cana, the top option is the premium ECO Cross: 6 seats, a 150 Ah long-range lithium battery with 85 to 95 km of range per charge and luxury seats. It's built for demanding guests, because it practically removes any worry about the battery even on busy days.",
           "Range varies by battery type, and it's worth being clear on it when choosing:"
         ],

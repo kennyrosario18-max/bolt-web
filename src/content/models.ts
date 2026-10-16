@@ -51,7 +51,7 @@ export const DESC_EN: Record<string, string> = {
   "cc-limo-4-2": "The Precedent limo configuration \u2014 the most spacious, ideal for events.",
   "cc-precedent-2-2": "Classic Precedent 2+2 with rear-facing seats for 4 passengers.",
   "cc-tempo-2-2": "Club Car Tempo: modern design, smooth quiet ride, 2+2 seats for 4.",
-  "zycar-4": "The Zycar line — a modern build with tech details. Seats 4 passengers in comfort.",
+  "zycar-4": "Compact Zycar for 4 passengers with all seats facing forward — the modern line with tech details.",
   "zycar-4-2": "Extended Zycar for 6 passengers with contemporary design.",
 };
 

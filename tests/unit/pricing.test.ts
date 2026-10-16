@@ -45,6 +45,10 @@ describe("pricing — fuente única", () => {
     expect(MODEL_PRICES).toEqual(OFFICIAL);
   });
 
+  it("Zycar 4 (todos hacia adelante) cuesta lo mismo que el ECO Cross 4 (regla de Kenny, 16/oct/2026)", () => {
+    expect(modelPrice("zycar-4")).toBe(modelPrice("eco-cross-4"));
+  });
+
   it("mínimos por capacidad: 4 plazas desde US$50, 6 plazas desde US$65", () => {
     expect(priceFromPax(4)).toBe(50);
     expect(priceFromPax(6)).toBe(65);
