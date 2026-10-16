@@ -11,14 +11,14 @@ const T = {
     intro: "Renta y venta de carritos de golf en Puntacana Resort & Club, Cap Cana y Bávaro.",
     misionTitle: "Misión",
     mision:
-      "Resolver la movilidad en Punta Cana de principio a fin: rentamos carritos de golf confiables, entregados donde está el cliente, y vendemos unidades nuevas para villas, familias y negocios que quieren su propio carrito — siempre con confirmación rápida, precios claros y atención personalizada de gente local que responde.",
+      "Resolver la movilidad en Punta Cana de principio a fin: rentamos carritos de golf confiables, entregados en tu villa dentro de nuestras zonas, y vendemos unidades nuevas para villas, familias y negocios que quieren su propio carrito — siempre con confirmación rápida, precios claros y atención personalizada de gente local que responde.",
     visionTitle: "Visión",
     vision:
       "Ser la marca de movilidad turística líder del este dominicano: la primera opción para rentar, y también para comprar, carritos de golf en Puntacana Resort & Club, Cap Cana y Bávaro — reconocidos por velocidad, transparencia, una flota impecable y un respaldo post-venta que ningún importador ofrece.",
     valoresTitle: "Valores",
     valores: [
       { t: "Velocidad con seriedad.", d: "Respondemos en minutos y cumplimos lo que confirmamos. El rayo es promesa, no adorno." },
-      { t: "Claridad total.", d: "Precios publicados con ITBIS, políticas por escrito, facturación formal con comprobante fiscal. En renta y en venta: sin sorpresas ni letra pequeña." },
+      { t: "Claridad total.", d: "Precios publicados con el ITBIS a la vista, políticas por escrito, facturación formal con comprobante fiscal. En renta y en venta: sin sorpresas ni letra pequeña." },
       { t: "Servicio local, estándar internacional.", d: "Atendemos en español e inglés, con la calidez dominicana y la formalidad que espera el huésped extranjero." },
       { t: "Seguridad primero.", d: "Unidades mantenidas y entregadas en condiciones óptimas, siempre." },
       { t: "Relaciones que crecen.", d: "Aliados, clientes de renta y compradores: cada cliente es una relación de años, no una transacción." },
@@ -61,14 +61,14 @@ const T = {
     intro: "Golf cart rental and sales in Puntacana Resort & Club, Cap Cana and Bávaro.",
     misionTitle: "Mission",
     mision:
-      "To solve mobility in Punta Cana end to end: we rent reliable golf carts delivered wherever the client is, and we sell new units to villas, families and businesses that want their own cart — always with fast confirmation, clear pricing and personal attention from local people who answer.",
+      "To solve mobility in Punta Cana end to end: we rent reliable golf carts delivered to your villa across our zones, and we sell new units to villas, families and businesses that want their own cart — always with fast confirmation, clear pricing and personal attention from local people who answer.",
     visionTitle: "Vision",
     vision:
       "To be the leading tourist-mobility brand of the Dominican east: the first choice to rent — and to buy — golf carts in Puntacana Resort & Club, Cap Cana and Bávaro, known for speed, transparency, an impeccable fleet and after-sales backing no importer offers.",
     valoresTitle: "Values",
     valores: [
       { t: "Speed with seriousness.", d: "We reply in minutes and deliver what we confirm. The lightning bolt is a promise, not a decoration." },
-      { t: "Total clarity.", d: "Published prices with tax, written policies, formal tax-receipt invoicing. Renting or buying: no surprises, no fine print." },
+      { t: "Total clarity.", d: "Published prices with tax shown, written policies, formal tax-receipt invoicing. Renting or buying: no surprises, no fine print." },
       { t: "Local service, international standard.", d: "We serve in Spanish and English, with Dominican warmth and the formality foreign guests expect." },
       { t: "Safety first.", d: "Maintained units delivered in optimal condition, always." },
       { t: "Relationships that grow.", d: "Partners, renters and buyers: every client is a years-long relationship, not a transaction." },
@@ -86,7 +86,7 @@ const T = {
     compraTitle: "And every buyer, additionally, to",
     compra: [
       "Honest advice on the right model for their real use",
-      "A new unit with written warranty and usage induction",
+      "A new unit with written warranty and usage briefing",
       "Local after-sales backing: maintenance, parts and support from the same team that runs the BOLT fleet daily",
     ],
     culturaTitle: "Culture · What we're like inside",

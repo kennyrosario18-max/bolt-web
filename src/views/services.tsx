@@ -96,7 +96,7 @@ const T = {
     ],
     partnersSub: "Tarifa preferencial · cuenta mensual a crédito para aliados aprobados · disponibilidad prioritaria · reporte por villa.",
     partnersCta: "Ask for the partner rate →",
-    partnersMsg: "Hola BOLT, manejo villas y quiero información del Programa de Aliados.",
+    partnersMsg: "Hi BOLT, I manage villas and I'd like information about the Partner Program.",
   },
 } as const;
 

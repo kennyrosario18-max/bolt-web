@@ -32,7 +32,7 @@ const T = {
     freeDays: (n: number) => `${n} días`,
     transportFoot: "Tarifas en US$ por viaje de tráiler + ITBIS 18% aparte. Transporte fijo por zona, sin sorpresas.",
     weeklyNote: "7 noches o más: pregunta por la tarifa semanal y mensual con descuento.",
-    minNote: `Renta mínima: ${MIN_DAYS.regular} días (${MIN_DAYS.high} días en temporada alta). Para un solo día, escríbenos por WhatsApp.`,
+    minNote: `Renta mínima: ${MIN_DAYS.regular} días (${MIN_DAYS.high} en temporada alta; 7 en Casa de Campo y La Romana). Para un solo día, escríbenos por WhatsApp.`,
     reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
     chipsLabel: "Solicita tu modelo:",
@@ -67,7 +67,7 @@ const T = {
     freeDays: (n: number) => `${n} days`,
     transportFoot: "Rates in US$ per trailer trip + 18% tax. Fixed transport by zone, no surprises.",
     weeklyNote: "7+ nights: ask about discounted weekly and monthly rates.",
-    minNote: `Minimum rental: ${MIN_DAYS.regular} days (${MIN_DAYS.high} days in high season). For a single day, message us on WhatsApp.`,
+    minNote: `Minimum rental: ${MIN_DAYS.regular} days (${MIN_DAYS.high} in high season; 7 in Casa de Campo and La Romana). For a single day, message us on WhatsApp.`,
     reqCta: "Request availability",
     reqHref: "/en/request-availability",
     chipsLabel: "Request your model:",
@@ -123,7 +123,7 @@ export function PricingView({ locale }: { locale: Locale }) {
                       <h3 className="font-display text-lg font-extrabold">{m.name}</h3>
                       <p className="mt-1 text-sm text-steel">{lineName(m.line, locale)}</p>
                     </div>
-                    <div className="text-right">
+                    <div className="ml-auto text-right">
                       <p className="font-display text-3xl font-extrabold tabular-nums text-ink">
                         US${m.price}
                         <span className="text-sm font-semibold text-steel">{t.perDay}</span>
@@ -147,37 +147,37 @@ export function PricingView({ locale }: { locale: Locale }) {
         <hr className="divider-volt mt-12 border-0" />
 
         {/* Transporte — lista oficial por zona (16/oct/2026); tarifas en ZONES. */}
-        <div className="reveal mt-8 rounded-card bg-cream p-7">
+        <div className="reveal mt-8 rounded-card bg-cream p-4 sm:p-7">
           <h2 className="font-display text-xl font-extrabold">
             {t.deliveryTitle}
             <span className="text-base font-semibold text-steel">{t.deliverySub}</span>
           </h2>
           <p className="mt-2 text-sm text-inktext">{t.transportLead}</p>
           <div className="mt-4 overflow-x-auto rounded-lg border border-line bg-white">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-ink text-xs uppercase tracking-[0.1em] text-white">
+            <table className="w-full text-left text-xs sm:text-sm">
+              <thead className="bg-ink text-[11px] uppercase tracking-[0.06em] text-white sm:text-xs sm:tracking-[0.1em]">
                 <tr>
-                  <th scope="col" className="px-4 py-3 font-bold">{t.thZone}</th>
-                  <th scope="col" className="px-4 py-3 text-right font-bold">{t.thTrip}</th>
-                  <th scope="col" className="px-4 py-3 text-right font-bold">{t.thFree}</th>
+                  <th scope="col" className="px-2 py-3 font-bold sm:px-4">{t.thZone}</th>
+                  <th scope="col" className="px-2 py-3 text-right font-bold sm:px-4">{t.thTrip}</th>
+                  <th scope="col" className="px-2 py-3 text-right font-bold sm:px-4">{t.thFree}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
                 {TRANSPORT_ZONES.map((z) => (
                   <tr key={z.id}>
-                    <td className="px-4 py-3">
+                    <td className="px-2 py-3 sm:px-4">
                       <span className="font-semibold text-ink">{z.name}</span>
                       {z.landmarks ? <span className="block text-xs text-steel">{z.landmarks}</span> : null}
                     </td>
-                    <td className="px-4 py-3 text-right font-display text-lg font-extrabold tabular-nums text-ink">US${z.transport}</td>
-                    <td className="px-4 py-3 text-right tabular-nums text-inktext">
+                    <td className="px-2 py-3 text-right font-display text-base font-extrabold tabular-nums text-ink sm:px-4 sm:text-lg">US${z.transport}</td>
+                    <td className="px-2 py-3 text-right tabular-nums text-inktext sm:px-4">
                       {z.transportFreeFrom ? t.freeDays(z.transportFreeFrom) : t.noFree}
                     </td>
                   </tr>
                 ))}
                 <tr>
-                  <td className="px-4 py-3 font-semibold text-ink">{t.otherZones}</td>
-                  <td className="px-4 py-3 text-right text-inktext">{t.quote}</td>
+                  <td className="px-2 py-3 font-semibold text-ink sm:px-4">{t.otherZones}</td>
+                  <td className="px-2 py-3 text-right text-inktext sm:px-4">{t.quote}</td>
                   <td className="px-4 py-3 text-right text-inktext">{t.noFree}</td>
                 </tr>
               </tbody>

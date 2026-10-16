@@ -331,7 +331,7 @@ export function PartnersView({ locale = "es" }: { locale?: Locale }) {
               className="shine lift mt-5 inline-flex items-center gap-1.5 rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
             >
               <BoltIcon className="inline-block align-[-0.15em]" size={15} />
-              {t.ctaBtn} · {CONTACT.phoneDisplay}
+              {t.ctaBtn} · <span className="whitespace-nowrap">{CONTACT.phoneDisplay}</span>
             </a>
           </div>
         </div>

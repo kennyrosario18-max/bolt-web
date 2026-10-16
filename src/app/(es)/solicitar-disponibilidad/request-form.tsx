@@ -13,7 +13,7 @@ import type { Locale } from "@/lib/i18n";
 const T = {
   es: {
     success:
-      "Gracias por su solicitud. Nuestro equipo verificará la disponibilidad y se comunicará con usted lo antes posible para confirmar su reserva y ofrecerle la mejor opción disponible.",
+      "Gracias por tu solicitud. Nuestro equipo verificará la disponibilidad y se comunicará contigo lo antes posible para confirmar tu reserva y ofrecerte la mejor opción disponible.",
     sentTitle: "Solicitud enviada",
     waFallback: "Si WhatsApp no se abrió automáticamente, escríbenos directo al",
     header: "⚡ SOLICITUD DE DISPONIBILIDAD — boltgolfcars.com",

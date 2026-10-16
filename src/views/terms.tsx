@@ -29,7 +29,7 @@ const T: Record<
   es: {
     kicker: "Legal",
     h1: "Términos y Condiciones",
-    updated: "Última actualización: 6 de julio de 2026",
+    updated: "Última actualización: 16 de octubre de 2026",
     intro:
       "Estos términos rigen la renta de golf carts y los servicios de BOLT. Al enviar una solicitud y confirmar una reserva con el pago del depósito, el cliente acepta estos términos junto con la Política de Cancelación y Depósitos.",
     sections: [
@@ -126,7 +126,7 @@ const T: Record<
   en: {
     kicker: "Legal",
     h1: "Terms & Conditions",
-    updated: "Last updated: July 6, 2026",
+    updated: "Last updated: October 16, 2026",
     intro:
       "These terms govern BOLT golf cart rentals and services. By sending a request and confirming a booking with the deposit payment, the client accepts these terms together with the Cancellation & Deposit Policy.",
     sections: [
@@ -202,7 +202,7 @@ const T: Record<
         n: "10",
         title: "New unit sales",
         body: [
-          "New units are sold with a written warranty and usage induction. The specific conditions of each sale (model, price, warranty and delivery) are agreed in writing in the corresponding quote.",
+          "New units are sold with a written warranty and usage briefing. The specific conditions of each sale (model, price, warranty and delivery) are agreed in writing in the corresponding quote.",
         ],
       },
       {

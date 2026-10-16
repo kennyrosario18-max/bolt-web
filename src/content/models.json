@@ -99,7 +99,7 @@
     "cap": "540 kg",
     "range_lead": "25–40 km",
     "range_li": "85–95 km",
-    "desc": "Variante todoterreno con suspensión reforzada, para 6 pasajeros.",
+    "desc": "Variante todoterreno con suspensión reforzada y litio de 150 Ah, para 6 pasajeros.",
     "pax": 6,
     "batteries": [
       {
@@ -117,7 +117,7 @@
     "cap": "540 kg",
     "range_lead": "25–40 km",
     "range_li": "60–70 km",
-    "desc": "ECO Sport extendido para grupos. Look agresivo, capacidad de 6.",
+    "desc": "ECO Sport extendido para grupos. Look agresivo, capacidad de 6 y hasta 540 kg.",
     "pax": 6,
     "batteries": [
       {

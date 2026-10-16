@@ -28,6 +28,9 @@ export default function RequestPageEn() {
             Fill in the form and our team will verify availability for your model. No booking is
             ever confirmed automatically — a real person always replies.
           </p>
+          <p lang="es" className="mt-1 text-sm italic text-white/60">
+            Envía tu solicitud — nuestro equipo confirma la disponibilidad personalmente.
+          </p>
           <p className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-volt px-4 py-1.5 text-sm font-bold text-ink">
             <CheckIcon size={15} /> We confirm your availability the same day
           </p>

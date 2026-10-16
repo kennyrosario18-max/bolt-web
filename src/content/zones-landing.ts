@@ -121,7 +121,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       { q: "Do you deliver inside Puntacana Resort & Club?", a: "Yes, to villas and residences across the resort. We coordinate delivery with your host, concierge or property manager for access." },
       { q: "Can I drive anywhere in the resort?", a: "The golf cart is for use inside residential areas, villas and permitted resort areas, following the resort's internal rules and BOLT's 25 km/h limit in residential zones." },
       { q: "How far in advance should I book?", a: "We recommend requesting availability as soon as you have your dates — in high season the fleet sells out. We confirm on WhatsApp as soon as possible." },
-      { q: "Is delivery free inside the resort?", a: "Transport (delivery + pickup) in Puntacana Resort & Club is US$60 + 18% tax per trailer trip, paid with the booking. On rentals of 5 days or more it's free — every trip on that booking." },
+      { q: "Is there a delivery fee inside the resort?", a: "Transport (delivery + pickup) in Puntacana Resort & Club is US$60 + 18% tax per trailer trip, paid with the booking. On rentals of 5 days or more it's free — every trip on that booking." },
     ],
   },
   {
@@ -166,11 +166,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         h: "El modelo indicado para tu grupo",
         hEn: "The right model for your group",
         p: [
-          "Para parejas o grupos pequeños, un modelo de 4 plazas es cómodo y económico, desde US$50 por día. Para cinco o seis personas recomendamos la línea ECO de 6 plazas (4+2), con espacio real para todos y los bolsos, desde US$65 por día según el modelo.",
+          "Para parejas o grupos pequeños, un modelo de 4 plazas es cómodo y económico, desde US$50 por día. Para cinco o seis personas recomendamos la línea ECO de 6 plazas (4+2), con espacio real para todos y los bolsos, desde US$75 por día según el modelo.",
           "Si buscan máximo confort y autonomía para todo el día, el ECO Cross premium monta batería de litio de largo alcance (150 Ah) y rinde hasta 95 km por carga — ideal para grupos que se mueven mucho. ¿No sabes cuál elegir? Pide una recomendación al enviar tu solicitud y te orientamos por WhatsApp el mismo día según tu grupo y tus planes.",
         ],
         pEn: [
-          "For couples or small groups, a 4-seat model is comfortable and affordable, from US$50 a day. For five or six people we recommend the 6-seat ECO line (4+2), with real room for everyone and the bags, from US$65 a day depending on the model.",
+          "For couples or small groups, a 4-seat model is comfortable and affordable, from US$50 a day. For five or six people we recommend the 6-seat ECO line (4+2), with real room for everyone and the bags, from US$75 a day depending on the model.",
           "For maximum comfort and all-day range, the premium ECO Cross runs a long-range lithium battery (150 Ah) and does up to 95 km per charge — ideal for groups that move around a lot. Not sure which to pick? Ask for a recommendation in your request and we'll guide you on WhatsApp the same day based on your group and plans.",
         ],
       },
@@ -202,7 +202,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     faqsEn: [
       { q: "Do you deliver to any community in Cap Cana?", a: "We deliver to villas and residences inside Cap Cana. Tell us the name of your community or villa in your request and we coordinate access." },
       { q: "Which model is best for a large group?", a: "For 5 or 6 people we recommend the 6-seat ECO line (4+2). For maximum comfort, the premium ECO Cross with long-range lithium (150 Ah) does up to 95 km per charge." },
-      { q: "Is delivery free?", a: "Transport (delivery + pickup) in Cap Cana is US$60 + 18% tax per trailer trip, paid with the booking. On rentals of 5 days or more it's free — every trip on that booking." },
+      { q: "Is there a delivery fee?", a: "Transport (delivery + pickup) in Cap Cana is US$60 + 18% tax per trailer trip, paid with the booking. On rentals of 5 days or more it's free — every trip on that booking." },
       { q: "How long does the battery last?", a: "It depends on the model and your usage, but a full charge easily covers a normal day inside Cap Cana. Long-range lithium models go further; we deliver the cart fully charged." },
     ],
   },
@@ -304,7 +304,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     sections: [
       {
         h: "Un golf cart para vivir Casa de Campo",
-        hEn: "A golf cart to live Casa de Campo",
+        hEn: "A golf cart to enjoy Casa de Campo",
         p: [
           "Casa de Campo es una de las comunidades residenciales más extensas del Caribe: villas amplias, campos de golf y grandes áreas verdes separadas por trayectos considerables. Moverse cómodamente por dentro pide un vehículo propio, y el golf cart es exactamente eso — la manera relajada de ir de la villa a la playa, al golf o a cenar sin depender de traslados.",
           "Para una estadía en familia o con amigos, tener el carrito estacionado en tu villa cambia por completo la experiencia: organizas el día a tu ritmo y aprovechas cada rincón de la comunidad sin fricción. Por eso ofrecemos nuestra flota también aquí, con el mismo estándar de servicio de Punta Cana.",

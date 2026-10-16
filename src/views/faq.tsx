@@ -44,7 +44,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿Cuántas personas caben?",
-      a: "Los modelos de 4 plazas (2+2) cargan hasta 360 kg y los de 6 plazas (4+2) hasta 540 kg. Todos los pasajeros deben ir sentados; no se permite exceder la capacidad.",
+      a: "Los modelos de 4 plazas (2+2 o todos mirando hacia adelante) cargan hasta 360 kg y los de 6 plazas (4+2) hasta 540 kg. Todos los pasajeros deben ir sentados; no se permite exceder la capacidad.",
     },
     {
       q: "¿Un “día de renta” es un día calendario?",
@@ -65,7 +65,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
       a: "4-seaters start at US$50/day and 6-seaters at US$65/day. Tax (18% ITBIS) is shown per model on the pricing page. Transport is charged separately by zone (from US$60 per trip, free on longer stays). In high season (Dec 20 – Jan 6 & Holy Week) each model's high-season rate applies, published on the pricing page. For 7+ nights, ask about discounted weekly and monthly rates.",
     },
     {
-      q: "Is delivery free?",
+      q: "Is there a delivery fee?",
       a: "Transport is a fixed round-trip fee (delivery + pickup) per trailer trip: US$60 to Puntacana Resort & Club, Cap Cana and Bávaro, and US$120 to Uvero Alto / Macao; other areas are quoted. It's free on bookings of 5+ days (Puntacana Resort & Club and Cap Cana) and 10+ days (Bávaro). Paid with the booking; 18% tax added.",
     },
     {
@@ -94,7 +94,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "How many people fit?",
-      a: "4-seaters (2+2) carry up to 360 kg and 6-seaters (4+2) up to 540 kg. All passengers must remain seated; exceeding capacity is not allowed.",
+      a: "4-seaters (2+2 or all forward-facing) carry up to 360 kg and 6-seaters (4+2) up to 540 kg. All passengers must remain seated; exceeding capacity is not allowed.",
     },
     {
       q: "Is a “rental day” a calendar day?",

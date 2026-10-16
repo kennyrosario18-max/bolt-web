@@ -4,7 +4,7 @@ import { getModel } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
 import { BoltIcon, CheckIcon } from "@/components/icons";
 import { ZONE_LANDINGS, type ZoneLanding } from "@/content/zones-landing";
-import { transportLabel } from "@/content/site";
+import { PRICING, transportLabel } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -153,7 +153,7 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
         ))}
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-4 sm:px-6">
+      <section className="mx-auto mt-6 max-w-6xl px-4 pb-4 sm:px-6">
         <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
           {t.recA}
           <span className="hl">{t.recB}</span>
@@ -164,6 +164,7 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
             <ModelCard key={m.id} model={m} locale={locale} />
           ))}
         </div>
+        <p className="mt-3 text-xs text-steel">{es ? PRICING.itbisNote : PRICING.itbisNoteEn}</p>
         <Link
           href={t.allFleetHref}
           className="mt-6 inline-block text-sm font-bold text-ink underline underline-offset-4 hover:text-volt-dark"

@@ -66,7 +66,7 @@ export const ARTICLES: BlogArticle[] = [
           "Para un grupo activo que sale temprano y regresa de noche, un modelo de litio te da tranquilidad de sobra. Si no estás seguro, dinos cuántos son y qué planes tienen: te recomendamos el modelo que mejor encaje."
         ],
         "bullets": [
-          "4 plazas (2+2, hasta 360 kg): ideal para parejas o familias pequeñas. Desde US$50/día según el modelo.",
+          "4 plazas (2+2 o todos mirando hacia adelante, hasta 360 kg): ideal para parejas o familias pequeñas. Desde US$50/día según el modelo.",
           "6 plazas (4+2, hasta 540 kg): la mejor opción para familias grandes o grupos de amigos. Desde US$65/día según el modelo — el ECO Cross premium, con batería de litio 150 Ah y asientos de lujo, va a US$85/día.",
           "Plomo-ácido: 25–40 km por carga.",
           "Litio estándar (105 Ah): 60–70 km por carga.",
@@ -247,7 +247,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "La pregunta que define tu reserva",
         "paragraphs": [
           "Si ya decidiste moverte en golf cart durante tu estadía en Punta Cana —buena decisión—, la siguiente pregunta llega sola: ¿de 4 plazas o de 6? En BOLT la escuchamos todos los días, y la respuesta casi nunca depende de un solo factor. Influyen cuántos son, cuánto equipaje cargan, si viajan con niños o abuelos, tu presupuesto y hasta la fecha del viaje.",
-          "Lo primero es entender la diferencia básica. El golf cart de 4 plazas tiene configuración 2+2: dos asientos mirando al frente y dos hacia atrás, con capacidad de carga de 360 kg. El de 6 plazas es 4+2: cuatro asientos al frente y dos atrás, con capacidad de 540 kg. Esos 180 kg de diferencia importan más de lo que parece, y aquí te explicamos por qué."
+          "Lo primero es entender la diferencia básica. El golf cart de 4 plazas suele ser 2+2 (dos asientos mirando al frente y dos hacia atrás) o, en modelos como el ECO Cross 4 y el Zycar 4, con los cuatro asientos mirando hacia adelante; carga hasta 360 kg. El de 6 plazas es 4+2: cuatro asientos al frente y dos atrás, con capacidad de 540 kg. Esos 180 kg de diferencia importan más de lo que parece, y aquí te explicamos por qué."
         ]
       },
       {
@@ -426,7 +426,7 @@ export const ARTICLES: BlogArticle[] = [
           "For an active group that heads out early and returns at night, a lithium model gives you plenty of peace of mind. If you're not sure, tell us how many you are and what your plans are: we'll recommend the model that fits best."
         ],
         "bullets": [
-          "4 seats (2+2, up to 360 kg): ideal for couples or small families. From US$50/day depending on the model.",
+          "4 seats (2+2 or all forward-facing, up to 360 kg): ideal for couples or small families. From US$50/day depending on the model.",
           "6 seats (4+2, up to 540 kg): the best option for large families or groups of friends. From US$65/day depending on the model — the premium ECO Cross, with a 150 Ah lithium battery and luxury seats, is US$85/day.",
           "Lead-acid: 25–40 km per charge.",
           "Standard lithium (105 Ah): 60–70 km per charge.",
@@ -475,7 +475,7 @@ export const ARTICLES: BlogArticle[] = [
         "a": "Yes. The driver must be over 18 and hold a valid driver's license. Use is only inside residential areas, villas and resorts; driving on the beach, the sand or public roads is not allowed."
       },
       {
-        "q": "Is villa delivery free?",
+        "q": "Is there a villa delivery fee?",
         "a": "In Puntacana Resort & Club it's free on bookings of 5 days or more. On shorter bookings, transport (round trip, delivery + pickup) is US$60 per trailer trip + 18% tax, charged with your booking. On stays of 7 nights or more we handle discounted weekly and monthly rates; ask about your case."
       },
       {
@@ -538,7 +538,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "What the rental includes and what rules apply in the communities",
         "paragraphs": [
-          "Every rental includes charger, usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa (transport by zone, free on bookings of 5 days or more). There's nothing extra to buy and no charging station to find: the villa outlet is enough.",
+          "Every rental includes a charger, usage briefing and 24/7 WhatsApp support in English and Spanish; delivery and pickup at your villa are charged as fixed zone transport (US$60 + 18% tax in Cap Cana, free on bookings of 5 days or more). There's nothing extra to buy and no charging station to find: the villa outlet is enough.",
           "Private communities like Cap Cana take the safety and quiet of their residents seriously, and BOLT's rules are in the same spirit:"
         ],
         "bullets": [
@@ -598,7 +598,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "The question that defines your booking",
         "paragraphs": [
           "If you've already decided to get around by golf cart during your stay in Punta Cana — good call — the next question arrives on its own: 4 seats or 6? At BOLT we hear it every day, and the answer almost never comes down to a single factor. It's shaped by how many you are, how much luggage you carry, whether you're travelling with kids or grandparents, your budget and even the travel date.",
-          "First, understand the basic difference. The 4-seat golf cart has a 2+2 configuration: two forward-facing seats and two rear-facing, with a 360 kg load capacity. The 6-seater is 4+2: four seats up front and two in the back, with 540 kg capacity. Those 180 kg of difference matter more than they seem, and here's why."
+          "First, understand the basic difference. The 4-seat golf cart is usually 2+2 (two forward-facing seats and two rear-facing) or, on models like the ECO Cross 4 and Zycar 4, has all four seats facing forward; it carries up to 360 kg. The 6-seater is 4+2: four seats up front and two in the back, with 540 kg capacity. Those 180 kg of difference matter more than they seem, and here's why."
         ]
       },
       {
