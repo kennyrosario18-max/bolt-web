@@ -12,7 +12,7 @@
  */
 
 export const UMAMI_SRC = "https://cloud.umami.is/script.js";
-export const UMAMI_WEBSITE_ID = "";
+export const UMAMI_WEBSITE_ID = "60f5da77-8414-42c8-9b27-b7b2579f6353";
 export const UMAMI_DOMAINS = "boltgolfcars.com";
 
 export type BoltEvent =
