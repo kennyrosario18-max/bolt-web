@@ -43,8 +43,8 @@ export function priceFromPax(pax: number): number {
 
 /** Tarifa de TEMPORADA ALTA, US$/día por modelo (Kenny, 16/oct/2026). Fechas en HIGH_SEASON
  *  (site.ts): 20 dic – 6 ene y Semana Santa. Solo cliente directo y solo por las noches que caen
- *  en temporada alta. Regla: por debajo de Eco Planeta y al menos US$10 sobre la tarifa festiva
- *  de los aliados (4pl US$50–60, 6pl US$80), para no dejar al aliado sin margen. */
+ *  en temporada alta. Regla: piso de margen mínimo sobre la tarifa interna de aliados (ver lista
+ *  interna), para no dejar al aliado sin margen. */
 export const HIGH_SEASON_PRICES: Record<string, number> = {
   "cc-precedent-2-2": 70,
   "cc-tempo-2-2": 75,

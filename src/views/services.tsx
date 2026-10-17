@@ -20,8 +20,8 @@ const SERVICES: Service[] = [
   {
     title: "Renta por día, semana o temporada",
     titleEn: "Daily, weekly & seasonal rental",
-    body: "Flota de 4 y 6 plazas con entrega y recogida en tu villa (transporte fijo por zona desde US$60 por viaje, gratis en reservas largas). Para 7 noches o más, pregunta por la tarifa semanal y mensual con descuento.",
-    bodyEn: "4 and 6-seat fleet with delivery and pickup at your villa (fixed transport by zone from US$60 per trip, free on longer stays). For 7+ nights, ask about discounted weekly and monthly rates.",
+    body: "Flota de 4 y 6 plazas con entrega y recogida en tu villa (transporte fijo por zona desde US$60 por viaje + ITBIS; gratis desde 5 días en Puntacana Resort & Club y Cap Cana, 10 en Bávaro). Rentas de un mes o más: cotización por WhatsApp.",
+    bodyEn: "4 and 6-seat fleet with delivery and pickup at your villa (fixed transport by zone from US$60 per trip + tax; free from 5 days in Puntacana Resort & Club and Cap Cana, 10 in Bávaro). Rentals of a month or more: quote on WhatsApp.",
     ctaEs: "Ver precios →",
     ctaEn: "See pricing →",
     hrefEs: "/precios",

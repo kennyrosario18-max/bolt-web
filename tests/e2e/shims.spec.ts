@@ -3,6 +3,21 @@ import { expect, test } from "@playwright/test";
 /** Smoke E2E de los shims vanilla y el CSS interactivo — lo más frágil de la
  *  arquitectura sin React. Corre contra el build final (out/). */
 
+/** Hoy en RD (ISO), igual que lo calcula el shim del formulario para llegada.min. */
+const todayRD = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Santo_Domingo" }).format(new Date());
+const addDays = (iso: string, n: number) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  const t = new Date(Date.UTC(y, m - 1, d + n));
+  return t.toISOString().slice(0, 10);
+};
+/** Misma fecha (mes-día) en el primer año en que todavía es futura: las pruebas que ENVÍAN el
+ *  formulario no pueden usar fechas pasadas porque llegada.min las bloquea. */
+const upcoming = (iso: string) => {
+  let s = iso;
+  while (s <= addDays(todayRD(), 1)) s = `${Number(s.slice(0, 4)) + 1}${s.slice(4)}`;
+  return s;
+};
+
 test.describe("filtro de flota (CSS :checked ~)", () => {
   test("filtra por línea y vuelve a Todos", async ({ page }) => {
     await page.goto("/flota/");
@@ -69,8 +84,9 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.locator("#zona").selectOption("casa-de-campo");
     await page.locator("#alojamiento").selectOption("villa");
     await page.locator("#lugar").fill("Villa QA");
-    await page.locator("#llegada").fill("2027-01-10");
-    await page.locator("#salida").fill("2027-01-12"); // 2 días < mínimo 7
+    const llegada = upcoming("2027-01-10");
+    await page.locator("#llegada").fill(llegada);
+    await page.locator("#salida").fill(addDays(llegada, 2)); // 2 días < mínimo 7
 
     // Aviso en vivo (aria-live) antes de enviar.
     await expect(page.locator("#min-warning")).toContainText(/mínimo/i);
@@ -90,21 +106,58 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.locator("#zona").selectOption("cap-cana");
     await page.locator("#alojamiento").selectOption("villa");
     await page.locator("#lugar").fill("Villa QA");
-    // 1 día en temporada regular: bloquea y manda a WhatsApp.
-    await page.locator("#llegada").fill("2027-02-10");
-    await page.locator("#salida").fill("2027-02-11");
-    await expect(page.locator("#min-warning")).toContainText(/WhatsApp/);
+    // 1 día en temporada regular: bloquea (no se renta por un solo día; sin vía por WhatsApp).
+    const regular = upcoming("2027-02-10");
+    await page.locator("#llegada").fill(regular);
+    await page.locator("#salida").fill(addDays(regular, 1));
+    await expect(page.locator("#min-warning")).toContainText(/mínima es de 2 días/);
+    await expect(page.locator("#min-warning")).not.toContainText(/WhatsApp/);
     await page.locator('#req-form button[type="submit"]').click();
     await expect(page.locator("#form-error")).toContainText(/mínima es de 2 días/);
-    // 3 días que tocan la temporada alta: bloquea con mínimo 5.
-    await page.locator("#llegada").fill("2026-12-26");
-    await page.locator("#salida").fill("2026-12-29");
+    await expect(page.locator("#form-error")).not.toContainText(/WhatsApp/);
+    // 3 días que tocan la temporada alta (26 dic): bloquea con mínimo 5.
+    const festivo = upcoming("2026-12-26");
+    await page.locator("#llegada").fill(festivo);
+    await page.locator("#salida").fill(addDays(festivo, 3));
     await expect(page.locator("#min-warning")).toContainText(/Temporada alta/);
     await page.locator('#req-form button[type="submit"]').click();
     await expect(page.locator("#form-error")).toContainText(/5 días/);
     // 5 días en temporada alta: sin aviso.
-    await page.locator("#salida").fill("2026-12-31");
+    await page.locator("#salida").fill(addDays(festivo, 5));
     await expect(page.locator("#min-warning")).toBeEmpty();
+  });
+
+  test("fecha de llegada pasada: bloqueada por el min nativo (hoy en RD)", async ({ page }) => {
+    await page.goto("/solicitar-disponibilidad/");
+    const hoy = todayRD();
+    await expect(page.locator("#llegada")).toHaveAttribute("min", hoy);
+    await page.locator("#nombre").fill("Test QA");
+    await page.locator("#whatsapp").fill("+1 809 000 0000");
+    await page.locator("#email").fill("qa@example.com");
+    await page.locator("#zona").selectOption("cap-cana");
+    await page.locator("#alojamiento").selectOption("villa");
+    await page.locator("#lugar").fill("Villa QA");
+    await page.locator("#llegada").fill(addDays(hoy, -3));
+    await page.locator("#salida").fill(addDays(hoy, 1));
+    await page.locator('#req-form button[type="submit"]').click();
+    // La validación nativa (min) frena el envío: el formulario sigue visible y el campo es inválido.
+    await expect(page.locator("#req-form")).toBeVisible();
+    await expect(page.locator("#req-success")).toBeHidden();
+    expect(await page.locator("#llegada").evaluate((el) => (el as HTMLInputElement).validity.rangeUnderflow)).toBe(true);
+  });
+
+  test("más de 6 pasajeros: sin total, manda a cotizar varios carritos", async ({ page }) => {
+    await page.goto("/solicitar-disponibilidad/?modelo=eco-cross-4-2");
+    await page.locator("#zona").selectOption("cap-cana");
+    await page.locator("#llegada").fill("2027-02-10");
+    await page.locator("#salida").fill("2027-02-14");
+    await expect(page.locator("#estimate")).toContainText("US$");
+    await page.locator("#pasajeros").selectOption({ index: 7 }); // "Más de 6 (varios carritos)"
+    await expect(page.locator("#estimate")).toContainText(/más de 6/i);
+    await expect(page.locator("#estimate")).not.toContainText("US$");
+    // Al volver a un grupo normal, el estimado regresa.
+    await page.locator("#pasajeros").selectOption("4");
+    await expect(page.locator("#estimate")).toContainText("US$");
   });
 
   test("estimado con temporada alta: cada noche a su tarifa", async ({ page }) => {

@@ -47,7 +47,7 @@ export const ARTICLES: BlogArticle[] = [
         "paragraphs": [
           "Una de las mayores comodidades es que no tienes que ir a buscar el carrito a ningún lado: nosotros te lo llevamos y lo recogemos en la villa. Antes de entregártelo te damos una orientación rápida de uso, para que salgas a rodar con confianza aunque nunca hayas manejado un golf cart.",
           "Cada renta con BOLT incluye lo esencial para que solo te ocupes de disfrutar:",
-          "El transporte (entrega + recogida, ida y vuelta) dentro de Puntacana Resort & Club es US$60 + ITBIS por viaje de tráiler, y es gratis en reservas de 5 días o más. Y si tu estadía es de 7 noches o más, manejamos tarifas semanales y mensuales con descuento; pregúntanos por tu caso. Un detalle que conviene saber: tu día de renta son 24 horas contadas desde la entrega, no el día de calendario, así que aprovechas el tiempo completo."
+          "El transporte (entrega + recogida, ida y vuelta) dentro de Puntacana Resort & Club es US$60 + ITBIS por viaje de tráiler, y es gratis en reservas de 5 días o más. Un detalle que conviene saber: tu día de renta son 24 horas contadas desde la entrega, no el día de calendario, así que aprovechas el tiempo completo."
         ],
         "bullets": [
           "Entrega y recogida directamente en tu villa (transporte fijo por zona, gratis desde 5 días)",
@@ -116,7 +116,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿La entrega en la villa tiene costo?",
-        "a": "El transporte (entrega + recogida) en Puntacana Resort & Club es US$60 + ITBIS por viaje de tráiler y es gratis en reservas de 5 días o más; se paga con la reserva. En estadías de 7 noches o más manejamos tarifas semanales y mensuales con descuento; pregúntanos por tu caso."
+        "a": "El transporte (entrega + recogida) en Puntacana Resort & Club es US$60 + ITBIS por viaje de tráiler y es gratis en reservas de 5 días o más; se paga con la reserva."
       },
       {
         "q": "¿Cuánto tarda en cargar y cómo lo hago?",
@@ -172,7 +172,7 @@ export const ARTICLES: BlogArticle[] = [
         "bullets": [
           "4 plazas: desde US$50/día según el modelo.",
           "6 plazas: desde US$65/día según el modelo (el ECO Cross premium, de litio 150 Ah con asientos de lujo, US$85/día).",
-          "Rentas de 7 noches o más: tarifa semanal o mensual con descuento; pregunta al cotizar."
+          "Rentas de un mes o más: cotización por WhatsApp."
         ]
       },
       {
@@ -203,7 +203,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Un último consejo antes de reservar",
         "paragraphs": [
-          "Como BOLT trabaja por solicitud de disponibilidad, conviene escribir apenas tengas fechas de viaje confirmadas, sobre todo si necesitas un modelo de 6 plazas o el ECO Cross premium. Si eres property manager, el mismo canal de WhatsApp te sirve para coordinar entregas para tus huéspedes y cotizar tarifas semanales con descuento. Your ride in paradise: escríbenos y te confirmamos qué hay disponible para tus fechas."
+          "Como BOLT trabaja por solicitud de disponibilidad, conviene escribir apenas tengas fechas de viaje confirmadas, sobre todo si necesitas un modelo de 6 plazas o el ECO Cross premium. Si eres property manager, el mismo canal de WhatsApp te sirve para coordinar entregas para tus huéspedes; conoce nuestro Programa de Aliados en boltgolfcars.com/aliados. Your ride in paradise: escríbenos y te confirmamos qué hay disponible para tus fechas."
         ]
       }
     ],
@@ -266,14 +266,14 @@ export const ARTICLES: BlogArticle[] = [
           "Golf cart de 4 plazas: desde US$50/día según el modelo.",
           "Golf cart de 6 plazas: desde US$65/día según el modelo (el ECO Cross premium, con batería de litio de 150 Ah y asientos de lujo, US$85/día).",
           "Transporte (entrega + recogida) por viaje de tráiler: US$60 en Puntacana Resort & Club, Cap Cana y Bávaro — gratis en reservas de 5+ días (10+ en Bávaro); US$120 en Uvero Alto / Macao. ITBIS aparte.",
-          "Estadías de 7+ noches: pregunta por la tarifa semanal o mensual con descuento."
+          "Estadías de un mes o más: cotización por WhatsApp."
         ]
       },
       {
         "heading": "Temporada alta: los 6 plazas vuelan primero",
         "paragraphs": [
           "Hay un dato que conviene saber antes de dejar la decisión para última hora: en fechas festivas y semanas de temporada alta, los 6 plazas son los primeros en agotarse. Tiene lógica: las familias grandes y los grupos los buscan primero, y la flota de 6 plazas no es infinita.",
-          "En BOLT toda reserva funciona por solicitud de disponibilidad —nunca por confirmación automática—, así que mientras antes escribas, más opciones tendrás. La reserva se asegura con un depósito del 50%, y si tus planes cambian, puedes mover la fecha gratis avisando con 48 horas de anticipación. Es decir: reservar temprano no te amarra, te protege."
+          "En BOLT toda reserva funciona por solicitud de disponibilidad —nunca por confirmación automática—, así que mientras antes escribas, más opciones tendrás. La reserva se asegura con un depósito del 50%. En temporada alta (20 dic – 6 ene y Semana Santa) la renta mínima es de 5 días y ese anticipo no es reembolsable; si avisas con 30 días o más, queda como crédito. Fuera de esas fechas puedes mover la fecha gratis con 48 horas de aviso."
         ]
       },
       {
@@ -407,7 +407,7 @@ export const ARTICLES: BlogArticle[] = [
         "paragraphs": [
           "One of the biggest conveniences is that you don't have to go pick the cart up anywhere: we bring it to and collect it from your villa. Before handing it over we give you a quick usage briefing, so you head out with confidence even if you've never driven a golf cart.",
           "Every BOLT rental includes the essentials so you only have to enjoy:",
-          "Transport to Puntacana Resort & Club (round trip, delivery + pickup) is US$60 per trailer trip + 18% tax, charged with your booking — and it's free on bookings of 5 days or more. If your stay is 7 nights or more, we also handle discounted weekly and monthly rates; ask about your case. One detail worth knowing: your rental day is 24 hours counted from delivery, not the calendar day, so you get the full time."
+          "Transport to Puntacana Resort & Club (round trip, delivery + pickup) is US$60 per trailer trip + 18% tax, charged with your booking — and it's free on bookings of 5 days or more. One detail worth knowing: your rental day is 24 hours counted from delivery, not the calendar day, so you get the full time."
         ],
         "bullets": [
           "Delivery and pickup directly at your villa (transport by zone; free on 5+ day bookings)",
@@ -476,7 +476,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "Is there a villa delivery fee?",
-        "a": "In Puntacana Resort & Club it's free on bookings of 5 days or more. On shorter bookings, transport (round trip, delivery + pickup) is US$60 per trailer trip + 18% tax, charged with your booking. On stays of 7 nights or more we handle discounted weekly and monthly rates; ask about your case."
+        "a": "In Puntacana Resort & Club it's free on bookings of 5 days or more. On shorter bookings, transport (round trip, delivery + pickup) is US$60 per trailer trip + 18% tax, charged with your booking."
       },
       {
         "q": "How long does it take to charge and how do I do it?",
@@ -532,7 +532,7 @@ export const ARTICLES: BlogArticle[] = [
         "bullets": [
           "4 seats: from US$50/day depending on the model.",
           "6 seats: from US$65/day depending on the model (the premium ECO Cross, 150 Ah lithium with luxury seats, US$85/day).",
-          "Rentals of 7 nights or more: discounted weekly or monthly rate; ask when quoting."
+          "Rentals of a month or more: quote on WhatsApp."
         ]
       },
       {
@@ -563,7 +563,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "One last tip before booking",
         "paragraphs": [
-          "Since BOLT works by availability request, it's best to write as soon as you have confirmed travel dates, especially if you need a 6-seater or the premium ECO Cross. If you're a property manager, the same WhatsApp channel works to coordinate deliveries for your guests and quote discounted weekly rates. Your ride in paradise: write to us and we'll confirm what's available for your dates."
+          "Since BOLT works by availability request, it's best to write as soon as you have confirmed travel dates, especially if you need a 6-seater or the premium ECO Cross. If you're a property manager, the same WhatsApp channel works to coordinate deliveries for your guests; learn about our Partner Program at boltgolfcars.com/en/partners. Your ride in paradise: write to us and we'll confirm what's available for your dates."
         ]
       }
     ],
@@ -617,14 +617,14 @@ export const ARTICLES: BlogArticle[] = [
           "4-seat golf cart: from US$50/day depending on the model.",
           "6-seat golf cart: from US$65/day depending on the model (the premium ECO Cross, with a 150 Ah lithium battery and luxury seats, US$85/day).",
           "Transport (round trip, delivery + pickup): US$60 per trailer trip + 18% tax to Puntacana Resort & Club, Cap Cana and Bávaro — free on longer stays (5+ days nearby, 10+ days in Bávaro). US$120 to Uvero Alto / Macao; other areas, ask for a quote.",
-          "Stays of 7+ nights: ask about the discounted weekly or monthly rate."
+          "Stays of a month or more: quote on WhatsApp."
         ]
       },
       {
         "heading": "High season: the 6-seaters go first",
         "paragraphs": [
           "There's one thing worth knowing before leaving the decision to the last minute: on holidays and high-season weeks, the 6-seaters are the first to sell out. It makes sense: large families and groups look for them first, and the 6-seat fleet isn't infinite.",
-          "At BOLT every booking works by availability request — never automatic confirmation — so the sooner you write, the more options you'll have. The booking is secured with a 50% deposit, and if your plans change, you can move the date for free with 48 hours' notice. In other words: booking early doesn't tie you down, it protects you."
+          "At BOLT every booking works by availability request — never automatic confirmation — so the sooner you write, the more options you'll have. The booking is secured with a 50% deposit. In high season (Dec 20 – Jan 6 and Holy Week) the minimum rental is 5 days and that advance is non-refundable; with 30+ days' notice it is kept as credit. Outside those dates you can move the date for free with 48 hours' notice."
         ]
       },
       {

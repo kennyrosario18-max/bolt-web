@@ -15,7 +15,7 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       "Estas condiciones aplican a toda reserva de carrito BOLT. Al confirmar y pagar el depósito, el cliente acepta esta política.",
     accept: "Aceptación: al reservar, el cliente declara haber leído y aceptado esta política.",
     sections: [
-      { n: "01", title: "Depósito de confirmación", body: ["50% del total para apartar la reserva. El saldo se paga a la entrega."] },
+      { n: "01", title: "Depósito de confirmación", body: ["50% del total para apartar la reserva. El saldo se paga a la entrega.", "El transporte (entrega + recogida) se paga con la reserva y sigue esta misma política."] },
       {
         n: "02",
         title: "Cancelación — Temporada estándar",
@@ -57,8 +57,8 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
         body: ["US$200 reembolsable, retenido a la entrega y devuelto tras la inspección de devolución, descontando cargos por daños o penalidades del manual."],
       },
       { n: "09", title: "Fuerza mayor / clima", body: ["Ante huracán, tormenta o cierre oficial del resort, se ofrece reprogramación o crédito, no reembolso en efectivo."] },
-      { n: "10", title: "Comisiones bancarias", body: ["Los reembolsos se procesan menos las comisiones bancarias o de procesador de pago aplicables."] },
-      { n: "11", title: "Renta mínima", body: ["Temporada estándar: 2 días. Temporada alta (20 dic – 6 ene y Semana Santa): 5 días. Casa de Campo: 7 días.", "Para un solo día, escríbenos por WhatsApp: lo confirmamos solo si hay un carro libre que no esté comprometido."] },
+      { n: "10", title: "Comisiones bancarias", body: ["La devolución del depósito de garantía de US$200 se procesa menos las comisiones bancarias o de procesador de pago aplicables. Los anticipos no se devuelven en efectivo: quedan como crédito según los puntos 02 y 03."] },
+      { n: "11", title: "Renta mínima", body: ["Temporada estándar: 2 días. Temporada alta (20 dic – 6 ene y Semana Santa): 5 días. Casa de Campo: 7 días.", "No rentamos por un solo día."] },
     ],
   },
   en: {
@@ -68,7 +68,7 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
       "These terms apply to every BOLT cart booking. By confirming and paying the deposit, the client accepts this policy.",
     accept: "By booking, the client confirms they have read and accepted this policy.",
     sections: [
-      { n: "01", title: "Confirmation deposit", body: ["50% of the total to confirm the booking. Balance due on delivery."] },
+      { n: "01", title: "Confirmation deposit", body: ["50% of the total to confirm the booking. Balance due on delivery.", "Transport (delivery + pickup) is paid with the booking and follows this same policy."] },
       {
         n: "02",
         title: "Cancellation — Standard season",
@@ -110,8 +110,8 @@ const T: Record<Locale, { kicker: string; h1: string; intro: string; accept: str
         body: ["US$200 refundable, held at delivery and returned after the return inspection, less any damage charges or manual penalties."],
       },
       { n: "09", title: "Force majeure / weather", body: ["In case of hurricane, storm or official resort closure, we offer rescheduling or credit, not a cash refund."] },
-      { n: "10", title: "Bank fees", body: ["Refunds are processed less applicable bank or payment-processor fees."] },
-      { n: "11", title: "Minimum rental", body: ["Standard season: 2 days. High season (Dec 20 – Jan 6 and Holy Week): 5 days. Casa de Campo: 7 days.", "For a single day, message us on WhatsApp: we confirm it only if a cart is free and not already committed."] },
+      { n: "10", title: "Bank fees", body: ["The return of the US$200 damage deposit is processed less applicable bank or payment-processor fees. Advances are not refunded in cash: they are kept as credit per points 02 and 03."] },
+      { n: "11", title: "Minimum rental", body: ["Standard season: 2 days. High season (Dec 20 – Jan 6 and Holy Week): 5 days. Casa de Campo: 7 days.", "We do not rent for a single day."] },
     ],
   },
 };

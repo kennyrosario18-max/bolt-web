@@ -17,6 +17,7 @@ const T = {
     perDay: " /día",
     withTax: "con ITBIS · ",
     highLabel: "Temporada alta: ",
+    highTax: " + ITBIS",
     group4: "Hasta 4 personas",
     group6: "Hasta 6 personas",
     tapModel: "Toca un modelo para solicitarlo →",
@@ -31,8 +32,8 @@ const T = {
     noFree: "Sin exención",
     freeDays: (n: number) => `${n} días`,
     transportFoot: "Tarifas en US$ por viaje de tráiler + ITBIS 18% aparte. Transporte fijo por zona, sin sorpresas.",
-    weeklyNote: "7 noches o más: pregunta por la tarifa semanal y mensual con descuento.",
-    minNote: `Renta mínima: ${MIN_DAYS.regular} días (${MIN_DAYS.high} en temporada alta; 7 en Casa de Campo). Para un solo día, escríbenos por WhatsApp.`,
+    longStayNote: "Estadías largas: entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro). Rentas de un mes o más: cotización por WhatsApp.",
+    minNote: `Renta mínima: ${MIN_DAYS.regular} días (${MIN_DAYS.high} en temporada alta; 7 en Casa de Campo).`,
     reqCta: "Solicitar disponibilidad",
     reqHref: "/solicitar-disponibilidad",
     chipsLabel: "Solicita tu modelo:",
@@ -52,6 +53,7 @@ const T = {
     perDay: " /day",
     withTax: "with tax · ",
     highLabel: "High season: ",
+    highTax: " + tax",
     group4: "Up to 4 people",
     group6: "Up to 6 people",
     tapModel: "Tap a model to request it →",
@@ -66,8 +68,8 @@ const T = {
     noFree: "No exemption",
     freeDays: (n: number) => `${n} days`,
     transportFoot: "Rates in US$ per trailer trip + 18% tax. Fixed transport by zone, no surprises.",
-    weeklyNote: "7+ nights: ask about discounted weekly and monthly rates.",
-    minNote: `Minimum rental: ${MIN_DAYS.regular} days (${MIN_DAYS.high} in high season; 7 in Casa de Campo). For a single day, message us on WhatsApp.`,
+    longStayNote: "Long stays: free delivery and pickup from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro). Rentals of a month or more: quote on WhatsApp.",
+    minNote: `Minimum rental: ${MIN_DAYS.regular} days (${MIN_DAYS.high} in high season; 7 in Casa de Campo).`,
     reqCta: "Request availability",
     reqHref: "/en/request-availability",
     chipsLabel: "Request your model:",
@@ -133,8 +135,7 @@ export function PricingView({ locale }: { locale: Locale }) {
                         {withItbis(m.price)}
                       </p>
                       <p className="mt-0.5 text-xs font-semibold tabular-nums text-volt-dark">
-                        {t.highLabel}US${m.highPrice}
-                        {t.perDay}
+                        {t.highLabel}US${m.highPrice}{t.highTax} ({withItbis(m.highPrice)})
                       </p>
                     </div>
                   </Link>
@@ -200,7 +201,7 @@ export function PricingView({ locale }: { locale: Locale }) {
           <p className="mt-3 text-sm text-inktext">{t.depositBody}</p>
           <p className="mt-2 text-sm font-semibold text-volt-dark">{t.seasonBody}</p>
           <p className="mt-2 text-sm font-semibold text-inktext">{t.minNote}</p>
-          <p className="mt-2 text-sm text-inktext">{t.weeklyNote}</p>
+          <p className="mt-2 text-sm text-inktext">{t.longStayNote}</p>
         </div>
 
         <p className="reveal mt-8 text-sm text-steel">{es ? PRICING_FOOTNOTE.es : PRICING_FOOTNOTE.en}</p>

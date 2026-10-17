@@ -67,7 +67,7 @@ describe("pricing — fuente única", () => {
     expect(modelHighPrice("zycar-4-2")).toBe(modelHighPrice("eco-track-4-2"));
   });
 
-  it("temporada alta deja margen al aliado: 4 plazas ≥ US$70 y 6 plazas ≥ US$90 (festivo aliado US$60 / US$80 + US$10)", () => {
+  it("temporada alta deja margen al aliado: piso 4 plazas ≥ US$70 y 6 plazas ≥ US$90 (ver lista interna)", () => {
     for (const m of MODELS) {
       expect(modelHighPrice(m.id), m.id).toBeGreaterThanOrEqual(m.pax === 4 ? 70 : 90);
     }

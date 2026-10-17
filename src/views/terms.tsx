@@ -53,7 +53,7 @@ const T: Record<
         n: "03",
         title: "Reserva y pagos",
         body: [
-          "La renta mínima es de 2 días (5 en temporada alta y 7 en Casa de Campo); una renta de un solo día se acepta solo por excepción, según disponibilidad. La reserva se asegura con un depósito de confirmación del 50% del total; el saldo se paga a la entrega. A la entrega se retiene además un depósito de garantía de US$200, reembolsable tras la inspección de devolución, descontando cargos por daños o penalidades si los hubiera.",
+          "La renta mínima es de 2 días (5 en temporada alta y 7 en Casa de Campo); no se renta por un solo día. La reserva se asegura con un depósito de confirmación del 50% del total; el saldo se paga a la entrega. A la entrega se retiene además un depósito de garantía de US$200, reembolsable tras la inspección de devolución, descontando cargos por daños o penalidades si los hubiera.",
           "Los precios se publican en US$ por día; el ITBIS (18%) se muestra por modelo. Las noches que caen en temporada alta (20 dic – 6 ene y Semana Santa) se cobran a la tarifa de temporada alta publicada en Precios. Un día de renta es un período de 24 horas desde la hora exacta de entrega, con 60 minutos de gracia en la devolución.",
         ],
       },
@@ -91,7 +91,7 @@ const T: Record<
         n: "08",
         title: "Cancelaciones, cambios y devoluciones",
         body: [
-          "Aplica la Política de Cancelación y Depósitos publicada en este sitio, que incluye los plazos de reembolso, las condiciones de temporada alta, el cambio de fecha gratuito con 48 horas de aviso y las reglas de devolución anticipada y renta continua (la renta no se pausa ni se fracciona). La misma política aplica al cargo de transporte, que se paga junto con la reserva.",
+          "Aplica la Política de Cancelación y Depósitos publicada en este sitio, que incluye los plazos de crédito, las condiciones de temporada alta, el cambio de fecha gratuito con 48 horas de aviso y las reglas de devolución anticipada y renta continua (la renta no se pausa ni se fracciona). La misma política aplica al cargo de transporte, que se paga junto con la reserva.",
         ],
       },
       {
@@ -150,7 +150,7 @@ const T: Record<
         n: "03",
         title: "Booking and payments",
         body: [
-          "The minimum rental is 2 days (5 in high season and 7 in Casa de Campo); a single-day rental is accepted only as an exception, subject to availability. Bookings are secured with a 50% confirmation deposit; the balance is due on delivery. At delivery, a refundable US$200 damage deposit is also held and returned after the return inspection, less any damage charges or penalties if applicable.",
+          "The minimum rental is 2 days (5 in high season and 7 in Casa de Campo); we do not rent for a single day. Bookings are secured with a 50% confirmation deposit; the balance is due on delivery. At delivery, a refundable US$200 damage deposit is also held and returned after the return inspection, less any damage charges or penalties if applicable.",
           "Prices are published in US$ per day; tax (18% ITBIS) is shown per model. Nights falling in high season (Dec 20 – Jan 6 & Holy Week) are charged at the high-season rate published on the pricing page. A rental day is a 24-hour period from the exact delivery time, with a 60-minute grace window on return.",
         ],
       },
@@ -188,7 +188,7 @@ const T: Record<
         n: "08",
         title: "Cancellations, changes and returns",
         body: [
-          "The Cancellation & Deposit Policy published on this site applies, including refund windows, high-season conditions, the free date change with 48-hour notice, and the rules for early returns and continuous rental (rentals cannot be paused or split). The same policy applies to the transport charge, which is paid with the booking.",
+          "The Cancellation & Deposit Policy published on this site applies, including credit windows, high-season conditions, the free date change with 48-hour notice, and the rules for early returns and continuous rental (rentals cannot be paused or split). The same policy applies to the transport charge, which is paid with the booking.",
         ],
       },
       {

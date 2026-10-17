@@ -1,6 +1,6 @@
 /** Lógica del formulario de disponibilidad — vanilla, sin hidratación React
  *  (shim del PRD F3). Reglas de negocio portadas 1:1 del componente anterior:
- *   · fechas locales RD (mínimo = hoy local, no UTC),
+ *   · fechas RD: llegada mínima = hoy en America/Santo_Domingo (no la hora del navegador),
  *   · mínimo de días: por zona, general (2) y de temporada alta (5); manda el mayor
  *     (aviso en vivo + bloqueo al enviar),
  *   · transporte por zona (nota en vivo + 1 viaje en el estimado si no está exento),
@@ -18,10 +18,10 @@ interface Fields {
 interface Payload {
   phone: string; header: string; plazas: string; recommend: string;
   day: string; days: string; f: Fields;
-  errFechas: string; errOrden: string; errMin: string; warnMin: string; zoneNoteTpl: string;
+  errFechas: string; errOrden: string; errPasada: string; errMin: string; warnMin: string; zoneNoteTpl: string;
   errBaseMin: string; warnBaseMin: string; errHighMin: string; warnHighMin: string;
   minBase: number; minHigh: number; high: ReadonlyArray<readonly [string, string]>;
-  transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string; estTransportQuoted: string;
+  transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string; estTransportQuoted: string; estBigGroup: string;
   estHigh: string; night: string; nights: string; high4: number; high6: number;
   estimateTpl: string; price4: number; price6: number;
   web3key: string; emailSubject: string;
@@ -42,6 +42,10 @@ function script(p: Payload): string {
   function zopt(){return zona.options[zona.selectedIndex];}
   function fill(tpl,map){return tpl.replace(/\\{(\\w+)\\}/g,function(_,k){return map[k]!=null?map[k]:'';});}
   function val(id){var el=$(id);return el?el.value.trim():'';}
+  // Hoy en RD (ISO): el turista puede estar en otra zona horaria; la operación es en Santo Domingo.
+  function todayRD(){try{return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Santo_Domingo'}).format(new Date());}catch(e){var t=new Date();return t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);}}
+  // 'Más de 6' = varios carritos: no se estima (el total depende de cuántos carros y viajes).
+  function bigGroup(){return !!(pasajeros&&pasajeros.value&&isNaN(parseInt(pasajeros.value,10)));}
 
   // ¿Alguna noche de la renta [llegada, salida) cae en temporada alta? Fechas ISO: se comparan como texto.
   function isHigh(a,b){if(!a||!b)return false;for(var i=0;i<P.high.length;i++){if(a<=P.high[i][1]&&b>P.high[i][0])return true;}return false;}
@@ -79,7 +83,7 @@ function script(p: Payload): string {
     var mo=modelo.options[modelo.selectedIndex];
     if(mo&&mo.value&&mo.getAttribute('data-price'))return [+mo.getAttribute('data-price'),+(mo.getAttribute('data-hprice')||mo.getAttribute('data-price'))];
     var pax=pasajeros?pasajeros.value:'';
-    if(pax){var n=parseInt(pax,10)||7;return n>=5?[P.price6,P.high6]:[P.price4,P.high4];}
+    if(pax){var n=parseInt(pax,10);if(!n)return [0,0];return n>=5?[P.price6,P.high6]:[P.price4,P.high4];}
     return [0,0];
   }
   // Noches de la renta que caen en temporada alta (cada noche = fecha de inicio de ese día de renta).
@@ -95,6 +99,7 @@ function script(p: Payload): string {
   function zoneTransport(){var o=zopt();return [o?+(o.getAttribute('data-transport')||0):0,o?+(o.getAttribute('data-freefrom')||0):0];}
   function updateEstimate(){
     if(!estimate)return;
+    if(bigGroup()){estimate.textContent=P.estBigGroup;return;}
     var d=diffDays(llegada.value,salida.value),pr=dailyPrices(),daily=pr[0];
     if(d>0&&daily>0){
       var hn=highNights(llegada.value,d);
@@ -196,6 +201,7 @@ function script(p: Payload): string {
     if(val('empresa')){succeed();return;} // honeypot: éxito falso, sin abrir WhatsApp
     var la=llegada.value,sa=salida.value;
     if(!la||!sa){showError(P.errFechas,!la?llegada:salida);return;}
+    if(la<todayRD()){showError(P.errPasada,llegada);return;}   // respaldo del min nativo
     var d=diffDays(la,sa);
     if(d<=0){showError(P.errOrden,salida);return;}
     var r=minRule();
@@ -225,6 +231,7 @@ function script(p: Payload): string {
   function preselect(el,v){if(!el||!v)return;for(var i=0;i<el.options.length;i++){if(el.options[i].value===v){el.selectedIndex=i;return;}}}
   function initState(){
     var q=new URLSearchParams(location.search);
+    var today=todayRD();llegada.min=today;if(!salida.min)salida.min=today;
     preselect(modelo,q.get('modelo'));
     preselect(zona,q.get('zona'));
     preselect($('alojamiento'),q.get('alojamiento'));

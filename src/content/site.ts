@@ -124,7 +124,7 @@ export function transportLabel(z: Zone, locale: "es" | "en"): string {
 }
 
 /** Mínimo de días para CLIENTES DIRECTOS (Kenny, 16/oct/2026): una renta de 1 día puede tumbar
- *  una reserva de varios días de un aliado (PCC, VOLALTO). A los aliados no les aplica. */
+ *  una reserva de varios días de un aliado. A los aliados no les aplica. */
 export const MIN_DAYS = { regular: 2, high: 5 } as const;
 
 /** Temporada alta (noches, ISO inclusive): 20 dic – 6 ene y Semana Santa (jueves a domingo). */

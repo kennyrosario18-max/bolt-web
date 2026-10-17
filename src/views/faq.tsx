@@ -12,7 +12,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿Cuánto cuesta la renta?",
-      a: "Los modelos de 4 plazas van desde US$50/día y los de 6 plazas desde US$65/día. El ITBIS (18%) se muestra por modelo en la página de precios. El transporte se cobra aparte por zona (desde US$60 por viaje, gratis en reservas largas). En temporada alta (20 dic – 6 ene y Semana Santa) aplica la tarifa de temporada alta de cada modelo, publicada en Precios. Para 7 noches o más hay tarifa semanal y mensual con descuento.",
+      a: "Los modelos de 4 plazas van desde US$50/día y los de 6 plazas desde US$65/día. El ITBIS (18%) se muestra por modelo en la página de precios. El transporte se cobra aparte por zona: desde US$60 por viaje + ITBIS, gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro). En temporada alta (20 dic – 6 ene y Semana Santa) aplica la tarifa de temporada alta de cada modelo, publicada en Precios. Rentas de un mes o más: cotización por WhatsApp.",
     },
     {
       q: "¿La entrega tiene costo?",
@@ -62,7 +62,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "How much does it cost?",
-      a: "4-seaters start at US$50/day and 6-seaters at US$65/day. Tax (18% ITBIS) is shown per model on the pricing page. Transport is charged separately by zone (from US$60 per trip, free on longer stays). In high season (Dec 20 – Jan 6 & Holy Week) each model's high-season rate applies, published on the pricing page. For 7+ nights, ask about discounted weekly and monthly rates.",
+      a: "4-seaters start at US$50/day and 6-seaters at US$65/day. Tax (18% ITBIS) is shown per model on the pricing page. Transport is charged separately by zone: from US$60 per trip + tax, free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro). In high season (Dec 20 – Jan 6 & Holy Week) each model's high-season rate applies, published on the pricing page. Rentals of a month or more: quote on WhatsApp.",
     },
     {
       q: "Is there a delivery fee?",
