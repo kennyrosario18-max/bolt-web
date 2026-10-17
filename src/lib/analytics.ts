@@ -1,15 +1,19 @@
-/** Medición de BOLT — cero cookies, cero PII, compatible con export estático.
+/** Medición de BOLT — cero cookies, cero datos personales, compatible con export estático.
  *
- * Pageviews + Web Vitals de campo: Cloudflare Web Analytics (beacon liviano).
- * Para activarlo, pon el token del beacon en NEXT_PUBLIC_CF_BEACON (una constante
- * en el build). Sin token, no se inyecta nada y el sitio funciona igual.
+ * Visitas + origen + eventos: Umami Cloud (plan gratis), script `defer` plano en
+ * <Analytics/> (NO next/script: el postbuild quita el runtime de React y un script
+ * inyectado por hidratación nunca correría). Para activarlo, pon el Website ID del
+ * sitio en UMAMI_WEBSITE_ID. Vacío = no se inyecta nada y el sitio funciona igual.
+ * `data-domains` limita la medición al dominio real (nada en local ni en preview).
  *
- * Eventos de conversión: se emiten vía `track()`. Hoy quedan registrados en
- * window.__boltEvents (inspeccionables) y, si algún día se conecta un endpoint
- * o Cloudflare Zaraz, se reenvían sin tocar los componentes — solo esta función.
+ * Eventos de conversión (wa_click, form_submit…): los shims vanilla los dejan en
+ * window.__boltEvents (inspeccionables) y, si Umami está cargado, los reenvían con
+ * `umami.track(ev)`. La línea de WhatsApp no se conecta a nada: solo se cuenta el clic.
  */
 
-export const CF_BEACON_TOKEN = process.env.NEXT_PUBLIC_CF_BEACON ?? "";
+export const UMAMI_SRC = "https://cloud.umami.is/script.js";
+export const UMAMI_WEBSITE_ID = "";
+export const UMAMI_DOMAINS = "boltgolfcars.com";
 
 export type BoltEvent =
   | "wa_click" // clic en cualquier enlace de WhatsApp
@@ -22,6 +26,11 @@ export type BoltEvent =
 /** Registra un evento de conversión. Seguro en SSR (no hace nada sin window). */
 export function track(event: BoltEvent, detail?: Record<string, string>): void {
   if (typeof window === "undefined") return;
-  const w = window as unknown as { __boltEvents?: unknown[] };
+  const w = window as unknown as { __boltEvents?: unknown[]; umami?: { track?: (n: string, d?: object) => void } };
   (w.__boltEvents ??= []).push({ event, detail, t: Date.now(), path: location.pathname });
+  try {
+    w.umami?.track?.(event, detail);
+  } catch {
+    /* la medición nunca rompe la página */
+  }
 }

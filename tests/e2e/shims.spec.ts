@@ -146,6 +146,45 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     expect(await page.locator("#llegada").evaluate((el) => (el as HTMLInputElement).validity.rangeUnderflow)).toBe(true);
   });
 
+  test("origen de la visita: utm_source viaja en la copia por correo, no en WhatsApp", async ({ page }) => {
+    // Llega por una landing con utm_source y después va al formulario: el origen sobrevive en sessionStorage.
+    await page.goto("/alquiler/cap-cana/?utm_source=instagram");
+    await page.goto("/solicitar-disponibilidad/?modelo=eco-cross-4-2");
+    expect(await page.evaluate(() => sessionStorage.getItem("bolt_origen"))).toBe("instagram");
+
+    // Intercepta el respaldo por correo (Web3Forms) y captura el cuerpo enviado.
+    let body: Record<string, string> | null = null;
+    await page.route("https://api.web3forms.com/submit", async (route) => {
+      body = route.request().postDataJSON();
+      await route.fulfill({ status: 200, contentType: "application/json", body: '{"success":true}' });
+    });
+    await page.locator("#nombre").fill("Test QA");
+    await page.locator("#whatsapp").fill("+1 809 000 0000");
+    await page.locator("#email").fill("qa@example.com");
+    await page.locator("#zona").selectOption("cap-cana");
+    await page.locator("#alojamiento").selectOption("villa");
+    await page.locator("#lugar").fill("Villa QA");
+    const llegada = upcoming("2027-02-10");
+    await page.locator("#llegada").fill(llegada);
+    await page.locator("#salida").fill(addDays(llegada, 4));
+    // El envío abre wa.me en otra pestaña (sin red en CI): se captura y se cierra.
+    const popup = page.context().waitForEvent("page");
+    await page.locator('#req-form button[type="submit"]').click();
+    await expect(page.locator("#req-success")).toBeVisible();
+    await expect.poll(() => body).not.toBeNull();
+    expect(body!.Origen).toBe("instagram");
+    // El mensaje de WhatsApp del cliente no cambia: no lleva el origen.
+    const waHref = decodeURIComponent((await page.locator("#wa-fallback").getAttribute("href")) ?? "");
+    expect(waHref).toContain("wa.me/");
+    expect(waHref).not.toMatch(/instagram|Origen/);
+    await (await popup).close();
+  });
+
+  test("origen de la visita: sin utm ni referrer es 'directo'", async ({ page }) => {
+    await page.goto("/");
+    expect(await page.evaluate(() => sessionStorage.getItem("bolt_origen"))).toBe("directo");
+  });
+
   test("más de 6 pasajeros: sin total, manda a cotizar varios carritos", async ({ page }) => {
     await page.goto("/solicitar-disponibilidad/?modelo=eco-cross-4-2");
     await page.locator("#zona").selectOption("cap-cana");

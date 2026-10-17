@@ -2,7 +2,7 @@ import { CONTACT } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 
 /** Política de Privacidad — basada en las prácticas reales de BOLT y la Ley 172-13 (RD).
-    Última actualización: 6 de julio de 2026. */
+    Última actualización: 17 de octubre de 2026 (analítica sin cookies y copia de solicitudes por correo). */
 
 interface Section {
   n: string;
@@ -18,7 +18,7 @@ const T: Record<
   es: {
     kicker: "Legal",
     h1: "Política de Privacidad",
-    updated: "Última actualización: 6 de julio de 2026",
+    updated: "Última actualización: 17 de octubre de 2026",
     intro:
       "En BOLT tratamos tus datos personales con la misma claridad que nuestros precios: recogemos solo lo necesario para atenderte, no vendemos tus datos y respondemos cualquier duda por WhatsApp o correo.",
     sections: [
@@ -63,14 +63,14 @@ const T: Record<
         n: "05",
         title: "Con quién se comparten",
         body: [
-          "No vendemos ni alquilamos tus datos a terceros. Tus mensajes por WhatsApp se transmiten a través de la plataforma de WhatsApp (Meta), sujeta a sus propias políticas de privacidad. Podemos compartir datos con autoridades fiscales cuando la ley lo requiera (por ejemplo, en la facturación e-CF).",
+          "No vendemos ni alquilamos tus datos a terceros. Tus mensajes por WhatsApp se transmiten a través de la plataforma de WhatsApp (Meta), sujeta a sus propias políticas de privacidad. Cuando envías una solicitud desde el sitio, una copia nos llega por correo a través de Web3Forms, un servicio de envío de formularios que procesa esos datos solo para entregarnos el mensaje. Podemos compartir datos con autoridades fiscales cuando la ley lo requiera (por ejemplo, en la facturación e-CF).",
         ],
       },
       {
         n: "06",
         title: "Cookies y analítica",
         body: [
-          "Este sitio no utiliza cookies de rastreo ni publicidad. Si en el futuro incorporamos herramientas de analítica de tráfico, actualizaremos esta política antes de activarlas.",
+          "Este sitio no utiliza cookies de rastreo ni publicidad. Para saber cuántas personas nos visitan y qué canales funcionan, usamos Umami, una herramienta de analítica sin cookies: registra datos agregados (página visitada, país, tipo de dispositivo, sitio desde el que llegaste y clics en nuestros botones de contacto) sin identificarte y sin guardar tu dirección IP. Cuando envías una solicitud, anotamos también el origen de tu visita (por ejemplo, \"google\" o \"instagram\") en nuestro correo interno, solo para medir qué canal te trajo. Si incorporamos otra herramienta de medición, actualizaremos esta política antes de activarla.",
         ],
       },
       {
@@ -106,7 +106,7 @@ const T: Record<
   en: {
     kicker: "Legal",
     h1: "Privacy Policy",
-    updated: "Last updated: July 6, 2026",
+    updated: "Last updated: October 17, 2026",
     intro:
       "At BOLT we treat your personal data with the same clarity as our pricing: we collect only what we need to serve you, we never sell your data, and we answer any question via WhatsApp or email.",
     sections: [
@@ -151,14 +151,14 @@ const T: Record<
         n: "05",
         title: "Who we share it with",
         body: [
-          "We do not sell or rent your data to third parties. Your WhatsApp messages are transmitted through the WhatsApp platform (Meta), subject to its own privacy policies. We may share data with tax authorities where required by law (for example, e-CF invoicing).",
+          "We do not sell or rent your data to third parties. Your WhatsApp messages are transmitted through the WhatsApp platform (Meta), subject to its own privacy policies. When you send a request from the site, a copy reaches us by email through Web3Forms, a form-delivery service that processes that data only to deliver the message to us. We may share data with tax authorities where required by law (for example, e-CF invoicing).",
         ],
       },
       {
         n: "06",
         title: "Cookies and analytics",
         body: [
-          "This site does not use tracking or advertising cookies. If we add traffic-analytics tools in the future, we will update this policy before enabling them.",
+          "This site does not use tracking or advertising cookies. To know how many people visit us and which channels work, we use Umami, a cookie-free analytics tool: it records aggregated data (page visited, country, device type, the site you came from and clicks on our contact buttons) without identifying you and without storing your IP address. When you send a request, we also note the origin of your visit (for example \"google\" or \"instagram\") in our internal email, only to measure which channel brought you. If we add another measurement tool, we will update this policy before enabling it.",
         ],
       },
       {

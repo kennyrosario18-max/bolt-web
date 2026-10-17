@@ -123,7 +123,12 @@ function script(p: Payload): string {
     err.scrollIntoView({block:'center',behavior:'smooth'});
   }
 
-  function track(ev){(window.__boltEvents=window.__boltEvents||[]).push({event:ev,path:location.pathname,t:Date.now()});}
+  // Origen de la visita (lo guarda el listener global de <Analytics/> en cada página).
+  function origen(){try{return sessionStorage.getItem('bolt_origen')||'directo';}catch(e){return 'directo';}}
+  function track(ev){
+    (window.__boltEvents=window.__boltEvents||[]).push({event:ev,path:location.pathname,t:Date.now()});
+    try{if(window.umami&&window.umami.track)window.umami.track(ev,{origen:origen()});}catch(e){}
+  }
 
   // Respaldo por email (Web3Forms) — fire-and-forget: nunca bloquea ni rompe el
   // flujo de WhatsApp aunque el servicio falle. Garantiza que el lead quede
@@ -150,6 +155,7 @@ function script(p: Payload): string {
           Alojamiento:alojaStr()||'(no indicado)',
           Pasajeros:val('pasajeros')||'(no indicado)',
           Comentarios:val('comentarios'),
+          Origen:origen(),   // utm_source, dominio que enlazó o "directo" — para saber qué canal funciona
           message:summary,
           botcheck:''
         })
