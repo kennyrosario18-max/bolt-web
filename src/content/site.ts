@@ -49,8 +49,8 @@ export const ZONES: Zone[] = [
     id: "puntacana-resort",
     name: "Puntacana Resort & Club",
     short: "PCRC",
-    blurb: "Nuestra base principal. Entrega en villas y residenciales de todo el resort.",
-    blurbEn: "Our home base. Delivery to villas and residences across the resort.",
+    blurb: "Nuestra zona principal, donde más entregamos. Villas y residenciales de todo el resort.",
+    blurbEn: "Our main zone, where we deliver the most. Villas and residences across the resort.",
     transport: 60,
     transportFreeFrom: 5,
   },
@@ -112,15 +112,19 @@ export const SERVICE_AREAS = ZONES.filter((z) => z.id !== "otra-zona");
 /** Zonas con landing propia (/alquiler/{id}) — sitemap, home y footer. */
 export const LANDING_ZONES = ZONES.filter((z) => !z.noLanding);
 
-/** Texto corto del transporte de una zona (pills, formularios, mensajes). */
+/** Texto corto del transporte de una zona (pills de inicio y landings). Regla de redacción:
+ *  primero lo gratis, y nunca "por viaje" a secas (se leía como "por tramo"): es ida y vuelta,
+ *  por viaje de tráiler, hasta 2 carritos. */
 export function transportLabel(z: Zone, locale: "es" | "en"): string {
   const es = locale === "es";
-  if (!z.transport) return es ? "Transporte sujeto a cotización" : "Transport quoted separately";
-  const base = es ? `Transporte US$${z.transport} por viaje + ITBIS 18%` : `Transport US$${z.transport} per trip + 18% tax`;
-  if (!z.transportFreeFrom) return base;
+  if (!z.transport) return es ? "Transporte cotizado según tu villa y fechas" : "Transport quoted by villa and dates";
+  const trip = es
+    ? `US$${z.transport} ida y vuelta por viaje de tráiler (hasta 2 carritos) + ITBIS`
+    : `US$${z.transport} round trip per trailer trip (up to 2 carts) + tax`;
+  if (!z.transportFreeFrom) return es ? `${trip} · sin entrega gratis` : `${trip} · no free delivery`;
   return es
-    ? `${base} · gratis en reservas de ${z.transportFreeFrom}+ días`
-    : `${base} · free on ${z.transportFreeFrom}+ day rentals`;
+    ? `Entrega y recogida gratis desde ${z.transportFreeFrom} días · menos días: ${trip}`
+    : `Free delivery & pickup on ${z.transportFreeFrom}+ day stays · shorter: ${trip}`;
 }
 
 /** Mínimo de días para CLIENTES DIRECTOS (Kenny, 16/oct/2026): una renta de 1 día puede tumbar

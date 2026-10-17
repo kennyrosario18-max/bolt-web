@@ -14,12 +14,15 @@ export function generateStaticParams() {
   return MODELS.map((m) => ({ id: m.id }));
 }
 
+/** Short name for the <title> (≤ 43 chars + " | BOLT Golf Cars" = ≤ 60): drops "Precedent". */
+const shortName = (n: string) => n.replace(/^Club Car Precedent /, "Club Car ");
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const model = getModel(id);
   if (!model) return {};
   return {
-    title: `${model.name} rental in Punta Cana — ${model.pax} seats`,
+    title: `${shortName(model.name)} rental in Punta Cana`,
     description: `Rent the ${model.name} (${model.pax} seats) in Punta Cana from US$${modelPrice(model.id)}/day. Villa delivery and 24/7 support — same-day confirmation.`,
     alternates: {
       canonical: `/en/fleet/${model.id}/`,

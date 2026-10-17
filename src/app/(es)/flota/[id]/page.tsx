@@ -14,12 +14,15 @@ export function generateStaticParams() {
   return MODELS.map((m) => ({ id: m.id }));
 }
 
+/** Nombre corto para el <title> (≤ 43 chars + " | BOLT Golf Cars" = ≤ 60): quita "Precedent". */
+const shortName = (n: string) => n.replace(/^Club Car Precedent /, "Club Car ");
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const model = getModel(id);
   if (!model) return {};
   return {
-    title: `Renta ${model.name} en Punta Cana — ${model.pax} plazas`,
+    title: `${shortName(model.name)} — renta en Punta Cana`,
     description: `Alquila el ${model.name} (${model.pax} plazas) en Punta Cana desde US$${modelPrice(model.id)}/día. Entrega en tu villa y soporte 24/7 — confirmación el mismo día.`,
     alternates: {
       canonical: `/flota/${model.id}/`,

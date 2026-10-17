@@ -2,6 +2,18 @@ import { describe, expect, it } from "vitest";
 import { ARTICLES, articlesByLocale, BLOG_SLUG_PAIRS } from "@/content/blog";
 import { ZONE_LANDINGS } from "@/content/zones-landing";
 import { getModel } from "@/content/models";
+import { FAQS } from "@/views/faq";
+
+describe("FAQ general — espejo ES/EN", () => {
+  it("misma cantidad de preguntas y la renta mínima está (sin la vía de un día)", () => {
+    expect(FAQS.es.length).toBe(FAQS.en.length);
+    const min = FAQS.es.find((f) => /renta mínima/i.test(f.q));
+    expect(min).toBeDefined();
+    expect(min!.a).toMatch(/2 días/);
+    expect(min!.a).not.toMatch(/WhatsApp|un solo día/);
+    expect(FAQS.en.some((f) => /minimum rental/i.test(f.q))).toBe(true);
+  });
+});
 
 /** Invariantes del contenido bilingüe: cada par ES/EN debe ser espejo real. */
 

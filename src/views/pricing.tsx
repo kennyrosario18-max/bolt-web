@@ -1,8 +1,8 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import { PRICING_FOOTNOTE, TRANSPORT_RULES, TRANSPORT_ZONES, pricedModels, withItbis } from "@/content/pricing";
-import { lineName } from "@/content/models";
-import { MIN_DAYS, waLink } from "@/content/site";
+import { PRICING_FOOTNOTE, TRANSPORT_RULES, TRANSPORT_ZONES, modelPrice, pricedModels, withItbis } from "@/content/pricing";
+import { MODELS, lineName } from "@/content/models";
+import { MIN_DAYS, ZONES, waLink } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
@@ -12,8 +12,8 @@ const T = {
   es: {
     kicker: "Precios",
     h1: "Tarifas claras, sin sorpresas",
-    lead: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Transporte fijo por zona, sin cargos ocultos.",
-    leadSub: "Daily rates in US$ plus 18% tax, shown per model — fixed transport by zone, no hidden fees.",
+    lead: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro). Transporte fijo por zona, sin cargos ocultos.",
+    leadSub: "Daily rates in US$ plus 18% tax, shown per model. Free delivery & pickup from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro) — fixed transport by zone, no hidden fees.",
     perDay: " /día",
     withTax: "con ITBIS · ",
     highLabel: "Temporada alta: ",
@@ -41,6 +41,11 @@ const T = {
     fleetHref: "/flota",
     waCta: "Preguntar por WhatsApp",
     waMsg: "Hola BOLT, tengo una pregunta sobre las tarifas de renta.",
+    fullTitle: "Tu precio completo ",
+    fullSub: "· Your full price",
+    fullEx1: (model: string, total: string) => `6 noches de ${model} en Puntacana Resort & Club o Cap Cana: ${total} con ITBIS, entrega y recogida incluidas (reserva de 5+ días).`,
+    fullEx2: (model: string, four: string, five: string) => `4 días de ${model} en Cap Cana con transporte: ${four} · 5 días: ${five} con entrega gratis — un día más te sale igual.`,
+    fullPoints: ["Un solo cargo ida y vuelta por viaje de tráiler (hasta 2 carritos)", "ITBIS a la vista en cada modelo", "Tarifa de transporte publicada por zona", "Aparte: garantía reembolsable de US$200 a la entrega"],
     depositTitle: "Depósitos y temporada",
     depositBody: "Reserva: depósito de confirmación del 50% del total. A la entrega: depósito de garantía de US$200, reembolsable tras la inspección de devolución.",
     seasonBody: "Temporada alta (20 dic–6 ene y Semana Santa): las noches que caen en esas fechas se cobran a la tarifa de temporada alta de cada modelo (en la tabla), con renta mínima de 5 días. Reserva con anticipación: en esas fechas el anticipo no es reembolsable (queda como crédito solo con 30+ días de aviso).",
@@ -48,8 +53,8 @@ const T = {
   en: {
     kicker: "Pricing",
     h1: "Clear rates, no surprises",
-    lead: "Daily rates in US$ plus 18% tax, shown per model. Fixed transport by zone — no hidden fees.",
-    leadSub: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Transporte fijo por zona, sin cargos ocultos.",
+    lead: "Daily rates in US$ plus 18% tax, shown per model. Free delivery & pickup from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro). Fixed transport by zone — no hidden fees.",
+    leadSub: "Precios por día en US$ + ITBIS (18%), mostrado en cada modelo. Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro). Transporte fijo por zona, sin cargos ocultos.",
     perDay: " /day",
     withTax: "with tax · ",
     highLabel: "High season: ",
@@ -77,6 +82,11 @@ const T = {
     fleetHref: "/en/fleet",
     waCta: "Ask on WhatsApp",
     waMsg: "Hi BOLT, I have a question about rental rates.",
+    fullTitle: "Your full price ",
+    fullSub: "· Tu precio completo",
+    fullEx1: (model: string, total: string) => `6 nights of ${model} in Puntacana Resort & Club or Cap Cana: ${total} with tax, delivery and pickup included (5+ day booking).`,
+    fullEx2: (model: string, four: string, five: string) => `4 days of ${model} in Cap Cana with transport: ${four} · 5 days: ${five} with free delivery — one more day costs the same.`,
+    fullPoints: ["One round-trip charge per trailer trip (up to 2 carts)", "Tax shown on every model", "Transport rate published by zone", "Separately: refundable US$200 damage deposit at delivery"],
     depositTitle: "Deposits & season",
     depositBody: "Booking: 50% confirmation deposit of the total. At delivery: a US$200 damage deposit, refundable after the return inspection.",
     seasonBody: "High season (Dec 20–Jan 6 & Holy Week): nights on those dates are charged at each model’s high-season rate (in the table), with a 5-day minimum. Book ahead: the advance is non-refundable on those dates (kept as credit only with 30+ days’ notice).",
@@ -86,6 +96,10 @@ const T = {
 export function PricingView({ locale }: { locale: Locale }) {
   const t = T[locale];
   const es = locale === "es";
+  // Ejemplos de "Tu precio completo": ECO Plus 2+2 en una zona con exención a los 5 días.
+  const exModel = MODELS.find((m) => m.id === "eco-plus-2-2")!;
+  const exPrice = modelPrice(exModel.id);
+  const exZone = ZONES.find((z) => z.id === "cap-cana")!;
 
   return (
     <>
@@ -148,7 +162,7 @@ export function PricingView({ locale }: { locale: Locale }) {
         <hr className="divider-volt mt-12 border-0" />
 
         {/* Transporte — lista oficial por zona (16/oct/2026); tarifas en ZONES. */}
-        <div className="reveal mt-8 rounded-card bg-cream p-4 sm:p-7">
+        <div id="transporte" className="reveal mt-8 scroll-mt-20 rounded-card bg-cream p-4 sm:p-7">
           <h2 className="font-display text-xl font-extrabold">
             {t.deliveryTitle}
             <span className="text-base font-semibold text-steel">{t.deliverySub}</span>
@@ -193,6 +207,23 @@ export function PricingView({ locale }: { locale: Locale }) {
             ))}
           </ul>
           <p className="mt-4 text-xs font-semibold text-steel">{t.transportFoot}</p>
+        </div>
+
+        {/* Tu precio completo — ejemplos calculados desde MODEL_PRICES y ZONES (nunca envejecen). */}
+        <div className="reveal mt-8 rounded-card border border-volt/40 bg-cream p-6 sm:p-7">
+          <h2 className="font-display text-xl font-extrabold">
+            {t.fullTitle}
+            <span className="text-base font-semibold text-steel">{t.fullSub}</span>
+          </h2>
+          <ul className="mt-4 space-y-3 text-sm text-inktext">
+            <li className="rounded-box bg-white px-4 py-3">{t.fullEx1(exModel.name, withItbis(exPrice * 6))}</li>
+            <li className="rounded-box bg-white px-4 py-3">{t.fullEx2(exModel.name, withItbis(exPrice * 4 + exZone.transport!), withItbis(exPrice * exZone.transportFreeFrom!))}</li>
+          </ul>
+          <ul className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-volt-dark">
+            {t.fullPoints.map((p) => (
+              <li key={p} className="rounded-full border border-volt/40 bg-white px-3 py-1">{p}</li>
+            ))}
+          </ul>
         </div>
 
         {/* Depósitos + temporada — transparencia (F6). */}

@@ -10,17 +10,27 @@ import { SITE_URL } from "@/lib/site-url";
 
 const SITE = SITE_URL;
 
+/** Último cambio de contenido de las páginas fijas (no del blog, que usa `updated`). */
+const LAST_CHANGE = "2026-10-17";
+
 /** Par ES/EN con hreflang recíproco; prioridades por rol en el embudo. */
-function pair(es: string, en: string, priority: number): MetadataRoute.Sitemap {
+function pair(
+  es: string,
+  en: string,
+  priority: number,
+  lastModified: string = LAST_CHANGE,
+): MetadataRoute.Sitemap {
   return [
     {
       url: `${SITE}${es}`,
       priority,
+      lastModified,
       alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${en}` } },
     },
     {
       url: `${SITE}${en}`,
       priority,
+      lastModified,
       alternates: { languages: { "es": `${SITE}${es}`, en: `${SITE}${en}`, "x-default": `${SITE}${en}` } },
     },
   ];
@@ -57,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog: índice y cada artículo emparejados ES↔EN por su pairSlug.
   entries.push(...pair("/blog/", "/en/blog/", 0.6));
   for (const a of articlesByLocale("es")) {
-    entries.push(...pair(`/blog/${a.slug}/`, `/en/blog/${a.pairSlug}/`, 0.6));
+    entries.push(...pair(`/blog/${a.slug}/`, `/en/blog/${a.pairSlug}/`, 0.6, a.updated));
   }
 
   return entries;

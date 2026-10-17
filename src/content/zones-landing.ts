@@ -33,6 +33,8 @@ export interface ZoneLanding {
   recommendedIds: string[];
   faqs: { q: string; a: string }[];
   faqsEn: { q: string; a: string }[];
+  /** Sectores y residenciales donde entregamos (solo nombres de lugar; Kenny, 17/oct/2026). */
+  sectors?: string[];
 }
 
 const byId = (id: string): Zone => {
@@ -52,9 +54,9 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     metaTitleEn: "Golf carts in Puntacana Resort & Club",
     metaDescriptionEn: "Golf cart rental with villa delivery inside Puntacana Resort & Club. Free transport on 5+ day stays. 4 and 6-seat fleet, 24/7 bilingual support.",
     intro:
-      "Es nuestra base principal y donde más carritos entregamos cada semana. Llevamos tu golf cart con carga completa hasta tu villa, coordinando el acceso con tu anfitrión o property manager.",
+      "Es nuestra zona principal, donde más carritos entregamos cada semana. Llevamos tu golf cart con carga completa hasta tu villa, coordinando el acceso con tu anfitrión o property manager.",
     introEn:
-      "Our home base — and where we deliver the most carts every week. We bring your golf cart fully charged to your villa and coordinate access with your host or property manager.",
+      "Our main zone — where we deliver the most carts every week. We bring your golf cart fully charged to your villa and coordinate access with your host or property manager.",
     sections: [
       {
         h: "Por qué necesitas un golf cart en Puntacana Resort & Club",
@@ -98,6 +100,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       { es: "Coordinación directa con concierges y property managers", en: "Direct coordination with concierges and property managers" },
       { es: "Asistencia y reposición si algo falla — soporte 24/7", en: "Swap or assistance if anything fails — 24/7 support" },
     ],
+    sectors: ["Corales", "Tortuga Bay", "Arrecife", "Hacienda", "Mangle", "Canoa"],
     recommendedIds: ["eco-cross-4-2", "eco-plus-4-2", "cc-precedent-2-2"],
     faqs: [
       {
@@ -180,6 +183,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       { es: "Modelos de 6 plazas ideales para familias y grupos", en: "6-seaters ideal for families and groups" },
       { es: "Soporte 24/7 por WhatsApp en español e inglés", en: "24/7 bilingual WhatsApp support" },
     ],
+    sectors: ["Juanillo", "Las Iguanas", "Punta Espada", "Marina"],
     recommendedIds: ["eco-cross-4-2", "eco-sport-4-2", "zycar-4-2"],
     faqs: [
       {
@@ -262,6 +266,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       { es: "Entrega en residenciales y complejos turísticos de la zona", en: "Delivery to residential communities and resorts" },
       { es: "Ideal para estadías largas: transporte gratis desde 10 días", en: "Great for long stays — free transport from 10 days" },
     ],
+    sectors: ["Cocotal", "Vista Cana"],
     recommendedIds: ["eco-plus-2-2", "eco-track-4-2", "cc-tempo-2-2"],
     faqs: [
       {
@@ -278,14 +283,14 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Cuál es la tarifa por día en Bávaro?",
-        a: "Desde US$50 por día los modelos de 4 plazas y desde US$65 los de 6 plazas, con el precio exacto según el modelo. El transporte (entrega + recogida) en Bávaro es US$60 + ITBIS por viaje y es gratis en reservas de 10 días o más.",
+        a: "Desde US$50 por día los modelos de 4 plazas y desde US$65 los de 6 plazas, con el precio exacto según el modelo. En Bávaro la entrega y la recogida son gratis en reservas de 10 días o más; en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS.",
       },
     ],
     faqsEn: [
       { q: "Where are you located?", a: "Our base is at Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro. The whole fleet dispatches from there." },
       { q: "Can I pick up the cart myself?", a: "Our standard service is delivery to your accommodation within the area (transport billed per trailer trip, free on 10+ day bookings). If you'd rather arrange something different, message us on WhatsApp and we'll look into it." },
       { q: "Do you rent by the week or month?", a: "Yes. The model's daily rate is the same; on rentals of 10 days or more transport is free. Rentals of a month or more: quote on WhatsApp." },
-      { q: "What's the daily rate in Bávaro?", a: "From US$50 a day for 4-seat models and from US$65 for 6-seaters, with the exact price depending on the model. Transport (delivery + pickup) in Bávaro is US$60 + 18% tax per trip and free on rentals of 10 days or more." },
+      { q: "What's the daily rate in Bávaro?", a: "From US$50 a day for 4-seat models and from US$65 for 6-seaters, with the exact price depending on the model. In Bávaro delivery and pickup are free on rentals of 10 days or more; on shorter stays, US$60 round trip per trailer trip + tax." },
     ],
   },
   {
@@ -318,11 +323,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         h: "Cómo funciona la reserva de 7 días o más",
         hEn: "How the 7-day-plus rental works",
         p: [
-          "Casa de Campo está fuera de nuestra zona base en Punta Cana, así que trasladar el carrito solo tiene sentido en estadías largas — por eso el mínimo es de siete días. El transporte de ida y vuelta se cotiza según la ubicación exacta de tu villa y tus fechas, y te lo incluimos en la confirmación de la solicitud, sin sorpresas de último momento.",
+          "Casa de Campo está fuera de nuestra zona habitual en Punta Cana, así que trasladar el carrito solo tiene sentido en estadías largas — por eso el mínimo es de siete días. El transporte de ida y vuelta se cotiza según la ubicación exacta de tu villa y tus fechas, y te lo incluimos en la confirmación de la solicitud, sin sorpresas de último momento.",
           "La tarifa por día del modelo es la misma que en el resto de nuestras zonas; solo cambia el transporte, que aquí se cotiza según tu villa en lugar de la tarifa fija por zona. Envía tu solicitud con la villa y las fechas y te devolvemos por WhatsApp el costo total claro — carrito, transporte y depósito — para que decidas con toda la información.",
         ],
         pEn: [
-          "Casa de Campo is outside our home base in Punta Cana, so moving the cart only makes sense for longer stays — hence the seven-day minimum. Round-trip transport is quoted based on your villa's exact location and your dates, and we include it in your request confirmation, with no last-minute surprises.",
+          "Casa de Campo is outside our usual area in Punta Cana, so moving the cart only makes sense for longer stays — hence the seven-day minimum. Round-trip transport is quoted based on your villa's exact location and your dates, and we include it in your request confirmation, with no last-minute surprises.",
           "The model's daily rate is the same as in the rest of our zones; only the transport differs — here it's quoted by villa instead of the fixed zone rate. Send your request with the villa and dates and we'll get back to you on WhatsApp with the clear total — cart, transport and deposit — so you decide with full information.",
         ],
       },
@@ -348,7 +353,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     faqs: [
       {
         q: "¿Por qué el mínimo es de 7 días?",
-        a: "Casa de Campo está fuera de nuestra zona base en Punta Cana. El traslado del carrito solo se justifica en estadías largas — por eso el mínimo de 7 días.",
+        a: "Casa de Campo está fuera de nuestra zona habitual en Punta Cana. El traslado del carrito solo se justifica en estadías largas — por eso el mínimo de 7 días.",
       },
       {
         q: "¿Cuánto cuesta el transporte hasta Casa de Campo?",
@@ -360,14 +365,14 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Tengo soporte durante la renta en Casa de Campo?",
-        a: "Sí. Aunque estés fuera de nuestra zona base, cuentas con el mismo soporte 24/7 por WhatsApp en español e inglés durante toda la estadía.",
+        a: "Sí. Aunque estés fuera de nuestra zona habitual, cuentas con el mismo soporte 24/7 por WhatsApp en español e inglés durante toda la estadía.",
       },
     ],
     faqsEn: [
-      { q: "Why is there a 7-day minimum?", a: "Casa de Campo is outside our home base in Punta Cana. Transporting the cart only makes sense for longer stays — hence the 7-day minimum." },
+      { q: "Why is there a 7-day minimum?", a: "Casa de Campo is outside our usual area in Punta Cana. Transporting the cart only makes sense for longer stays — hence the 7-day minimum." },
       { q: "How much does transport to Casa de Campo cost?", a: "It's quoted based on your villa, dates and number of carts (trailer trips). Send your request and we'll include the exact transport cost in the confirmation — no surprises." },
       { q: "Is the daily rate the same?", a: "Yes, the model's daily rate is the same. Only the transport differs — quoted here instead of the fixed zone rate." },
-      { q: "Do I have support during the rental in Casa de Campo?", a: "Yes. Even outside our home base, you have the same 24/7 WhatsApp support in English and Spanish throughout the stay." },
+      { q: "Do I have support during the rental in Casa de Campo?", a: "Yes. Even outside our usual area, you have the same 24/7 WhatsApp support in English and Spanish throughout the stay." },
     ],
   },
 ];

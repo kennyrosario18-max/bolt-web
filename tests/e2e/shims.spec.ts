@@ -173,16 +173,35 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await expect(page.locator("#req-success")).toBeVisible();
     await expect.poll(() => body).not.toBeNull();
     expect(body!.Origen).toBe("instagram");
-    // El mensaje de WhatsApp del cliente no cambia: no lleva el origen.
+    // El mensaje de WhatsApp del cliente no lleva el origen, pero sí el estimado que vio en pantalla.
     const waHref = decodeURIComponent((await page.locator("#wa-fallback").getAttribute("href")) ?? "");
     expect(waHref).toContain("wa.me/");
     expect(waHref).not.toMatch(/instagram|Origen/);
+    expect(waHref).toMatch(/Estimado web \(1 carrito, ITBIS incluido\): US\$\d+ · 4 días · transporte incluido US\$71 \(1 viaje\) · depósito 50%/);
     await (await popup).close();
   });
 
   test("origen de la visita: sin utm ni referrer es 'directo'", async ({ page }) => {
     await page.goto("/");
     expect(await page.evaluate(() => sessionStorage.getItem("bolt_origen"))).toBe("directo");
+  });
+
+  test("un día más sale más barato: Precedent 4 días en PCRC", async ({ page }) => {
+    // 4 × 50 × 1.18 = 236 + 71 = US$307; con 5 días y entrega gratis: 5 × 50 × 1.18 = US$295.
+    await page.goto("/solicitar-disponibilidad/?modelo=cc-precedent-2-2&zona=puntacana-resort");
+    await page.locator("#llegada").fill("2027-02-10");
+    await page.locator("#salida").fill("2027-02-14");
+    await expect(page.locator("#estimate")).toContainText("US$307");
+    await expect(page.locator("#estimate-tip")).toContainText("US$295");
+    await expect(page.locator("#estimate-tip")).toContainText(/igual o más barato/);
+  });
+
+  test("la landing de zona prellena la zona en el formulario", async ({ page }) => {
+    await page.goto("/alquiler/cap-cana/");
+    await page.locator('a[href*="/solicitar-disponibilidad/?zona=cap-cana"]').first().click();
+    await expect(page).toHaveURL(/zona=cap-cana/);
+    await expect(page.locator("#zona")).toHaveValue("cap-cana");
+    await expect(page.locator("#zona-note")).toContainText(/gratis desde 5 días/);
   });
 
   test("más de 6 pasajeros: sin total, manda a cotizar varios carritos", async ({ page }) => {
@@ -240,10 +259,18 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await expect(page.locator("#zona-note")).toContainText("US$60");
     await expect(page.locator("#estimate")).toContainText("US$372");
     await expect(page.locator("#estimate")).toContainText(/transporte|transport/i);
-    // 5 días o más en PCRC: transporte gratis → 5 × 85 × 1.18 = US$502
+    await expect(page.locator("#estimate-tip")).toBeEmpty();
+    // 4 días (uno antes de la exención): 4 × 85 × 1.18 = 401 + 71 = US$472, y el aviso de que
+    // con 5 días la entrega sale gratis por US$502 (solo US$30 más).
+    await page.locator("#salida").fill("2027-01-14");
+    await expect(page.locator("#estimate")).toContainText("US$472");
+    await expect(page.locator("#estimate-tip")).toContainText("US$502");
+    await expect(page.locator("#estimate-tip")).toContainText("US$30");
+    // 5 días o más en PCRC: transporte gratis → 5 × 85 × 1.18 = US$502, sin aviso.
     await page.locator("#salida").fill("2027-01-15");
     await expect(page.locator("#estimate")).toContainText("US$502");
     await expect(page.locator("#estimate")).toContainText(/gratis|free/i);
+    await expect(page.locator("#estimate-tip")).toBeEmpty();
     // Zona cotizada (Casa de Campo, 7+ días): el estimado avisa que el transporte va aparte.
     await page.locator("#salida").fill("2027-01-18");
     await page.locator("#zona").selectOption("casa-de-campo");

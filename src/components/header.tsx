@@ -20,6 +20,7 @@ const NAV: Record<Locale, { href: string; label: string }[]> = {
     { href: "/venta", label: "Venta" },
     { href: "/#zonas", label: "Zonas" },
     { href: "/servicios", label: "Servicios" },
+    { href: "/nosotros", label: "Nosotros" },
     { href: "/blog", label: "Blog" },
   ],
   en: [
@@ -27,6 +28,7 @@ const NAV: Record<Locale, { href: string; label: string }[]> = {
     { href: "/en/golf-carts-for-sale", label: "For sale" },
     { href: "/en#zones", label: "Zones" },
     { href: "/en/services", label: "Services" },
+    { href: "/en/about", label: "About" },
     { href: "/en/blog", label: "Blog" },
   ],
 };

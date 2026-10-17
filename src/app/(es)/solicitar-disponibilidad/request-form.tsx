@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MODELS } from "@/content/models";
-import { CONTACT, HIGH_SEASON, MIN_DAYS, ZONES, priceFrom, WEB3FORMS_ACCESS_KEY } from "@/content/site";
+import { CONTACT, HIGH_SEASON, MIN_DAYS, ZONES, priceFrom, waLink, WEB3FORMS_ACCESS_KEY } from "@/content/site";
 import { highPriceFromPax, modelHighPrice, modelPrice } from "@/content/pricing";
 import { BoltIcon } from "@/components/icons";
 import { RequestFormEnhance } from "./request-form-enhance";
@@ -13,7 +13,7 @@ import type { Locale } from "@/lib/i18n";
 const T = {
   es: {
     success:
-      "Gracias por tu solicitud. Nuestro equipo verificará la disponibilidad y se comunicará contigo lo antes posible para confirmar tu reserva y ofrecerte la mejor opción disponible.",
+      "Gracias por tu solicitud. Nuestro equipo verifica la disponibilidad y te confirma por WhatsApp el mismo día, con la mejor opción disponible.",
     sentTitle: "Solicitud enviada",
     waFallback: "Si WhatsApp no se abrió automáticamente, escríbenos directo al",
     header: "⚡ SOLICITUD DE DISPONIBILIDAD — boltgolfcars.com",
@@ -29,7 +29,7 @@ const T = {
     lSalida: "Fecha de salida *",
     lZona: "Zona de entrega *",
     zonaPlaceholder: "Selecciona la zona…",
-    zonaHint: "Rentamos para uso dentro de complejos privados (residenciales y resorts) de Bávaro, Punta Cana y Casa de Campo, y en eventos. No se circula por vías públicas.",
+    zonaHint: "Entregamos en Puntacana Resort & Club, Cap Cana, Bávaro y Uvero Alto / Macao, y en Casa de Campo en reservas de 7 días o más. Rentamos solo para uso dentro de complejos privados (residenciales y resorts) y en eventos; no se circula por vías públicas.",
     lAlojamiento: "Tipo de alojamiento *",
     alojamientoPlaceholder: "Villa, hotel…",
     alojamientoOpts: { villa: "Villa", hotel: "Hotel", condo: "Apartamento o condominio", otro: "Otro" },
@@ -37,12 +37,25 @@ const T = {
     lugarPlaceholder: "Ej. Villa Tortuga B-12 · Hotel Meliá · Torre…",
     minDays: (n: number) => ` (mínimo ${n} días)`,
     zoneNoteTpl: "{name}: reservas de {min}+ días · {note}",
-    transportTpl: "Transporte (entrega + recogida): US${price} por viaje + ITBIS 18% · gratis en reservas de {free} días o más",
-    transportNoFreeTpl: "Transporte (entrega + recogida): US${price} por viaje + ITBIS 18% · sin exención",
+    transportTpl: "Entrega y recogida gratis desde {free} días · menos días: US${price} ida y vuelta por viaje de tráiler + ITBIS 18%",
+    transportNoFreeTpl: "Entrega y recogida: US${price} ida y vuelta por viaje de tráiler + ITBIS 18% · sin entrega gratis",
     estTransport: " · incluye transporte US${amount} (1 viaje)",
     estTransportFree: " · transporte gratis",
     estTransportQuoted: " · transporte cotizado aparte",
     estBigGroup: "Para grupos de más de 6 te cotizamos varios carritos por WhatsApp (el transporte depende de los viajes de tráiler).",
+    estTipTpl: "Con {free} días la entrega y recogida salen gratis: total US${total5} (solo US${diff} más, para 1 carrito).",
+    estTipSameTpl: "Con {free} días la entrega y recogida salen gratis: total US${total5} — te sale igual o más barato (1 carrito).",
+    msgEstimateTpl: "Estimado web (1 carrito, ITBIS incluido): US${total} · {days} {dayword}{season} · {transport} · depósito 50%: US${deposit} (sujeto a confirmación)",
+    msgTrFree: "transporte gratis",
+    msgTrIncl: "transporte incluido US${amount} (1 viaje)",
+    msgTrQuoted: "transporte por cotizar",
+    msgBigGroup: "Grupo de más de 6: cotizar varios carritos",
+    datesNote: `Mínimo ${MIN_DAYS.regular} días (${MIN_DAYS.high} en temporada alta: 20 dic – 6 ene y Semana Santa). Desde 5 días la entrega y recogida van gratis en Puntacana Resort & Club y Cap Cana (10 en Bávaro).`,
+    waDirect: "¿Prefieres escribir directo? WhatsApp ",
+    waDirectMsg: "Hola BOLT, quiero consultar disponibilidad de un golf cart.",
+    formal: "Empresa dominicana formal · KR Experts and Management SRL · RNC 132-22400-2 · base de operaciones en Bávaro · pagos solo a cuenta empresarial · ",
+    formalLink: "Conócenos →",
+    aboutHref: "/nosotros",
     estHigh: " · {n} {nightword} a tarifa de temporada alta",
     night: "noche",
     nights: "noches",
@@ -66,7 +79,7 @@ const T = {
     warnMin: "Para {name} el mínimo es de {min} días — tu selección actual es de {days} {dayword}.",
     errBaseMin: "La renta mínima es de {min} días. Ajusta tus fechas.",
     warnBaseMin: "La renta mínima es de {min} días — tu selección actual es de {days} {dayword}.",
-    errHighMin: "En temporada alta (20 dic – 6 ene y Semana Santa) la renta mínima es de {min} días. Ajusta tus fechas.",
+    errHighMin: "En temporada alta (20 dic – 6 ene y Semana Santa) la renta mínima es de {min} días; en Puntacana Resort & Club y Cap Cana eso incluye la entrega y recogida gratis. Ajusta tus fechas.",
     warnHighMin: "Temporada alta: la renta mínima es de {min} días — tu selección actual es de {days} {dayword}.",
     submit: "Enviar solicitud por WhatsApp",
     legalPre: "Al enviar tu solicitud aceptas nuestros",
@@ -79,7 +92,7 @@ const T = {
   },
   en: {
     success:
-      "Thank you for your request. Our team will verify availability and contact you as soon as possible to confirm your reservation and offer you the best available option.",
+      "Thank you for your request. Our team checks availability and confirms on WhatsApp the same day, with the best available option.",
     sentTitle: "Request sent",
     waFallback: "If WhatsApp didn't open automatically, message us directly at",
     header: "⚡ AVAILABILITY REQUEST — boltgolfcars.com",
@@ -95,7 +108,7 @@ const T = {
     lSalida: "Departure date *",
     lZona: "Delivery zone *",
     zonaPlaceholder: "Select your zone…",
-    zonaHint: "We rent for use inside private communities (residences and resorts) in Bávaro, Punta Cana and Casa de Campo, and at events. No driving on public roads.",
+    zonaHint: "We deliver in Puntacana Resort & Club, Cap Cana, Bávaro and Uvero Alto / Macao, and in Casa de Campo on rentals of 7 days or more. We rent only for use inside private communities (residences and resorts) and at events; no driving on public roads.",
     lAlojamiento: "Accommodation type *",
     alojamientoPlaceholder: "Villa, hotel…",
     alojamientoOpts: { villa: "Villa", hotel: "Hotel", condo: "Apartment or condo", otro: "Other" },
@@ -103,12 +116,25 @@ const T = {
     lugarPlaceholder: "e.g. Villa Tortuga B-12 · Meliá Hotel · Tower…",
     minDays: (n: number) => ` (${n}-day minimum)`,
     zoneNoteTpl: "{name}: {min}+ day rentals · {note}",
-    transportTpl: "Transport (delivery + pickup): US${price} per trip + 18% tax · free on rentals of {free}+ days",
-    transportNoFreeTpl: "Transport (delivery + pickup): US${price} per trip + 18% tax · no exemption",
+    transportTpl: "Free delivery & pickup on {free}+ day stays · shorter: US${price} round trip per trailer trip + 18% tax",
+    transportNoFreeTpl: "Delivery & pickup: US${price} round trip per trailer trip + 18% tax · no free delivery",
     estTransport: " · includes transport US${amount} (1 trip)",
     estTransportFree: " · transport free",
     estTransportQuoted: " · transport quoted separately",
     estBigGroup: "For groups of more than 6 we quote multiple carts on WhatsApp (transport depends on the number of trailer trips).",
+    estTipTpl: "With {free} days delivery and pickup are free: total US${total5} (only US${diff} more, for 1 cart).",
+    estTipSameTpl: "With {free} days delivery and pickup are free: total US${total5} — same price or cheaper (1 cart).",
+    msgEstimateTpl: "Web estimate (1 cart, tax included): US${total} · {days} {dayword}{season} · {transport} · 50% deposit: US${deposit} (subject to confirmation)",
+    msgTrFree: "transport free",
+    msgTrIncl: "transport included US${amount} (1 trip)",
+    msgTrQuoted: "transport to be quoted",
+    msgBigGroup: "Group of more than 6: multiple carts to be quoted",
+    datesNote: `Minimum ${MIN_DAYS.regular} days (${MIN_DAYS.high} in high season: Dec 20 – Jan 6 & Holy Week). From 5 days, delivery and pickup are free in Puntacana Resort & Club and Cap Cana (10 in Bávaro).`,
+    waDirect: "Prefer to write directly? WhatsApp ",
+    waDirectMsg: "Hi BOLT, I'd like to check golf cart availability.",
+    formal: "Registered Dominican company · KR Experts and Management SRL · RNC 132-22400-2 · operations base in Bávaro · payments only to the company account · ",
+    formalLink: "About us →",
+    aboutHref: "/en/about",
     estHigh: " · {n} {nightword} at the high-season rate",
     night: "night",
     nights: "nights",
@@ -132,7 +158,7 @@ const T = {
     warnMin: "{name} requires a {min}-day minimum — your current selection is {days} {dayword}.",
     errBaseMin: "The minimum rental is {min} days. Please adjust your dates.",
     warnBaseMin: "The minimum rental is {min} days — your current selection is {days} {dayword}.",
-    errHighMin: "In high season (Dec 20 – Jan 6 and Holy Week) the minimum rental is {min} days. Please adjust your dates.",
+    errHighMin: "In high season (Dec 20 – Jan 6 and Holy Week) the minimum rental is {min} days; in Puntacana Resort & Club and Cap Cana that includes free delivery and pickup. Please adjust your dates.",
     warnHighMin: "High season: the minimum rental is {min} days — your current selection is {days} {dayword}.",
     submit: "Send request via WhatsApp",
     legalPre: "By sending your request you accept our",
@@ -180,6 +206,13 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     estTransportFree: t.estTransportFree,
     estTransportQuoted: t.estTransportQuoted,
     estBigGroup: t.estBigGroup,
+    estTipTpl: t.estTipTpl,
+    estTipSameTpl: t.estTipSameTpl,
+    msgEstimateTpl: t.msgEstimateTpl,
+    msgTrFree: t.msgTrFree,
+    msgTrIncl: t.msgTrIncl,
+    msgTrQuoted: t.msgTrQuoted,
+    msgBigGroup: t.msgBigGroup,
     estHigh: t.estHigh,
     night: t.night,
     nights: t.nights,
@@ -199,6 +232,15 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
       {/* F4: la barra CTA fija es redundante donde vive el formulario — el envío
           ES el CTA. La ocultamos solo en esta página, sin JS. */}
       <style>{`#mobile-cta{display:none}`}</style>
+      {/* Confianza antes de pedir datos: empresa formal a la vista y vía directa por WhatsApp. */}
+      <p className="mb-2 rounded-box bg-cream px-4 py-2.5 text-xs text-inktext">
+        {t.formal}
+        <Link href={t.aboutHref} className="font-bold underline underline-offset-2">{t.formalLink}</Link>
+      </p>
+      <p className="mb-5 text-sm text-steel">
+        {t.waDirect}
+        <a href={waLink(t.waDirectMsg)} target="_blank" rel="noopener noreferrer" className="font-bold text-ink underline underline-offset-2">{CONTACT.phoneDisplay}</a>
+      </p>
       <form id="req-form" className="grid gap-5 sm:grid-cols-2">
         {/* WCAG 3.3.2: leyenda que explica el asterisco de obligatorio. */}
         <p className="text-xs text-steel sm:col-span-2">{t.reqLegend}</p>
@@ -224,6 +266,11 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
         <div>
           <label className={labelCls} htmlFor="salida">{t.lSalida}</label>
           <input id="salida" name="salida" type="date" required className={inputCls} />
+        </div>
+        <div className="sm:col-span-2">
+          <p className="text-xs text-steel">{t.datesNote}</p>
+          {/* Aviso de mínimo en vivo (aria-live), aquí para que se vea en el celular junto a las fechas. */}
+          <p id="min-warning" aria-live="polite" className="mt-2 rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark" />
         </div>
 
         <div>
@@ -304,6 +351,7 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
 
         {/* Estimado en vivo — se muestra cuando hay fechas + modelo o pasajeros. */}
         <p id="estimate" aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-ink sm:col-span-2" />
+        <p id="estimate-tip" aria-live="polite" className="rounded-box border border-volt/40 bg-volt/10 px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2" />
 
         {/* Transparencia de depósitos + temporada (siempre visible). */}
         <div className="rounded-box border border-line bg-white px-4 py-3 text-xs text-steel sm:col-span-2">
@@ -311,7 +359,6 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
           <p className="mt-1">{t.seasonNote}</p>
         </div>
 
-        <p id="min-warning" aria-live="polite" className="rounded-box bg-cream px-4 py-3 text-sm font-semibold text-volt-dark sm:col-span-2" />
         <p id="form-error" hidden role="alert" className="rounded-box bg-red-50 px-4 py-3 text-sm font-semibold text-danger sm:col-span-2" />
 
         <div className="sm:col-span-2">

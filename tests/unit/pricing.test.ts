@@ -11,6 +11,7 @@ import {
   HIGH_SEASON_PRICES,
   modelHighPrice,
 } from "@/content/pricing";
+import { PRICING } from "@/content/site";
 
 /** Guardas de la fuente única de precios (confirmados por Kenny, jul/2026).
  *  Si un precio oficial cambia, se actualiza AQUÍ y en MODEL_PRICES a la vez —
@@ -78,6 +79,11 @@ describe("pricing — fuente única", () => {
     expect(priceFromPax(6)).toBe(65);
     expect(MIN_PRICE).toBe(50);
     expect(MAX_PRICE).toBe(100);
+  });
+
+  it("el 'desde' del inicio y del formulario coincide con pricing.ts", () => {
+    expect(PRICING.from4pax).toBe(priceFromPax(4));
+    expect(PRICING.from6pax).toBe(priceFromPax(6));
   });
 
   it("withItbis aplica 18% con formato US$XX.XX", () => {

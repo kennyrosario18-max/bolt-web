@@ -4,7 +4,7 @@ import { hreflang } from "@/lib/i18n";
 import { ogMeta } from "@/lib/og";
 
 export const metadata: Metadata = {
-  title: "Venta de golf carts en Punta Cana — nuevos y usados",
+  title: "Venta de golf carts en Punta Cana",
   description:
     "Compra golf carts en Punta Cana: nuevos importados y seminuevos de nuestra flota, con entrega, garantía y mantenimiento local. Consulta precio de compra por WhatsApp.",
   alternates: {

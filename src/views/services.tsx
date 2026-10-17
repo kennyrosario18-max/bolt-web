@@ -18,10 +18,10 @@ interface Service {
 
 const SERVICES: Service[] = [
   {
-    title: "Renta por día, semana o temporada",
-    titleEn: "Daily, weekly & seasonal rental",
-    body: "Flota de 4 y 6 plazas con entrega y recogida en tu villa (transporte fijo por zona desde US$60 por viaje + ITBIS; gratis desde 5 días en Puntacana Resort & Club y Cap Cana, 10 en Bávaro). Rentas de un mes o más: cotización por WhatsApp.",
-    bodyEn: "4 and 6-seat fleet with delivery and pickup at your villa (fixed transport by zone from US$60 per trip + tax; free from 5 days in Puntacana Resort & Club and Cap Cana, 10 in Bávaro). Rentals of a month or more: quote on WhatsApp.",
+    title: "Renta desde 2 días, por semana o por temporada",
+    titleEn: "Rental from 2 days, by the week or season",
+    body: "Flota de 4 y 6 plazas con entrega y recogida en tu villa (entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); estadías más cortas: US$60 ida y vuelta por viaje de tráiler + ITBIS). Rentas de un mes o más: cotización por WhatsApp.",
+    bodyEn: "4 and 6-seat fleet with delivery and pickup at your villa (delivery and pickup free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); shorter stays: US$60 round trip per trailer trip + tax). Rentals of a month or more: quote on WhatsApp.",
     ctaEs: "Ver precios →",
     ctaEn: "See pricing →",
     hrefEs: "/precios",
@@ -41,8 +41,8 @@ const SERVICES: Service[] = [
   {
     title: "Entrega en toda la zona",
     titleEn: "Delivery across the area",
-    body: "Llevamos y recogemos tu carrito con carga completa y orientación de uso en tu villa. Transporte fijo por zona (ida y vuelta): US$60 por viaje en Puntacana Resort & Club, Cap Cana y Bávaro — gratis en reservas de 5+ días (Bávaro 10+) — y US$120 en Uvero Alto / Macao; Casa de Campo en reservas de 7+ días con transporte cotizado. ITBIS 18% aparte.",
-    bodyEn: "We deliver and pick up your cart fully charged with a usage briefing at your villa. Fixed round-trip transport by zone: US$60 per trip to Puntacana Resort & Club, Cap Cana and Bávaro — free on 5+ day stays (Bávaro 10+) — and US$120 to Uvero Alto / Macao; Casa de Campo on 7+ day rentals with quoted transport. 18% tax added.",
+    body: "Llevamos y recogemos tu carrito con carga completa y orientación de uso en tu villa. Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, un solo cargo de US$60 ida y vuelta por viaje de tráiler + ITBIS en esas tres zonas, y US$120 + ITBIS en Uvero Alto / Macao (sin entrega gratis). Casa de Campo en reservas de 7+ días con transporte cotizado.",
+    bodyEn: "We deliver and pick up your cart fully charged with a usage briefing at your villa. Free delivery and pickup from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, a single charge of US$60 round trip per trailer trip + tax in those three zones, and US$120 + tax to Uvero Alto / Macao (no free delivery). Casa de Campo on 7+ day rentals with quoted transport.",
     ctaEs: "Ver zonas →",
     ctaEn: "See zones →",
     hrefEs: "/#zonas",

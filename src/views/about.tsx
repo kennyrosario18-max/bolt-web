@@ -17,7 +17,7 @@ const T = {
       "Ser la marca de movilidad turística líder del este dominicano: la primera opción para rentar, y también para comprar, carritos de golf en Puntacana Resort & Club, Cap Cana y Bávaro — reconocidos por velocidad, transparencia, una flota impecable y un respaldo post-venta que ningún importador ofrece.",
     valoresTitle: "Valores",
     valores: [
-      { t: "Velocidad con seriedad.", d: "Respondemos en minutos y cumplimos lo que confirmamos. El rayo es promesa, no adorno." },
+      { t: "Velocidad con seriedad.", d: "Respondemos rápido y cumplimos lo que confirmamos. El rayo es promesa, no adorno." },
       { t: "Claridad total.", d: "Precios publicados con el ITBIS a la vista, políticas por escrito, facturación formal con comprobante fiscal. En renta y en venta: sin sorpresas ni letra pequeña." },
       { t: "Servicio local, estándar internacional.", d: "Atendemos en español e inglés, con la calidez dominicana y la formalidad que espera el huésped extranjero." },
       { t: "Seguridad primero.", d: "Unidades mantenidas y entregadas en condiciones óptimas, siempre." },
@@ -41,7 +41,7 @@ const T = {
     ],
     culturaTitle: "Cultura · Cómo somos por dentro",
     cultura: [
-      { t: "El rayo se demuestra en la respuesta", d: "Nadie deja un WhatsApp en visto. Quien escribe recibe respuesta en minutos, aunque sea un «dame 10 minutos y te confirmo»." },
+      { t: "El rayo se demuestra en la respuesta", d: "Nadie deja un WhatsApp en visto. Quien escribe recibe respuesta rápido, aunque sea un «dame 10 minutos y te confirmo»." },
       { t: "Todo se registra, nada queda en el aire", d: "Cada renta, pago, comisión y mantenimiento entra al sistema. Lo que no está registrado no existe." },
       { t: "El carrito habla de nosotros", d: "Cada unidad se entrega limpia, cargada y revisada. El cliente no ve nuestra oficina: ve el carrito." },
       { t: "Puntualidad de reloj, calidez dominicana", d: "Llegamos a la hora confirmada y con buena actitud: saludamos, explicamos, dejamos al cliente sonriendo." },
@@ -67,7 +67,7 @@ const T = {
       "To be the leading tourist-mobility brand of the Dominican east: the first choice to rent — and to buy — golf carts in Puntacana Resort & Club, Cap Cana and Bávaro, known for speed, transparency, an impeccable fleet and after-sales backing no importer offers.",
     valoresTitle: "Values",
     valores: [
-      { t: "Speed with seriousness.", d: "We reply in minutes and deliver what we confirm. The lightning bolt is a promise, not a decoration." },
+      { t: "Speed with seriousness.", d: "We reply fast and deliver what we confirm. The lightning bolt is a promise, not a decoration." },
       { t: "Total clarity.", d: "Published prices with tax shown, written policies, formal tax-receipt invoicing. Renting or buying: no surprises, no fine print." },
       { t: "Local service, international standard.", d: "We serve in Spanish and English, with Dominican warmth and the formality foreign guests expect." },
       { t: "Safety first.", d: "Maintained units delivered in optimal condition, always." },
@@ -91,7 +91,7 @@ const T = {
     ],
     culturaTitle: "Culture · What we're like inside",
     cultura: [
-      { t: "The bolt shows in the reply", d: "Nobody leaves a WhatsApp on read. Whoever writes gets an answer in minutes, even if it's just “give me 10 minutes to confirm”." },
+      { t: "The bolt shows in the reply", d: "Nobody leaves a WhatsApp on read. Whoever writes gets a quick answer, even if it's just “give me 10 minutes to confirm”." },
       { t: "Everything gets recorded, nothing floats", d: "Every rental, payment, commission and maintenance enters the system. What isn't recorded doesn't exist." },
       { t: "The cart speaks for us", d: "Every unit is delivered clean, charged and checked. The client never sees our office — they see the cart." },
       { t: "Clockwork punctuality, Dominican warmth", d: "We arrive at the confirmed time and with a good attitude: we greet, we explain, we leave the client smiling." },

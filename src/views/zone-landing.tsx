@@ -2,9 +2,10 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { getModel } from "@/content/models";
 import { ModelCard } from "@/components/model-card";
+import { HighSeasonNote } from "@/components/high-season-note";
 import { BoltIcon, CheckIcon } from "@/components/icons";
 import { ZONE_LANDINGS, type ZoneLanding } from "@/content/zones-landing";
-import { PRICING, transportLabel } from "@/content/site";
+import { PRICING, transportLabel, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
 import { JsonLdScriptProps, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -29,6 +30,10 @@ const T = {
     zoneHref: (id: string) => `/alquiler/${id}/`,
     faqTitle: (short: string) => `Preguntas frecuentes — ${short}`,
     ready: (short: string) => `¿Listo para tu BOLT en ${short}?`,
+    waCta: "o escríbenos por WhatsApp",
+    waMsg: (name: string) => `Hola BOLT, quiero rentar un golf cart en ${name}.`,
+    sectorsTitle: (short: string) => `Dónde entregamos en ${short}`,
+    sectorsNote: "Sectores y residenciales dentro de la comunidad. Si el tuyo no aparece, indícalo en tu solicitud.",
   },
   en: {
     crumbHome: "Home",
@@ -48,6 +53,10 @@ const T = {
     zoneHref: (id: string) => `/en/rentals/${id}/`,
     faqTitle: (short: string) => `FAQ — ${short}`,
     ready: (short: string) => `Ready for your BOLT in ${short}?`,
+    waCta: "or message us on WhatsApp",
+    waMsg: (name: string) => `Hi BOLT, I'd like to rent a golf cart in ${name}.`,
+    sectorsTitle: (short: string) => `Where we deliver in ${short}`,
+    sectorsNote: "Sectors and residential areas inside the community. If yours isn't listed, mention it in your request.",
   },
 } as const;
 
@@ -110,8 +119,9 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
             </p>
           ) : null}
           <div className="animate-rise stagger mt-7 flex flex-wrap gap-3" style={{ "--i": 5 } as CSSProperties}>
+            {/* ?zona= prellena la zona en el formulario: el cliente no vuelve a elegirla. */}
             <Link
-              href={t.reqHref}
+              href={`${t.reqHref}?zona=${zone.id}`}
               className="shine lift rounded-full bg-volt px-7 py-3.5 text-base font-bold text-ink shadow-[var(--shadow-glow)]"
             >
               <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
@@ -137,6 +147,7 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
             </li>
           ))}
         </ul>
+        {zone.transport ? <HighSeasonNote locale={locale} className="mt-6" /> : null}
       </section>
 
       {/* Cuerpo largo (F7-B): contenido único e indexable por zona. */}
@@ -151,6 +162,20 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
             ))}
           </div>
         ))}
+        {/* Dónde entregamos: solo nombres de sector (sin villas ni clientes). */}
+        {landing.sectors?.length ? (
+          <div className="reveal mt-10">
+            <h2 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">{t.sectorsTitle(zone.short)}</h2>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {landing.sectors.map((s) => (
+                <li key={s} className="rounded-full border border-line bg-cream px-4 py-1.5 text-sm font-semibold text-ink">
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-sm text-steel">{t.sectorsNote}</p>
+          </div>
+        ) : null}
       </section>
 
       <section className="mx-auto mt-6 max-w-6xl px-4 pb-4 sm:px-6">
@@ -187,11 +212,16 @@ export function ZoneLandingView({ landing, locale }: { landing: ZoneLanding; loc
           <div className="mt-10 rounded-card bg-ink p-8 text-center">
             <p className="font-display text-xl font-bold text-white">{t.ready(zone.short)}</p>
             <Link
-              href={t.reqHref}
+              href={`${t.reqHref}?zona=${zone.id}`}
               className="mt-4 inline-block rounded-full bg-volt px-8 py-3.5 text-base font-bold text-ink transition-transform hover:scale-105"
             >
               <BoltIcon className="mr-1.5 inline-block align-[-0.15em]" size={15} />{t.reqCta}
             </Link>
+            <p className="mt-3 text-sm text-white/70">
+              <a href={waLink(t.waMsg(zone.name))} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-volt">
+                {t.waCta}
+              </a>
+            </p>
           </div>
         </div>
       </section>

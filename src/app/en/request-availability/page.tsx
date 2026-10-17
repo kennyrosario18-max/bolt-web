@@ -6,7 +6,7 @@ import { hreflang } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Request availability",
   description:
-    "Request availability for your BOLT golf cart in Punta Cana. Our team verifies the fleet and confirms via WhatsApp as soon as possible.",
+    "Request availability for your BOLT golf cart in Punta Cana. Our team verifies the fleet and confirms via WhatsApp the same day.",
   alternates: {
     canonical: "/en/request-availability/",
     ...hreflang("/solicitar-disponibilidad/", "/en/request-availability/"),

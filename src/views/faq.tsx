@@ -8,15 +8,23 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
   es: [
     {
       q: "¿Qué incluye la renta de un golf cart BOLT?",
-      a: "Cargador para carga nocturna, orientación de uso al entregarte el carrito y soporte por WhatsApp 24/7 en español e inglés. La entrega y recogida en tu villa o residencial llevan un transporte fijo por zona (desde US$60 por viaje, gratis en reservas largas).",
+      a: "Cargador para carga nocturna, orientación de uso al entregarte el carrito y soporte por WhatsApp 24/7 en español e inglés. La entrega y recogida en tu villa o residencial llevan un transporte fijo por zona: gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS.",
     },
     {
       q: "¿Cuánto cuesta la renta?",
-      a: "Los modelos de 4 plazas van desde US$50/día y los de 6 plazas desde US$65/día. El ITBIS (18%) se muestra por modelo en la página de precios. El transporte se cobra aparte por zona: desde US$60 por viaje + ITBIS, gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro). En temporada alta (20 dic – 6 ene y Semana Santa) aplica la tarifa de temporada alta de cada modelo, publicada en Precios. Rentas de un mes o más: cotización por WhatsApp.",
+      a: "Los modelos de 4 plazas van desde US$50/día y los de 6 plazas desde US$65/día. El ITBIS (18%) se muestra por modelo en la página de precios. El transporte se cobra aparte por zona: gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS. En temporada alta (20 dic – 6 ene y Semana Santa) aplica la tarifa de temporada alta de cada modelo, publicada en Precios. Rentas de un mes o más: cotización por WhatsApp.",
+    },
+    {
+      q: "¿Cuál es la renta mínima?",
+      a: "2 días. Si alguna noche cae en temporada alta (20 dic – 6 ene y Semana Santa), 5 días. En Casa de Campo, 7 días. La renta es continua: corre desde la entrega hasta la devolución y no se pausa ni se fracciona.",
+    },
+    {
+      q: "¿Cuál es la renta mínima?",
+      a: "2 días. Si alguna noche cae en temporada alta (20 dic – 6 ene y Semana Santa), 5 días. En Casa de Campo, 7 días. La renta es continua: corre desde la entrega hasta la devolución y no se pausa ni se fracciona.",
     },
     {
       q: "¿La entrega tiene costo?",
-      a: "Sí, es un cargo fijo por zona, ida y vuelta (entrega + recogida), por viaje de tráiler: US$60 en Puntacana Resort & Club, Cap Cana y Bávaro, y US$120 en Uvero Alto / Macao; otras zonas se cotizan. Es gratis en reservas de 5 días o más (Puntacana Resort & Club y Cap Cana) y de 10 días o más (Bávaro). Se paga con la reserva; ITBIS 18% aparte.",
+      a: "En estadías de 5 días o más en Puntacana Resort & Club y Cap Cana (10 en Bávaro) no: la entrega y la recogida salen gratis para toda la reserva. En estadías más cortas es un solo cargo fijo, ida y vuelta, por viaje de tráiler (hasta 2 carritos): US$60 + ITBIS en esas tres zonas. Uvero Alto / Macao: US$120 ida y vuelta por viaje de tráiler + ITBIS, sin entrega gratis. Casa de Campo y otros complejos privados o eventos: se cotiza. Se paga con la reserva.",
     },
     {
       q: "¿Qué necesito para manejar el carrito?",
@@ -24,7 +32,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿En qué zonas entregan?",
-      a: "Puntacana Resort & Club, Cap Cana y Bávaro con transporte fijo de US$60 por viaje (gratis en reservas largas), y Uvero Alto / Macao a US$120. Casa de Campo está disponible para reservas de 7 días o más, con transporte sujeto a cotización.",
+      a: "Puntacana Resort & Club, Cap Cana y Bávaro (entrega y recogida gratis desde 5 días, 10 en Bávaro; en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS) y Uvero Alto / Macao (US$120 ida y vuelta por viaje de tráiler + ITBIS, sin entrega gratis). Casa de Campo está disponible para reservas de 7 días o más, con transporte sujeto a cotización.",
     },
     {
       q: "¿Cómo se confirma mi reserva?",
@@ -58,15 +66,23 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
   en: [
     {
       q: "What does a BOLT golf cart rental include?",
-      a: "A charger for overnight charging, a usage briefing at delivery and 24/7 WhatsApp support in English and Spanish. Delivery and pickup at your villa carry a fixed transport fee by zone (from US$60 per trip, free on longer stays).",
+      a: "A charger for overnight charging, a usage briefing at delivery and 24/7 WhatsApp support in English and Spanish. Delivery and pickup at your villa carry a fixed transport fee by zone: free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, US$60 round trip per trailer trip + tax.",
     },
     {
       q: "How much does it cost?",
-      a: "4-seaters start at US$50/day and 6-seaters at US$65/day. Tax (18% ITBIS) is shown per model on the pricing page. Transport is charged separately by zone: from US$60 per trip + tax, free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro). In high season (Dec 20 – Jan 6 & Holy Week) each model's high-season rate applies, published on the pricing page. Rentals of a month or more: quote on WhatsApp.",
+      a: "4-seaters start at US$50/day and 6-seaters at US$65/day. Tax (18% ITBIS) is shown per model on the pricing page. Transport is charged separately by zone: free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, US$60 round trip per trailer trip + tax. In high season (Dec 20 – Jan 6 & Holy Week) each model's high-season rate applies, published on the pricing page. Rentals of a month or more: quote on WhatsApp.",
+    },
+    {
+      q: "What's the minimum rental?",
+      a: "2 days. If any night falls in high season (Dec 20 – Jan 6 and Holy Week), 5 days. In Casa de Campo, 7 days. The rental is continuous: it runs from delivery to return and cannot be paused or split.",
+    },
+    {
+      q: "What's the minimum rental?",
+      a: "2 days. If any night falls in high season (Dec 20 – Jan 6 and Holy Week), 5 days. In Casa de Campo, 7 days. The rental is continuous: it runs from delivery to return and cannot be paused or split.",
     },
     {
       q: "Is there a delivery fee?",
-      a: "Transport is a fixed round-trip fee (delivery + pickup) per trailer trip: US$60 to Puntacana Resort & Club, Cap Cana and Bávaro, and US$120 to Uvero Alto / Macao; other areas are quoted. It's free on bookings of 5+ days (Puntacana Resort & Club and Cap Cana) and 10+ days (Bávaro). Paid with the booking; 18% tax added.",
+      a: "On stays of 5 days or more in Puntacana Resort & Club and Cap Cana (10 in Bávaro), no: delivery and pickup are free for the whole booking. On shorter stays it's a single fixed round-trip charge per trailer trip (up to 2 carts): US$60 + 18% tax in those three zones. Uvero Alto / Macao: US$120 round trip per trailer trip + tax, no free delivery. Casa de Campo and other private communities or events: quoted. Paid with the booking.",
     },
     {
       q: "What do I need to drive the cart?",
@@ -74,7 +90,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "Which areas do you deliver to?",
-      a: "Puntacana Resort & Club, Cap Cana and Bávaro with a fixed US$60 transport fee per trip (free on longer stays), and Uvero Alto / Macao at US$120. Casa de Campo is available for rentals of 7 days or more, with transport quoted separately.",
+      a: "Puntacana Resort & Club, Cap Cana and Bávaro (free delivery and pickup from 5 days, 10 in Bávaro; on shorter stays, US$60 round trip per trailer trip + tax) and Uvero Alto / Macao (US$120 round trip per trailer trip + tax, no free delivery). Casa de Campo is available for rentals of 7 days or more, with transport quoted separately.",
     },
     {
       q: "How is my booking confirmed?",

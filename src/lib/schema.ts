@@ -1,9 +1,12 @@
 import { CONTACT, SERVICE_AREAS } from "@/content/site";
-import { MIN_PRICE, MAX_PRICE, modelPrice } from "@/content/pricing";
+import { MIN_PRICE, HIGH_SEASON_PRICES, modelPrice, modelHighPrice } from "@/content/pricing";
 import { DESC_EN, type Model } from "@/content/models";
 import { SITE_URL } from "./site-url";
 
 const SITE = SITE_URL;
+
+/** Tope del rango publicado = la tarifa más alta de temporada alta. */
+const MAX_HIGH = Math.max(...Object.values(HIGH_SEASON_PRICES));
 
 /** Imagen absoluta para JSON-LD/OG: SITE ya incluye el basePath del preview,
     así que aquí NO se usa modelImage() (que también lo antepone). */
@@ -40,7 +43,7 @@ export const LOCAL_BUSINESS = {
     "https://www.google.com/maps/search/?api=1&query=Av.%20Barcel%C3%B3%20Km%203%201%2F2%2C%20B%C3%A1varo%2C%20La%20Altagracia",
   areaServed: SERVICE_AREAS.map((z) => ({ "@type": "Place", name: z.name })),
   sameAs: [CONTACT.instagram],
-  priceRange: `US$${MIN_PRICE}–US$${MAX_PRICE}`,
+  priceRange: `US$${MIN_PRICE}–US$${MAX_HIGH} + ITBIS`,
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -65,6 +68,32 @@ export function productSchema(model: Model, locale: "es" | "en") {
       price: modelPrice(model.id),
       availability: "https://schema.org/InStock",
       url: `${SITE}${path}/`,
+      priceSpecification: [
+        {
+          "@type": "UnitPriceSpecification",
+          price: modelPrice(model.id),
+          priceCurrency: "USD",
+          unitCode: "DAY",
+          valueAddedTaxIncluded: false,
+          name:
+            locale === "es"
+              ? "Tarifa por día (temporada regular), ITBIS 18% aparte"
+              : "Daily rate (regular season), 18% tax not included",
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          price: modelHighPrice(model.id),
+          priceCurrency: "USD",
+          unitCode: "DAY",
+          valueAddedTaxIncluded: false,
+          validFrom: "2026-12-20",
+          validThrough: "2027-01-06",
+          name:
+            locale === "es"
+              ? "Tarifa por día en temporada alta (20 dic – 6 ene y Semana Santa), ITBIS 18% aparte"
+              : "Daily rate in high season (Dec 20 – Jan 6 & Holy Week), 18% tax not included",
+        },
+      ],
     },
   };
 }

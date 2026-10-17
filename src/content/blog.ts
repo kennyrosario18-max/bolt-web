@@ -39,7 +39,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Por qué el golf cart es el vehículo natural de Puntacana Resort & Club",
         "paragraphs": [
           "Puntacana Resort & Club es un entorno de villas, calles internas tranquilas, campos de golf, clubes de playa y áreas comunes pensadas para moverse sin prisa. En ese escenario, el golf cart no es un lujo opcional: es la forma más cómoda, silenciosa y práctica de recorrerlo. Con un carrito en la puerta de tu villa te olvidas de esperar transporte, cargas lo de la playa sin esfuerzo y llegas a cenar en minutos.",
-          "En BOLT, Puntacana Resort & Club es nuestra base principal de clientes, así que conocemos bien cómo se vive dentro del complejo. También operamos en Cap Cana y mantenemos nuestra base de operaciones en Bávaro. Cuando reservas para tu villa, todo está pensado para que empieces a disfrutar desde el primer día. Your ride in paradise."
+          "En BOLT, Puntacana Resort & Club es nuestra zona principal, donde más entregamos, así que conocemos bien cómo se vive dentro del complejo. También operamos en Cap Cana y mantenemos nuestra base de operaciones en Bávaro. Cuando reservas para tu villa, todo está pensado para que empieces a disfrutar desde el primer día. Your ride in paradise."
         ]
       },
       {
@@ -146,7 +146,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Cobertura de BOLT en Cap Cana y entrega en tu villa",
         "paragraphs": [
-          "BOLT renta golf carts premium en las tres zonas principales de Punta Cana: Puntacana Resort & Club (su base principal de clientes), Cap Cana y Bávaro, donde está la base de operaciones (Av. Barceló Km 3 1/2, Naves Montolio #17). En Cap Cana el servicio funciona con entrega directa: el equipo lleva el golf cart hasta tu villa, te da una orientación de uso y lo recoge en el mismo punto al final de la renta. No tienes que salir de la comunidad ni coordinar nada más.",
+          "BOLT renta golf carts premium en las tres zonas principales de Punta Cana: Puntacana Resort & Club (su zona principal, donde más entrega), Cap Cana y Bávaro, donde está la base de operaciones (Av. Barceló Km 3 1/2, Naves Montolio #17). En Cap Cana el servicio funciona con entrega directa: el equipo lleva el golf cart hasta tu villa, te da una orientación de uso y lo recoge en el mismo punto al final de la renta. No tienes que salir de la comunidad ni coordinar nada más.",
           "El transporte a Cap Cana (entrega y recogida, ida y vuelta) cuesta US$60 más ITBIS por viaje de tráiler y es gratis en reservas de 5 días o más; se paga junto con la reserva. Un detalle que muchos agradecen: el día de renta se cuenta como 24 horas desde la entrega, no como día calendario. Si recibes el carro a las 3 de la tarde, es tuyo hasta las 3 de la tarde del día siguiente."
         ]
       },
@@ -292,7 +292,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Asegura el tuyo antes de aterrizar",
         "paragraphs": [
-          "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte a tu villa es fijo por zona (US$60 + ITBIS por viaje, gratis en reservas de 5+ días, 10+ en Bávaro). El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
+          "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte a tu villa es fijo por zona: gratis en reservas de 5+ días (10+ en Bávaro) y, en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS. El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
           "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
         ]
       }
@@ -363,7 +363,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Cuándo conviene el tier premium ECO Cross (US$85/día)",
         "paragraphs": [
           "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$85/día + ITBIS. Frente a un 6 plazas estándar de US$75/día, hablamos de US$10 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
-          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte (entrega y recogida en tu villa) es fijo por zona: US$60 + ITBIS por viaje en Puntacana Resort & Club, Cap Cana y Bávaro, gratis en reservas de 5+ días (10+ en Bávaro). El día de renta son 24 horas desde la entrega, no día calendario.",
+          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte (entrega y recogida en tu villa) es fijo por zona: gratis en reservas de 5+ días (10+ en Bávaro) y, en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS en Puntacana Resort & Club, Cap Cana y Bávaro. El día de renta son 24 horas desde la entrega, no día calendario.",
           "¿No estás seguro de cuál te conviene? Escríbenos por WhatsApp al +1 809 839 8515 y cuéntanos tu plan: cuántas personas son, dónde se hospedan y cuántos días. Trabajamos por solicitud de disponibilidad —nunca confirmación automática—, así que mientras antes nos escribas, mejor. Your ride in paradise."
         ]
       }
@@ -399,7 +399,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Why the golf cart is the natural vehicle of Puntacana Resort & Club",
         "paragraphs": [
           "Puntacana Resort & Club is a setting of villas, quiet internal streets, golf courses, beach clubs and common areas built for getting around unhurried. In that context the golf cart isn't an optional luxury: it's the most comfortable, quiet and practical way to move through it. With a cart at your villa door you stop waiting for rides, load your beach gear effortlessly and make it to dinner in minutes.",
-          "At BOLT, Puntacana Resort & Club is our main customer base, so we know the community well. We also operate in Cap Cana and keep our operations base in Bávaro. When you book for your villa, everything is set up so you start enjoying from day one. Your ride in paradise."
+          "At BOLT, Puntacana Resort & Club is our main zone, where we deliver the most, so we know the community well. We also operate in Cap Cana and keep our operations base in Bávaro. When you book for your villa, everything is set up so you start enjoying from day one. Your ride in paradise."
         ]
       },
       {
@@ -506,7 +506,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "BOLT coverage in Cap Cana and villa delivery",
         "paragraphs": [
-          "BOLT rents premium golf carts in the three main areas of Punta Cana: Puntacana Resort & Club (its main customer base), Cap Cana and Bávaro, where the operations base is (Av. Barceló Km 3 1/2, Naves Montolio #17). In Cap Cana the service runs on direct delivery: the team brings the golf cart to your villa, gives you a usage briefing and picks it up at the same spot at the end of the rental. You don't have to leave the community or arrange anything else.",
+          "BOLT rents premium golf carts in the three main areas of Punta Cana: Puntacana Resort & Club (its main zone, where it delivers the most), Cap Cana and Bávaro, where the operations base is (Av. Barceló Km 3 1/2, Naves Montolio #17). In Cap Cana the service runs on direct delivery: the team brings the golf cart to your villa, gives you a usage briefing and picks it up at the same spot at the end of the rental. You don't have to leave the community or arrange anything else.",
           "Transport to Cap Cana (round trip, delivery + pickup) is US$60 per trailer trip plus 18% tax, charged with your booking, and it's free on bookings of 5 days or more. A detail many appreciate: the rental day counts as 24 hours from delivery, not a calendar day. If you get the cart at 3 pm, it's yours until 3 pm the next day."
         ]
       },
@@ -643,8 +643,8 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Secure yours before you land",
         "paragraphs": [
-          "Whatever you choose, the BOLT rental includes the same: charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa charged as fixed transport by zone (from US$60 per trip, free on longer stays). The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
-          "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
+          "Whatever you choose, the BOLT rental includes the same: charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa charged as fixed transport by zone: free on 5+ day bookings (10+ in Bávaro) and, on shorter stays, US$60 round trip per trailer trip + tax. The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
+          "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. Transport (delivery + pickup) is US$60 per trailer trip + 18% tax in Puntacana Resort & Club, Cap Cana and Bávaro, free from 5 days (10 in Bávaro). We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
         ]
       }
     ],
@@ -740,6 +740,528 @@ export const ARTICLES: BlogArticle[] = [
       {
         "q": "Does the premium ECO Cross price include tax and delivery?",
         "a": "The premium tier is US$85/day + 18% tax. Transport (round trip, delivery + pickup) is charged separately with your booking: US$60 per trailer trip to Puntacana Resort & Club, Cap Cana and Bávaro + 18% tax, free on longer stays (5+ days nearby, 10+ days in Bávaro); US$120 to Uvero Alto / Macao. Remember the rental day is 24 hours from delivery."
+      }
+    ],
+    "locale": "en"
+  },
+  {
+    "published": "2026-10-17",
+    "updated": "2026-10-17",
+    "slug": "golf-cart-bavaro",
+    "pairSlug": "golf-cart-bavaro-guide",
+    "title": "Golf cart en Bávaro: Cocotal, Vista Cana y residenciales de la zona",
+    "metaTitle": "Golf cart en Bávaro: Cocotal y Vista Cana",
+    "metaDescription": "Renta un golf cart en Bávaro con BOLT: entrega en Cocotal, Vista Cana y residenciales de la zona, transporte gratis desde 10 días; menos días, US$60 ida y vuelta por viaje de tráiler.",
+    "excerpt": "Bávaro es la casa de BOLT: entrega rápida en Cocotal, Vista Cana y los residenciales de la zona, con toda la flota disponible y soporte 24/7 por WhatsApp.",
+    "readMinutes": 4,
+    "sections": [
+      {
+        "heading": "Bávaro es la casa de BOLT",
+        "paragraphs": [
+          "Si te hospedas en Bávaro, estás más cerca de nosotros que en ninguna otra zona. Nuestra base de operaciones está en la Av. Barceló Km 3½, Naves Montolio, Local #17, en pleno Bávaro: desde aquí salen los tráilers cada mañana y aquí vuelve cada carrito al final de su renta. Para ti, eso se traduce en dos ventajas muy concretas: la entrega más rápida de todas nuestras zonas y la asistencia más ágil si algo surge durante tu estadía.",
+          "También significa que tienes toda la flota a mano. Los 11 modelos de BOLT —las líneas ECO, Club Car y Zycar, en 4 y 6 plazas— viven en Bávaro, así que cuando pides disponibilidad para un residencial de la zona no dependes de que un carrito regrese de otro punto: revisamos lo que hay en la nave y te confirmamos el mismo día."
+        ]
+      },
+      {
+        "heading": "Dónde entregamos en Bávaro: Cocotal, Vista Cana y más",
+        "paragraphs": [
+          "En Bávaro entregamos en residencias, apartamentos y resorts de toda la zona. Los dos sectores donde más carritos tenemos rodando son Cocotal, con sus calles internas y su campo de golf, y Vista Cana, una comunidad amplia donde el golf cart es la manera natural de ir de la casa a las áreas comunes. Si tu residencial no es uno de estos dos, escríbenos igual: la regla es que el carrito se use dentro de un complejo privado, y en Bávaro hay muchos que cumplen esa condición.",
+          "La entrega funciona igual que en el resto de nuestras zonas: te llevamos el carrito hasta la puerta de tu villa o apartamento, lo recibes con la batería cargada y te damos una orientación rápida de uso antes de que salgas a rodar. Al terminar la renta lo recogemos en el mismo lugar. No tienes que venir a la base ni coordinar nada más."
+        ],
+        "bullets": [
+          "Cocotal: villas y apartamentos dentro del complejo.",
+          "Vista Cana: casas y áreas comunes de la comunidad.",
+          "Otros residenciales, apartamentos y resorts de Bávaro: consulta por WhatsApp y te decimos si entregamos ahí."
+        ]
+      },
+      {
+        "heading": "Transporte, renta mínima y estadías largas",
+        "paragraphs": [
+          "El transporte en Bávaro (entrega + recogida, ida y vuelta) cuesta US$60 por viaje de tráiler más ITBIS 18%, y se paga junto con la reserva. En un viaje van dos carritos de 4 plazas, o uno de 6 y uno de 4. Lo mejor viene en las estadías largas: en reservas de 10 días o más el transporte es gratis para toda la reserva, sin importar cuántos viajes haga falta hacer.",
+          "La renta mínima para clientes directos es de 2 días durante el año y de 5 días en temporada alta (del 20 de diciembre al 6 de enero y Semana Santa). Tu día de renta son 24 horas contadas desde la entrega, no el día calendario: si recibes el carrito a las 2 de la tarde, es tuyo hasta las 2 de la tarde del día siguiente. Y si tu plan es quedarte un mes o más, escríbenos por WhatsApp y te preparamos una cotización a la medida de tus fechas."
+        ],
+        "bullets": [
+          "Transporte: US$60 por viaje de tráiler + ITBIS 18%.",
+          "Gratis en reservas de 10 días o más (toda la reserva).",
+          "Renta mínima: 2 días; 5 días en temporada alta.",
+          "Rentas de un mes o más: cotización por WhatsApp."
+        ]
+      },
+      {
+        "heading": "Reglas de uso dentro de los residenciales",
+        "paragraphs": [
+          "El golf cart es fácil de manejar y seguro dentro de un residencial, siempre que se respeten unas reglas básicas que cuidan a todos: a tu familia, a los vecinos y al carrito. En BOLT mantenemos un límite de 25 km/h en zonas residenciales, y el uso es exclusivamente dentro de comunidades privadas y resorts. Bávaro tiene carreteras públicas muy transitadas a pocos metros de casi cualquier residencial, y ahí el golf cart no puede circular, igual que en la playa o la arena."
+        ],
+        "bullets": [
+          "El conductor debe ser mayor de 18 años y tener licencia de conducir vigente.",
+          "Uso solo dentro de residenciales, villas y resorts; nunca en carreteras públicas ni en la playa.",
+          "Límite BOLT de 25 km/h en zonas residenciales.",
+          "Todos los pasajeros van sentados y no se excede la capacidad del carrito (360 kg en 4 plazas, 540 kg en 6 plazas)."
+        ]
+      },
+      {
+        "heading": "Cómo reservar tu golf cart en Bávaro",
+        "paragraphs": [
+          "Toda reserva con BOLT es por solicitud de disponibilidad: no es una confirmación automática, una persona de nuestro equipo revisa la flota y te responde el mismo día. Escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, el nombre de tu residencial en Bávaro y cuántas personas viajan, o envía tu solicitud desde boltgolfcars.com. Te proponemos el modelo que mejor encaja y la cotización completa: tarifa por día, transporte e ITBIS, sin sorpresas.",
+          "Para asegurar la reserva se paga un depósito del 50%, y a la entrega se toma un depósito de garantía de US$200 que se devuelve al recibir el carrito en buen estado. Durante toda la renta tienes soporte por WhatsApp 24/7 en español e inglés, y en Bávaro ese soporte está literalmente a pocos minutos de tu puerta. Your ride in paradise."
+        ],
+        "bullets": [
+          "Depósito del 50% para confirmar.",
+          "Depósito de garantía de US$200, reembolsable.",
+          "Confirmación el mismo día por una persona del equipo.",
+          "Cambio de fecha gratis con 48 horas de aviso (fuera de temporada alta)."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Entregan en mi residencial de Bávaro aunque no sea Cocotal ni Vista Cana?",
+        "a": "Sí, siempre que el carrito se use dentro de un complejo privado: residenciales, apartamentos y resorts de la zona de Bávaro. Escríbenos por WhatsApp con el nombre del residencial y te confirmamos la entrega."
+      },
+      {
+        "q": "¿Cuánto cuesta el transporte en Bávaro y cuándo es gratis?",
+        "a": "US$60 por viaje de tráiler más ITBIS 18% (entrega y recogida, ida y vuelta). En reservas de 10 días o más el transporte es gratis para toda la reserva."
+      },
+      {
+        "q": "¿Cuál es la renta mínima en Bávaro?",
+        "a": "2 días durante el año y 5 días en temporada alta (20 de diciembre al 6 de enero y Semana Santa). Cada día de renta son 24 horas desde la entrega. Para un mes o más, pide tu cotización por WhatsApp."
+      },
+      {
+        "q": "¿Puedo salir del residencial con el golf cart?",
+        "a": "No. El golf cart se usa solo dentro de comunidades privadas y resorts, a un máximo de 25 km/h en zonas residenciales. Está prohibido circular por carreteras públicas, la playa o la arena. El conductor debe ser mayor de 18 años con licencia vigente."
+      }
+    ],
+    "locale": "es"
+  },
+  {
+    "published": "2026-10-17",
+    "updated": "2026-10-17",
+    "slug": "golf-cart-bavaro-guide",
+    "pairSlug": "golf-cart-bavaro",
+    "title": "Golf cart in Bávaro: Cocotal, Vista Cana and the area's residential communities",
+    "metaTitle": "Golf cart in Bávaro: Cocotal & Vista Cana",
+    "metaDescription": "Rent a golf cart in Bávaro with BOLT: delivery to Cocotal, Vista Cana and residential communities in the area, transport free from 10 days; shorter stays, US$60 round trip per trailer trip.",
+    "excerpt": "Bávaro is BOLT's home: fast delivery to Cocotal, Vista Cana and the area's residential communities, with the full fleet on hand and 24/7 WhatsApp support.",
+    "readMinutes": 4,
+    "sections": [
+      {
+        "heading": "Bávaro is BOLT's home",
+        "paragraphs": [
+          "If you're staying in Bávaro, you're closer to us than in any other area. Our operations base is at Av. Barceló Km 3½, Naves Montolio, Local #17, right in Bávaro: the trailers leave from here every morning and every cart comes back here at the end of its rental. For you, that means two very concrete advantages: the fastest delivery of all our zones and the quickest assistance if anything comes up during your stay.",
+          "It also means you have the whole fleet within reach. BOLT's 11 models — the ECO, Club Car and Zycar lines, in 4 and 6 seats — live in Bávaro, so when you request availability for a residential community in the area you don't depend on a cart coming back from somewhere else: we check what's in the warehouse and confirm the same day."
+        ]
+      },
+      {
+        "heading": "Where we deliver in Bávaro: Cocotal, Vista Cana and more",
+        "paragraphs": [
+          "In Bávaro we deliver to residences, apartments and resorts across the area. The two sectors where we have the most carts rolling are Cocotal, with its internal streets and golf course, and Vista Cana, a large community where the golf cart is the natural way to get from the house to the common areas. If your residential community isn't one of these two, write to us anyway: the rule is that the cart is used inside a private community, and Bávaro has plenty that meet that condition.",
+          "Delivery works the same as in the rest of our zones: we bring the cart to the door of your villa or apartment, you receive it with the battery charged and we give you a quick usage briefing before you head out. At the end of the rental we pick it up at the same spot. You don't have to come to the base or arrange anything else."
+        ],
+        "bullets": [
+          "Cocotal: villas and apartments inside the complex.",
+          "Vista Cana: houses and common areas of the community.",
+          "Other residential communities, apartments and resorts in Bávaro: ask on WhatsApp and we'll tell you if we deliver there."
+        ]
+      },
+      {
+        "heading": "Transport, minimum rental and long stays",
+        "paragraphs": [
+          "Transport in Bávaro (delivery + pickup, round trip) is US$60 per trailer trip plus 18% tax, paid with your booking. One trip carries two 4-seaters, or one 6-seater and one 4-seater. The best part comes with long stays: on bookings of 10 days or more, transport is free for the whole booking, no matter how many trips it takes.",
+          "The minimum rental for direct customers is 2 days through the year and 5 days in high season (December 20 to January 6 and Holy Week). Your rental day is 24 hours counted from delivery, not the calendar day: if you receive the cart at 2 pm, it's yours until 2 pm the next day. And if your plan is to stay a month or more, message us on WhatsApp and we'll prepare a quote tailored to your dates."
+        ],
+        "bullets": [
+          "Transport: US$60 per trailer trip + 18% tax.",
+          "Free on bookings of 10 days or more (the whole booking).",
+          "Minimum rental: 2 days; 5 days in high season.",
+          "Rentals of a month or more: quote on WhatsApp."
+        ]
+      },
+      {
+        "heading": "Usage rules inside the residential communities",
+        "paragraphs": [
+          "The golf cart is easy to drive and safe inside a residential community, as long as a few basic rules are followed that look after everyone: your family, the neighbours and the cart. At BOLT we keep a 25 km/h limit in residential zones, and use is exclusively inside private communities and resorts. Bávaro has busy public roads a few metres from almost any residential community, and the golf cart cannot drive there, just as it can't on the beach or the sand."
+        ],
+        "bullets": [
+          "The driver must be over 18 and hold a valid driver's license.",
+          "Use only inside residential communities, villas and resorts; never on public roads or the beach.",
+          "BOLT limit of 25 km/h in residential zones.",
+          "All passengers ride seated and the cart's capacity is never exceeded (360 kg on 4 seats, 540 kg on 6 seats)."
+        ]
+      },
+      {
+        "heading": "How to book your golf cart in Bávaro",
+        "paragraphs": [
+          "Every booking with BOLT is by availability request: it's not an automatic confirmation, a person on our team checks the fleet and replies the same day. Message us on WhatsApp at +1 809 839 8515 with your dates, the name of your residential community in Bávaro and how many people are travelling, or send your request from boltgolfcars.com. We propose the model that fits best and the full quote: daily rate, transport and tax, with no surprises.",
+          "To secure the booking you pay a 50% deposit, and on delivery a US$200 damage deposit is taken, returned when the cart comes back in good condition. Throughout the rental you have 24/7 WhatsApp support in English and Spanish, and in Bávaro that support is literally a few minutes from your door. Your ride in paradise."
+        ],
+        "bullets": [
+          "50% deposit to confirm.",
+          "US$200 refundable damage deposit.",
+          "Same-day confirmation by a person on the team.",
+          "Free date change with 48 hours' notice (outside high season)."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do you deliver to my residential community in Bávaro even if it isn't Cocotal or Vista Cana?",
+        "a": "Yes, as long as the cart is used inside a private community: residential communities, apartments and resorts across the Bávaro area. Message us on WhatsApp with the name of the community and we'll confirm delivery."
+      },
+      {
+        "q": "How much is transport in Bávaro and when is it free?",
+        "a": "US$60 per trailer trip plus 18% tax (delivery and pickup, round trip). On bookings of 10 days or more, transport is free for the whole booking."
+      },
+      {
+        "q": "What is the minimum rental in Bávaro?",
+        "a": "2 days through the year and 5 days in high season (December 20 to January 6 and Holy Week). Each rental day is 24 hours from delivery. For a month or more, ask for your quote on WhatsApp."
+      },
+      {
+        "q": "Can I leave the residential community with the golf cart?",
+        "a": "No. The golf cart is used only inside private communities and resorts, at a maximum of 25 km/h in residential zones. Driving on public roads, the beach or the sand is prohibited. The driver must be over 18 with a valid license."
+      }
+    ],
+    "locale": "en"
+  },
+  {
+    "published": "2026-10-17",
+    "updated": "2026-10-17",
+    "slug": "golf-cart-casa-de-campo-7-dias",
+    "pairSlug": "golf-cart-casa-de-campo-7-days",
+    "title": "Golf cart en Casa de Campo para estadías de 7 días o más",
+    "metaTitle": "Golf cart en Casa de Campo: 7 días o más",
+    "metaDescription": "Golf cart en Casa de Campo en estadías de 7 días o más: la misma tarifa por día que en Punta Cana, transporte cotizado por villa y soporte 24/7 por WhatsApp.",
+    "excerpt": "Casa de Campo queda fuera de nuestra zona habitual, pero en estadías de 7 días o más llevamos el golf cart hasta tu villa con el transporte cotizado y la misma tarifa por día.",
+    "readMinutes": 5,
+    "sections": [
+      {
+        "heading": "Una comunidad hecha para moverse en golf cart",
+        "paragraphs": [
+          "Casa de Campo es una de las comunidades residenciales más extensas del Caribe. Villas amplias, varios campos de golf, marina, playa y grandes áreas verdes, todo separado por distancias que a pie no se recorren. Dentro, el golf cart no es un capricho: es el vehículo con el que se vive la comunidad. De la villa a la playa por la mañana, al golf al mediodía, a cenar en la noche, y de vuelta sin depender de nadie.",
+          "Si tu estadía es de una semana o más, tener tu propio carrito desde el primer día cambia el ritmo de las vacaciones. No esperas traslados, cargas lo de la playa sin esfuerzo y cada salida corta deja de ser una logística. En esta guía te contamos cómo funciona la renta con BOLT en Casa de Campo, qué condiciones son distintas y qué modelo conviene para una estadía larga."
+        ]
+      },
+      {
+        "heading": "Por qué el mínimo es de 7 días",
+        "paragraphs": [
+          "Casa de Campo está fuera de nuestra zona habitual: nuestras entregas diarias se concentran en Puntacana Resort & Club, Cap Cana y Bávaro, y trasladar un carrito hasta allá implica un viaje de tráiler considerablemente más largo. Por eso solo tiene sentido en estadías largas, y el mínimo de renta en Casa de Campo es de 7 días. No es una regla para complicarte: es lo que permite que el servicio llegue con la misma calidad que en el resto de nuestras zonas.",
+          "Para ti, el mínimo de 7 días encaja con lo que de todas formas suele ser una estadía en Casa de Campo: una semana, dos semanas o una temporada completa. Y como tu día de renta son 24 horas desde la entrega, los siete días se cuentan completos desde el momento en que recibes el carrito en tu villa."
+        ]
+      },
+      {
+        "heading": "Transporte cotizado, tarifa por día igual que en todas partes",
+        "paragraphs": [
+          "En nuestras tres zonas de Punta Cana el transporte tiene una tarifa fija por viaje de tráiler. En Casa de Campo, en cambio, se cotiza para cada solicitud según tres datos: tu villa (la ubicación exacta dentro de la comunidad), tus fechas y la cantidad de carritos, porque cada viaje de tráiler lleva dos carritos de 4 plazas o uno de 6 y uno de 4. Con esos tres datos te devolvemos el costo exacto del transporte y lo incluimos en la confirmación de tu solicitud, de modo que sabes el total completo antes de pagar nada.",
+          "Lo que no cambia es la tarifa por día del modelo: es la misma que en Puntacana Resort & Club, Cap Cana o Bávaro. Los 4 plazas van desde US$50/día y los 6 plazas desde US$65/día, siempre más ITBIS 18%. No hay recargo por zona en la tarifa del carrito; la única línea que se cotiza aparte es el transporte."
+        ],
+        "bullets": [
+          "Mínimo de renta en Casa de Campo: 7 días.",
+          "Transporte: cotizado según villa, fechas y número de carritos (viajes de tráiler).",
+          "Tarifa por día del modelo: la misma que en el resto de nuestras zonas, más ITBIS 18%.",
+          "El costo exacto del transporte llega en la confirmación de tu solicitud."
+        ]
+      },
+      {
+        "heading": "Qué modelo conviene para una estadía larga",
+        "paragraphs": [
+          "Para una semana o más en una comunidad tan extensa, te recomendamos ir a las líneas premium. En 4 plazas, el ECO Cross 4 y el Zycar 4 tienen todos los asientos mirando hacia adelante, cómodos para una pareja o una familia pequeña que va a usar el carrito todos los días. En 6 plazas, el ECO Cross 4+2 y el ECO Track 4+2 dan el espacio y la capacidad (hasta 540 kg) que piden una familia completa o un grupo de amigos con cooler, bolsos de playa y compras.",
+          "Si tu plan incluye muchas vueltas al día —golf por la mañana, playa por la tarde, cena en la marina— vale la pena considerar un modelo con batería de litio de largo alcance (150 Ah), disponible en el ECO Cross y el ECO Track: entre 85 y 95 km por carga, frente a los 25–40 km del plomo-ácido. Sea cual sea el modelo, el cargador va incluido: lo conectas de noche a un tomacorriente estándar de la villa y en 8 a 10 horas amanece lleno."
+        ],
+        "bullets": [
+          "4 plazas premium: ECO Cross 4 y Zycar 4 (asientos hacia adelante).",
+          "6 plazas premium: ECO Cross 4+2 y ECO Track 4+2 (hasta 540 kg).",
+          "Opcional: litio de largo alcance 150 Ah, 85–95 km por carga.",
+          "Cargador incluido; carga completa en 8–10 horas en un tomacorriente estándar."
+        ]
+      },
+      {
+        "heading": "Soporte 24/7 y cómo reservar",
+        "paragraphs": [
+          "Aunque Casa de Campo quede fuera de nuestra zona habitual, el servicio durante la renta es exactamente el mismo: soporte por WhatsApp 24/7 en español e inglés, el carrito entregado con carga completa y una orientación de uso en la puerta de tu villa. Si en algún momento necesitas asistencia, una sola conversación de WhatsApp lo resuelve.",
+          "Reservar es por solicitud de disponibilidad, nunca confirmación automática: escríbenos por WhatsApp al +1 809 839 8515 o desde boltgolfcars.com con el nombre de tu villa en Casa de Campo, tus fechas y cuántas personas viajan. Una persona del equipo te responde el mismo día con los modelos disponibles y el total claro: tarifa por día, transporte cotizado e ITBIS. Confirmas con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200, reembolsable al devolver el carrito. Your ride in paradise."
+        ],
+        "bullets": [
+          "Escribe con villa, fechas y número de personas.",
+          "Recibes los modelos disponibles y el total con el transporte ya cotizado.",
+          "Depósito del 50% para confirmar; US$200 de garantía reembolsable a la entrega.",
+          "Soporte 24/7 por WhatsApp durante toda la estadía."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué el mínimo es de 7 días en Casa de Campo?",
+        "a": "Porque Casa de Campo está fuera de nuestra zona habitual y el traslado del carrito solo se justifica en estadías largas. Los 7 días se cuentan como 24 horas cada uno desde la entrega."
+      },
+      {
+        "q": "¿Cuánto cuesta llevar el golf cart a Casa de Campo?",
+        "a": "Se cotiza para cada solicitud según tu villa, tus fechas y la cantidad de carritos (viajes de tráiler). Te enviamos el costo exacto en la confirmación, antes de que pagues el depósito."
+      },
+      {
+        "q": "¿La tarifa por día es distinta en Casa de Campo?",
+        "a": "No. La tarifa por día del modelo es la misma que en el resto de nuestras zonas: 4 plazas desde US$50/día y 6 plazas desde US$65/día, más ITBIS 18%. Solo el transporte se cotiza aparte."
+      },
+      {
+        "q": "¿Qué modelo me recomiendan para dos semanas con la familia?",
+        "a": "Un 6 plazas premium: el ECO Cross 4+2 con litio de largo alcance (85–95 km por carga) es la opción más cómoda para una familia que va a usar el carrito todos los días. Si son hasta 4 personas, el ECO Cross 4 o el Zycar 4."
+      }
+    ],
+    "locale": "es"
+  },
+  {
+    "published": "2026-10-17",
+    "updated": "2026-10-17",
+    "slug": "golf-cart-casa-de-campo-7-days",
+    "pairSlug": "golf-cart-casa-de-campo-7-dias",
+    "title": "Golf cart in Casa de Campo for stays of 7 days or more",
+    "metaTitle": "Golf cart in Casa de Campo: 7+ days",
+    "metaDescription": "Golf cart in Casa de Campo for stays of 7 days or more: the same daily rate as in Punta Cana, transport quoted by villa and 24/7 WhatsApp support.",
+    "excerpt": "Casa de Campo is outside our usual area, but for stays of 7 days or more we bring the golf cart to your villa with transport quoted and the same daily rate.",
+    "readMinutes": 5,
+    "sections": [
+      {
+        "heading": "A community built for getting around by golf cart",
+        "paragraphs": [
+          "Casa de Campo is one of the largest residential communities in the Caribbean. Spacious villas, several golf courses, a marina, beach and big green areas, all separated by distances you don't cover on foot. Inside, the golf cart isn't a whim: it's the vehicle the community is lived with. From the villa to the beach in the morning, to the golf at midday, to dinner at night, and back without depending on anyone.",
+          "If your stay is a week or more, having your own cart from day one changes the pace of the holiday. You don't wait for rides, you load your beach gear effortlessly and every short outing stops being a logistics exercise. In this guide we explain how renting with BOLT works in Casa de Campo, which terms are different and which model suits a long stay."
+        ]
+      },
+      {
+        "heading": "Why the minimum is 7 days",
+        "paragraphs": [
+          "Casa de Campo is outside our usual area: our daily deliveries are concentrated in Puntacana Resort & Club, Cap Cana and Bávaro, and moving a cart there means a considerably longer trailer trip. That's why it only makes sense for long stays, and the minimum rental in Casa de Campo is 7 days. It isn't a rule to complicate things: it's what allows the service to arrive with the same quality as in the rest of our zones.",
+          "For you, the 7-day minimum fits what a stay in Casa de Campo usually is anyway: a week, two weeks or a full season. And since your rental day is 24 hours from delivery, the seven days are counted in full from the moment you receive the cart at your villa."
+        ]
+      },
+      {
+        "heading": "Transport quoted, the same daily rate as everywhere",
+        "paragraphs": [
+          "In our three Punta Cana zones, transport has a fixed rate per trailer trip. In Casa de Campo, instead, it's quoted for each request based on three things: your villa (the exact location inside the community), your dates and the number of carts, because each trailer trip carries two 4-seaters or one 6-seater and one 4-seater. With those three details we come back with the exact transport cost and include it in the confirmation of your request, so you know the full total before paying anything.",
+          "What doesn't change is the model's daily rate: it's the same as in Puntacana Resort & Club, Cap Cana or Bávaro. 4-seaters go from US$50/day and 6-seaters from US$65/day, always plus 18% tax. There's no zone surcharge on the cart's rate; the only line quoted separately is transport."
+        ],
+        "bullets": [
+          "Minimum rental in Casa de Campo: 7 days.",
+          "Transport: quoted by villa, dates and number of carts (trailer trips).",
+          "Model's daily rate: the same as in the rest of our zones, plus 18% tax.",
+          "The exact transport cost comes in the confirmation of your request."
+        ]
+      },
+      {
+        "heading": "Which model suits a long stay",
+        "paragraphs": [
+          "For a week or more in such a large community, we recommend going for the premium lines. In 4 seats, the ECO Cross 4 and the Zycar 4 have all seats facing forward, comfortable for a couple or a small family that will use the cart every day. In 6 seats, the ECO Cross 4+2 and the ECO Track 4+2 give the space and capacity (up to 540 kg) that a full family or a group of friends with a cooler, beach bags and shopping needs.",
+          "If your plan includes many trips a day — golf in the morning, beach in the afternoon, dinner at the marina — it's worth considering a model with a long-range lithium battery (150 Ah), available on the ECO Cross and the ECO Track: between 85 and 95 km per charge, against the 25–40 km of lead-acid. Whatever the model, the charger is included: plug it in at night to a standard villa outlet and in 8 to 10 hours it wakes up full."
+        ],
+        "bullets": [
+          "Premium 4 seats: ECO Cross 4 and Zycar 4 (forward-facing seats).",
+          "Premium 6 seats: ECO Cross 4+2 and ECO Track 4+2 (up to 540 kg).",
+          "Optional: 150 Ah long-range lithium, 85–95 km per charge.",
+          "Charger included; full charge in 8–10 hours on a standard outlet."
+        ]
+      },
+      {
+        "heading": "24/7 support and how to book",
+        "paragraphs": [
+          "Even though Casa de Campo is outside our usual area, the service during the rental is exactly the same: 24/7 WhatsApp support in English and Spanish, the cart delivered fully charged and a usage briefing at your villa door. If you ever need assistance, a single WhatsApp conversation sorts it out.",
+          "Booking is by availability request, never automatic confirmation: message us on WhatsApp at +1 809 839 8515 or from boltgolfcars.com with the name of your villa in Casa de Campo, your dates and how many people are travelling. A person on the team replies the same day with the available models and the clear total: daily rate, quoted transport and tax. You confirm with a 50% deposit and on delivery a US$200 damage deposit is taken, refundable when the cart is returned. Your ride in paradise."
+        ],
+        "bullets": [
+          "Write with villa, dates and number of people.",
+          "You receive the available models and the total with transport already quoted.",
+          "50% deposit to confirm; US$200 refundable damage deposit on delivery.",
+          "24/7 WhatsApp support throughout the stay."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why is the minimum 7 days in Casa de Campo?",
+        "a": "Because Casa de Campo is outside our usual area and moving the cart only makes sense for long stays. The 7 days are counted as 24 hours each from delivery."
+      },
+      {
+        "q": "How much does it cost to bring the golf cart to Casa de Campo?",
+        "a": "It's quoted for each request based on your villa, your dates and the number of carts (trailer trips). We send you the exact cost in the confirmation, before you pay the deposit."
+      },
+      {
+        "q": "Is the daily rate different in Casa de Campo?",
+        "a": "No. The model's daily rate is the same as in the rest of our zones: 4 seats from US$50/day and 6 seats from US$65/day, plus 18% tax. Only transport is quoted separately."
+      },
+      {
+        "q": "Which model do you recommend for two weeks with the family?",
+        "a": "A premium 6-seater: the ECO Cross 4+2 with long-range lithium (85–95 km per charge) is the most comfortable option for a family that will use the cart every day. If you're up to 4 people, the ECO Cross 4 or the Zycar 4."
+      }
+    ],
+    "locale": "en"
+  },
+  {
+    "published": "2026-10-17",
+    "updated": "2026-10-17",
+    "slug": "temporada-alta-punta-cana-2027",
+    "pairSlug": "high-season-punta-cana-2027",
+    "title": "Temporada alta en Punta Cana: Navidad, Año Nuevo y Semana Santa 2027 en golf cart",
+    "metaTitle": "Temporada alta 2027: golf cart Punta Cana",
+    "metaDescription": "Fechas, tarifas por modelo y condiciones de BOLT en temporada alta: Navidad, Año Nuevo y Semana Santa 2027. Mínimo 5 días y entrega incluida desde 5 días.",
+    "excerpt": "Qué cambia en temporada alta: fechas, tarifas por modelo, mínimo de 5 días y la política de anticipo. Y por qué Semana Santa 2027 y enero–marzo son la mejor ventana para rodar.",
+    "readMinutes": 5,
+    "sections": [
+      {
+        "heading": "Qué fechas cuentan como temporada alta",
+        "paragraphs": [
+          "En BOLT la temporada alta tiene fechas exactas y públicas: del 20 de diciembre al 6 de enero, y Semana Santa, que en 2027 cae del jueves 25 al domingo 28 de marzo. Fuera de esas ventanas, el resto del año es temporada regular, con las tarifas y condiciones de siempre.",
+          "La regla es por noche, no por reserva: solo las noches que caen dentro de esas fechas se cobran a la tarifa de temporada alta de cada modelo, más ITBIS 18%. Si tu estadía empieza el 15 de diciembre y termina el 23, las noches del 15 al 19 van a tarifa regular y las del 20 al 22 a tarifa de temporada alta. Así no pagas de más por los días que quedan fuera."
+        ]
+      },
+      {
+        "heading": "Tarifas de temporada alta por modelo",
+        "paragraphs": [
+          "Las tarifas de temporada alta son por día, en US$, con el ITBIS 18% aparte. Los 4 plazas van desde US$70/día y los 6 plazas desde US$90/día. Este es el detalle por modelo:",
+          "El cargador, la orientación de uso en la entrega y el soporte por WhatsApp 24/7 en español e inglés van incluidos igual que el resto del año."
+        ],
+        "bullets": [
+          "Club Car Precedent 2+2 (4 plazas): US$70/día.",
+          "Club Car Tempo 2+2 y ECO Plus 2+2 (4 plazas): US$75/día.",
+          "ECO Cross 4 y Zycar 4 (4 plazas, asientos hacia adelante): US$80/día.",
+          "Club Car Precedent Limo 4+2 (6 plazas): US$90/día.",
+          "ECO Plus 4+2 y ECO Sport 4+2 (6 plazas): US$95/día.",
+          "ECO Cross 4+2 (6 plazas, litio de largo alcance): US$105/día.",
+          "ECO Track 4+2 y Zycar 4+2 (6 plazas): US$125/día."
+        ]
+      },
+      {
+        "heading": "Condiciones que cambian en temporada alta",
+        "paragraphs": [
+          "Tres cosas cambian en esas fechas, y conviene tenerlas claras antes de reservar. Primero, la renta mínima: 5 días en temporada alta, frente a 2 días el resto del año. Segundo, el anticipo: el depósito del 50% con el que confirmas no es reembolsable en esas fechas; si avisas con 30 días o más de anticipación, queda como crédito a tu favor, válido por 12 meses para una próxima renta. Tercero, la renta es continua: se cuenta de corrido desde la entrega hasta la recogida, sin pausas en medio.",
+          "Fuera de temporada alta las condiciones son las de siempre: renta mínima de 2 días y un cambio de fecha gratis avisando con 48 horas de anticipación. El depósito de garantía de US$200 es igual todo el año, y se devuelve al recibir el carrito en buen estado."
+        ],
+        "bullets": [
+          "Renta mínima: 5 días en temporada alta (2 el resto del año).",
+          "Anticipo del 50%: no reembolsable en esas fechas; con 30 días o más de aviso queda como crédito válido por 12 meses.",
+          "Renta continua, sin pausas, desde la entrega hasta la recogida.",
+          "Fuera de esas fechas: un cambio de fecha gratis con 48 horas de aviso."
+        ]
+      },
+      {
+        "heading": "Transporte: el mínimo de 5 noches ya incluye la entrega",
+        "paragraphs": [
+          "Aquí hay una buena noticia que a veces pasa desapercibida. El transporte (entrega + recogida, ida y vuelta) cuesta US$60 por viaje de tráiler más ITBIS, pero es gratis en reservas de 5 días o más en Puntacana Resort & Club y Cap Cana, y de 10 días o más en Bávaro. Como la renta mínima de temporada alta es de 5 días, toda reserva de temporada alta en Puntacana Resort & Club o Cap Cana lleva la entrega y la recogida en la villa sin costo. En Bávaro, nuestra base, la entrega es gratis a partir de 10 días."
+        ]
+      },
+      {
+        "heading": "Navidad y Año Nuevo: cupo muy limitado",
+        "paragraphs": [
+          "Entre el 20 de diciembre y el 3 de enero el cupo es muy limitado y los 6 plazas son los primeros en agotarse. Para esas fechas no prometemos nada que no podamos cumplir: consulta disponibilidad por WhatsApp y te decimos con honestidad qué hay para tus fechas. Si hay carrito, lo confirmamos el mismo día; si no lo hay, te lo decimos igual de rápido y, si te sirve, te proponemos fechas de enero con toda la flota disponible."
+        ]
+      },
+      {
+        "heading": "Semana Santa 2027 y enero–marzo: la ventana que recomendamos",
+        "paragraphs": [
+          "Si tienes flexibilidad, nuestra recomendación es clara: del 7 de enero al 24 de marzo, y la propia Semana Santa del 25 al 28 de marzo de 2027. Es la época más tranquila y soleada del año en Punta Cana: días despejados, poca lluvia, temperatura perfecta para rodar en golf cart y, sobre todo, la mejor disponibilidad de modelos. En enero, febrero y marzo encuentras el 6 plazas que quieres, en la fecha que quieres, a tarifa regular. En Semana Santa aplican las tarifas y el mínimo de 5 días de temporada alta, pero la disponibilidad sigue siendo mucho más amplia que en diciembre.",
+          "Para pedir disponibilidad, escríbenos por WhatsApp al +1 809 839 8515 o desde boltgolfcars.com con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas viajan. Una persona del equipo revisa la flota y te responde el mismo día con los modelos disponibles y el total claro: tarifa por noche según la temporada, transporte e ITBIS. Confirmas con el depósito del 50% y listo. Your ride in paradise."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué pasa si mi estadía cae solo en parte en temporada alta?",
+        "a": "Solo las noches dentro del 20 de diciembre al 6 de enero o de Semana Santa (25 al 28 de marzo de 2027) se cobran a tarifa de temporada alta; el resto de las noches van a tarifa regular. Todo más ITBIS 18%."
+      },
+      {
+        "q": "¿Puedo cancelar o cambiar una reserva de Navidad o Año Nuevo?",
+        "a": "En temporada alta el anticipo del 50% no es reembolsable. Si avisas con 30 días o más de anticipación, queda como crédito a tu favor válido por 12 meses. Fuera de esas fechas tienes un cambio de fecha gratis con 48 horas de aviso."
+      },
+      {
+        "q": "¿Cuál es la renta mínima en Semana Santa 2027?",
+        "a": "5 días, igual que en Navidad y Año Nuevo. Las noches del 25 al 28 de marzo de 2027 van a tarifa de temporada alta y el resto a tarifa regular. El resto del año la renta mínima es de 2 días."
+      },
+      {
+        "q": "¿El transporte es gratis en temporada alta?",
+        "a": "El transporte es gratis en reservas de 5 días o más en Puntacana Resort & Club y Cap Cana, y de 10 días o más en Bávaro. Como el mínimo de temporada alta es de 5 días, en Puntacana Resort & Club y Cap Cana la entrega y la recogida van incluidas; en reservas más cortas fuera de temporada son US$60 por viaje de tráiler más ITBIS."
+      }
+    ],
+    "locale": "es"
+  },
+  {
+    "published": "2026-10-17",
+    "updated": "2026-10-17",
+    "slug": "high-season-punta-cana-2027",
+    "pairSlug": "temporada-alta-punta-cana-2027",
+    "title": "High season in Punta Cana: Christmas, New Year and Holy Week 2027 by golf cart",
+    "metaTitle": "Golf cart in high season: Punta Cana 2027",
+    "metaDescription": "BOLT's dates, per-model rates and terms for high season: Christmas, New Year and Holy Week 2027. 5-day minimum and delivery included from 5 days.",
+    "excerpt": "What changes in high season: dates, per-model rates, 5-day minimum and the deposit policy. And why Holy Week 2027 and January–March are the best window to ride.",
+    "readMinutes": 5,
+    "sections": [
+      {
+        "heading": "Which dates count as high season",
+        "paragraphs": [
+          "At BOLT, high season has exact, public dates: December 20 to January 6, and Holy Week, which in 2027 falls from Thursday March 25 to Sunday March 28. Outside those windows, the rest of the year is regular season, with the usual rates and terms.",
+          "The rule is per night, not per booking: only the nights that fall within those dates are charged at each model's high-season rate, plus 18% tax. If your stay starts on December 15 and ends on the 23rd, the nights of the 15th to the 19th go at the regular rate and those of the 20th to the 22nd at the high-season rate. That way you don't overpay for the days that fall outside."
+        ]
+      },
+      {
+        "heading": "High-season rates by model",
+        "paragraphs": [
+          "High-season rates are per day, in US$, with 18% tax on top. 4-seaters go from US$70/day and 6-seaters from US$90/day. Here is the detail by model:",
+          "The charger, the usage briefing at delivery and 24/7 WhatsApp support in English and Spanish are included just like the rest of the year."
+        ],
+        "bullets": [
+          "Club Car Precedent 2+2 (4 seats): US$70/day.",
+          "Club Car Tempo 2+2 and ECO Plus 2+2 (4 seats): US$75/day.",
+          "ECO Cross 4 and Zycar 4 (4 seats, forward-facing seats): US$80/day.",
+          "Club Car Precedent Limo 4+2 (6 seats): US$90/day.",
+          "ECO Plus 4+2 and ECO Sport 4+2 (6 seats): US$95/day.",
+          "ECO Cross 4+2 (6 seats, long-range lithium): US$105/day.",
+          "ECO Track 4+2 and Zycar 4+2 (6 seats): US$125/day."
+        ]
+      },
+      {
+        "heading": "Terms that change in high season",
+        "paragraphs": [
+          "Three things change on those dates, and it's worth having them clear before booking. First, the minimum rental: 5 days in high season, against 2 days the rest of the year. Second, the advance: the 50% deposit you confirm with is non-refundable on those dates; if you give 30 days' notice or more, it is kept as credit in your favour, valid for 12 months towards a future rental. Third, the rental is continuous: it runs straight through from delivery to pickup, with no pauses in between.",
+          "Outside high season the terms are the usual ones: 2-day minimum rental and one free date change with 48 hours' notice. The US$200 damage deposit is the same all year round, and it's returned when the cart comes back in good condition."
+        ],
+        "bullets": [
+          "Minimum rental: 5 days in high season (2 the rest of the year).",
+          "50% advance: non-refundable on those dates; with 30 days' notice or more it is kept as credit valid for 12 months.",
+          "Continuous rental, no pauses, from delivery to pickup.",
+          "Outside those dates: one free date change with 48 hours' notice."
+        ]
+      },
+      {
+        "heading": "Transport: the 5-night minimum already includes delivery",
+        "paragraphs": [
+          "Here's some good news that sometimes goes unnoticed. Transport (delivery + pickup, round trip) is US$60 per trailer trip plus tax, but it's free on bookings of 5 days or more in Puntacana Resort & Club and Cap Cana, and of 10 days or more in Bávaro. Since the high-season minimum rental is 5 days, every high-season booking in Puntacana Resort & Club or Cap Cana comes with delivery and pickup at the villa at no cost. In Bávaro, our home base, delivery is free from 10 days."
+        ]
+      },
+      {
+        "heading": "Christmas and New Year: very limited availability",
+        "paragraphs": [
+          "Between December 20 and January 3, availability is very limited and the 6-seaters are the first to sell out. For those dates we don't promise anything we can't deliver: ask about availability on WhatsApp and we'll tell you honestly what there is for your dates. If there's a cart, we confirm it the same day; if there isn't, we tell you just as quickly and, if it helps, we propose January dates with the whole fleet available."
+        ]
+      },
+      {
+        "heading": "Holy Week 2027 and January–March: the window we recommend",
+        "paragraphs": [
+          "If you have flexibility, our recommendation is clear: from January 7 to March 24, and Holy Week itself from March 25 to 28, 2027. It's the calmest, sunniest time of year in Punta Cana: clear days, little rain, perfect temperature for riding a golf cart and, above all, the best availability of models. In January, February and March you find the 6-seater you want, on the date you want, at the regular rate. In Holy Week the high-season rates and 5-day minimum apply, but availability is still far wider than in December.",
+          "To request availability, message us on WhatsApp at +1 809 839 8515 or from boltgolfcars.com with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people are travelling. A person on the team checks the fleet and replies the same day with the available models and the clear total: rate per night by season, transport and tax. You confirm with the 50% deposit and that's it. Your ride in paradise."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What if only part of my stay falls in high season?",
+        "a": "Only the nights within December 20 to January 6 or Holy Week (March 25 to 28, 2027) are charged at the high-season rate; the remaining nights go at the regular rate. All plus 18% tax."
+      },
+      {
+        "q": "Can I cancel or change a Christmas or New Year booking?",
+        "a": "In high season the 50% advance is non-refundable. If you give 30 days' notice or more, it is kept as credit in your favour valid for 12 months. Outside those dates you have one free date change with 48 hours' notice."
+      },
+      {
+        "q": "What is the minimum rental in Holy Week 2027?",
+        "a": "5 days, the same as at Christmas and New Year. The nights of March 25 to 28, 2027 go at the high-season rate and the rest at the regular rate. The rest of the year the minimum rental is 2 days."
+      },
+      {
+        "q": "Is transport free in high season?",
+        "a": "Transport is free on bookings of 5 days or more in Puntacana Resort & Club and Cap Cana, and of 10 days or more in Bávaro. Since the high-season minimum is 5 days, in Puntacana Resort & Club and Cap Cana delivery and pickup are included; on shorter bookings outside the season it's US$60 per trailer trip plus tax."
       }
     ],
     "locale": "en"

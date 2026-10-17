@@ -22,6 +22,7 @@ interface Payload {
   errBaseMin: string; warnBaseMin: string; errHighMin: string; warnHighMin: string;
   minBase: number; minHigh: number; high: ReadonlyArray<readonly [string, string]>;
   transportTpl: string; transportNoFreeTpl: string; estTransport: string; estTransportFree: string; estTransportQuoted: string; estBigGroup: string;
+  estTipTpl: string; estTipSameTpl: string; msgEstimateTpl: string; msgTrFree: string; msgTrIncl: string; msgTrQuoted: string; msgBigGroup: string;
   estHigh: string; night: string; nights: string; high4: number; high6: number;
   estimateTpl: string; price4: number; price6: number;
   web3key: string; emailSubject: string;
@@ -97,20 +98,32 @@ function script(p: Payload): string {
   }
   // Transporte de la zona elegida: [tarifa por viaje, días desde los que es gratis].
   function zoneTransport(){var o=zopt();return [o?+(o.getAttribute('data-transport')||0):0,o?+(o.getAttribute('data-freefrom')||0):0];}
+  // Cuenta del estimado (1 carrito): null si faltan fechas o tarifa.
+  function calc(){
+    var d=diffDays(llegada.value,salida.value),pr=dailyPrices(),daily=pr[0];
+    if(!(d>0&&daily>0))return null;
+    var hn=highNights(llegada.value,d);
+    var zt=zoneTransport(),exempt=!!(zt[0]&&zt[1]&&d>=zt[1]);
+    var tr=(zt[0]&&!exempt)?Math.round(zt[0]*1.18):0;   // 1 viaje con ITBIS; 0 si exento o se cotiza
+    var total=Math.round(((d-hn)*daily+hn*pr[1])*1.18)+tr;    // ITBIS 18% incluido; noches de temporada alta a su tarifa
+    return {d:d,daily:daily,hn:hn,zt:zt,exempt:exempt,tr:tr,total:total,deposit:Math.round(total*0.50),quoted:!zt[0]};
+  }
+  function seasonTxt(c){return c.hn?fill(P.estHigh,{n:c.hn,nightword:c.hn===1?P.night:P.nights}):'';}
   function updateEstimate(){
     if(!estimate)return;
-    if(bigGroup()){estimate.textContent=P.estBigGroup;return;}
-    var d=diffDays(llegada.value,salida.value),pr=dailyPrices(),daily=pr[0];
-    if(d>0&&daily>0){
-      var hn=highNights(llegada.value,d);
-      var zt=zoneTransport(),exempt=!!(zt[0]&&zt[1]&&d>=zt[1]);
-      var tr=(zt[0]&&!exempt)?Math.round(zt[0]*1.18):0;   // 1 viaje con ITBIS; 0 si exento o se cotiza
-      var total=Math.round(((d-hn)*daily+hn*pr[1])*1.18)+tr;    // ITBIS 18% incluido; noches de temporada alta a su tarifa
-      var deposit=Math.round(total*0.50);       // depósito de confirmación 50%
-      var trTxt=tr?fill(P.estTransport,{amount:tr}):(exempt?P.estTransportFree:(zt[0]?'':P.estTransportQuoted));
-      var hsTxt=hn?fill(P.estHigh,{n:hn,nightword:hn===1?P.night:P.nights}):'';
-      estimate.textContent=fill(P.estimateTpl,{total:total,days:d,dayword:d===1?P.day:P.days,deposit:deposit,transport:trTxt,season:hsTxt});
-    }else{estimate.textContent='';}
+    var tip=$('estimate-tip');
+    if(bigGroup()){estimate.textContent=P.estBigGroup;if(tip)tip.textContent='';return;}
+    var c=calc();
+    if(!c){estimate.textContent='';if(tip)tip.textContent='';return;}
+    var trTxt=c.tr?fill(P.estTransport,{amount:c.tr}):(c.exempt?P.estTransportFree:(c.quoted?P.estTransportQuoted:''));
+    estimate.textContent=fill(P.estimateTpl,{total:c.total,days:c.d,dayword:c.d===1?P.day:P.days,deposit:c.deposit,transport:trTxt,season:seasonTxt(c)});
+    // "Un día más sale igual": justo un día antes de la exención y sin noches de temporada alta.
+    if(tip){
+      if(c.zt[0]&&c.zt[1]&&c.d===c.zt[1]-1&&!c.hn){
+        var t5=Math.round(c.zt[1]*c.daily*1.18),diff=t5-c.total;
+        tip.textContent=fill(diff>0?P.estTipTpl:P.estTipSameTpl,{free:c.zt[1],total5:t5,diff:diff});
+      }else{tip.textContent='';}
+    }
   }
 
   function clearError(){
@@ -189,9 +202,18 @@ function script(p: Payload): string {
       f.entrega+': '+zoneName+(zoneNote?(' — '+zoneNote):''),
       aloja?(f.alojamiento+': '+aloja):'',
       val('pasajeros')?(f.pasajeros+': '+val('pasajeros')):'',
-      val('comentarios')?(f.comentarios+': '+val('comentarios')):''
+      val('comentarios')?(f.comentarios+': '+val('comentarios')):'',
+      estimateLine()
     ];
     return lines.filter(Boolean).join('\\n');
+  }
+
+  // El mismo estimado que vio el cliente viaja en su mensaje: el equipo no recalcula a ciegas.
+  function estimateLine(){
+    if(bigGroup())return P.msgBigGroup;
+    var c=calc();if(!c)return '';
+    var tr=c.exempt?P.msgTrFree:(c.tr?fill(P.msgTrIncl,{amount:c.tr}):P.msgTrQuoted);
+    return fill(P.msgEstimateTpl,{total:c.total,days:c.d,dayword:c.d===1?P.day:P.days,season:seasonTxt(c),transport:tr,deposit:c.deposit});
   }
 
   function succeed(){

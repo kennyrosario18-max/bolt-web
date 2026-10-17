@@ -6,7 +6,7 @@ import { hreflang } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Solicitar disponibilidad",
   description:
-    "Solicita la disponibilidad de tu golf cart BOLT en Punta Cana. Nuestro equipo verifica y te confirma por WhatsApp lo antes posible.",
+    "Solicita la disponibilidad de tu golf cart BOLT en Punta Cana. Nuestro equipo verifica y te confirma por WhatsApp el mismo día.",
   alternates: {
     canonical: "/solicitar-disponibilidad/",
     ...hreflang("/solicitar-disponibilidad/", "/en/request-availability/"),

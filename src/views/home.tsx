@@ -4,6 +4,7 @@ import { MODELS } from "@/content/models";
 import { ModelPhoto } from "@/components/model-photo";
 import { TESTIMONIALS } from "@/content/testimonials";
 import { ModelCard } from "@/components/model-card";
+import { HighSeasonNote } from "@/components/high-season-note";
 import { BoltIcon, PinIcon, ShieldIcon, ChatIcon, CheckIcon } from "@/components/icons";
 import { LANDING_ZONES, PRICING, SLOGAN, transportLabel, waLink } from "@/content/site";
 import type { Locale } from "@/lib/i18n";
@@ -43,10 +44,10 @@ const T = {
     featB: "destacados",
     seeAll: `Ver los ${MODELS.length} modelos →`,
     rentKicker: "Renta",
-    rentTitle: "Por día, semana o temporada",
+    rentTitle: "Desde 2 días, por semana o por temporada",
     rentBodyA: "Modelos de 4 y 6 plazas desde ",
     rentPrice: `US$${PRICING.from4pax}/día`,
-    rentBodyB: ". Transporte fijo por zona desde US$60, gratis en estadías largas.",
+    rentBodyB: ". Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); estadías más cortas: US$60 ida y vuelta por viaje de tráiler + ITBIS.",
     rentItbis: PRICING.itbisNote,
     rentCta: "Explorar la flota →",
     salesKicker: "Venta · Nuevo",
@@ -57,9 +58,15 @@ const T = {
     coverKicker: "Cobertura",
     coverA: "Entrega en ",
     coverB: "toda la zona",
-    coverLead: "Llevamos tu golf cart con carga completa hasta tu villa o residencial. Transporte fijo por viaje desde US$60, gratis en estadías largas.",
-    coverSub: "Delivery across the area · fixed transport from US$60, free on longer stays.",
+    coverLead: "Llevamos tu golf cart con carga completa hasta tu villa o residencial. Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, un solo cargo de US$60 ida y vuelta por viaje de tráiler + ITBIS.",
+    coverSub: "Free delivery & pickup on 5+ day stays in Puntacana Resort & Club and Cap Cana (10 in Bávaro) · shorter stays: US$60 round trip per trailer trip + tax.",
     zoneCta: "Ver zona →",
+    otherZones: "También Uvero Alto / Macao (US$120 ida y vuelta por viaje de tráiler + ITBIS, sin entrega gratis) y otros complejos privados o eventos (cotizar). ",
+    otherZonesLink: "Ver la tabla de transporte →",
+    transportHref: "/precios#transporte",
+    formal: "Empresa dominicana formal · KR Experts and Management SRL · RNC 132-22400-2 · base de operaciones en Bávaro · pagos solo a cuenta empresarial · ",
+    formalLink: "Conócenos →",
+    aboutHref: "/nosotros",
     howKicker: "Cómo funciona",
     howTitle: "Tu BOLT en 3 pasos",
     sameDay: "Confirmamos tu disponibilidad el mismo día",
@@ -102,10 +109,10 @@ const T = {
     featB: "models",
     seeAll: `See all ${MODELS.length} models →`,
     rentKicker: "Rental",
-    rentTitle: "By the day, week or season",
+    rentTitle: "From 2 days, by the week or by the season",
     rentBodyA: "4 and 6-seat models from ",
     rentPrice: `US$${PRICING.from4pax}/day`,
-    rentBodyB: ". Fixed transport by zone from US$60, free on longer stays.",
+    rentBodyB: ". Delivery and pickup free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); shorter stays: US$60 round trip per trailer trip + tax.",
     rentItbis: PRICING.itbisNoteEn,
     rentCta: "Explore the fleet →",
     salesKicker: "Sales · New",
@@ -116,9 +123,15 @@ const T = {
     coverKicker: "Coverage",
     coverA: "Delivery ",
     coverB: "across the area",
-    coverLead: "We bring your golf cart fully charged to your villa or residential community. Fixed transport per trip from US$60, free on longer stays.",
-    coverSub: "Entrega en toda la zona · transporte fijo desde US$60, gratis en estadías largas.",
+    coverLead: "We bring your golf cart fully charged to your villa or residential community. Delivery and pickup free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, a single charge of US$60 round trip per trailer trip + tax.",
+    coverSub: "Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro) · estadías más cortas: US$60 ida y vuelta por viaje de tráiler + ITBIS.",
     zoneCta: "View zone →",
+    otherZones: "Also Uvero Alto / Macao (US$120 round trip per trailer trip + tax, no free delivery) and other private communities or events (quoted). ",
+    otherZonesLink: "See the transport table →",
+    transportHref: "/en/pricing#transporte",
+    formal: "Registered Dominican company · KR Experts and Management SRL · RNC 132-22400-2 · operations base in Bávaro · payments only to the company account · ",
+    formalLink: "About us →",
+    aboutHref: "/en/about",
     howKicker: "How it works",
     howTitle: "Your BOLT in 3 steps",
     sameDay: "We confirm your availability the same day",
@@ -222,6 +235,11 @@ export function HomeView({ locale }: { locale: Locale }) {
               );
             })}
           </div>
+          {/* Empresa formal a la vista (confianza): el turista paga el 50% por adelantado. */}
+          <p className="mx-auto max-w-6xl border-t border-white/10 px-4 py-3 text-xs text-white/60 sm:px-6">
+            {t.formal}
+            <Link href={t.aboutHref} className="font-bold text-white/80 underline underline-offset-2 hover:text-volt">{t.formalLink}</Link>
+          </p>
         </div>
       </section>
 
@@ -310,6 +328,11 @@ export function HomeView({ locale }: { locale: Locale }) {
             </Link>
           ))}
         </div>
+        <p className="mt-6 text-sm text-inktext">
+          {t.otherZones}
+          <Link href={t.transportHref} className="font-bold text-ink underline underline-offset-4 hover:text-volt-dark">{t.otherZonesLink}</Link>
+        </p>
+        <HighSeasonNote locale={locale} className="mt-8" />
       </section>
 
       {/* Testimonios — slot listo; se muestra solo cuando haya reseñas reales (F4). */}
