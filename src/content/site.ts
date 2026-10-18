@@ -1,12 +1,15 @@
 /** Datos de negocio de BOLT — fuente de verdad para todo el sitio. */
 
 export const CONTACT = {
-  whatsapp: "18098398515",
-  phoneDisplay: "+1 809 839 8515",
+  /** WhatsApp ÚNICO de BOLT, 24/7 (Kenny, 18/oct/2026): el bot de reservas. Cotiza, revisa
+   *  disponibilidad y aparta; ventas, aliados, soporte y comprobantes de depósito los pasa al equipo.
+   *  Número solo de WhatsApp (API de Meta): NO recibe llamadas (BOLT no atiende llamadas). */
+  whatsapp: "18292027849",
+  phoneDisplay: "+1 829 202 7849",
   email: "info@krexpert.com",
   address: "Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, R.D.",
   legal: "KR Experts and Management SRL · RNC 132-22400-2",
-  instagram: "https://www.instagram.com/boltgolfcars",
+  // Sin Instagram (Kenny, 18/oct/2026): BOLT no tiene cuenta; el enlace llevaba a una que no es suya.
 } as const;
 
 export const SLOGAN = "Your ride in paradise.";

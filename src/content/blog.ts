@@ -100,7 +100,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Cómo solicitar disponibilidad",
         "paragraphs": [
           "Reservar con BOLT es por solicitud de disponibilidad: no es una confirmación automática. Nos escribes con tus fechas y detalles, revisamos la flota y te confirmamos. Así nos aseguramos de tener el modelo correcto listo para tu villa. Estas son las condiciones de reserva:",
-          "Para pedir disponibilidad, escríbenos por WhatsApp al +1 809 839 8515 con las fechas de tu estadía, cuántos viajan y el nombre de tu villa o residencial dentro de Puntacana Resort & Club. Te ayudamos a elegir el modelo ideal y coordinamos la entrega. Your ride in paradise."
+          "Para pedir disponibilidad, escríbenos por WhatsApp al +1 829 202 7849 con las fechas de tu estadía, cuántos viajan y el nombre de tu villa o residencial dentro de Puntacana Resort & Club. Te ayudamos a elegir el modelo ideal y coordinamos la entrega. Your ride in paradise."
         ],
         "bullets": [
           "Depósito del 50% para asegurar tu reserva.",
@@ -194,7 +194,7 @@ export const ARTICLES: BlogArticle[] = [
           "BOLT trabaja por solicitud de disponibilidad, nunca con confirmación automática: cada reserva se verifica contra la flota real para que el carro que te prometen sea el que llega a tu villa. El proceso es directo:"
         ],
         "bullets": [
-          "Escribe por WhatsApp al +1 809 839 8515 con tus fechas, la comunidad o villa dentro de Cap Cana y cuántas personas viajan.",
+          "Escribe por WhatsApp al +1 829 202 7849 con tus fechas, la comunidad o villa dentro de Cap Cana y cuántas personas viajan.",
           "Recibes las opciones de modelo disponibles y la cotización (tarifa más transporte por zona, más ITBIS 18%).",
           "Confirmas con un depósito del 50%; al entregar el carro se toma un depósito de garantía de US$200, reembolsable al devolverlo.",
           "Si cambian tus planes, puedes mover la fecha gratis avisando con 48 horas de antelación."
@@ -218,7 +218,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿Qué necesito para reservar y qué pasa si cambian mis fechas?",
-        "a": "Se solicita disponibilidad por WhatsApp (+1 809 839 8515), se confirma con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200 reembolsable. El cambio de fecha es gratis si avisas con al menos 48 horas de antelación."
+        "a": "Se solicita disponibilidad por WhatsApp (+1 829 202 7849), se confirma con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200 reembolsable. El cambio de fecha es gratis si avisas con al menos 48 horas de antelación."
       }
     ],
     "locale": "es"
@@ -236,7 +236,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿Qué hago si el 6 plazas ya no está disponible en mis fechas?",
-        "a": "Escríbenos igual por WhatsApp al +1 809 839 8515: toda reserva funciona por solicitud de disponibilidad y el equipo te confirma qué hay para tus fechas. Si el grupo es grande y no queda 6 plazas, una alternativa práctica es combinar dos carts de 4 plazas. Y si tus planes cambian, puedes mover la fecha gratis avisando con 48 horas."
+        "a": "Escríbenos igual por WhatsApp al +1 829 202 7849: toda reserva funciona por solicitud de disponibilidad y el equipo te confirma qué hay para tus fechas. Si el grupo es grande y no queda 6 plazas, una alternativa práctica es combinar dos carts de 4 plazas. Y si tus planes cambian, puedes mover la fecha gratis avisando con 48 horas."
       }
     ],
     "metaDescription": "Guía práctica para elegir entre golf cart de 4 o 6 plazas en Punta Cana: capacidad, equipaje, precios desde US$50 y disponibilidad en temporada alta.",
@@ -293,7 +293,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Asegura el tuyo antes de aterrizar",
         "paragraphs": [
           "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte a tu villa es fijo por zona: gratis en reservas de 5+ días (10+ en Bávaro) y, en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS. El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
-          "Para reservar, escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
+          "Para reservar, escríbenos por WhatsApp al +1 829 202 7849 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
         ]
       }
     ],
@@ -364,7 +364,7 @@ export const ARTICLES: BlogArticle[] = [
         "paragraphs": [
           "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$85/día + ITBIS. Frente a un 6 plazas estándar de US$75/día, hablamos de US$10 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
           "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte (entrega y recogida en tu villa) es fijo por zona: gratis en reservas de 5+ días (10+ en Bávaro) y, en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS en Puntacana Resort & Club, Cap Cana y Bávaro. El día de renta son 24 horas desde la entrega, no día calendario.",
-          "¿No estás seguro de cuál te conviene? Escríbenos por WhatsApp al +1 809 839 8515 y cuéntanos tu plan: cuántas personas son, dónde se hospedan y cuántos días. Trabajamos por solicitud de disponibilidad —nunca confirmación automática—, así que mientras antes nos escribas, mejor. Your ride in paradise."
+          "¿No estás seguro de cuál te conviene? Escríbenos por WhatsApp al +1 829 202 7849 y cuéntanos tu plan: cuántas personas son, dónde se hospedan y cuántos días. Trabajamos por solicitud de disponibilidad —nunca confirmación automática—, así que mientras antes nos escribas, mejor. Your ride in paradise."
         ]
       }
     ],
@@ -460,7 +460,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "How to request availability",
         "paragraphs": [
           "Booking with BOLT is by availability request: it's not an automatic confirmation. You write to us with your dates and details, we check the fleet and confirm. That way we make sure we have the right model ready for your villa. These are the booking terms:",
-          "To request availability, message us on WhatsApp at +1 809 839 8515 with your stay dates, how many are travelling and the name of your villa or residence inside Puntacana Resort & Club. We help you pick the ideal model and coordinate delivery. Your ride in paradise."
+          "To request availability, message us on WhatsApp at +1 829 202 7849 with your stay dates, how many are travelling and the name of your villa or residence inside Puntacana Resort & Club. We help you pick the ideal model and coordinate delivery. Your ride in paradise."
         ],
         "bullets": [
           "50% deposit to secure your booking.",
@@ -554,7 +554,7 @@ export const ARTICLES: BlogArticle[] = [
           "BOLT works by availability request, never by automatic confirmation: every booking is checked against the real fleet so the cart you're promised is the one that arrives at your villa. The process is straightforward:"
         ],
         "bullets": [
-          "Message on WhatsApp at +1 809 839 8515 with your dates, the community or villa inside Cap Cana and how many people are travelling.",
+          "Message on WhatsApp at +1 829 202 7849 with your dates, the community or villa inside Cap Cana and how many people are travelling.",
           "You receive the available model options and the quote (rate plus transport by zone, plus 18% tax).",
           "You confirm with a 50% deposit; on delivery a US$200 damage deposit is taken, refundable on return.",
           "If your plans change, you can move the date for free with 48 hours' notice."
@@ -578,7 +578,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "What do I need to book and what if my dates change?",
-        "a": "You request availability on WhatsApp (+1 809 839 8515), confirm with a 50% deposit and on delivery a refundable US$200 damage deposit is taken. Date changes are free with at least 48 hours' notice."
+        "a": "You request availability on WhatsApp (+1 829 202 7849), confirm with a 50% deposit and on delivery a refundable US$200 damage deposit is taken. Date changes are free with at least 48 hours' notice."
       }
     ],
     "locale": "en"
@@ -644,7 +644,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Secure yours before you land",
         "paragraphs": [
           "Whatever you choose, the BOLT rental includes the same: charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa charged as fixed transport by zone: free on 5+ day bookings (10+ in Bávaro) and, on shorter stays, US$60 round trip per trailer trip + tax. The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
-          "To book, message us on WhatsApp at +1 809 839 8515 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. Transport (delivery + pickup) is US$60 per trailer trip + 18% tax in Puntacana Resort & Club, Cap Cana and Bávaro, free from 5 days (10 in Bávaro). We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
+          "To book, message us on WhatsApp at +1 829 202 7849 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. Transport (delivery + pickup) is US$60 per trailer trip + 18% tax in Puntacana Resort & Club, Cap Cana and Bávaro, free from 5 days (10 in Bávaro). We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
         ]
       }
     ],
@@ -659,7 +659,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "What if the 6-seater is no longer available for my dates?",
-        "a": "Write to us anyway on WhatsApp at +1 809 839 8515: every booking works by availability request and the team confirms what's available for your dates. If the group is large and no 6-seater is left, a practical alternative is combining two 4-seaters. And if your plans change, you can move the date for free with 48 hours' notice."
+        "a": "Write to us anyway on WhatsApp at +1 829 202 7849: every booking works by availability request and the team confirms what's available for your dates. If the group is large and no 6-seater is left, a practical alternative is combining two 4-seaters. And if your plans change, you can move the date for free with 48 hours' notice."
       }
     ],
     "locale": "en"
@@ -724,7 +724,7 @@ export const ARTICLES: BlogArticle[] = [
         "paragraphs": [
           "The premium ECO Cross is our 6-seater with 150 Ah lithium: 85–95 km per charge and luxury seats, at US$85/day + tax. Against a standard 6-seater at US$75/day, we're talking about US$10 a day of difference. When is it worth it? When you travel as a full group (4+2), when your day is constant movement from morning to night, or when you simply don't want to count kilometers on holiday: with nearly triple the range of lead-acid, the battery stops being a concern.",
           "For comparison, our 4-seaters start at US$50/day (up to US$65 depending on the model); 6-seaters go from US$65/day (up to US$100 for the all-terrain ECO Track), always + 18% tax. Every rental includes charger and 24/7 WhatsApp support in English and Spanish; delivery and pickup at your villa are charged as fixed transport by zone (US$60 per trailer trip + 18% tax to Puntacana Resort & Club, Cap Cana and Bávaro, free on longer stays: 5+ days nearby, 10+ days in Bávaro). The rental day is 24 hours from delivery, not a calendar day.",
-          "Not sure which suits you? Message us on WhatsApp at +1 809 839 8515 and tell us your plan: how many people, where you're staying and how many days. We work by availability request — never automatic confirmation — so the sooner you write, the better. Your ride in paradise."
+          "Not sure which suits you? Message us on WhatsApp at +1 829 202 7849 and tell us your plan: how many people, where you're staying and how many days. We work by availability request — never automatic confirmation — so the sooner you write, the better. Your ride in paradise."
         ]
       }
     ],
@@ -802,7 +802,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Cómo reservar tu golf cart en Bávaro",
         "paragraphs": [
-          "Toda reserva con BOLT es por solicitud de disponibilidad: no es una confirmación automática, una persona de nuestro equipo revisa la flota y te responde el mismo día. Escríbenos por WhatsApp al +1 809 839 8515 con tus fechas, el nombre de tu residencial en Bávaro y cuántas personas viajan, o envía tu solicitud desde boltgolfcars.com. Te proponemos el modelo que mejor encaja y la cotización completa: tarifa por día, transporte e ITBIS, sin sorpresas.",
+          "Toda reserva con BOLT es por solicitud de disponibilidad: no es una confirmación automática, una persona de nuestro equipo revisa la flota y te responde el mismo día. Escríbenos por WhatsApp al +1 829 202 7849 con tus fechas, el nombre de tu residencial en Bávaro y cuántas personas viajan, o envía tu solicitud desde boltgolfcars.com. Te proponemos el modelo que mejor encaja y la cotización completa: tarifa por día, transporte e ITBIS, sin sorpresas.",
           "Para asegurar la reserva se paga un depósito del 50%, y a la entrega se toma un depósito de garantía de US$200 que se devuelve al recibir el carrito en buen estado. Durante toda la renta tienes soporte por WhatsApp 24/7 en español e inglés, y en Bávaro ese soporte está literalmente a pocos minutos de tu puerta. Your ride in paradise."
         ],
         "bullets": [
@@ -891,7 +891,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "How to book your golf cart in Bávaro",
         "paragraphs": [
-          "Every booking with BOLT is by availability request: it's not an automatic confirmation, a person on our team checks the fleet and replies the same day. Message us on WhatsApp at +1 809 839 8515 with your dates, the name of your residential community in Bávaro and how many people are travelling, or send your request from boltgolfcars.com. We propose the model that fits best and the full quote: daily rate, transport and tax, with no surprises.",
+          "Every booking with BOLT is by availability request: it's not an automatic confirmation, a person on our team checks the fleet and replies the same day. Message us on WhatsApp at +1 829 202 7849 with your dates, the name of your residential community in Bávaro and how many people are travelling, or send your request from boltgolfcars.com. We propose the model that fits best and the full quote: daily rate, transport and tax, with no surprises.",
           "To secure the booking you pay a 50% deposit, and on delivery a US$200 damage deposit is taken, returned when the cart comes back in good condition. Throughout the rental you have 24/7 WhatsApp support in English and Spanish, and in Bávaro that support is literally a few minutes from your door. Your ride in paradise."
         ],
         "bullets": [
@@ -977,7 +977,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Soporte 24/7 y cómo reservar",
         "paragraphs": [
           "Aunque Casa de Campo quede fuera de nuestra zona habitual, el servicio durante la renta es exactamente el mismo: soporte por WhatsApp 24/7 en español e inglés, el carrito entregado con carga completa y una orientación de uso en la puerta de tu villa. Si en algún momento necesitas asistencia, una sola conversación de WhatsApp lo resuelve.",
-          "Reservar es por solicitud de disponibilidad, nunca confirmación automática: escríbenos por WhatsApp al +1 809 839 8515 o desde boltgolfcars.com con el nombre de tu villa en Casa de Campo, tus fechas y cuántas personas viajan. Una persona del equipo te responde el mismo día con los modelos disponibles y el total claro: tarifa por día, transporte cotizado e ITBIS. Confirmas con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200, reembolsable al devolver el carrito. Your ride in paradise."
+          "Reservar es por solicitud de disponibilidad, nunca confirmación automática: escríbenos por WhatsApp al +1 829 202 7849 o desde boltgolfcars.com con el nombre de tu villa en Casa de Campo, tus fechas y cuántas personas viajan. Una persona del equipo te responde el mismo día con los modelos disponibles y el total claro: tarifa por día, transporte cotizado e ITBIS. Confirmas con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200, reembolsable al devolver el carrito. Your ride in paradise."
         ],
         "bullets": [
           "Escribe con villa, fechas y número de personas.",
@@ -1062,7 +1062,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "24/7 support and how to book",
         "paragraphs": [
           "Even though Casa de Campo is outside our usual area, the service during the rental is exactly the same: 24/7 WhatsApp support in English and Spanish, the cart delivered fully charged and a usage briefing at your villa door. If you ever need assistance, a single WhatsApp conversation sorts it out.",
-          "Booking is by availability request, never automatic confirmation: message us on WhatsApp at +1 809 839 8515 or from boltgolfcars.com with the name of your villa in Casa de Campo, your dates and how many people are travelling. A person on the team replies the same day with the available models and the clear total: daily rate, quoted transport and tax. You confirm with a 50% deposit and on delivery a US$200 damage deposit is taken, refundable when the cart is returned. Your ride in paradise."
+          "Booking is by availability request, never automatic confirmation: message us on WhatsApp at +1 829 202 7849 or from boltgolfcars.com with the name of your villa in Casa de Campo, your dates and how many people are travelling. A person on the team replies the same day with the available models and the clear total: daily rate, quoted transport and tax. You confirm with a 50% deposit and on delivery a US$200 damage deposit is taken, refundable when the cart is returned. Your ride in paradise."
         ],
         "bullets": [
           "Write with villa, dates and number of people.",
@@ -1155,7 +1155,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Semana Santa 2027 y enero–marzo: la ventana que recomendamos",
         "paragraphs": [
           "Si tienes flexibilidad, nuestra recomendación es clara: del 7 de enero al 24 de marzo, y la propia Semana Santa del 25 al 28 de marzo de 2027. Es la época más tranquila y soleada del año en Punta Cana: días despejados, poca lluvia, temperatura perfecta para rodar en golf cart y, sobre todo, la mejor disponibilidad de modelos. En enero, febrero y marzo encuentras el 6 plazas que quieres, en la fecha que quieres, a tarifa regular. En Semana Santa aplican las tarifas y el mínimo de 5 días de temporada alta, pero la disponibilidad sigue siendo mucho más amplia que en diciembre.",
-          "Para pedir disponibilidad, escríbenos por WhatsApp al +1 809 839 8515 o desde boltgolfcars.com con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas viajan. Una persona del equipo revisa la flota y te responde el mismo día con los modelos disponibles y el total claro: tarifa por noche según la temporada, transporte e ITBIS. Confirmas con el depósito del 50% y listo. Your ride in paradise."
+          "Para pedir disponibilidad, escríbenos por WhatsApp al +1 829 202 7849 o desde boltgolfcars.com con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas viajan. Una persona del equipo revisa la flota y te responde el mismo día con los modelos disponibles y el total claro: tarifa por noche según la temporada, transporte e ITBIS. Confirmas con el depósito del 50% y listo. Your ride in paradise."
         ]
       }
     ],
@@ -1242,7 +1242,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Holy Week 2027 and January–March: the window we recommend",
         "paragraphs": [
           "If you have flexibility, our recommendation is clear: from January 7 to March 24, and Holy Week itself from March 25 to 28, 2027. It's the calmest, sunniest time of year in Punta Cana: clear days, little rain, perfect temperature for riding a golf cart and, above all, the best availability of models. In January, February and March you find the 6-seater you want, on the date you want, at the regular rate. In Holy Week the high-season rates and 5-day minimum apply, but availability is still far wider than in December.",
-          "To request availability, message us on WhatsApp at +1 809 839 8515 or from boltgolfcars.com with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people are travelling. A person on the team checks the fleet and replies the same day with the available models and the clear total: rate per night by season, transport and tax. You confirm with the 50% deposit and that's it. Your ride in paradise."
+          "To request availability, message us on WhatsApp at +1 829 202 7849 or from boltgolfcars.com with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people are travelling. A person on the team checks the fleet and replies the same day with the available models and the clear total: rate per night by season, transport and tax. You confirm with the 50% deposit and that's it. Your ride in paradise."
         ]
       }
     ],

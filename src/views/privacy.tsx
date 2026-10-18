@@ -26,7 +26,7 @@ const T: Record<
         n: "01",
         title: "Responsable del tratamiento",
         body: [
-          "KR Experts and Management SRL (RNC 132-22400-2), Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, República Dominicana. Contacto: info@krexpert.com · +1 809 839 8515.",
+          "KR Experts and Management SRL (RNC 132-22400-2), Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, República Dominicana. Contacto: info@krexpert.com · +1 829 202 7849.",
         ],
       },
       {
@@ -84,7 +84,7 @@ const T: Record<
         n: "08",
         title: "Tus derechos",
         body: [
-          "Puedes solicitar en cualquier momento el acceso, la rectificación, la cancelación o la oposición al tratamiento de tus datos (derechos reconocidos por la Ley 172-13) escribiendo a info@krexpert.com o por WhatsApp al +1 809 839 8515. Respondemos lo antes posible.",
+          "Puedes solicitar en cualquier momento el acceso, la rectificación, la cancelación o la oposición al tratamiento de tus datos (derechos reconocidos por la Ley 172-13) escribiendo a info@krexpert.com o por WhatsApp al +1 829 202 7849. Respondemos lo antes posible.",
         ],
       },
       {
@@ -114,7 +114,7 @@ const T: Record<
         n: "01",
         title: "Data controller",
         body: [
-          "KR Experts and Management SRL (Tax ID/RNC 132-22400-2), Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, Dominican Republic. Contact: info@krexpert.com · +1 809 839 8515.",
+          "KR Experts and Management SRL (Tax ID/RNC 132-22400-2), Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, Dominican Republic. Contact: info@krexpert.com · +1 829 202 7849.",
         ],
       },
       {
@@ -172,7 +172,7 @@ const T: Record<
         n: "08",
         title: "Your rights",
         body: [
-          "You may request access, rectification, deletion or objection to the processing of your data at any time (rights recognized by Law 172-13) by writing to info@krexpert.com or via WhatsApp at +1 809 839 8515. We reply as soon as possible.",
+          "You may request access, rectification, deletion or objection to the processing of your data at any time (rights recognized by Law 172-13) by writing to info@krexpert.com or via WhatsApp at +1 829 202 7849. We reply as soon as possible.",
         ],
       },
       {

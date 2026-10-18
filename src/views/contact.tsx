@@ -10,7 +10,6 @@ const T = {
     intro: "WhatsApp es nuestra vía más rápida, atendida 24/7 en español e inglés.",
     waMsg: "Hola BOLT, quiero información sobre la renta de un golf cart.",
     wa: "Escribir por WhatsApp",
-    call: "Llamar",
     mail: "Escribir un correo",
     visit: "Nuestra base",
     hours: "Soporte por WhatsApp 24/7 · Entregas coordinadas a tu horario",
@@ -24,7 +23,6 @@ const T = {
     intro: "WhatsApp is our fastest channel, staffed 24/7 in English and Spanish.",
     waMsg: "Hi BOLT, I would like information about renting a golf cart.",
     wa: "Message us on WhatsApp",
-    call: "Call",
     mail: "Send an email",
     visit: "Our base",
     hours: "24/7 WhatsApp support · Deliveries scheduled around you",
@@ -60,16 +58,13 @@ export function ContactView({ locale }: { locale: Locale }) {
             <p className="mt-2 font-display text-2xl font-extrabold text-white">{CONTACT.phoneDisplay}</p>
             <p className="mt-2 text-sm text-white/70">{t.wa} →</p>
           </a>
-          <a href={`tel:+${CONTACT.whatsapp}`} className="rounded-card border border-line p-7 transition-shadow hover:shadow-lg">
-            <p className="text-xs font-bold uppercase tracking-wider text-volt-dark">{t.call}</p>
-            <p className="mt-2 font-display text-2xl font-extrabold">{CONTACT.phoneDisplay}</p>
-          </a>
+          {/* Sin "Llamar" (Kenny, 18/oct/2026): BOLT atiende solo por WhatsApp y correo. */}
           <a href={`mailto:${CONTACT.email}`} className="rounded-card border border-line p-7 transition-shadow hover:shadow-lg">
             <p className="text-xs font-bold uppercase tracking-wider text-volt-dark">Email</p>
             <p className="mt-2 font-display text-xl font-extrabold">{CONTACT.email}</p>
             <p className="mt-2 text-sm text-steel">{t.mail} →</p>
           </a>
-          <div className="rounded-card bg-cream p-7">
+          <div className="rounded-card bg-cream p-7 sm:col-span-2">
             <p className="text-xs font-bold uppercase tracking-wider text-volt-dark">{t.visit}</p>
             <p className="mt-2 text-sm font-semibold text-ink">{CONTACT.address}</p>
             <p className="mt-2 text-sm text-steel">{t.hours}</p>

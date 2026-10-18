@@ -22,7 +22,7 @@ export const LOCAL_BUSINESS = {
   legalName: "KR Experts and Management SRL",
   taxID: "RNC 132-22400-2",
   url: SITE,
-  telephone: "+18098398515",
+  // Sin "telephone" (Kenny, 18/oct/2026): BOLT no atiende llamadas; Google mostraba "Llamar".
   email: CONTACT.email,
   slogan: "Your ride in paradise.",
   image: modelImageUrl("eco-cross-4-2"),
@@ -42,7 +42,6 @@ export const LOCAL_BUSINESS = {
   hasMap:
     "https://www.google.com/maps/search/?api=1&query=Av.%20Barcel%C3%B3%20Km%203%201%2F2%2C%20B%C3%A1varo%2C%20La%20Altagracia",
   areaServed: SERVICE_AREAS.map((z) => ({ "@type": "Place", name: z.name })),
-  sameAs: [CONTACT.instagram],
   priceRange: `US$${MIN_PRICE}–US$${MAX_HIGH} + ITBIS`,
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",

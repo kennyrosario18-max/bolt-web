@@ -37,7 +37,7 @@ const T: Record<
         n: "01",
         title: "Quiénes somos",
         body: [
-          "BOLT es una marca comercial operada y representada legalmente por KR Experts and Management SRL (RNC 132-22400-2), con domicilio en Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, República Dominicana. Contacto: +1 809 839 8515 · info@krexpert.com.",
+          "BOLT es una marca comercial operada y representada legalmente por KR Experts and Management SRL (RNC 132-22400-2), con domicilio en Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, República Dominicana. Contacto: +1 829 202 7849 · info@krexpert.com.",
         ],
       },
       {
@@ -134,7 +134,7 @@ const T: Record<
         n: "01",
         title: "Who we are",
         body: [
-          "BOLT is a commercial brand operated and legally represented by KR Experts and Management SRL (Tax ID/RNC 132-22400-2), based at Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, Dominican Republic. Contact: +1 809 839 8515 · info@krexpert.com.",
+          "BOLT is a commercial brand operated and legally represented by KR Experts and Management SRL (Tax ID/RNC 132-22400-2), based at Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro, La Altagracia, Dominican Republic. Contact: +1 829 202 7849 · info@krexpert.com.",
         ],
       },
       {
