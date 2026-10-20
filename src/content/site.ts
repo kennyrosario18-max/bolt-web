@@ -19,6 +19,12 @@ export const SLOGAN = "Your ride in paradise.";
  *  configura en el panel de web3forms.com, no aquí. */
 export const WEB3FORMS_ACCESS_KEY = "62ee470e-1f4c-460c-89b9-6e63082e9b3c";
 
+/** Bot de reservas (Railway): cada solicitud de los formularios entra también al CRM de Odoo, y si el
+ *  cliente no le escribe al bot en 20 min se avisa al equipo (Kenny, 20/oct/2026: Teresita Bou llenó el
+ *  formulario, no tocó "enviar" en WhatsApp y solo quedó el correo). Solo se llama desde boltgolfcars.com
+ *  (en localhost/CI no, para no crear oportunidades de prueba). */
+export const BOT_FORM_URL = "https://bolt-whatsapp-bot-production.up.railway.app/formulario";
+
 export function waLink(message: string): string {
   return `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
 }

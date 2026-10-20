@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MODELS } from "@/content/models";
-import { CONTACT, HIGH_SEASON, MIN_DAYS, ZONES, priceFrom, waLink, WEB3FORMS_ACCESS_KEY } from "@/content/site";
+import { BOT_FORM_URL, CONTACT, HIGH_SEASON, MIN_DAYS, ZONES, priceFrom, waLink, WEB3FORMS_ACCESS_KEY } from "@/content/site";
 import { highPriceFromPax, modelHighPrice, modelPrice } from "@/content/pricing";
 import { BoltIcon } from "@/components/icons";
 import { RequestFormEnhance } from "./request-form-enhance";
@@ -225,6 +225,8 @@ export function RequestForm({ locale = "es" }: { locale?: Locale }) {
     // Respaldo por email (Web3Forms) — cada lead llega también al correo.
     web3key: WEB3FORMS_ACCESS_KEY,
     emailSubject: es ? "Nueva solicitud de disponibilidad — BOLT" : "New availability request — BOLT",
+    // Cada lead entra también al CRM de Odoo por el bot (y aviso al equipo si no escribe por WhatsApp).
+    botUrl: BOT_FORM_URL,
   };
 
   return (

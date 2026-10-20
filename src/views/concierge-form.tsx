@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT, ZONES, WEB3FORMS_ACCESS_KEY } from "@/content/site";
+import { BOT_FORM_URL, CONTACT, ZONES, WEB3FORMS_ACCESS_KEY } from "@/content/site";
 import { BoltIcon } from "@/components/icons";
 import type { Locale } from "@/lib/i18n";
 
@@ -112,6 +112,7 @@ export function ConciergeForm({ locale = "es" }: { locale?: Locale }) {
     errReq: t.errReq, errFechas: t.errFechas, errOrden: t.errOrden, errCarts: t.errCarts,
     web3key: WEB3FORMS_ACCESS_KEY,
     emailSubject: t.emailSubject,
+    botUrl: BOT_FORM_URL,   // también al CRM de Odoo por el bot
   };
 
   return (
@@ -244,6 +245,14 @@ function ConciergeEnhance({ payload }: { payload: unknown }) {
       val('cg-comentarios')?(f.comentarios+': '+val('cg-comentarios')):''
     ].filter(Boolean).join('\\n');
   }
+  // Al CRM de Odoo por el bot (solo en boltgolfcars.com; text/plain = sin preflight CORS).
+  function sendBot(summary,ck){
+    if(!P.botUrl||!/(^|\\.)boltgolfcars\\.com$/.test(location.hostname))return;
+    try{fetch(P.botUrl,{method:'POST',keepalive:true,headers:{'Content-Type':'text/plain;charset=UTF-8'},
+      body:JSON.stringify({tipo:'concierge',nombre:val('cg-aliado'),email:val('cg-email'),whatsapp:val('cg-whatsapp'),
+        modelo:ck.text,llegada:val('cg-checkin'),salida:val('cg-checkout'),entrega:zoneName(),alojamiento:val('cg-villa'),
+        comentarios:val('cg-comentarios'),resumen:summary,empresa:val('empresa')})}).catch(function(){});}catch(e){}
+  }
   function sendEmail(summary){
     if(!P.web3key)return;
     try{fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -266,6 +275,7 @@ function ConciergeEnhance({ payload }: { payload: unknown }) {
     var summary=buildMsg(d,ck);
     var url='https://wa.me/'+P.phone+'?text='+encodeURIComponent(summary);
     track('concierge_submit');track('form_open_whatsapp');
+    sendBot(summary,ck);
     sendEmail(summary);
     var fb=$('cg-wa');if(fb)fb.setAttribute('href',url);
     window.open(url,'_blank','noopener,noreferrer');

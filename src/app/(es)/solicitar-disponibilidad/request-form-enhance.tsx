@@ -25,7 +25,7 @@ interface Payload {
   estTipTpl: string; estTipSameTpl: string; msgEstimateTpl: string; msgTrFree: string; msgTrIncl: string; msgTrQuoted: string; msgBigGroup: string;
   estHigh: string; night: string; nights: string; high4: number; high6: number;
   estimateTpl: string; price4: number; price6: number;
-  web3key: string; emailSubject: string;
+  web3key: string; emailSubject: string; botUrl: string;
 }
 
 function script(p: Payload): string {
@@ -146,7 +146,23 @@ function script(p: Payload): string {
   // Respaldo por email (Web3Forms) — fire-and-forget: nunca bloquea ni rompe el
   // flujo de WhatsApp aunque el servicio falle. Garantiza que el lead quede
   // registrado aunque wa.me no abra.
+  // Al CRM de Odoo por el bot — fire-and-forget, solo en boltgolfcars.com (no en localhost/CI).
+  // text/plain = petición simple (sin preflight CORS), así keepalive funciona aunque se abra WhatsApp.
+  function sendBot(summary){
+    if(!P.botUrl||!/(^|\\.)boltgolfcars\\.com$/.test(location.hostname))return;
+    var o=zopt(),mo=modelo.options[modelo.selectedIndex];
+    try{
+      fetch(P.botUrl,{method:'POST',keepalive:true,headers:{'Content-Type':'text/plain;charset=UTF-8'},
+        body:JSON.stringify({tipo:'disponibilidad',nombre:val('nombre'),email:val('email'),whatsapp:val('whatsapp'),
+          modelo:(mo&&mo.value)?mo.getAttribute('data-name'):P.recommend,llegada:val('llegada'),salida:val('salida'),
+          entrega:(o&&o.value)?o.getAttribute('data-name'):'',alojamiento:alojaStr(),pasajeros:val('pasajeros'),
+          comentarios:val('comentarios'),origen:origen(),resumen:summary,empresa:val('empresa')})
+      }).catch(function(){});
+    }catch(e){}
+  }
+
   function sendEmail(summary){
+    sendBot(summary);
     if(!P.web3key)return;
     var o=zopt(),mo=modelo.options[modelo.selectedIndex];
     try{
