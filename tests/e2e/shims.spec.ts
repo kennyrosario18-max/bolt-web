@@ -221,15 +221,15 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
   test("estimado con temporada alta: cada noche a su tarifa", async ({ page }) => {
     await page.goto("/solicitar-disponibilidad/?modelo=eco-cross-4-2");
     await page.locator("#zona").selectOption("puntacana-resort");
-    // 5 noches en temporada alta: 5 × US$105 × 1.18 = 619.5 → US$620 (transporte gratis, 5+ días en PCRC)
+    // 5 noches en temporada alta: 5 × US$110 × 1.18 = 649 → US$649 (transporte gratis, 5+ días en PCRC)
     await page.locator("#llegada").fill("2026-12-28");
     await page.locator("#salida").fill("2027-01-02");
-    await expect(page.locator("#estimate")).toContainText("US$620");
+    await expect(page.locator("#estimate")).toContainText("US$649");
     await expect(page.locator("#estimate")).toContainText(/5 noches a tarifa de temporada alta/);
-    // Mixta: 4–9 ene = 3 noches alta (4, 5, 6) + 2 regular: (3×105 + 2×85) × 1.18 = 572.3 → US$572
+    // Mixta: 4–9 ene = 3 noches alta (4, 5, 6) + 2 regular: (3×110 + 2×90) × 1.18 = 601.8 → US$602
     await page.locator("#llegada").fill("2027-01-04");
     await page.locator("#salida").fill("2027-01-09");
-    await expect(page.locator("#estimate")).toContainText("US$572");
+    await expect(page.locator("#estimate")).toContainText("US$602");
     await expect(page.locator("#estimate")).toContainText(/3 noches a tarifa de temporada alta/);
   });
 
@@ -255,20 +255,20 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await page.locator("#llegada").fill("2027-01-10");
     await page.locator("#salida").fill("2027-01-13");
     await page.locator("#zona").selectOption({ index: 1 });
-    // PCRC: 3 días × US$85 × 1.18 = 301 + transporte (1 viaje, < 5 días) 60 × 1.18 = 71 → US$372
+    // PCRC: 3 días × US$90 × 1.18 = 319 + transporte (1 viaje, < 5 días) 60 × 1.18 = 71 → US$390
     await expect(page.locator("#zona-note")).toContainText("US$60");
-    await expect(page.locator("#estimate")).toContainText("US$372");
+    await expect(page.locator("#estimate")).toContainText("US$390");
     await expect(page.locator("#estimate")).toContainText(/transporte|transport/i);
     await expect(page.locator("#estimate-tip")).toBeEmpty();
-    // 4 días (uno antes de la exención): 4 × 85 × 1.18 = 401 + 71 = US$472, y el aviso de que
-    // con 5 días la entrega sale gratis por US$502 (solo US$30 más).
+    // 4 días (uno antes de la exención): 4 × 90 × 1.18 = 425 + 71 = US$496, y el aviso de que
+    // con 5 días la entrega sale gratis por US$531 (solo US$35 más).
     await page.locator("#salida").fill("2027-01-14");
-    await expect(page.locator("#estimate")).toContainText("US$472");
-    await expect(page.locator("#estimate-tip")).toContainText("US$502");
-    await expect(page.locator("#estimate-tip")).toContainText("US$30");
-    // 5 días o más en PCRC: transporte gratis → 5 × 85 × 1.18 = US$502, sin aviso.
+    await expect(page.locator("#estimate")).toContainText("US$496");
+    await expect(page.locator("#estimate-tip")).toContainText("US$531");
+    await expect(page.locator("#estimate-tip")).toContainText("US$35");
+    // 5 días o más en PCRC: transporte gratis → 5 × 90 × 1.18 = US$531, sin aviso.
     await page.locator("#salida").fill("2027-01-15");
-    await expect(page.locator("#estimate")).toContainText("US$502");
+    await expect(page.locator("#estimate")).toContainText("US$531");
     await expect(page.locator("#estimate")).toContainText(/gratis|free/i);
     await expect(page.locator("#estimate-tip")).toBeEmpty();
     // Zona cotizada (Casa de Campo, 7+ días): el estimado avisa que el transporte va aparte.

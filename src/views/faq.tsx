@@ -12,7 +12,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿Cuánto cuesta la renta?",
-      a: "Los modelos de 4 plazas van desde US$50/día y los de 6 plazas desde US$65/día. El ITBIS (18%) se muestra por modelo en la página de precios. El transporte se cobra aparte por zona: gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS. En temporada alta (20 dic – 6 ene y Semana Santa) aplica la tarifa de temporada alta de cada modelo, publicada en Precios. Rentas de un mes o más: cotización por WhatsApp.",
+      a: "Los modelos de 4 plazas van desde US$50/día y los de 6 plazas desde US$75/día. El ITBIS (18%) se muestra por modelo en la página de precios. El transporte se cobra aparte por zona: gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS. En temporada alta (20 dic – 6 ene y Semana Santa) aplica la tarifa de temporada alta de cada modelo, publicada en Precios. Rentas de un mes o más: cotización por WhatsApp.",
     },
     {
       q: "¿Cuál es la renta mínima?",
@@ -70,7 +70,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "How much does it cost?",
-      a: "4-seaters start at US$50/day and 6-seaters at US$65/day. Tax (18% ITBIS) is shown per model on the pricing page. Transport is charged separately by zone: free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, US$60 round trip per trailer trip + tax. In high season (Dec 20 – Jan 6 & Holy Week) each model's high-season rate applies, published on the pricing page. Rentals of a month or more: quote on WhatsApp.",
+      a: "4-seaters start at US$50/day and 6-seaters at US$75/day. Tax (18% ITBIS) is shown per model on the pricing page. Transport is charged separately by zone: free from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, US$60 round trip per trailer trip + tax. In high season (Dec 20 – Jan 6 & Holy Week) each model's high-season rate applies, published on the pricing page. Rentals of a month or more: quote on WhatsApp.",
     },
     {
       q: "What's the minimum rental?",

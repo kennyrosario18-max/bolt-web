@@ -86,11 +86,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         h: "Qué modelo elegir según tu grupo",
         hEn: "Which model to choose for your group",
         p: [
-          "Para dos o tres personas, un modelo de 4 plazas rinde de sobra y es el más económico, desde US$50 por día. Para familias o grupos de cinco y seis, los modelos de 4+2 plazas dan espacio real para todos más los bolsos, desde US$65 por día — el precio exacto depende del modelo y lo ves claro en cada ficha.",
+          "Para dos o tres personas, un modelo de 4 plazas rinde de sobra y es el más económico, desde US$50 por día. Para familias o grupos de cinco y seis, los modelos de 4+2 plazas dan espacio real para todos más los bolsos, desde US$75 por día — el precio exacto depende del modelo y lo ves claro en cada ficha.",
           "Si buscan autonomía para moverse todo el día sin pensar en la carga, la línea ECO premium con batería de litio de largo alcance es la opción más cómoda. Si no estás seguro, en tu solicitud puedes pedir que te recomendemos según tu grupo y tus planes: te respondemos por WhatsApp el mismo día con la mejor opción disponible.",
         ],
         pEn: [
-          "For two or three people, a 4-seat model is more than enough and the most affordable, from US$50 a day. For families or groups of five and six, the 4+2 models give real room for everyone plus the bags, from US$65 a day — the exact price depends on the model and is shown clearly on each spec page.",
+          "For two or three people, a 4-seat model is more than enough and the most affordable, from US$50 a day. For families or groups of five and six, the 4+2 models give real room for everyone plus the bags, from US$75 a day — the exact price depends on the model and is shown clearly on each spec page.",
           "If you want range to move around all day without thinking about charge, the premium ECO line with long-range lithium is the most comfortable choice. If you're unsure, in your request you can ask us to recommend one based on your group and plans: we reply on WhatsApp the same day with the best available option.",
         ],
       },
@@ -253,11 +253,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         hEn: "Great for long stays: free transport from 10 days",
         p: [
           "Si te quedas una semana o más, Bávaro es la zona perfecta para una renta larga. En reservas de 10 días o más, la entrega y la recogida son gratis: el transporte queda en US$0 para toda la reserva. Rentas de un mes o más: escríbenos por WhatsApp y te preparamos una cotización a la medida de tus fechas.",
-          "Los modelos de 4 plazas arrancan desde US$50 por día y los de 6 plazas desde US$65, con el precio exacto según el modelo. Para estadías largas, un modelo con buena autonomía marca la diferencia; si no estás seguro de cuál elegir, pídenos una recomendación y te orientamos según cuántas personas son y cómo piensan moverse.",
+          "Los modelos de 4 plazas arrancan desde US$50 por día y los de 6 plazas desde US$75, con el precio exacto según el modelo. Para estadías largas, un modelo con buena autonomía marca la diferencia; si no estás seguro de cuál elegir, pídenos una recomendación y te orientamos según cuántas personas son y cómo piensan moverse.",
         ],
         pEn: [
           "If you're staying a week or more, Bávaro is the perfect area for a long rental. On rentals of 10 days or more, delivery and pickup are free: transport is US$0 for the whole booking. Rentals of a month or more: message us on WhatsApp and we'll prepare a quote tailored to your dates.",
-          "4-seat models start from US$50 a day and 6-seaters from US$65, with the exact price depending on the model. For long stays, a model with good range makes the difference; if you're unsure which to choose, ask us for a recommendation and we'll guide you based on how many you are and how you plan to get around.",
+          "4-seat models start from US$50 a day and 6-seaters from US$75, with the exact price depending on the model. For long stays, a model with good range makes the difference; if you're unsure which to choose, ask us for a recommendation and we'll guide you based on how many you are and how you plan to get around.",
         ],
       },
     ],
@@ -283,14 +283,14 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Cuál es la tarifa por día en Bávaro?",
-        a: "Desde US$50 por día los modelos de 4 plazas y desde US$65 los de 6 plazas, con el precio exacto según el modelo. En Bávaro la entrega y la recogida son gratis en reservas de 10 días o más; en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS.",
+        a: "Desde US$50 por día los modelos de 4 plazas y desde US$75 los de 6 plazas, con el precio exacto según el modelo. En Bávaro la entrega y la recogida son gratis en reservas de 10 días o más; en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS.",
       },
     ],
     faqsEn: [
       { q: "Where are you located?", a: "Our base is at Av. Barceló Km 3 1/2, Naves Montolio, Local #17, Bávaro. The whole fleet dispatches from there." },
       { q: "Can I pick up the cart myself?", a: "Our standard service is delivery to your accommodation within the area (transport billed per trailer trip, free on 10+ day bookings). If you'd rather arrange something different, message us on WhatsApp and we'll look into it." },
       { q: "Do you rent by the week or month?", a: "Yes. The model's daily rate is the same; on rentals of 10 days or more transport is free. Rentals of a month or more: quote on WhatsApp." },
-      { q: "What's the daily rate in Bávaro?", a: "From US$50 a day for 4-seat models and from US$65 for 6-seaters, with the exact price depending on the model. In Bávaro delivery and pickup are free on rentals of 10 days or more; on shorter stays, US$60 round trip per trailer trip + tax." },
+      { q: "What's the daily rate in Bávaro?", a: "From US$50 a day for 4-seat models and from US$75 for 6-seaters, with the exact price depending on the model. In Bávaro delivery and pickup are free on rentals of 10 days or more; on shorter stays, US$60 round trip per trailer trip + tax." },
     ],
   },
   {

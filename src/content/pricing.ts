@@ -8,16 +8,16 @@ import { ZONES } from "./site";
 
 /** Precio base US$/día por id de modelo. */
 export const MODEL_PRICES: Record<string, number> = {
-  "eco-cross-4": 65,
-  "eco-cross-4-2": 85,
+  "eco-cross-4": 75,
+  "eco-cross-4-2": 90,
   "eco-plus-2-2": 60,
-  "eco-plus-4-2": 75,
+  "eco-plus-4-2": 85,
   "eco-track-4-2": 100,
-  "eco-sport-4-2": 75,
-  "cc-limo-4-2": 65,
+  "eco-sport-4-2": 85,
+  "cc-limo-4-2": 75,
   "cc-precedent-2-2": 50,
   "cc-tempo-2-2": 60,
-  "zycar-4": 65,
+  "zycar-4": 75,
   "zycar-4-2": 100,
 };
 
@@ -35,13 +35,13 @@ const PRICES = Object.values(MODEL_PRICES);
 export const MIN_PRICE = Math.min(...PRICES);
 export const MAX_PRICE = Math.max(...PRICES);
 
-/** "Desde" por capacidad = el modelo más barato de esas plazas (4→50, 6→65). */
+/** "Desde" por capacidad = el modelo más barato de esas plazas (4→50, 6→75). */
 export function priceFromPax(pax: number): number {
   const of = MODELS.filter((m) => m.pax === pax).map((m) => modelPrice(m.id));
   return of.length ? Math.min(...of) : MIN_PRICE;
 }
 
-/** Tarifa de TEMPORADA ALTA, US$/día por modelo (Kenny, 16/oct/2026). Fechas en HIGH_SEASON
+/** Tarifa de TEMPORADA ALTA, US$/día por modelo (Kenny, 16/oct/2026; ajustada 21/oct/2026). Fechas en HIGH_SEASON
  *  (site.ts): 20 dic – 6 ene y Semana Santa. Solo cliente directo y solo por las noches que caen
  *  en temporada alta. Regla: piso de margen mínimo sobre la tarifa interna de aliados (ver lista
  *  interna), para no dejar al aliado sin margen. */
@@ -49,12 +49,12 @@ export const HIGH_SEASON_PRICES: Record<string, number> = {
   "cc-precedent-2-2": 70,
   "cc-tempo-2-2": 75,
   "eco-plus-2-2": 75,
-  "eco-cross-4": 80,
-  "zycar-4": 80,
-  "cc-limo-4-2": 90,
-  "eco-plus-4-2": 95,
-  "eco-sport-4-2": 95,
-  "eco-cross-4-2": 105,
+  "eco-cross-4": 90,
+  "zycar-4": 90,
+  "cc-limo-4-2": 95,
+  "eco-plus-4-2": 105,
+  "eco-sport-4-2": 105,
+  "eco-cross-4-2": 110,
   "eco-track-4-2": 125,
   "zycar-4-2": 125,
 };

@@ -151,7 +151,7 @@ export const HIGH_SEASON: ReadonlyArray<readonly [string, string]> = [
 /** Tarifas oficiales (confirmadas jun/2026). Siempre en US$; ITBIS 18% aparte. */
 export const PRICING = {
   from4pax: 50,
-  from6pax: 65,
+  from6pax: 75,
   itbisNote: "Tarifas por día en US$. ITBIS 18% no incluido.",
   itbisNoteEn: "Daily rates in US$. 18% ITBIS tax not included.",
 } as const;

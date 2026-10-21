@@ -20,13 +20,13 @@ const OFFICIAL: Record<string, number> = {
   "cc-precedent-2-2": 50,
   "eco-plus-2-2": 60,
   "cc-tempo-2-2": 60,
-  "eco-cross-4": 65,
-  "zycar-4": 65,
-  "cc-limo-4-2": 65,
-  "eco-plus-4-2": 75,
-  "eco-sport-4-2": 75,
+  "eco-cross-4": 75,
+  "zycar-4": 75,
+  "cc-limo-4-2": 75,
+  "eco-plus-4-2": 85,
+  "eco-sport-4-2": 85,
   "zycar-4-2": 100,
-  "eco-cross-4-2": 85,
+  "eco-cross-4-2": 90,
   "eco-track-4-2": 100,
 };
 
@@ -56,10 +56,10 @@ describe("pricing — fuente única", () => {
     expect(modelPrice("zycar-4-2")).toBe(modelPrice("eco-track-4-2"));
   });
 
-  it("temporada alta: precios aprobados por Kenny (16/oct/2026), uno por modelo y siempre mayor que el regular", () => {
+  it("temporada alta: precios aprobados por Kenny (21/oct/2026), uno por modelo y siempre mayor que el regular", () => {
     expect(HIGH_SEASON_PRICES).toEqual({
-      "cc-precedent-2-2": 70, "cc-tempo-2-2": 75, "eco-plus-2-2": 75, "eco-cross-4": 80, "zycar-4": 80,
-      "cc-limo-4-2": 90, "eco-plus-4-2": 95, "eco-sport-4-2": 95, "eco-cross-4-2": 105, "eco-track-4-2": 125, "zycar-4-2": 125,
+      "cc-precedent-2-2": 70, "cc-tempo-2-2": 75, "eco-plus-2-2": 75, "eco-cross-4": 90, "zycar-4": 90,
+      "cc-limo-4-2": 95, "eco-plus-4-2": 105, "eco-sport-4-2": 105, "eco-cross-4-2": 110, "eco-track-4-2": 125, "zycar-4-2": 125,
     });
     for (const m of MODELS) {
       expect(modelHighPrice(m.id), `temporada alta de ${m.id}`).toBeGreaterThan(modelPrice(m.id));
@@ -74,9 +74,9 @@ describe("pricing — fuente única", () => {
     }
   });
 
-  it("mínimos por capacidad: 4 plazas desde US$50, 6 plazas desde US$65", () => {
+  it("mínimos por capacidad: 4 plazas desde US$50, 6 plazas desde US$75", () => {
     expect(priceFromPax(4)).toBe(50);
-    expect(priceFromPax(6)).toBe(65);
+    expect(priceFromPax(6)).toBe(75);
     expect(MIN_PRICE).toBe(50);
     expect(MAX_PRICE).toBe(100);
   });

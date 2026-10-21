@@ -67,7 +67,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "4 plazas (2+2 o todos mirando hacia adelante, hasta 360 kg): ideal para parejas o familias pequeñas. Desde US$50/día según el modelo.",
-          "6 plazas (4+2, hasta 540 kg): la mejor opción para familias grandes o grupos de amigos. Desde US$65/día según el modelo — el ECO Cross premium, con batería de litio 150 Ah y asientos de lujo, va a US$85/día.",
+          "6 plazas (4+2, hasta 540 kg): la mejor opción para familias grandes o grupos de amigos. Desde US$75/día según el modelo — el ECO Cross premium, con batería de litio 150 Ah y asientos de lujo, va a US$90/día.",
           "Plomo-ácido: 25–40 km por carga.",
           "Litio estándar (105 Ah): 60–70 km por carga.",
           "Litio de largo alcance (150 Ah): 85–95 km por carga, disponible en los ECO Cross (4 y 6 plazas) y el ECO Track."
@@ -171,7 +171,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "4 plazas: desde US$50/día según el modelo.",
-          "6 plazas: desde US$65/día según el modelo (el ECO Cross premium, de litio 150 Ah con asientos de lujo, US$85/día).",
+          "6 plazas: desde US$75/día según el modelo (el ECO Cross premium, de litio 150 Ah con asientos de lujo, US$90/día).",
           "Rentas de un mes o más: cotización por WhatsApp."
         ]
       },
@@ -264,7 +264,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "Golf cart de 4 plazas: desde US$50/día según el modelo.",
-          "Golf cart de 6 plazas: desde US$65/día según el modelo (el ECO Cross premium, con batería de litio de 150 Ah y asientos de lujo, US$85/día).",
+          "Golf cart de 6 plazas: desde US$75/día según el modelo (el ECO Cross premium, con batería de litio de 150 Ah y asientos de lujo, US$90/día).",
           "Transporte (entrega + recogida) por viaje de tráiler: US$60 en Puntacana Resort & Club, Cap Cana y Bávaro — gratis en reservas de 5+ días (10+ en Bávaro); US$120 en Uvero Alto / Macao. ITBIS aparte.",
           "Estadías de un mes o más: cotización por WhatsApp."
         ]
@@ -283,10 +283,10 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "Pareja: 4 plazas Budget desde US$50/día. Los asientos traseros quedan libres para el cooler, las toallas y las compras. Es la opción más eficiente en precio y espacio.",
-          "Familia de 4: puede funcionar el 4 plazas si viajan ligeros, pero si cargan cooler, juguetes de playa y compras a diario, el 6 plazas Budget (US$65/día) da un margen que se agradece cada día del viaje.",
+          "Familia de 4: puede funcionar el 4 plazas si viajan ligeros, pero si cargan cooler, juguetes de playa y compras a diario, el 6 plazas Budget (US$75/día) da un margen que se agradece cada día del viaje.",
           "Familia con abuelos (5–6 personas): 6 plazas sin dudarlo. Todos deben ir sentados, así que cinco personas ya descartan el 4 plazas. Los asientos delanteros amplios del 4+2 son más cómodos para los mayores.",
-          "Grupo de amigos: 6 plazas Budget desde US$65/día. Si son más de seis, lo correcto es combinar dos carts; sobrecargar no está permitido y arruina la experiencia.",
-          "Dato útil: un 4 plazas Estándar cuesta US$65/día, lo mismo que un 6 plazas Budget. Si dudas entre ambos, por el mismo precio puedes llevar dos asientos extra."
+          "Grupo de amigos: 6 plazas Budget desde US$75/día. Si son más de seis, lo correcto es combinar dos carts; sobrecargar no está permitido y arruina la experiencia.",
+          "Dato útil: un 4 plazas con todos los asientos al frente cuesta US$75/día, lo mismo que un 6 plazas Budget. Si dudas entre ambos, por el mismo precio puedes llevar dos asientos extra."
         ]
       },
       {
@@ -360,10 +360,10 @@ export const ARTICLES: BlogArticle[] = [
         ]
       },
       {
-        "heading": "Cuándo conviene el tier premium ECO Cross (US$85/día)",
+        "heading": "Cuándo conviene el tier premium ECO Cross (US$90/día)",
         "paragraphs": [
-          "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$85/día + ITBIS. Frente a un 6 plazas estándar de US$75/día, hablamos de US$10 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
-          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$65 según el modelo); los 6 plazas van desde US$65/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte (entrega y recogida en tu villa) es fijo por zona: gratis en reservas de 5+ días (10+ en Bávaro) y, en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS en Puntacana Resort & Club, Cap Cana y Bávaro. El día de renta son 24 horas desde la entrega, no día calendario.",
+          "El ECO Cross premium es nuestro 6 plazas con litio de 150 Ah: 85–95 km por carga y asientos de lujo, a US$90/día + ITBIS. Frente a un 6 plazas estándar de US$85/día, hablamos de US$5 diarios de diferencia. ¿Cuándo vale la pena? Cuando viajan en grupo completo (4+2), cuando tu día es de movimiento constante de la mañana a la noche, o cuando sencillamente no quieres calcular kilómetros en vacaciones: con casi el triple de autonomía que el plomo-ácido, la batería deja de ser un tema.",
+          "Para comparar, nuestros 4 plazas arrancan en US$50/día (hasta US$75 según el modelo); los 6 plazas van desde US$75/día (hasta US$100 el ECO Track todoterreno), siempre + ITBIS 18%. Toda renta incluye cargador, orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte (entrega y recogida en tu villa) es fijo por zona: gratis en reservas de 5+ días (10+ en Bávaro) y, en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS en Puntacana Resort & Club, Cap Cana y Bávaro. El día de renta son 24 horas desde la entrega, no día calendario.",
           "¿No estás seguro de cuál te conviene? Escríbenos por WhatsApp al +1 829 202 7849 y cuéntanos tu plan: cuántas personas son, dónde se hospedan y cuántos días. Trabajamos por solicitud de disponibilidad —nunca confirmación automática—, así que mientras antes nos escribas, mejor. Your ride in paradise."
         ]
       }
@@ -379,7 +379,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿El precio del ECO Cross premium incluye impuestos y entrega?",
-        "a": "El tier premium cuesta US$85/día + ITBIS 18%. El transporte (entrega y recogida en tu villa) va aparte, por viaje de tráiler: US$60 + ITBIS en Puntacana Resort & Club, Cap Cana y Bávaro, gratis en reservas de 5+ días (10+ en Bávaro); US$120 en Uvero Alto / Macao. Recuerda que el día de renta son 24 horas desde la entrega."
+        "a": "El tier premium cuesta US$90/día + ITBIS 18%. El transporte (entrega y recogida en tu villa) va aparte, por viaje de tráiler: US$60 + ITBIS en Puntacana Resort & Club, Cap Cana y Bávaro, gratis en reservas de 5+ días (10+ en Bávaro); US$120 en Uvero Alto / Macao. Recuerda que el día de renta son 24 horas desde la entrega."
       }
     ],
     "locale": "es"
@@ -427,7 +427,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "4 seats (2+2 or all forward-facing, up to 360 kg): ideal for couples or small families. From US$50/day depending on the model.",
-          "6 seats (4+2, up to 540 kg): the best option for large families or groups of friends. From US$65/day depending on the model — the premium ECO Cross, with a 150 Ah lithium battery and luxury seats, is US$85/day.",
+          "6 seats (4+2, up to 540 kg): the best option for large families or groups of friends. From US$75/day depending on the model — the premium ECO Cross, with a 150 Ah lithium battery and luxury seats, is US$90/day.",
           "Lead-acid: 25–40 km per charge.",
           "Standard lithium (105 Ah): 60–70 km per charge.",
           "Long-range lithium (150 Ah): 85–95 km per charge, available in the ECO Cross (4 and 6 seats) and the ECO Track."
@@ -531,7 +531,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "4 seats: from US$50/day depending on the model.",
-          "6 seats: from US$65/day depending on the model (the premium ECO Cross, 150 Ah lithium with luxury seats, US$85/day).",
+          "6 seats: from US$75/day depending on the model (the premium ECO Cross, 150 Ah lithium with luxury seats, US$90/day).",
           "Rentals of a month or more: quote on WhatsApp."
         ]
       },
@@ -615,7 +615,7 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "4-seat golf cart: from US$50/day depending on the model.",
-          "6-seat golf cart: from US$65/day depending on the model (the premium ECO Cross, with a 150 Ah lithium battery and luxury seats, US$85/day).",
+          "6-seat golf cart: from US$75/day depending on the model (the premium ECO Cross, with a 150 Ah lithium battery and luxury seats, US$90/day).",
           "Transport (round trip, delivery + pickup): US$60 per trailer trip + 18% tax to Puntacana Resort & Club, Cap Cana and Bávaro — free on longer stays (5+ days nearby, 10+ days in Bávaro). US$120 to Uvero Alto / Macao; other areas, ask for a quote.",
           "Stays of a month or more: quote on WhatsApp."
         ]
@@ -634,10 +634,10 @@ export const ARTICLES: BlogArticle[] = [
         ],
         "bullets": [
           "Couple: 4-seater from US$50/day. The rear seats stay free for the cooler, towels and shopping. It's the most efficient option in price and space.",
-          "Family of 4: a 4-seater can work if you travel light, but if you carry a cooler, beach toys and daily shopping, the 6-seater (US$65/day) gives welcome margin every day of the trip.",
+          "Family of 4: a 4-seater can work if you travel light, but if you carry a cooler, beach toys and daily shopping, the 6-seater (US$75/day) gives welcome margin every day of the trip.",
           "Family with grandparents (5–6 people): 6-seater, no question. Everyone must be seated, so five people already rule out the 4-seater. The wide front seats of the 4+2 are more comfortable for older travellers.",
-          "Group of friends: 6-seater from US$65/day. If you're more than six, the right move is to combine two carts; overloading isn't allowed and ruins the experience.",
-          "Useful fact: a mid-tier 4-seater costs US$65/day, the same as an entry 6-seater. If you're torn between the two, for the same price you can take two extra seats."
+          "Group of friends: 6-seater from US$75/day. If you're more than six, the right move is to combine two carts; overloading isn't allowed and ruins the experience.",
+          "Useful fact: a 4-seater with all seats facing forward costs US$75/day, the same as an entry 6-seater. If you're torn between the two, for the same price you can take two extra seats."
         ]
       },
       {
@@ -720,10 +720,10 @@ export const ARTICLES: BlogArticle[] = [
         ]
       },
       {
-        "heading": "When the premium ECO Cross tier is worth it (US$85/day)",
+        "heading": "When the premium ECO Cross tier is worth it (US$90/day)",
         "paragraphs": [
-          "The premium ECO Cross is our 6-seater with 150 Ah lithium: 85–95 km per charge and luxury seats, at US$85/day + tax. Against a standard 6-seater at US$75/day, we're talking about US$10 a day of difference. When is it worth it? When you travel as a full group (4+2), when your day is constant movement from morning to night, or when you simply don't want to count kilometers on holiday: with nearly triple the range of lead-acid, the battery stops being a concern.",
-          "For comparison, our 4-seaters start at US$50/day (up to US$65 depending on the model); 6-seaters go from US$65/day (up to US$100 for the all-terrain ECO Track), always + 18% tax. Every rental includes charger and 24/7 WhatsApp support in English and Spanish; delivery and pickup at your villa are charged as fixed transport by zone (US$60 per trailer trip + 18% tax to Puntacana Resort & Club, Cap Cana and Bávaro, free on longer stays: 5+ days nearby, 10+ days in Bávaro). The rental day is 24 hours from delivery, not a calendar day.",
+          "The premium ECO Cross is our 6-seater with 150 Ah lithium: 85–95 km per charge and luxury seats, at US$90/day + tax. Against a standard 6-seater at US$85/day, we're talking about US$5 a day of difference. When is it worth it? When you travel as a full group (4+2), when your day is constant movement from morning to night, or when you simply don't want to count kilometers on holiday: with nearly triple the range of lead-acid, the battery stops being a concern.",
+          "For comparison, our 4-seaters start at US$50/day (up to US$75 depending on the model); 6-seaters go from US$75/day (up to US$100 for the all-terrain ECO Track), always + 18% tax. Every rental includes charger and 24/7 WhatsApp support in English and Spanish; delivery and pickup at your villa are charged as fixed transport by zone (US$60 per trailer trip + 18% tax to Puntacana Resort & Club, Cap Cana and Bávaro, free on longer stays: 5+ days nearby, 10+ days in Bávaro). The rental day is 24 hours from delivery, not a calendar day.",
           "Not sure which suits you? Message us on WhatsApp at +1 829 202 7849 and tell us your plan: how many people, where you're staying and how many days. We work by availability request — never automatic confirmation — so the sooner you write, the better. Your ride in paradise."
         ]
       }
@@ -739,7 +739,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "Does the premium ECO Cross price include tax and delivery?",
-        "a": "The premium tier is US$85/day + 18% tax. Transport (round trip, delivery + pickup) is charged separately with your booking: US$60 per trailer trip to Puntacana Resort & Club, Cap Cana and Bávaro + 18% tax, free on longer stays (5+ days nearby, 10+ days in Bávaro); US$120 to Uvero Alto / Macao. Remember the rental day is 24 hours from delivery."
+        "a": "The premium tier is US$90/day + 18% tax. Transport (round trip, delivery + pickup) is charged separately with your booking: US$60 per trailer trip to Puntacana Resort & Club, Cap Cana and Bávaro + 18% tax, free on longer stays (5+ days nearby, 10+ days in Bávaro); US$120 to Uvero Alto / Macao. Remember the rental day is 24 hours from delivery."
       }
     ],
     "locale": "en"
@@ -951,7 +951,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Transporte cotizado, tarifa por día igual que en todas partes",
         "paragraphs": [
           "En nuestras tres zonas de Punta Cana el transporte tiene una tarifa fija por viaje de tráiler. En Casa de Campo, en cambio, se cotiza para cada solicitud según tres datos: tu villa (la ubicación exacta dentro de la comunidad), tus fechas y la cantidad de carritos, porque cada viaje de tráiler lleva dos carritos de 4 plazas o uno de 6 y uno de 4. Con esos tres datos te devolvemos el costo exacto del transporte y lo incluimos en la confirmación de tu solicitud, de modo que sabes el total completo antes de pagar nada.",
-          "Lo que no cambia es la tarifa por día del modelo: es la misma que en Puntacana Resort & Club, Cap Cana o Bávaro. Los 4 plazas van desde US$50/día y los 6 plazas desde US$65/día, siempre más ITBIS 18%. No hay recargo por zona en la tarifa del carrito; la única línea que se cotiza aparte es el transporte."
+          "Lo que no cambia es la tarifa por día del modelo: es la misma que en Puntacana Resort & Club, Cap Cana o Bávaro. Los 4 plazas van desde US$50/día y los 6 plazas desde US$75/día, siempre más ITBIS 18%. No hay recargo por zona en la tarifa del carrito; la única línea que se cotiza aparte es el transporte."
         ],
         "bullets": [
           "Mínimo de renta en Casa de Campo: 7 días.",
@@ -998,7 +998,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "¿La tarifa por día es distinta en Casa de Campo?",
-        "a": "No. La tarifa por día del modelo es la misma que en el resto de nuestras zonas: 4 plazas desde US$50/día y 6 plazas desde US$65/día, más ITBIS 18%. Solo el transporte se cotiza aparte."
+        "a": "No. La tarifa por día del modelo es la misma que en el resto de nuestras zonas: 4 plazas desde US$50/día y 6 plazas desde US$75/día, más ITBIS 18%. Solo el transporte se cotiza aparte."
       },
       {
         "q": "¿Qué modelo me recomiendan para dos semanas con la familia?",
@@ -1036,7 +1036,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Transport quoted, the same daily rate as everywhere",
         "paragraphs": [
           "In our three Punta Cana zones, transport has a fixed rate per trailer trip. In Casa de Campo, instead, it's quoted for each request based on three things: your villa (the exact location inside the community), your dates and the number of carts, because each trailer trip carries two 4-seaters or one 6-seater and one 4-seater. With those three details we come back with the exact transport cost and include it in the confirmation of your request, so you know the full total before paying anything.",
-          "What doesn't change is the model's daily rate: it's the same as in Puntacana Resort & Club, Cap Cana or Bávaro. 4-seaters go from US$50/day and 6-seaters from US$65/day, always plus 18% tax. There's no zone surcharge on the cart's rate; the only line quoted separately is transport."
+          "What doesn't change is the model's daily rate: it's the same as in Puntacana Resort & Club, Cap Cana or Bávaro. 4-seaters go from US$50/day and 6-seaters from US$75/day, always plus 18% tax. There's no zone surcharge on the cart's rate; the only line quoted separately is transport."
         ],
         "bullets": [
           "Minimum rental in Casa de Campo: 7 days.",
@@ -1083,7 +1083,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         "q": "Is the daily rate different in Casa de Campo?",
-        "a": "No. The model's daily rate is the same as in the rest of our zones: 4 seats from US$50/day and 6 seats from US$65/day, plus 18% tax. Only transport is quoted separately."
+        "a": "No. The model's daily rate is the same as in the rest of our zones: 4 seats from US$50/day and 6 seats from US$75/day, plus 18% tax. Only transport is quoted separately."
       },
       {
         "q": "Which model do you recommend for two weeks with the family?",
@@ -1113,16 +1113,16 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Tarifas de temporada alta por modelo",
         "paragraphs": [
-          "Las tarifas de temporada alta son por día, en US$, con el ITBIS 18% aparte. Los 4 plazas van desde US$70/día y los 6 plazas desde US$90/día. Este es el detalle por modelo:",
+          "Las tarifas de temporada alta son por día, en US$, con el ITBIS 18% aparte. Los 4 plazas van desde US$70/día y los 6 plazas desde US$95/día. Este es el detalle por modelo:",
           "El cargador, la orientación de uso en la entrega y el soporte por WhatsApp 24/7 en español e inglés van incluidos igual que el resto del año."
         ],
         "bullets": [
           "Club Car Precedent 2+2 (4 plazas): US$70/día.",
           "Club Car Tempo 2+2 y ECO Plus 2+2 (4 plazas): US$75/día.",
-          "ECO Cross 4 y Zycar 4 (4 plazas, asientos hacia adelante): US$80/día.",
-          "Club Car Precedent Limo 4+2 (6 plazas): US$90/día.",
-          "ECO Plus 4+2 y ECO Sport 4+2 (6 plazas): US$95/día.",
-          "ECO Cross 4+2 (6 plazas, litio de largo alcance): US$105/día.",
+          "ECO Cross 4 y Zycar 4 (4 plazas, asientos hacia adelante): US$90/día.",
+          "Club Car Precedent Limo 4+2 (6 plazas): US$95/día.",
+          "ECO Plus 4+2 y ECO Sport 4+2 (6 plazas): US$105/día.",
+          "ECO Cross 4+2 (6 plazas, litio de largo alcance): US$110/día.",
           "ECO Track 4+2 y Zycar 4+2 (6 plazas): US$125/día."
         ]
       },
@@ -1200,16 +1200,16 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "High-season rates by model",
         "paragraphs": [
-          "High-season rates are per day, in US$, with 18% tax on top. 4-seaters go from US$70/day and 6-seaters from US$90/day. Here is the detail by model:",
+          "High-season rates are per day, in US$, with 18% tax on top. 4-seaters go from US$70/day and 6-seaters from US$95/day. Here is the detail by model:",
           "The charger, the usage briefing at delivery and 24/7 WhatsApp support in English and Spanish are included just like the rest of the year."
         ],
         "bullets": [
           "Club Car Precedent 2+2 (4 seats): US$70/day.",
           "Club Car Tempo 2+2 and ECO Plus 2+2 (4 seats): US$75/day.",
-          "ECO Cross 4 and Zycar 4 (4 seats, forward-facing seats): US$80/day.",
-          "Club Car Precedent Limo 4+2 (6 seats): US$90/day.",
-          "ECO Plus 4+2 and ECO Sport 4+2 (6 seats): US$95/day.",
-          "ECO Cross 4+2 (6 seats, long-range lithium): US$105/day.",
+          "ECO Cross 4 and Zycar 4 (4 seats, forward-facing seats): US$90/day.",
+          "Club Car Precedent Limo 4+2 (6 seats): US$95/day.",
+          "ECO Plus 4+2 and ECO Sport 4+2 (6 seats): US$105/day.",
+          "ECO Cross 4+2 (6 seats, long-range lithium): US$110/day.",
           "ECO Track 4+2 and Zycar 4+2 (6 seats): US$125/day."
         ]
       },
