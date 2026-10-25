@@ -24,7 +24,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿La entrega tiene costo?",
-      a: "En estadías de 5 días o más en Puntacana Resort & Club y Cap Cana (10 en Bávaro) no: la entrega y la recogida salen gratis para toda la reserva. En estadías más cortas es un solo cargo fijo, ida y vuelta, por viaje de tráiler (hasta 2 carritos): US$60 + ITBIS en esas tres zonas. Uvero Alto / Macao: US$120 ida y vuelta por viaje de tráiler + ITBIS, sin entrega gratis. Casa de Campo y otros complejos privados o eventos: se cotiza. Se paga con la reserva.",
+      a: "En estadías de 5 días o más en Puntacana Resort & Club y Cap Cana (10 en Bávaro) no: la entrega y la recogida salen gratis para toda la reserva. En estadías más cortas es un solo cargo fijo, ida y vuelta, por viaje de tráiler (hasta 2 carritos): US$60 + ITBIS en esas tres zonas. Puntacana Village: US$40 ida y vuelta por viaje de tráiler + ITBIS, gratis desde 5 días. Uvero Alto / Macao: US$120 ida y vuelta por viaje de tráiler + ITBIS, sin entrega gratis. Casa de Campo y otros complejos privados o eventos: se cotiza. Se paga con la reserva.",
     },
     {
       q: "¿Qué necesito para manejar el carrito?",
@@ -32,7 +32,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "¿En qué zonas entregan?",
-      a: "Puntacana Resort & Club, Cap Cana y Bávaro (entrega y recogida gratis desde 5 días, 10 en Bávaro; en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS) y Uvero Alto / Macao (US$120 ida y vuelta por viaje de tráiler + ITBIS, sin entrega gratis). Casa de Campo está disponible para reservas de 7 días o más, con transporte sujeto a cotización.",
+      a: "Puntacana Resort & Club, Cap Cana y Bávaro (entrega y recogida gratis desde 5 días, 10 en Bávaro; en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS), Puntacana Village (US$40 ida y vuelta por viaje de tráiler + ITBIS, gratis desde 5 días) y Uvero Alto / Macao (US$120 ida y vuelta por viaje de tráiler + ITBIS, sin entrega gratis). Casa de Campo está disponible para reservas de 7 días o más, con transporte sujeto a cotización.",
     },
     {
       q: "¿Cómo se confirma mi reserva?",
@@ -82,7 +82,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "Is there a delivery fee?",
-      a: "On stays of 5 days or more in Puntacana Resort & Club and Cap Cana (10 in Bávaro), no: delivery and pickup are free for the whole booking. On shorter stays it's a single fixed round-trip charge per trailer trip (up to 2 carts): US$60 + 18% tax in those three zones. Uvero Alto / Macao: US$120 round trip per trailer trip + tax, no free delivery. Casa de Campo and other private communities or events: quoted. Paid with the booking.",
+      a: "On stays of 5 days or more in Puntacana Resort & Club and Cap Cana (10 in Bávaro), no: delivery and pickup are free for the whole booking. On shorter stays it's a single fixed round-trip charge per trailer trip (up to 2 carts): US$60 + 18% tax in those three zones. Puntacana Village: US$40 round trip per trailer trip + tax, free from 5 days. Uvero Alto / Macao: US$120 round trip per trailer trip + tax, no free delivery. Casa de Campo and other private communities or events: quoted. Paid with the booking.",
     },
     {
       q: "What do I need to drive the cart?",
@@ -90,7 +90,7 @@ export const FAQS: Record<Locale, { q: string; a: string }[]> = {
     },
     {
       q: "Which areas do you deliver to?",
-      a: "Puntacana Resort & Club, Cap Cana and Bávaro (free delivery and pickup from 5 days, 10 in Bávaro; on shorter stays, US$60 round trip per trailer trip + tax) and Uvero Alto / Macao (US$120 round trip per trailer trip + tax, no free delivery). Casa de Campo is available for rentals of 7 days or more, with transport quoted separately.",
+      a: "Puntacana Resort & Club, Cap Cana and Bávaro (free delivery and pickup from 5 days, 10 in Bávaro; on shorter stays, US$60 round trip per trailer trip + tax), Puntacana Village (US$40 round trip per trailer trip + tax, free from 5 days) and Uvero Alto / Macao (US$120 round trip per trailer trip + tax, no free delivery). Casa de Campo is available for rentals of 7 days or more, with transport quoted separately.",
     },
     {
       q: "How is my booking confirmed?",

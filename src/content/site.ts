@@ -73,6 +73,16 @@ export const ZONES: Zone[] = [
     transportFreeFrom: 5,
   },
   {
+    id: "puntacana-village",
+    name: "Puntacana Village",
+    short: "PC Village",
+    blurb: "Apartamentos y residenciales de Puntacana Village, junto al aeropuerto.",
+    blurbEn: "Apartments and residences in Puntacana Village, next to the airport.",
+    transport: 40,
+    transportFreeFrom: 5,
+    noLanding: true,
+  },
+  {
     id: "bavaro",
     name: "Bávaro",
     short: "Bávaro",
