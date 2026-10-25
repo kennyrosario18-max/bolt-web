@@ -41,8 +41,8 @@ const SERVICES: Service[] = [
   {
     title: "Entrega en toda la zona",
     titleEn: "Delivery across the area",
-    body: "Llevamos y recogemos tu carrito con carga completa y orientación de uso en tu villa. Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, un solo cargo de US$60 ida y vuelta por viaje de tráiler + ITBIS en esas tres zonas, US$40 + ITBIS en Puntacana Village (gratis desde 5 días) y US$120 + ITBIS en Uvero Alto / Macao (sin entrega gratis). Casa de Campo en reservas de 7+ días con transporte cotizado.",
-    bodyEn: "We deliver and pick up your cart fully charged with a usage briefing at your villa. Free delivery and pickup from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, a single charge of US$60 round trip per trailer trip + tax in those three zones, US$40 + tax to Puntacana Village (free from 5 days) and US$120 + tax to Uvero Alto / Macao (no free delivery). Casa de Campo on 7+ day rentals with quoted transport.",
+    body: "Llevamos y recogemos tu carrito con carga completa y orientación de uso en tu villa. Entrega y recogida gratis desde 5 días en Puntacana Resort & Club y Cap Cana (10 en Bávaro); en estadías más cortas, un solo cargo de US$60 ida y vuelta por viaje de tráiler + ITBIS en esas tres zonas, US$40 ida y vuelta por viaje de tráiler + ITBIS en Puntacana Village (gratis desde 5 días) y US$120 + ITBIS en Uvero Alto / Macao (sin entrega gratis). Casa de Campo en reservas de 7+ días con transporte cotizado.",
+    bodyEn: "We deliver and pick up your cart fully charged with a usage briefing at your villa. Free delivery and pickup from 5 days in Puntacana Resort & Club and Cap Cana (10 in Bávaro); on shorter stays, a single charge of US$60 round trip per trailer trip + tax in those three zones, US$40 round trip per trailer trip + tax to Puntacana Village (free from 5 days) and US$120 + tax to Uvero Alto / Macao (no free delivery). Casa de Campo on 7+ day rentals with quoted transport.",
     ctaEs: "Ver zonas →",
     ctaEn: "See zones →",
     hrefEs: "/#zonas",
