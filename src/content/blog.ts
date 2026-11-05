@@ -293,7 +293,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Asegura el tuyo antes de aterrizar",
         "paragraphs": [
           "Sea cual sea tu elección, la renta con BOLT incluye lo mismo: cargador (una carga completa toma 8–10 horas en un tomacorriente estándar), orientación de uso y soporte por WhatsApp 24/7 en español e inglés; el transporte a tu villa es fijo por zona: gratis en reservas de 5+ días (10+ en Bávaro) y, en estadías más cortas, US$60 ida y vuelta por viaje de tráiler + ITBIS. El día de renta cuenta como 24 horas desde la entrega, no como día calendario, así que aprovechas cada hora que pagas.",
-          "Para reservar, escríbenos por WhatsApp al +1 829 202 7849 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo, aplica solo para reservas de 7+ días con transporte cotizado aparte. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
+          "Para reservar, escríbenos por WhatsApp al +1 829 202 7849 con tus fechas, tu zona (Puntacana Resort & Club, Cap Cana o Bávaro) y cuántas personas son. Te confirmamos disponibilidad, apartas con el 50% de depósito y dejas un depósito de garantía de US$200 reembolsable. Si te hospedas en Casa de Campo, aplica solo para reservas de 7+ días, con transporte de US$250 por viaje de tráiler o US$360 en grúa (hasta 4 carritos) + ITBIS. Solicita tu disponibilidad hoy y llega a Punta Cana con el cart resuelto. Your ride in paradise."
         ]
       }
     ],
@@ -644,7 +644,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Secure yours before you land",
         "paragraphs": [
           "Whatever you choose, the BOLT rental includes the same: charger (a full charge takes 8–10 hours on a standard outlet), usage briefing and 24/7 WhatsApp support in English and Spanish, with delivery and pickup at your villa charged as fixed transport by zone: free on 5+ day bookings (10+ in Bávaro) and, on shorter stays, US$60 round trip per trailer trip + tax. The rental day counts as 24 hours from delivery, not a calendar day, so you make the most of every hour you pay for.",
-          "To book, message us on WhatsApp at +1 829 202 7849 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. Transport (delivery + pickup) is US$60 per trailer trip + 18% tax in Puntacana Resort & Club, Cap Cana and Bávaro, free from 5 days (10 in Bávaro). We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo, it applies only to bookings of 7+ days with transport quoted separately. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
+          "To book, message us on WhatsApp at +1 829 202 7849 with your dates, your area (Puntacana Resort & Club, Cap Cana or Bávaro) and how many people you are. Transport (delivery + pickup) is US$60 per trailer trip + 18% tax in Puntacana Resort & Club, Cap Cana and Bávaro, free from 5 days (10 in Bávaro). We confirm availability, you hold it with a 50% deposit and leave a refundable US$200 damage deposit. If you're staying in Casa de Campo, it applies only to bookings of 7+ days, with transport at US$250 per trailer trip or US$360 by tow truck (up to 4 carts) + tax. Request your availability today and arrive in Punta Cana with the cart sorted. Your ride in paradise."
         ]
       }
     ],
@@ -929,8 +929,8 @@ export const ARTICLES: BlogArticle[] = [
     "pairSlug": "golf-cart-casa-de-campo-7-days",
     "title": "Golf cart en Casa de Campo para estadías de 7 días o más",
     "metaTitle": "Golf cart en Casa de Campo: 7 días o más",
-    "metaDescription": "Golf cart en Casa de Campo en estadías de 7 días o más: la misma tarifa por día que en Punta Cana, transporte cotizado por villa y soporte 24/7 por WhatsApp.",
-    "excerpt": "Casa de Campo queda fuera de nuestra zona habitual, pero en estadías de 7 días o más llevamos el golf cart hasta tu villa con el transporte cotizado y la misma tarifa por día.",
+    "metaDescription": "Golf cart en Casa de Campo en estadías de 7 días o más: la misma tarifa por día que en Punta Cana, transporte fijo (tráiler o grúa) y soporte 24/7 por WhatsApp.",
+    "excerpt": "Casa de Campo queda fuera de nuestra zona habitual, pero en estadías de 7 días o más llevamos el golf cart hasta tu villa con transporte de precio fijo y la misma tarifa por día.",
     "readMinutes": 5,
     "sections": [
       {
@@ -950,7 +950,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Transporte cotizado, tarifa por día igual que en todas partes",
         "paragraphs": [
-          "En nuestras tres zonas de Punta Cana el transporte tiene una tarifa fija por viaje de tráiler. En Casa de Campo, en cambio, se cotiza para cada solicitud según tres datos: tu villa (la ubicación exacta dentro de la comunidad), tus fechas y la cantidad de carritos, porque cada viaje de tráiler lleva dos carritos de 4 plazas o uno de 6 y uno de 4. Con esos tres datos te devolvemos el costo exacto del transporte y lo incluimos en la confirmación de tu solicitud, de modo que sabes el total completo antes de pagar nada.",
+          "En nuestras tres zonas de Punta Cana el transporte tiene una tarifa fija por viaje de tráiler. En Casa de Campo también es fijo, con dos opciones: US$250 + ITBIS por viaje de tráiler, que lleva dos carritos de 4 plazas o uno de 6 y uno de 4, o US$360 + ITBIS en grúa, que lleva hasta 4 carritos (2 de 4 plazas y 2 de 6). Usamos la combinación más barata para tu grupo y la incluimos en la confirmación de tu solicitud, de modo que sabes el total completo antes de pagar nada.",
           "Lo que no cambia es la tarifa por día del modelo: es la misma que en Puntacana Resort & Club, Cap Cana o Bávaro. Los 4 plazas van desde US$50/día y los 6 plazas desde US$75/día, siempre más ITBIS 18%. No hay recargo por zona en la tarifa del carrito; la única línea que se cotiza aparte es el transporte."
         ],
         "bullets": [
@@ -977,7 +977,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "Soporte 24/7 y cómo reservar",
         "paragraphs": [
           "Aunque Casa de Campo quede fuera de nuestra zona habitual, el servicio durante la renta es exactamente el mismo: soporte por WhatsApp 24/7 en español e inglés, el carrito entregado con carga completa y una orientación de uso en la puerta de tu villa. Si en algún momento necesitas asistencia, una sola conversación de WhatsApp lo resuelve.",
-          "Reservar es por solicitud de disponibilidad, nunca confirmación automática: escríbenos por WhatsApp al +1 829 202 7849 o desde boltgolfcars.com con el nombre de tu villa en Casa de Campo, tus fechas y cuántas personas viajan. Una persona del equipo te responde el mismo día con los modelos disponibles y el total claro: tarifa por día, transporte cotizado e ITBIS. Confirmas con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200, reembolsable al devolver el carrito. Your ride in paradise."
+          "Reservar es por solicitud de disponibilidad, nunca confirmación automática: escríbenos por WhatsApp al +1 829 202 7849 o desde boltgolfcars.com con el nombre de tu villa en Casa de Campo, tus fechas y cuántas personas viajan. Una persona del equipo te responde el mismo día con los modelos disponibles y el total claro: tarifa por día, transporte e ITBIS. Confirmas con un depósito del 50% y a la entrega se toma un depósito de garantía de US$200, reembolsable al devolver el carrito. Your ride in paradise."
         ],
         "bullets": [
           "Escribe con villa, fechas y número de personas.",
@@ -1014,8 +1014,8 @@ export const ARTICLES: BlogArticle[] = [
     "pairSlug": "golf-cart-casa-de-campo-7-dias",
     "title": "Golf cart in Casa de Campo for stays of 7 days or more",
     "metaTitle": "Golf cart in Casa de Campo: 7+ days",
-    "metaDescription": "Golf cart in Casa de Campo for stays of 7 days or more: the same daily rate as in Punta Cana, transport quoted by villa and 24/7 WhatsApp support.",
-    "excerpt": "Casa de Campo is outside our usual area, but for stays of 7 days or more we bring the golf cart to your villa with transport quoted and the same daily rate.",
+    "metaDescription": "Golf cart in Casa de Campo for stays of 7 days or more: the same daily rate as in Punta Cana, fixed transport (trailer or tow truck) and 24/7 WhatsApp support.",
+    "excerpt": "Casa de Campo is outside our usual area, but for stays of 7 days or more we bring the golf cart to your villa with fixed-price transport and the same daily rate.",
     "readMinutes": 5,
     "sections": [
       {
@@ -1035,7 +1035,7 @@ export const ARTICLES: BlogArticle[] = [
       {
         "heading": "Transport quoted, the same daily rate as everywhere",
         "paragraphs": [
-          "In our three Punta Cana zones, transport has a fixed rate per trailer trip. In Casa de Campo, instead, it's quoted for each request based on three things: your villa (the exact location inside the community), your dates and the number of carts, because each trailer trip carries two 4-seaters or one 6-seater and one 4-seater. With those three details we come back with the exact transport cost and include it in the confirmation of your request, so you know the full total before paying anything.",
+          "In our three Punta Cana zones, transport has a fixed rate per trailer trip. In Casa de Campo it's fixed too, with two options: US$250 + tax per trailer trip, which carries two 4-seaters or one 6-seater and one 4-seater, or US$360 + tax by tow truck, which carries up to 4 carts (2 four-seaters and 2 six-seaters). We use the cheapest combination for your group and include it in the confirmation of your request, so you know the full total before paying anything.",
           "What doesn't change is the model's daily rate: it's the same as in Puntacana Resort & Club, Cap Cana or Bávaro. 4-seaters go from US$50/day and 6-seaters from US$75/day, always plus 18% tax. There's no zone surcharge on the cart's rate; the only line quoted separately is transport."
         ],
         "bullets": [
@@ -1062,7 +1062,7 @@ export const ARTICLES: BlogArticle[] = [
         "heading": "24/7 support and how to book",
         "paragraphs": [
           "Even though Casa de Campo is outside our usual area, the service during the rental is exactly the same: 24/7 WhatsApp support in English and Spanish, the cart delivered fully charged and a usage briefing at your villa door. If you ever need assistance, a single WhatsApp conversation sorts it out.",
-          "Booking is by availability request, never automatic confirmation: message us on WhatsApp at +1 829 202 7849 or from boltgolfcars.com with the name of your villa in Casa de Campo, your dates and how many people are travelling. A person on the team replies the same day with the available models and the clear total: daily rate, quoted transport and tax. You confirm with a 50% deposit and on delivery a US$200 damage deposit is taken, refundable when the cart is returned. Your ride in paradise."
+          "Booking is by availability request, never automatic confirmation: message us on WhatsApp at +1 829 202 7849 or from boltgolfcars.com with the name of your villa in Casa de Campo, your dates and how many people are travelling. A person on the team replies the same day with the available models and the clear total: daily rate, transport and tax. You confirm with a 50% deposit and on delivery a US$200 damage deposit is taken, refundable when the cart is returned. Your ride in paradise."
         ],
         "bullets": [
           "Write with villa, dates and number of people.",

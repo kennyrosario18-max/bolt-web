@@ -27,7 +27,7 @@ const T = {
     thZone: "Zona",
     thTrip: "Por viaje",
     thFree: "Gratis desde",
-    otherZones: "Otros complejos privados o eventos (Bávaro, Punta Cana, Casa de Campo)",
+    otherZones: "Otros complejos privados o eventos (Bávaro, Punta Cana)",
     quote: "Cotización",
     noFree: "Sin exención",
     freeDays: (n: number) => `${n} días`,
@@ -68,7 +68,7 @@ const T = {
     thZone: "Zone",
     thTrip: "Per trip",
     thFree: "Free from",
-    otherZones: "Other private communities or events (Bávaro, Punta Cana, Casa de Campo)",
+    otherZones: "Other private communities or events (Bávaro, Punta Cana)",
     quote: "Quoted",
     noFree: "No exemption",
     freeDays: (n: number) => `${n} days`,
@@ -183,6 +183,11 @@ export function PricingView({ locale }: { locale: Locale }) {
                     <td className="px-2 py-3 sm:px-4">
                       <span className="font-semibold text-ink">{z.name}</span>
                       {z.landmarks ? <span className="block text-xs text-steel">{z.landmarks}</span> : null}
+                      {z.towTruck ? (
+                        <span className="block text-xs font-semibold text-volt-dark">
+                          {es ? `Grúa (hasta 4 carritos): US$${z.towTruck}` : `Tow truck (up to 4 carts): US$${z.towTruck}`}
+                        </span>
+                      ) : null}
                     </td>
                     <td className="px-2 py-3 text-right font-display text-base font-extrabold tabular-nums text-ink sm:px-4 sm:text-lg">US${z.transport}</td>
                     <td className="px-2 py-3 text-right tabular-nums text-inktext sm:px-4">

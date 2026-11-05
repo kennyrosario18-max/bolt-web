@@ -299,13 +299,13 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     heroTitleEn: "Golf cart rental in Casa de Campo",
     metaTitle: "Golf carts en Casa de Campo — 7+ días",
     metaDescription:
-      "Llevamos golf carts a Casa de Campo en reservas de 7 días o más, con transporte cotizado según tu villa. Flota premium de 4 y 6 plazas.",
+      "Llevamos golf carts a Casa de Campo en reservas de 7 días o más: transporte US$250 por viaje de tráiler o US$360 en grúa. Flota premium de 4 y 6 plazas.",
     metaTitleEn: "Golf carts in Casa de Campo — 7+ days",
-    metaDescriptionEn: "We bring golf carts to Casa de Campo for rentals of 7 days or more, with transport quoted by villa. Premium 4 and 6-seat fleet.",
+    metaDescriptionEn: "We bring golf carts to Casa de Campo for rentals of 7 days or more: transport US$250 per trailer trip or US$360 by tow truck. Premium 4 and 6-seat fleet.",
     intro:
-      "Llevamos nuestra flota hasta Casa de Campo para reservas de 7 días o más. El transporte del carrito se cotiza según tu villa y fechas — lo incluimos en la confirmación de tu solicitud.",
+      "Llevamos nuestra flota hasta Casa de Campo para reservas de 7 días o más. El transporte ida y vuelta es fijo: US$250 por viaje de tráiler (hasta 2 carritos) o US$360 en grúa (hasta 4 carritos), + ITBIS.",
     introEn:
-      "We bring our fleet to Casa de Campo for rentals of 7 days or more. Cart transport is quoted based on your villa and dates — included in your request confirmation.",
+      "We bring our fleet to Casa de Campo for rentals of 7 days or more. Round-trip transport is fixed: US$250 per trailer trip (up to 2 carts) or US$360 by tow truck (up to 4 carts), + tax.",
     sections: [
       {
         h: "Un golf cart para vivir Casa de Campo",
@@ -323,12 +323,12 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
         h: "Cómo funciona la reserva de 7 días o más",
         hEn: "How the 7-day-plus rental works",
         p: [
-          "Casa de Campo está fuera de nuestra zona habitual en Punta Cana, así que trasladar el carrito solo tiene sentido en estadías largas — por eso el mínimo es de siete días. El transporte de ida y vuelta se cotiza según la ubicación exacta de tu villa y tus fechas, y te lo incluimos en la confirmación de la solicitud, sin sorpresas de último momento.",
-          "La tarifa por día del modelo es la misma que en el resto de nuestras zonas; solo cambia el transporte, que aquí se cotiza según tu villa en lugar de la tarifa fija por zona. Envía tu solicitud con la villa y las fechas y te devolvemos por WhatsApp el costo total claro — carrito, transporte y depósito — para que decidas con toda la información.",
+          "Casa de Campo está fuera de nuestra zona habitual en Punta Cana, así que trasladar el carrito solo tiene sentido en estadías largas — por eso el mínimo es de siete días. El transporte de ida y vuelta tiene precio fijo: US$250 + ITBIS por viaje de tráiler (hasta 2 carritos, máximo uno de 6 plazas) o US$360 + ITBIS en grúa, que lleva hasta 4 carritos (2 de 4 plazas y 2 de 6). Usamos la opción más barata para tu grupo y va en la confirmación, sin sorpresas de último momento.",
+          "La tarifa por día del modelo es la misma que en el resto de nuestras zonas; solo cambia el transporte, que aquí es de US$250 por tráiler o US$360 por grúa. Envía tu solicitud con la villa y las fechas y te devolvemos por WhatsApp el costo total claro — carrito, transporte y depósito — para que decidas con toda la información.",
         ],
         pEn: [
-          "Casa de Campo is outside our usual area in Punta Cana, so moving the cart only makes sense for longer stays — hence the seven-day minimum. Round-trip transport is quoted based on your villa's exact location and your dates, and we include it in your request confirmation, with no last-minute surprises.",
-          "The model's daily rate is the same as in the rest of our zones; only the transport differs — here it's quoted by villa instead of the fixed zone rate. Send your request with the villa and dates and we'll get back to you on WhatsApp with the clear total — cart, transport and deposit — so you decide with full information.",
+          "Casa de Campo is outside our usual area in Punta Cana, so moving the cart only makes sense for longer stays — hence the seven-day minimum. Round-trip transport has a fixed price: US$250 + tax per trailer trip (up to 2 carts, at most one six-seater) or US$360 + tax by tow truck, which carries up to 4 carts (2 four-seaters and 2 six-seaters). We use the cheapest option for your group and include it in the confirmation, with no last-minute surprises.",
+          "The model's daily rate is the same as in the rest of our zones; only the transport differs — here it's US$250 per trailer or US$360 per tow truck. Send your request with the villa and dates and we'll get back to you on WhatsApp with the clear total — cart, transport and deposit — so you decide with full information.",
         ],
       },
       {
@@ -346,7 +346,7 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     ],
     bullets: [
       { es: "Disponible para reservas de 7 días o más", en: "Available for rentals of 7 days or more" },
-      { es: "Transporte sujeto a cotización según villa y fechas", en: "Transport quoted by villa and dates" },
+      { es: "Transporte: US$250 por tráiler o US$360 en grúa (hasta 4 carritos) + ITBIS", en: "Transport: US$250 per trailer or US$360 by tow truck (up to 4 carts) + tax" },
       { es: "Ideal para estadías largas y villas familiares", en: "Ideal for long stays and family villas" },
     ],
     recommendedIds: ["eco-cross-4-2", "eco-plus-4-2", "cc-limo-4-2"],
@@ -357,11 +357,11 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
       },
       {
         q: "¿Cuánto cuesta el transporte hasta Casa de Campo?",
-        a: "Se cotiza según tu villa, tus fechas y la cantidad de carritos (viajes de tráiler). Envía tu solicitud y te incluimos el costo exacto de transporte en la confirmación, sin sorpresas.",
+        a: "US$250 + ITBIS ida y vuelta por viaje de tráiler (hasta 2 carritos, máximo uno de 6 plazas) o US$360 + ITBIS en grúa, que lleva hasta 4 carritos (2 de 4 plazas y 2 de 6). Usamos la opción más barata para tu grupo. No hay entrega gratis por días.",
       },
       {
         q: "¿La tarifa diaria es la misma?",
-        a: "Sí, la tarifa por día del modelo es la misma. Solo cambia el transporte, que aquí se cotiza en lugar de la tarifa fija por zona.",
+        a: "Sí, la tarifa por día del modelo es la misma. Solo cambia el transporte: US$250 por tráiler o US$360 por grúa.",
       },
       {
         q: "¿Tengo soporte durante la renta en Casa de Campo?",
@@ -370,8 +370,8 @@ export const ZONE_LANDINGS: ZoneLanding[] = [
     ],
     faqsEn: [
       { q: "Why is there a 7-day minimum?", a: "Casa de Campo is outside our usual area in Punta Cana. Transporting the cart only makes sense for longer stays — hence the 7-day minimum." },
-      { q: "How much does transport to Casa de Campo cost?", a: "It's quoted based on your villa, dates and number of carts (trailer trips). Send your request and we'll include the exact transport cost in the confirmation — no surprises." },
-      { q: "Is the daily rate the same?", a: "Yes, the model's daily rate is the same. Only the transport differs — quoted here instead of the fixed zone rate." },
+      { q: "How much does transport to Casa de Campo cost?", a: "US$250 + tax round trip per trailer trip (up to 2 carts, at most one six-seater) or US$360 + tax by tow truck, which carries up to 4 carts (2 four-seaters and 2 six-seaters). We use the cheapest option for your group. There's no free delivery by length of stay." },
+      { q: "Is the daily rate the same?", a: "Yes, the model's daily rate is the same. Only the transport differs: US$250 per trailer or US$360 per tow truck." },
       { q: "Do I have support during the rental in Casa de Campo?", a: "Yes. Even outside our usual area, you have the same 24/7 WhatsApp support in English and Spanish throughout the stay." },
     ],
   },

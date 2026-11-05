@@ -47,6 +47,8 @@ export interface Zone {
   transport?: number;
   /** Reservas de N días o más: transporte gratis (por reserva, todos los viajes). */
   transportFreeFrom?: number;
+  /** Grúa (Casa de Campo, 5/nov/2026): US$ + ITBIS por viaje, ida y vuelta, hasta 4 carritos (máx. 2 de 6 plazas). */
+  towTruck?: number;
   /** Puntos de referencia que acompañan al nombre en la tabla de transporte. */
   landmarks?: string;
   /** Sin landing propia: no sale en sitemap, home ni footer (sí en los formularios). */
@@ -109,16 +111,18 @@ export const ZONES: Zone[] = [
     blurb: "Disponible para reservas de 7 días o más.",
     blurbEn: "Available for rentals of 7 days or more.",
     minDays: 7,
-    note: "Transporte sujeto a cotización.",
-    noteEn: "Transport quoted separately.",
+    transport: 250,
+    towTruck: 360,
+    note: "Transporte ida y vuelta: US$250 por viaje de tráiler (hasta 2 carritos) o US$360 en grúa (hasta 4 carritos) + ITBIS.",
+    noteEn: "Round-trip transport: US$250 per trailer trip (up to 2 carts) or US$360 by tow truck (up to 4 carts) + tax.",
   },
   {
     id: "otra-zona",
     name: "Otro complejo privado o evento (cotizar)",
     nameEn: "Other private community or event (quote)",
     short: "Otro",
-    blurb: "Complejos privados de Bávaro, Punta Cana y Casa de Campo que no están en la lista, y eventos.",
-    blurbEn: "Private communities in Bávaro, Punta Cana and Casa de Campo not listed above, and events.",
+    blurb: "Complejos privados de Bávaro y Punta Cana que no están en la lista, y eventos.",
+    blurbEn: "Private communities in Bávaro and Punta Cana not listed above, and events.",
     note: "Solo rentamos para uso dentro de complejos privados (residenciales y resorts) y en eventos; el transporte se cotiza.",
     noteEn: "We only rent for use inside private communities (residences and resorts) and at events; transport is quoted.",
     noLanding: true,
@@ -140,7 +144,12 @@ export function transportLabel(z: Zone, locale: "es" | "en"): string {
   const trip = es
     ? `US$${z.transport} ida y vuelta por viaje de tráiler (hasta 2 carritos) + ITBIS`
     : `US$${z.transport} round trip per trailer trip (up to 2 carts) + tax`;
-  if (!z.transportFreeFrom) return es ? `${trip} · sin entrega gratis` : `${trip} · no free delivery`;
+  const tow = z.towTruck
+    ? es
+      ? ` · o US$${z.towTruck} en grúa (hasta 4 carritos) + ITBIS`
+      : ` · or US$${z.towTruck} by tow truck (up to 4 carts) + tax`
+    : "";
+  if (!z.transportFreeFrom) return es ? `${trip}${tow} · sin entrega gratis` : `${trip}${tow} · no free delivery`;
   return es
     ? `Entrega y recogida gratis desde ${z.transportFreeFrom} días · menos días: ${trip}`
     : `Free delivery & pickup on ${z.transportFreeFrom}+ day stays · shorter: ${trip}`;

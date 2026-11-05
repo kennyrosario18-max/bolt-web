@@ -95,14 +95,16 @@ export const TRANSPORT_RULES = {
   es: [
     "Se cobra por viaje de tráiler, no por carrito: en un viaje van 2 carritos de 4 plazas, o 1 de 6 y 1 de 4. Dos de 6 plazas son 2 viajes.",
     "Entrega gratis por reserva: si tu reserva cumple los días de la zona, todos los viajes van gratis (ej. 3 carritos a Bávaro por 12 días = US$0).",
-    "Uvero Alto / Macao y las zonas fuera de ruta no tienen exención.",
+    "Casa de Campo: además del tráiler (US$250, hasta 2 carritos) hay grúa por US$360 + ITBIS, ida y vuelta, que lleva hasta 4 carritos (2 de 4 plazas y 2 de 6). Usamos la combinación más barata para tu grupo.",
+    "Uvero Alto / Macao, Casa de Campo y las zonas fuera de ruta no tienen exención.",
     "Se paga con la reserva y sigue la misma política de cancelación de la renta.",
     "Incluye gas o batería lista y el carrito limpio y listo para rodar.",
   ],
   en: [
     "Charged per trailer trip, not per cart: one trip carries 2 four-seaters, or 1 six-seater and 1 four-seater. Two six-seaters are 2 trips.",
     "Free delivery is per reservation: if your rental meets the zone's days, every trip is free (e.g. 3 carts to Bávaro for 12 days = US$0).",
-    "Uvero Alto / Macao and out-of-route areas are never exempt.",
+    "Casa de Campo: besides the trailer (US$250, up to 2 carts) there's a tow truck at US$360 + tax, round trip, carrying up to 4 carts (2 four-seaters and 2 six-seaters). We use the cheapest combination for your group.",
+    "Uvero Alto / Macao, Casa de Campo and out-of-route areas are never exempt.",
     "Paid with the reservation and subject to the same cancellation policy as the rental.",
     "Includes gas or a charged battery and a clean cart, ready to drive.",
   ],

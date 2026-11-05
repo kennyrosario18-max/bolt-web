@@ -271,10 +271,13 @@ test.describe("formulario de disponibilidad (shim de validación)", () => {
     await expect(page.locator("#estimate")).toContainText("US$531");
     await expect(page.locator("#estimate")).toContainText(/gratis|free/i);
     await expect(page.locator("#estimate-tip")).toBeEmpty();
-    // Zona cotizada (Casa de Campo, 7+ días): el estimado avisa que el transporte va aparte.
+    // Casa de Campo (7+ días, 5/nov/2026): tráiler US$250 (1 carrito = 1 viaje, 250 × 1.18 = 295) o grúa US$360.
     await page.locator("#salida").fill("2027-01-18");
     await page.locator("#zona").selectOption("casa-de-campo");
-    await expect(page.locator("#estimate")).toContainText(/cotizado|quoted/i);
+    await expect(page.locator("#zona-note")).toContainText("US$250");
+    await expect(page.locator("#zona-note")).toContainText("US$360");
+    await expect(page.locator("#estimate")).toContainText("US$295");
+    await expect(page.locator("#estimate")).not.toContainText(/cotizado|quoted/i);
   });
 });
 
